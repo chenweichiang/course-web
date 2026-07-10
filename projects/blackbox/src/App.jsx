@@ -305,7 +305,7 @@ export default function App() {
       <footer className="px-5 lg:px-8 py-10 lg:py-12 border-t border-zinc-200 bg-white">
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 lg:gap-6">
           <p className="mono text-zinc-400 text-xs tracking-wide">
-            互動設計 114-2 · 黑盒子期末專案
+            互動設計 · 黑盒子期末專案
           </p>
 
           <div className="flex flex-col lg:flex-row lg:items-center lg:gap-6 gap-0 -mx-2 lg:mx-0">

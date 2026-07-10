@@ -20,11 +20,11 @@
 
 ## 專案定位
 
-「互動設計 114-2」課程的**期末作業教學引導網站**，由授課老師江振維建立，供學生學習和參考。
+「互動設計」課程的**期末作業教學引導網站**，由授課老師江振維建立，供學生學習和參考。
 
 **技術棧**：Vite 8 + React 19 + Tailwind CSS 4 + Framer Motion 12
 
-**部署**：自製 Vultr VPS，透過 rsync 推到 `research-server:/home/ccw/server/work/interactiondesign/114-2/`
+**部署**：自製 Vultr VPS，透過 rsync 推到 `research-server:/home/ccw/server/work/interactiondesign/blackbox/`
 
 ---
 
@@ -127,13 +127,13 @@
 
 **部署統一走 rsync，禁止透過 git push 觸發部署。**
 
-- **正式網址**：https://work.interaction.tw/interactiondesign/114-2/
-- **伺服器路徑**：`/home/ccw/server/work/interactiondesign/114-2/`
+- **正式網址**：https://work.interaction.tw/interactiondesign/blackbox/
+- **伺服器路徑**：`/home/ccw/server/work/interactiondesign/blackbox/`
 - **SSH alias**：`research-server`（隱私資訊不寫進文件）
 
 ```bash
 npm run build
-rsync -avz --delete dist/ research-server:/home/ccw/server/work/interactiondesign/114-2/
+rsync -avz --delete dist/ research-server:/home/ccw/server/work/interactiondesign/blackbox/
 ```
 
 Git 只用於原始碼版本管理，不負責部署。詳細部署流程見 [`docs/DEVELOPMENT.md`](docs/DEVELOPMENT.md)。

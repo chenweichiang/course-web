@@ -198,6 +198,6 @@
 
 ## 部署相關
 
-- 來源 → 目標：本地 `dist/` → `research-server:/home/ccw/server/work/interactiondesign/114-2/`
+- 來源 → 目標：本地 `dist/` → `research-server:/home/ccw/server/work/interactiondesign/blackbox/`
 - 工具：`rsync -avz --delete`
 - 詳見 [`DEVELOPMENT.md`](DEVELOPMENT.md) → 部署流程

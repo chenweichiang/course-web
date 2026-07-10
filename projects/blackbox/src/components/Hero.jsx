@@ -120,7 +120,7 @@ export default function Hero() {
         transition={{ delay: 0.3 }}
         className="absolute top-8 left-8 mono text-zinc-400 text-xs tracking-widest"
       >
-        互動設計 114-2 · 期末專案
+        互動設計 · 期末專案
       </motion.div>
 
       {/* Main content */}

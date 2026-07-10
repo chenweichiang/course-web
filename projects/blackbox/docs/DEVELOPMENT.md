@@ -34,13 +34,13 @@ npm run preview
 # → http://localhost:4173
 
 # 部署到 Vultr VPS
-rsync -avz --delete dist/ research-server:/home/ccw/server/work/interactiondesign/114-2/
+rsync -avz --delete dist/ research-server:/home/ccw/server/work/interactiondesign/blackbox/
 ```
 
 **典型部署一氣呵成**
 
 ```bash
-npm run build && rsync -avz --delete dist/ research-server:/home/ccw/server/work/interactiondesign/114-2/
+npm run build && rsync -avz --delete dist/ research-server:/home/ccw/server/work/interactiondesign/blackbox/
 ```
 
 ---
@@ -51,9 +51,9 @@ npm run build && rsync -avz --delete dist/ research-server:/home/ccw/server/work
 
 | 項目 | 值 |
 |---|---|
-| **正式網址** | https://work.interaction.tw/interactiondesign/114-2/ |
+| **正式網址** | https://work.interaction.tw/interactiondesign/blackbox/ |
 | **網域** | `work.interaction.tw` |
-| **伺服器路徑** | `/home/ccw/server/work/interactiondesign/114-2/` |
+| **伺服器路徑** | `/home/ccw/server/work/interactiondesign/blackbox/` |
 | **SSH alias** | `research-server` |
 | **服務軟體** | Caddy（系統級 systemd 服務） |
 | **HTTPS** | 自動由 Caddy 簽發與更新 |
@@ -62,7 +62,7 @@ Caddy 設定關鍵片段（讀者參考用，**不要在這裡修改**，要改�
 
 ```caddy
 work.interaction.tw {
-  handle /interactiondesign/114-2/* {
+  handle /interactiondesign/blackbox/* {
     root * /home/ccw/server/work
     file_server
   }
@@ -77,7 +77,7 @@ work.interaction.tw {
 
 ```bash
 ssh research-server "ls /home/ccw/server/work/interactiondesign/"
-# 預期輸出：114-2
+# （此為舊 VPS rsync 部署驗證，2026-07 已除役——現以 GitHub Pages/course-web 發佈，見 README「部署」段）
 ```
 
 ### 部署步驟
@@ -95,10 +95,10 @@ npm run build
 ls dist/    # 確認有 index.html / assets/ / *.jpg / *.png
 
 # 4. 推送到伺服器
-rsync -avz --delete dist/ research-server:/home/ccw/server/work/interactiondesign/114-2/
+rsync -avz --delete dist/ research-server:/home/ccw/server/work/interactiondesign/blackbox/
 
 # 5. 開瀏覽器確認
-open https://work.interaction.tw/interactiondesign/114-2/
+open https://work.interaction.tw/interactiondesign/blackbox/
 ```
 
 ### 安全 / 操作注意
@@ -115,7 +115,7 @@ open https://work.interaction.tw/interactiondesign/114-2/
 | `ssh research-server` 失敗 | 檢查 `~/.ssh/config`、私鑰權限（`chmod 600`）、防火牆 |
 | `rsync` 完成但網頁沒更新 | Cmd-Shift-R 強制重新整理；確認 build 是最新 |
 | HTTPS 憑證錯誤 | Caddy 會自動處理，若持續可 SSH 進去 `sudo systemctl status caddy` |
-| 樣式 / JS 路徑 404 | 檢查 `vite.config.js` 的 `base` 設定是否對應 `/interactiondesign/114-2/` |
+| 樣式 / JS 路徑 404 | 檢查 `vite.config.js` 的 `base` 設定是否對應 `/interactiondesign/blackbox/` |
 
 ---
 

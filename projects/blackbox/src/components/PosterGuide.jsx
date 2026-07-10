@@ -103,7 +103,7 @@ function LayoutDiagram({ showGrid, showBleed, showSafe }) {
         {/* ════ 4. Top strip content ════ */}
         <text x={M} y={TOP_H/2 + 4} fontSize="10" fill="#FFFFFF"
           fontFamily="'IBM Plex Mono', monospace" letterSpacing="0.14em">
-          INTERACTION DESIGN 114-2  ·  BLACK BOX PROJECT
+          INTERACTION DESIGN  ·  BLACK BOX PROJECT
         </text>
         <text x={PW - M} y={TOP_H/2 + 4} textAnchor="end" fontSize="10" fill="#CC0000"
           fontFamily="'IBM Plex Mono', monospace" letterSpacing="0.14em">
@@ -171,7 +171,7 @@ function LayoutDiagram({ showGrid, showBleed, showSafe }) {
         {/* ════ 7. Bottom strip content ════ */}
         <text x={M} y={BOT_Y + BOT_H/2 + 4} fontSize="9" fill="#FFFFFF"
           fontFamily="'IBM Plex Mono', monospace" letterSpacing="0.10em">
-          國立臺北商業大學  ·  創意科技與產品設計系  ·  互動設計 114-2
+          國立臺北商業大學  ·  創意科技與產品設計系  ·  互動設計
         </text>
         <text x={PW - M} y={BOT_Y + BOT_H/2 + 4} textAnchor="end" fontSize="9" fill="#CC0000"
           fontFamily="'IBM Plex Mono', monospace" letterSpacing="0.10em">
@@ -473,7 +473,7 @@ export default function PosterGuide() {
                   { label: '資訊列欄 1：作品名稱 / 類別', desc: '作品中英文名稱，作品類別標示' },
                   { label: '資訊列欄 2：設計概念', desc: '一句話概念說明，20 字以內' },
                   { label: '資訊列欄 3：學生', desc: '所有組員姓名 / 學號' },
-                  { label: '資訊列欄 4：學校 / 系所', desc: '國立臺北商業大學 · 創意科技與產品設計系 · 114-2' },
+                  { label: '資訊列欄 4：學校 / 系所', desc: '國立臺北商業大學 · 創意科技與產品設計系' },
                   { label: '下帶：尺寸標示', desc: 'A3 · 420 × 297 MM（右側）' },
                 ],
               },
