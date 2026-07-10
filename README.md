@@ -3,15 +3,13 @@
 江振維（Chiang Chenwei）課程頁面的統一發佈站。所有課程／作業展示頁與其原始碼都收在這一個 repo，
 掛在同一個網域 `course.interaction.tw` 底下的不同子路徑，由 GitHub Pages 免費代管（自訂網域 + HTTPS）。
 
-## 正式網址
+## 課程網址
 
-<https://course.interaction.tw/>
+總站首頁：<https://course.interaction.tw/>
 
-## 目前收錄
-
-| 子路徑 | 內容 | 原始碼 |
-|--------|------|--------|
-| [`/interactiondesign/blackbox/`](https://course.interaction.tw/interactiondesign/blackbox/) | 互動設計 114-2 期末專案「黑盒子」設計簡報頁 | `projects/blackbox/`（Vite + React） |
+| 課程 | 頁面 | 網址 | 原始碼 |
+|------|------|------|--------|
+| 互動設計 | 黑盒子 · 期末專案 | <https://course.interaction.tw/interactiondesign/blackbox/> | `projects/blackbox/`（Vite + React） |
 
 ## 結構
 
@@ -43,7 +41,7 @@ push 後 GitHub Pages 幾分鐘自動上線，無需碰伺服器。
   `base: '/<課程>/<專案>/'` 且 `build.outDir` 指向 `../../<課程>/<專案>`，build → commit → push。
 - **純手寫 HTML**：直接在根目錄開 `<課程>/<專案>/` 放 `index.html`（資源用相對路徑），commit → push。
 
-網址一律 = `course.interaction.tw/<課程>/<專案>/`。
+網址一律 = `course.interaction.tw/<課程>/<專案>/`。**新增後記得把網址補進上面「課程網址」表。**
 
 > 沿革：黑盒子頁原掛於自架伺服器 `work.interaction.tw/interactiondesign/114-2/`；2026-07 `work.interaction.tw`
 > 除役，頁面與其原始碼（原獨立專案 `202605 課程 互動設計黑盒子作業`）一併併入本總站，路徑改為 `/interactiondesign/blackbox/`。
