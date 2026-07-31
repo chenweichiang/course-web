@@ -30,7 +30,7 @@ export default function Hero() {
           </p>
           <div className="mt-8 flex flex-wrap gap-2">
             {CHIPS.map((c) => (
-              <span key={c} className="nb-sm px-3 py-1 bg-white font-mono text-sm">
+              <span key={c} className="px-3 py-1 rounded-full border border-neutral-300 bg-white/80 font-mono text-sm text-neutral-600">
                 {c}
               </span>
             ))}

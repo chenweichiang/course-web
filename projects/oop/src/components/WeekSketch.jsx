@@ -244,8 +244,9 @@ function draw(ctx, week, phase, t) {
   }
 }
 
-export default function WeekSketch({ week, phase }) {
+export default function WeekSketch({ week, phase, active = false }) {
   const canvasRef = useRef(null)
+  const tRef = useRef(1.2) // 記住停格時間，hover 續播不跳格
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -255,33 +256,35 @@ export default function WeekSketch({ week, phase }) {
     canvas.height = S * dpr
     const ctx = canvas.getContext('2d')
     ctx.scale(dpr, dpr)
-
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    if (reduced) {
-      draw(ctx, week, phase, 1.2)
-      return
-    }
-
-    let visible = false
-    let raf
-    const t0 = performance.now()
-    const loop = (now) => {
-      if (visible) draw(ctx, week, phase, (now - t0) / 1000)
-      raf = requestAnimationFrame(loop)
-    }
-    const io = new IntersectionObserver(([e]) => {
-      visible = e.isIntersecting
-    })
-    io.observe(canvas)
-    raf = requestAnimationFrame(loop)
-    return () => {
-      cancelAnimationFrame(raf)
-      io.disconnect()
-    }
+    draw(ctx, week, phase, tRef.current) // 預設靜止：停在一個畫格
   }, [week, phase])
 
+  useEffect(() => {
+    // 只有 hover（active）時才動；離開就停在當下畫格
+    if (!active) return
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    const canvas = canvasRef.current
+    if (!canvas) return
+    const ctx = canvas.getContext('2d')
+    let raf
+    let last = performance.now()
+    const loop = (now) => {
+      tRef.current += (now - last) / 1000
+      last = now
+      draw(ctx, week, phase, tRef.current)
+      raf = requestAnimationFrame(loop)
+    }
+    raf = requestAnimationFrame(loop)
+    return () => cancelAnimationFrame(raf)
+  }, [active, week, phase])
+
   return (
-    <div className="nb-sm shrink-0 overflow-hidden bg-white" aria-hidden="true">
+    <div
+      className={`shrink-0 overflow-hidden bg-white border-2 rounded-md transition-colors ${
+        active ? 'border-neutral-900' : 'border-neutral-300'
+      }`}
+      aria-hidden="true"
+    >
       <canvas ref={canvasRef} style={{ width: S, height: S, display: 'block' }} />
     </div>
   )

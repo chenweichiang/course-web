@@ -17,10 +17,10 @@ export default function HeroSketch() {
       const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
       const sketch = (p) => {
-        const N = 72
+        const N = 56
         const boids = []
-        // 大部分淡灰，少數帶課程三階段色（sky/amber/violet）
-        const INK = ['#d4d4d4', '#d4d4d4', '#d4d4d4', '#d4d4d4', '#a3a3a3', '#38bdf8', '#f59e0b', '#8b5cf6']
+        // 單色墨點：安靜的群集，不搶文字
+        const INK = ['#e5e5e5', '#d4d4d4', '#d4d4d4', '#c4c4c4', '#a3a3a3']
 
         const mk = () => ({
           pos: p.createVector(p.random(p.width), p.random(p.height)),

@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import Hero from './components/Hero'
-import SplitHeading from './components/SplitHeading'
 import Phases from './components/Phases'
 import Weeks from './components/Weeks'
 import Assessment from './components/Assessment'
@@ -54,7 +53,7 @@ export default function App() {
                 {s.navLabel}
               </a>
             ))}
-            <a href="gallery/" className="nb-sm nb-hover ml-1 px-2.5 py-1 bg-amber-300 text-sm font-bold whitespace-nowrap">
+            <a href="gallery/" className="nb-sm nb-hover ml-1 px-2.5 py-1 bg-amber-400 text-sm font-bold whitespace-nowrap">
               作業牆 ↗
             </a>
           </div>
@@ -67,7 +66,7 @@ export default function App() {
           <section key={id} id={id} className="max-w-6xl mx-auto px-4 py-16 border-t-2 border-neutral-200">
             <div className="mb-8">
               <div className="font-mono text-sm text-neutral-400 mb-1">{num}</div>
-              <SplitHeading className="font-display text-3xl font-black tracking-tight">{label}</SplitHeading>
+              <h2 className="font-display text-3xl font-black tracking-tight">{label}</h2>
               <p className="text-neutral-500 mt-2 max-w-2xl">{summary}</p>
             </div>
             <Component />
