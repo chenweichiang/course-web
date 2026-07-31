@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>作業牆 — 物件導向程式設計</title>
+    <meta name="description" content="清大科技藝術「物件導向程式設計」全班作品牆：每週作業與期末專題的線上作品連結。" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Noto+Sans+TC:wght@400;500;700;900&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+    <style>
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: 'Inter', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+        background: #fff; color: #0a0a0a;
+        -webkit-font-smoothing: antialiased;
+      }
+      .mono { font-family: 'IBM Plex Mono', Menlo, monospace; }
+      header { max-width: 72rem; margin: 0 auto; padding: 5rem 1rem 2rem; }
+      header .crumb { font-size: 0.85rem; color: #737373; margin-bottom: 0.75rem; }
+      header .crumb a { color: inherit; }
+      h1 { font-size: 2.5rem; font-weight: 900; letter-spacing: -0.02em; margin: 0; }
+      header p { color: #525252; max-width: 40rem; line-height: 1.7; }
+      main { max-width: 72rem; margin: 0 auto; padding: 0 1rem 4rem; }
+      .week { border-top: 1px solid #e5e5e5; padding: 2rem 0; }
+      .week h2 { font-size: 1.25rem; font-weight: 900; margin: 0 0 1rem; }
+      .week h2 .w { color: #a3a3a3; font-weight: 700; margin-right: 0.6rem; }
+      .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 0.75rem; }
+      .card {
+        display: block; border: 1px solid #e5e5e5; border-radius: 0.75rem;
+        padding: 1rem; text-decoration: none; color: inherit;
+        transition: border-color 0.15s, transform 0.15s;
+      }
+      .card:hover { border-color: #0a0a0a; transform: translateY(-2px); }
+      .card .name { font-weight: 700; }
+      .card .hint { font-size: 0.78rem; color: #a3a3a3; margin-top: 0.25rem; }
+      .empty {
+        border: 1px dashed #d4d4d4; border-radius: 1rem; padding: 3rem 1.5rem;
+        text-align: center; color: #737373; line-height: 1.8;
+      }
+      footer { border-top: 1px solid #e5e5e5; }
+      footer div { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; font-size: 0.85rem; color: #737373; }
+      footer a { color: inherit; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="crumb mono"><a href="../">← 物件導向程式設計</a> / 作業牆</div>
+      <h1>作業牆</h1>
+      <p>全班的每週作業與期末專題。每張卡片都連到同學自己 GitHub Pages 上「活的」作品——點開就會動。</p>
+    </header>
+    <main id="wall">
+      <div class="empty">作品牆載入中…</div>
+    </main>
+    <footer>
+      <div>清華大學 科技藝術跨域學士班 · 物件導向程式設計 115-1 · <a href="../">課程頁</a></div>
+    </footer>
+
+    <script type="module">
+      // 資料來源：./students.json（原始碼在 projects/oop/public/gallery/students.json）
+      // 老師更新名單/作品 → 改 json → npm run build → push 即上線
+      const wall = document.getElementById('wall')
+      try {
+        const res = await fetch('./students.json')
+        const data = await res.json()
+        const byId = Object.fromEntries(data.students.map((s) => [s.id, s]))
+        const weeks = (data.weeks ?? []).filter((wk) => (wk.works ?? []).length > 0)
+
+        if (weeks.length === 0) {
+          wall.innerHTML = `<div class="empty">還沒有作品——第一批作業上線後，這裡就會長出全班的作品牆。<br/>（同學：deadline 前 push 到你的作品集 repo 就會出現在這）</div>`
+        } else {
+          wall.innerHTML = weeks
+            .map(
+              (wk) => `
+              <section class="week">
+                <h2><span class="w mono">W${wk.w}</span>${wk.title ?? ''}</h2>
+                <div class="grid">
+                  ${wk.works
+                    .map((work) => {
+                      const s = byId[work.id]
+                      if (!s) return ''
+                      return `<a class="card" href="${work.url}" target="_blank" rel="noopener">
+                        <div class="name">${s.name}</div>
+                        <div class="hint mono">open work ↗</div>
+                      </a>`
+                    })
+                    .join('')}
+                </div>
+              </section>`,
+            )
+            .join('')
+        }
+      } catch (e) {
+        wall.innerHTML = `<div class="empty">作品資料載入失敗（students.json）。</div>`
+      }
+    </script>
+  </body>
+</html>

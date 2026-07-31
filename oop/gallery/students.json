@@ -1,0 +1,9 @@
+{
+  "_說明": "作業牆資料。students=名單（id 自訂、name 顯示名、repo 選填）；weeks=每週作品（works 的 id 對應學生、url 指到該生 GitHub Pages 上該週作品）。改完後在 projects/oop 跑 npm run build，commit+push 即上線。開學拿到名單後把 sample 換掉。",
+  "students": [
+    { "id": "sample", "name": "範例同學", "repo": "https://github.com/example/oop-portfolio" }
+  ],
+  "weeks": [
+    { "w": 2, "title": "互動塗鴉工具", "works": [] }
+  ]
+}

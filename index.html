@@ -1,15 +1,62 @@
 <!doctype html>
-<html lang="zh-Hant">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="refresh" content="0; url=https://github.com/chenweichiang/course-web">
-  <link rel="canonical" href="https://github.com/chenweichiang/course-web">
-  <meta name="robots" content="noindex">
-  <title>course-web</title>
-  <script>location.replace("https://github.com/chenweichiang/course-web");</script>
-</head>
-<body>
-  <p>轉往 <a href="https://github.com/chenweichiang/course-web">github.com/chenweichiang/course-web</a>…</p>
-</body>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>課程總站 — 江振維</title>
+    <meta name="description" content="江振維（Chiang Chenwei）課程頁面總站：互動設計、物件導向程式設計等課程的教材、作業說明與作品展示。" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Noto+Sans+TC:wght@400;500;700;900&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+    <style>
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: 'Inter', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+        background: #fff; color: #0a0a0a;
+        -webkit-font-smoothing: antialiased;
+      }
+      .mono { font-family: 'IBM Plex Mono', Menlo, monospace; }
+      main { max-width: 60rem; margin: 0 auto; padding: 6rem 1.5rem 4rem; }
+      h1 { font-size: 3rem; font-weight: 900; letter-spacing: -0.02em; margin: 0 0 0.5rem; }
+      .sub { color: #737373; margin-bottom: 3rem; }
+      .courses { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+      .card {
+        display: block; border: 1px solid #e5e5e5; border-radius: 1rem; padding: 1.5rem;
+        text-decoration: none; color: inherit;
+        transition: border-color 0.15s, transform 0.15s;
+      }
+      .card:hover { border-color: #0a0a0a; transform: translateY(-2px); }
+      .card .tag { font-size: 0.75rem; color: #737373; margin-bottom: 0.75rem; }
+      .card h2 { font-size: 1.35rem; font-weight: 900; margin: 0 0 0.5rem; }
+      .card p { font-size: 0.9rem; color: #525252; line-height: 1.7; margin: 0; }
+      .card .go { display: inline-block; margin-top: 1rem; font-size: 0.85rem; font-weight: 700; }
+      footer { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid #e5e5e5; font-size: 0.85rem; color: #737373; }
+      footer a { color: inherit; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>課程總站</h1>
+      <p class="sub">江振維（Chiang Chenwei）的課程頁面：教材、作業說明與作品展示。</p>
+      <div class="courses">
+        <a class="card" href="/oop/">
+          <div class="tag mono">清華大學 · 科技藝術跨域學士班 · 115-1</div>
+          <h2>物件導向程式設計</h2>
+          <p>零基礎的 16 週：p5.js 手寫基礎 → 物件導向＝創作媒材 → AI 課綱化。零考試、揭露制、口頭答辯。</p>
+          <span class="go mono">課程頁 →</span>
+        </a>
+        <a class="card" href="/interactiondesign/blackbox/">
+          <div class="tag mono">互動設計 · 期末專案</div>
+          <h2>黑盒子</h2>
+          <p>做一個把「感受」傳遞給陌生人的實體裝置——不解釋、不說明，讓盒子自己說話。</p>
+          <span class="go mono">專案頁 →</span>
+        </a>
+      </div>
+      <footer>
+        <a href="https://github.com/chenweichiang/course-web">原始碼（GitHub）</a> ·
+        <a href="https://interaction.tw">interaction.tw</a>
+      </footer>
+    </main>
+  </body>
 </html>

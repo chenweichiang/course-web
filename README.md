@@ -10,6 +10,10 @@
 | 課程 | 頁面 | 網址 | 原始碼 |
 |------|------|------|--------|
 | 互動設計 | 黑盒子 · 期末專案 | <https://course.interaction.tw/interactiondesign/blackbox/> | `projects/blackbox/`（Vite + React） |
+| 物件導向程式設計（清大科藝 115-1） | 課程主頁 | <https://course.interaction.tw/oop/> | `projects/oop/`（Vite + React；課程內容單一來源 `src/data.js`） |
+| 物件導向程式設計（清大科藝 115-1） | 作業牆 | <https://course.interaction.tw/oop/gallery/> | 同上（名單資料 `projects/oop/public/gallery/students.json`） |
+
+根目錄 `index.html`＝課程總覽首頁（原為轉址頁，2026-08 改版；新增課程記得補卡片）。
 
 ## 結構
 
