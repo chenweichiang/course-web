@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import Hero from './components/Hero'
+import SplitHeading from './components/SplitHeading'
 import Phases from './components/Phases'
 import Weeks from './components/Weeks'
 import Assessment from './components/Assessment'
@@ -35,7 +36,7 @@ export default function App() {
 
   return (
     <div>
-      <nav className="fixed top-0 inset-x-0 z-50 bg-white/90 backdrop-blur border-b border-neutral-200">
+      <nav className="fixed top-0 inset-x-0 z-50 bg-white/90 backdrop-blur border-b-2 border-neutral-900">
         <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
           <a href="#top" className="font-black tracking-tight whitespace-nowrap">
             物件導向程式設計
@@ -53,7 +54,7 @@ export default function App() {
                 {s.navLabel}
               </a>
             ))}
-            <a href="gallery/" className="ml-1 px-2.5 py-1.5 rounded-full text-sm whitespace-nowrap border border-neutral-300 hover:border-neutral-900 transition-colors">
+            <a href="gallery/" className="nb-sm nb-hover ml-1 px-2.5 py-1 bg-amber-300 text-sm font-bold whitespace-nowrap">
               作業牆 ↗
             </a>
           </div>
@@ -63,10 +64,10 @@ export default function App() {
       <main id="top">
         <Hero />
         {SECTIONS.map(({ id, num, label, summary, Component }) => (
-          <section key={id} id={id} className="max-w-6xl mx-auto px-4 py-16 border-t border-neutral-200">
+          <section key={id} id={id} className="max-w-6xl mx-auto px-4 py-16 border-t-2 border-neutral-200">
             <div className="mb-8">
               <div className="font-mono text-sm text-neutral-400 mb-1">{num}</div>
-              <h2 className="font-display text-3xl font-black tracking-tight">{label}</h2>
+              <SplitHeading className="font-display text-3xl font-black tracking-tight">{label}</SplitHeading>
               <p className="text-neutral-500 mt-2 max-w-2xl">{summary}</p>
             </div>
             <Component />

@@ -3,19 +3,19 @@ import { AI_RULES } from '../data'
 export default function AIPolicy() {
   return (
     <div>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {AI_RULES.map((r, i) => (
-          <div key={r.t} className="rounded-xl border border-neutral-200 p-5">
+          <div key={r.t} className="nb nb-hover bg-white p-5">
             <div className="font-mono text-sm text-neutral-400 mb-2">規則 {i + 1}</div>
-            <h3 className="font-black mb-2">{r.t}</h3>
+            <h3 className="font-display font-black mb-2">{r.t}</h3>
             <p className="text-sm text-neutral-600 leading-relaxed">{r.d}</p>
           </div>
         ))}
-        <div className="rounded-xl bg-amber-50 border border-amber-200 p-5">
-          <div className="font-mono text-sm text-amber-600 mb-2">為什麼這樣設計</div>
-          <p className="text-sm leading-relaxed text-neutral-700">
+        <div className="nb bg-amber-100 p-5">
+          <div className="font-mono text-sm text-amber-700 mb-2">為什麼這樣設計</div>
+          <p className="text-sm leading-relaxed text-neutral-800">
             「用這些工具自動化無聊的部分，但保護有趣、有意義的部分——那種摩擦感正是滋養創造力之處。」
-            <span className="block mt-1 font-mono text-xs text-neutral-500">— Zach Lieberman</span>
+            <span className="block mt-1 font-mono text-xs text-neutral-600">— Zach Lieberman</span>
           </p>
         </div>
       </div>

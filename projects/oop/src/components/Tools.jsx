@@ -3,12 +3,14 @@ import { TOOLS } from '../data'
 export default function Tools() {
   return (
     <div>
-      <div className="grid sm:grid-cols-2 gap-4">
+      <div className="grid sm:grid-cols-2 gap-5">
         {TOOLS.map((t) => (
-          <div key={t.name} className={`rounded-xl border p-5 ${t.main ? 'border-neutral-900' : 'border-neutral-200'}`}>
+          <div key={t.name} className={`nb nb-hover p-5 ${t.main ? 'bg-amber-50' : 'bg-white'}`}>
             <div className="flex items-center justify-between gap-3 mb-1">
-              <h3 className="font-black">{t.name}</h3>
-              <span className="font-mono text-xs px-2 py-0.5 rounded bg-neutral-100 whitespace-nowrap">{t.cost}</span>
+              <h3 className="font-display font-black">{t.name}</h3>
+              <span className="font-mono text-xs px-2 py-0.5 border-2 border-neutral-900 rounded bg-white whitespace-nowrap">
+                {t.cost}
+              </span>
             </div>
             <div className="text-sm text-neutral-500 mb-2">{t.role}</div>
             <p className="text-sm text-neutral-600 leading-relaxed">{t.note}</p>

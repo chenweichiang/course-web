@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import HeroSketch from './HeroSketch'
+import SplitHeading from './SplitHeading'
 
 const CHIPS = ['16 週', '零基礎可修', 'p5.js', '零考試', 'AI 揭露制']
 
@@ -12,11 +13,11 @@ export default function Hero() {
       <div className="relative max-w-6xl mx-auto px-4 pt-32 pb-16">
         <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
           <div className="font-mono text-sm text-neutral-500 mb-4">清華大學 科技藝術跨域學士班 · 115-1</div>
-          <h1 className="font-display text-5xl sm:text-7xl font-black tracking-tight leading-tight">
+          <SplitHeading as="h1" scroll={false} delay={0.15} className="font-display text-5xl sm:text-7xl font-black tracking-tight leading-tight">
             物件導向
             <br />
             程式設計
-          </h1>
+          </SplitHeading>
           <p className="mt-6 text-xl sm:text-2xl font-bold max-w-3xl">
             這門課不跟 AI 搶「寫程式」，
             <br className="hidden sm:block" />
@@ -29,7 +30,7 @@ export default function Hero() {
           </p>
           <div className="mt-8 flex flex-wrap gap-2">
             {CHIPS.map((c) => (
-              <span key={c} className="px-3 py-1.5 rounded-full border border-neutral-300 bg-white/80 font-mono text-sm">
+              <span key={c} className="nb-sm px-3 py-1 bg-white font-mono text-sm">
                 {c}
               </span>
             ))}

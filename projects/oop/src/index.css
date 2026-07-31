@@ -20,3 +20,26 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
+
+/* Neobrutalism 卡片語言：粗黑框＋硬陰影＋按壓位移 */
+.nb {
+  border: 2px solid #0a0a0a;
+  border-radius: 0.5rem;
+  box-shadow: 4px 4px 0 0 #0a0a0a;
+}
+.nb-sm {
+  border: 2px solid #0a0a0a;
+  border-radius: 0.5rem;
+  box-shadow: 2px 2px 0 0 #0a0a0a;
+}
+.nb-hover {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.nb-hover:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 0 #0a0a0a;
+}
+.nb-sm.nb-hover:hover {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 0 #0a0a0a;
+}
