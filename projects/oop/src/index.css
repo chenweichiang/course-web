@@ -3,6 +3,8 @@
 @theme {
   --font-sans: 'Inter', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', 'Heiti TC', sans-serif;
   --font-mono: 'IBM Plex Mono', 'Menlo', 'Monaco', 'Courier New', monospace;
+  /* 標題字：明體反差，去掉 Noto Sans 預設臉 */
+  --font-display: 'Noto Serif TC', 'Songti TC', 'PMingLiU', serif;
 }
 
 * { box-sizing: border-box; }

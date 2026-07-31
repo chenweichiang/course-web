@@ -66,7 +66,7 @@ export default function App() {
           <section key={id} id={id} className="max-w-6xl mx-auto px-4 py-16 border-t border-neutral-200">
             <div className="mb-8">
               <div className="font-mono text-sm text-neutral-400 mb-1">{num}</div>
-              <h2 className="text-3xl font-black tracking-tight">{label}</h2>
+              <h2 className="font-display text-3xl font-black tracking-tight">{label}</h2>
               <p className="text-neutral-500 mt-2 max-w-2xl">{summary}</p>
             </div>
             <Component />
