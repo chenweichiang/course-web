@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import HeroSketch from './HeroSketch'
 
-const CHIPS = ['16 週', '零基礎可修', 'p5.js', '零考試', 'AI 揭露制']
+const CHIPS = ['16 週', '零基礎可修', '研究先行', '零考試', 'AI 揭露制']
 
 export default function Hero() {
   return (
@@ -30,7 +30,7 @@ export default function Hero() {
             跟它搶「<span className="underline decoration-4 decoration-seal underline-offset-4">知道自己在做什麼</span>」。
           </p>
           <p className="heti mt-5 text-neutral-600 max-w-xl leading-loose text-[0.95rem]">
-            AI 可以替你寫碼，但不能替你知道你想做什麼、不能替你看出畫面哪裡不對、不能替你在critique時說明每一個決定。前段我們刻意保護「掙扎的過程」——那種摩擦感正是滋養創造力之處；後段我們把 AI 正式請進課堂，學怎麼指揮它、驗證它、揭露它。
+            AI 可以替你寫碼，但它會一本正經地錯——它不能替你驗證結果、不能替你在critique時說明每一個決定。這門課教三件事：看懂 AI（它怎麼運作、會出什麼問題）、指揮 AI（建構自己的工作流，動手前先讓它做深度研究、開源穩定熱門工具優先）、為作品負責（揭露、驗證、答辯）。
           </p>
           <div className="mt-8 flex flex-wrap gap-2">
             {CHIPS.map((c) => (
@@ -40,7 +40,7 @@ export default function Hero() {
             ))}
           </div>
           <div className="mt-10 font-mono text-xs text-neutral-400 max-w-xl">
-            {'// 這個背景是一個 flocking 群集系統，用 p5.js 寫的——第 10 週你會親手寫出它'}
+            {'// 這個背景是一個 flocking 群集系統——第 8 週你會用自己的工作流做出它'}
           </div>
         </motion.div>
 

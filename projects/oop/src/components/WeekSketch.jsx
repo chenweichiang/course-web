@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 
 // 十六週課表格的每週主題小 sketch（vanilla Canvas2D，輕量；hover 才動）。
-// 每週一個 case：圖像＝該週要學的概念。座標一律畫在 64×64 邏輯空間，依格寬縮放。
+// 每週一個 case：圖像＝該週要學的概念（對齊課綱 v1）。座標畫在 64×64 邏輯空間，依格寬縮放。
 
 const S = 64
 const INK = '#1A1917'
@@ -26,67 +26,63 @@ function draw(ctx, week, t) {
 
   switch (week) {
     case 1: {
+      // AI 的問題：一排一樣的東西裡，有一個一本正經地錯了（幻覺）
+      const bad = Math.floor(t * 0.9) % 9
+      for (let i = 0; i < 9; i++) {
+        const x = 14 + (i % 3) * 18
+        const y = 14 + Math.floor(i / 3) * 18
+        if (i === bad) {
+          ctx.fillStyle = SEAL
+          ctx.fillRect(x - 5, y - 5, 10, 10)
+        } else {
+          ctx.beginPath()
+          ctx.arc(x, y, 5.5, 0, Math.PI * 2)
+          ctx.stroke()
+        }
+      }
+      break
+    }
+    case 2: {
+      // AI 怎麼運作：預測下一個 token——已生成的方塊＋閃爍的「下一格」
+      const total = 10
+      const nGen = Math.floor(t * 2.2) % (total + 1)
+      for (let i = 0; i < total; i++) {
+        const x = 10 + (i % 5) * 10
+        const y = 22 + Math.floor(i / 5) * 14
+        if (i < nGen) {
+          ctx.fillStyle = INK
+          ctx.fillRect(x, y, 7, 9)
+        } else if (i === nGen && (t * 2) % 1 > 0.45) {
+          ctx.strokeStyle = SEAL
+          ctx.strokeRect(x, y, 7, 9)
+          ctx.strokeStyle = INK
+        }
+      }
+      break
+    }
+    case 3: {
+      // 建構工作流：終端機打字游標（prompt）
+      ctx.font = 'bold 13px "IBM Plex Mono", monospace'
+      ctx.fillStyle = INK
+      ctx.fillText('>', 10, 26)
+      const n = Math.floor(t * 3) % 7
+      for (let i = 0; i < n; i++) ctx.fillRect(20 + i * 5, 22, 3.5, 3)
+      if (Math.floor(t * 2) % 2 === 0) {
+        ctx.fillStyle = SEAL
+        ctx.fillRect(14, 36, 8, 14)
+      }
+      break
+    }
+    case 4: {
+      // p5.js 一日通：親手寫的第一個動畫——會呼吸的圓
       ctx.beginPath()
       ctx.arc(c, c, 15 + 3.5 * Math.sin(t * 2), 0, Math.PI * 2)
       ctx.stroke()
       dot(c, c, 2.5, SEAL)
       break
     }
-    case 2: {
-      const x = c + 20 * Math.sin(t * 1.3)
-      const y = c + 16 * Math.sin(t * 2.1 + 1)
-      for (let i = 5; i > 0; i--) {
-        const px = c + 20 * Math.sin((t - i * 0.09) * 1.3)
-        const py = c + 16 * Math.sin((t - i * 0.09) * 2.1 + 1)
-        dot(px, py, 4 - i * 0.55, GRAY)
-      }
-      dot(x, y, 4, SEAL)
-      break
-    }
-    case 3: {
-      const on = Math.floor(t) % 2 === 0
-      ctx.fillStyle = on ? INK : PAPER
-      ctx.beginPath()
-      ctx.roundRect(14, 14, 36, 36, 6)
-      ctx.fill()
-      ctx.stroke()
-      dot(c, c, 5, on ? SEAL : INK)
-      break
-    }
-    case 4: {
-      for (let i = 0; i < 4; i++)
-        for (let j = 0; j < 4; j++) {
-          const r = 3.2 + 1.8 * Math.sin(t * 2 + (i + j) * 0.7)
-          ctx.fillStyle = (i + j) % 5 === 0 ? SEAL : INK
-          ctx.fillRect(11 + i * 14 - r / 2, 11 + j * 14 - r / 2, r, r)
-        }
-      break
-    }
     case 5: {
-      const petals = 6
-      const len = 16 + 5 * Math.sin(t * 1.5)
-      ctx.save()
-      ctx.translate(c, c)
-      ctx.rotate(t * 0.4)
-      for (let i = 0; i < petals; i++) {
-        ctx.rotate((Math.PI * 2) / petals)
-        ctx.beginPath()
-        ctx.ellipse(len / 2 + 4, 0, len / 2, 5, 0, 0, Math.PI * 2)
-        ctx.stroke()
-      }
-      ctx.restore()
-      dot(c, c, 3.5, SEAL)
-      break
-    }
-    case 6: {
-      for (let i = 0; i < 12; i++) {
-        const x = 8 + i * 4.3
-        const y = c + 14 * Math.sin(t * 2.2 + i * 0.55)
-        dot(x, y, 2.4, i === 11 ? SEAL : INK)
-      }
-      break
-    }
-    case 7: {
+      // 讀碼與 OOP 詞彙：一顆有個性的球（class 的第一課）
       ctx.strokeRect(8, 8, 48, 48)
       const bx = c + 19 * Math.sin(t * 1.7)
       const by = c + 19 * Math.abs(Math.sin(t * 2.3)) - 9
@@ -96,7 +92,8 @@ function draw(ctx, week, t) {
       dot(bx, by, 4, SEAL)
       break
     }
-    case 8: {
+    case 6: {
+      // 一顆到一千顆：下雪（粒子系統）
       for (let i = 0; i < 22; i++) {
         const x = ((i * 137.5) % S) + 3 * Math.sin(t + i)
         const y = (i * 29 + t * (10 + (i % 5) * 4)) % (S + 8) - 4
@@ -104,7 +101,8 @@ function draw(ctx, week, t) {
       }
       break
     }
-    case 9: {
+    case 7: {
+      // 繼承與多型：同一條路徑，三種形狀各自表述
       for (const sIdx of [0, 1, 2]) {
         const a = t * 1.1 + (sIdx * Math.PI * 2) / 3
         const x = c + 18 * Math.cos(a)
@@ -124,7 +122,8 @@ function draw(ctx, week, t) {
       }
       break
     }
-    case 10: {
+    case 8: {
+      // 群集：一小群跟著游走的重心（就是 hero 背景）
       const cx = c + 12 * Math.sin(t * 0.8)
       const cy = c + 10 * Math.cos(t * 1.1)
       for (let i = 0; i < 13; i++) {
@@ -134,7 +133,28 @@ function draw(ctx, week, t) {
       }
       break
     }
+    case 9: {
+      // 工作流實作檢核：當場一氣呵成的一條波
+      for (let i = 0; i < 12; i++) {
+        const x = 8 + i * 4.3
+        const y = c + 14 * Math.sin(t * 2.2 + i * 0.55)
+        dot(x, y, 2.4, i === 11 ? SEAL : INK)
+      }
+      break
+    }
+    case 10: {
+      // 期中製作：三條進度不同的 bar
+      for (let i = 0; i < 3; i++) {
+        const y = 16 + i * 14
+        ctx.strokeRect(10, y, 44, 8)
+        const p = (Math.sin(t * (0.6 + i * 0.3) + i * 2) + 1) / 2
+        ctx.fillStyle = i === 1 ? SEAL : INK
+        ctx.fillRect(12, y + 2, 40 * p, 4)
+      }
+      break
+    }
     case 11: {
+      // 期中發表：畫框裡的生成小品
       ctx.lineWidth = 3
       ctx.strokeRect(10, 8, 44, 48)
       ctx.lineWidth = 2
@@ -146,40 +166,22 @@ function draw(ctx, week, t) {
       break
     }
     case 12: {
-      ctx.font = 'bold 13px "IBM Plex Mono", monospace'
-      ctx.fillStyle = INK
-      ctx.fillText('>', 10, 26)
-      const n = Math.floor(t * 3) % 7
-      for (let i = 0; i < n; i++) ctx.fillRect(20 + i * 5, 22, 3.5, 3)
-      if (Math.floor(t * 2) % 2 === 0) {
-        ctx.fillStyle = SEAL
-        ctx.fillRect(14, 36, 8, 14)
+      // 研究先行：紅框逐格掃描比較（選型研究）
+      const scan = Math.floor(t * 2.5) % 16
+      for (let i = 0; i < 16; i++) {
+        const x = 12 + (i % 4) * 14
+        const y = 12 + Math.floor(i / 4) * 14
+        dot(x, y, 2, i <= scan && Math.floor(scan / 16) === 0 ? INK : GRAY)
       }
+      const sx = 12 + (scan % 4) * 14
+      const sy = 12 + Math.floor(scan / 4) * 14
+      ctx.strokeStyle = SEAL
+      ctx.strokeRect(sx - 6.5, sy - 6.5, 13, 13)
+      ctx.strokeStyle = INK
       break
     }
     case 13: {
-      ctx.save()
-      ctx.translate(c, c)
-      for (const [rot, col] of [
-        [t * 0.12, GRAY],
-        [-t * 0.09, SEAL],
-      ]) {
-        ctx.save()
-        ctx.rotate(rot)
-        ctx.strokeStyle = col
-        ctx.lineWidth = 1.2
-        for (let i = -4; i <= 4; i++) {
-          ctx.beginPath()
-          ctx.moveTo(i * 7, -30)
-          ctx.lineTo(i * 7, 30)
-          ctx.stroke()
-        }
-        ctx.restore()
-      }
-      ctx.restore()
-      break
-    }
-    case 14: {
+      // ml5 手勢：五指骨架擺動
       const wx = c
       const wy = 52
       for (let f = 0; f < 5; f++) {
@@ -201,17 +203,51 @@ function draw(ctx, week, t) {
       dot(wx, wy, 3.5)
       break
     }
-    case 15: {
-      for (let i = 0; i < 3; i++) {
-        const y = 16 + i * 14
-        ctx.strokeRect(10, y, 44, 8)
-        const p = (Math.sin(t * (0.6 + i * 0.3) + i * 2) + 1) / 2
-        ctx.fillStyle = i === 1 ? SEAL : INK
-        ctx.fillRect(12, y + 2, 40 * p, 4)
+    case 14: {
+      // 重混：兩層網格疊出 moiré
+      ctx.save()
+      ctx.translate(c, c)
+      for (const [rot, col] of [
+        [t * 0.12, GRAY],
+        [-t * 0.09, SEAL],
+      ]) {
+        ctx.save()
+        ctx.rotate(rot)
+        ctx.strokeStyle = col
+        ctx.lineWidth = 1.2
+        for (let i = -4; i <= 4; i++) {
+          ctx.beginPath()
+          ctx.moveTo(i * 7, -30)
+          ctx.lineTo(i * 7, 30)
+          ctx.stroke()
+        }
+        ctx.restore()
       }
+      ctx.restore()
+      break
+    }
+    case 15: {
+      // 一對一 studio：兩點之間的往返對話
+      const p1 = { x: 14, y: c }
+      const p2 = { x: 50, y: c }
+      ctx.strokeStyle = GRAY
+      ctx.beginPath()
+      ctx.moveTo(p1.x, p1.y)
+      ctx.lineTo(p2.x, p2.y)
+      ctx.stroke()
+      ctx.strokeStyle = INK
+      const k = (Math.sin(t * 2) + 1) / 2
+      dot(p1.x + (p2.x - p1.x) * k, c - 6 * Math.sin(k * Math.PI), 2.5, SEAL)
+      ctx.beginPath()
+      ctx.arc(p1.x, p1.y, 6 + 1.2 * Math.sin(t * 3), 0, Math.PI * 2)
+      ctx.stroke()
+      ctx.beginPath()
+      ctx.arc(p2.x, p2.y, 6 + 1.2 * Math.cos(t * 3), 0, Math.PI * 2)
+      ctx.stroke()
       break
     }
     case 16: {
+      // 期末展演：黑場中移動的聚光燈
       ctx.fillStyle = INK
       ctx.fillRect(6, 6, 52, 52)
       const lx = c + 13 * Math.sin(t * 0.9)

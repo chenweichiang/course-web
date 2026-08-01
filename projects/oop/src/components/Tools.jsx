@@ -22,7 +22,7 @@ export default function Tools() {
       </div>
       <p className="heti mt-5 text-sm text-neutral-500 max-w-3xl leading-loose">
         <span className="inline-block w-2.5 h-2.5 bg-seal mr-1.5 align-baseline" aria-hidden="true" />
-        ＝課程主力。階段壹用不到 AI 工具（也不該用），所以 <strong>W7 之後再訂閱就好</strong>。
+        ＝課程主力。W3 就要建工作流，所以 <strong>W2–3 完成訂閱</strong>（一學期約訂 3–4 個月）。
         經濟上不方便訂閱的同學：免費保底方案功能足以完成本課所有要求，不會因為工具吃虧——有狀況直接找老師。
       </p>
     </div>
