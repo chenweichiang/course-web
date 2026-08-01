@@ -20,6 +20,16 @@ export default function App() {
   const [active, setActive] = useState('')
 
   useEffect(() => {
+    // Heti addon：中文標點擠壓與中西文間距（失敗就靜默略過，純增強）
+    import('heti/umd/heti-addon.min.js')
+      .then((mod) => {
+        const HetiCls = mod.default || window.Heti
+        if (HetiCls) new HetiCls('.heti').autoSpacing()
+      })
+      .catch(() => {})
+  }, [])
+
+  useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         for (const e of entries) if (e.isIntersecting) setActive(e.target.id)
@@ -67,7 +77,7 @@ export default function App() {
             <div className="mb-8">
               <div className="font-mono text-sm text-neutral-400 mb-1">{num}</div>
               <h2 className="font-display text-3xl font-black tracking-tight">{label}</h2>
-              <p className="text-neutral-500 mt-2 max-w-2xl">{summary}</p>
+              <p className="heti text-neutral-500 mt-2 max-w-2xl">{summary}</p>
             </div>
             <Component />
           </section>

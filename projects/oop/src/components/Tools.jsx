@@ -20,7 +20,7 @@ export default function Tools() {
           </div>
         ))}
       </div>
-      <p className="mt-6 text-sm text-neutral-500 max-w-3xl">
+      <p className="heti mt-6 text-sm text-neutral-500 max-w-3xl">
         <span className="inline-block w-2.5 h-2.5 bg-amber-400 border border-neutral-900 mr-1.5 align-baseline" aria-hidden="true" />
         ＝課程主力。階段 I 用不到 AI 工具（也不該用），所以 <strong>W7 之後再訂閱就好</strong>。
         經濟上不方便訂閱的同學：免費保底方案功能足以完成本課所有要求，不會因為工具吃虧——有狀況直接找老師。

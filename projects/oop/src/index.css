@@ -1,10 +1,36 @@
 @import "tailwindcss";
 
+/* 朱雀仿宋（OFL）：自架子集（226KB woff2，涵蓋全站用字）。
+   重新子集化指令見 projects/oop/README.md。 */
+@font-face {
+  font-family: 'Zhuque Fangsong';
+  src: url('/oop/fonts/ZhuqueFangsong-subset.woff2') format('woff2');
+  font-weight: 400 900;
+  font-display: swap;
+}
+
 @theme {
   --font-sans: 'Inter', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', 'Heiti TC', sans-serif;
   --font-mono: 'IBM Plex Mono', 'Menlo', 'Monaco', 'Courier New', monospace;
-  /* 標題字：明體反差，去掉 Noto Sans 預設臉 */
-  --font-display: 'Noto Serif TC', 'Songti TC', 'PMingLiU', serif;
+  /* 標題字：朱雀仿宋（民國活字書卷氣）→ 明體 fallback */
+  --font-display: 'Zhuque Fangsong', 'Noto Serif TC', 'Songti TC', 'PMingLiU', serif;
+}
+
+/* 仿宋只有單一字重：關掉瀏覽器假粗體，讓大字級以原始筆畫呈現 */
+.font-display { font-synthesis: none; }
+
+/* 跨頁轉場（View Transitions）：主頁 ↔ 作業牆。不支援的瀏覽器自動一般跳轉 */
+@view-transition { navigation: auto; }
+@media (prefers-reduced-motion: reduce) {
+  @view-transition { navigation: none; }
+}
+
+/* Heti（赫蹏）只取其排版行為（齊行、標點規則），字體與字級一律繼承本站設定 */
+.heti {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
 }
 
 * { box-sizing: border-box; }

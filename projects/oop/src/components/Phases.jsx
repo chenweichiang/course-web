@@ -16,7 +16,7 @@ export default function Phases() {
               <h3 className="font-display text-xl font-black">{p.name}</h3>
               <div className="text-sm text-neutral-500">{p.subtitle}</div>
             </div>
-            <p className="text-sm text-neutral-600 leading-relaxed">{p.desc}</p>
+            <p className="heti text-sm text-neutral-600 leading-relaxed">{p.desc}</p>
             <div className="text-sm font-bold">目標：{p.goal}</div>
             <div className="mt-auto pt-3 border-t border-neutral-200">
               <div className="font-mono text-xs text-neutral-400 mb-1">AI 規則</div>

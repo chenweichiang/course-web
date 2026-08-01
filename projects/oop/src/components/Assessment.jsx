@@ -20,7 +20,7 @@ export default function Assessment() {
       <div className="space-y-5">
         <div className="border-2 border-neutral-900 rounded-lg bg-neutral-900 text-white p-5">
           <div className="font-mono text-xs text-neutral-400 mb-2">沒有考試</div>
-          <p className="text-sm leading-relaxed">
+          <p className="heti text-sm leading-relaxed">
             評量的對象是<strong>作品與過程</strong>，不是對錯。完成度採三級制（完成／部分完成／未完成），
             每一次發表都含口頭說明——你要能講出自己的每一個決定。
           </p>
