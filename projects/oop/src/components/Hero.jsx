@@ -24,9 +24,7 @@ export default function Hero() {
             跟它搶「<span className="underline decoration-4 decoration-amber-400">知道自己在做什麼</span>」。
           </p>
           <p className="heti mt-4 text-neutral-600 max-w-3xl leading-relaxed">
-            AI 可以替你寫碼，但不能替你知道你想做什麼、不能替你看出畫面哪裡不對、不能替你在
-            critique 時說明每一個決定。前段我們刻意保護「掙扎的過程」——那種摩擦感正是滋養創造力之處；
-            後段我們把 AI 正式請進課堂，學怎麼指揮它、驗證它、揭露它。理解基礎，讓你從被動使用者變成主動創作者。
+            AI 可以替你寫碼，但不能替你知道你想做什麼、不能替你看出畫面哪裡不對、不能替你在critique時說明每一個決定。前段我們刻意保護「掙扎的過程」——那種摩擦感正是滋養創造力之處；後段我們把 AI 正式請進課堂，學怎麼指揮它、驗證它、揭露它。理解基礎，讓你從被動使用者變成主動創作者。
           </p>
           <div className="mt-8 flex flex-wrap gap-2">
             {CHIPS.map((c) => (

@@ -14,6 +14,8 @@ export default function HeroSketch() {
 
     import('p5').then(({ default: p5 }) => {
       if (cancelled) return
+      // 關掉 p5 Friendly Errors：省效能，也免去 minified 全域名與向量維度的 console 噪音
+      p5.disableFriendlyErrors = true
       const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
       const sketch = (p) => {
@@ -30,9 +32,10 @@ export default function HeroSketch() {
         })
 
         const steer = (b) => {
-          const sep = p.createVector()
-          const ali = p.createVector()
-          const coh = p.createVector()
+          // 明確二維：無參數 createVector 會是 3D,與 2D 速度相加每幀噴維度警告
+          const sep = p.createVector(0, 0)
+          const ali = p.createVector(0, 0)
+          const coh = p.createVector(0, 0)
           let n = 0
           for (const o of boids) {
             if (o === b) continue
@@ -69,7 +72,7 @@ export default function HeroSketch() {
         }
 
         const step = (fade = true) => {
-          if (fade) p.background(255, 28)
+          if (fade) p.background(255, 48) // 尾跡收短:28 的長尾在留白處看起來像刮痕
           p.noStroke()
           for (const b of boids) {
             steer(b)

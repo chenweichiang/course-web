@@ -9,7 +9,7 @@ export default function Weeks() {
 
   return (
     <div>
-      <ol className="relative border-l-2 border-neutral-900 ml-3">
+      <ol className="relative border-l-2 border-neutral-900 ml-3 max-w-3xl">
         {WEEKS.map((wk) => (
           <li
             key={wk.w}
