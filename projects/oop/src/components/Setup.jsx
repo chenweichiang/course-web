@@ -35,7 +35,7 @@ export default function Setup() {
         </div>
         <div className="mt-5 flex flex-wrap items-center gap-4">
           <a
-            href="https://github.com/chenweichiang/nthu-oop-portfolio-template"
+            href="https://github.com/chenweichiang/oop-portfolio-template"
             target="_blank"
             rel="noopener"
             className="seal-btn inline-block px-5 py-2.5 font-bold text-sm"
