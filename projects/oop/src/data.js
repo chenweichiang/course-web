@@ -77,7 +77,7 @@ export const TOOLS = [
 export const SETUP_ACCOUNTS = [
   {
     t: 'GitHub 帳號＋學生驗證',
-    d: '到 github.com 註冊 → 再到 github.com/education 用清大信箱＋學生證申請學生驗證（審核數天到數週，W1 就辦）。驗證後 Codespaces 額度升級（每月 180 core-hours）＋整包 Student Pack。',
+    d: '到 github.com 註冊 → 再到 github.com/education 用學校信箱＋學生證申請學生驗證（審核數天到數週，W1 就辦）。驗證後 Codespaces 額度升級（每月 180 core-hours）＋整包 Student Pack。',
     url: 'https://github.com/education',
   },
   {

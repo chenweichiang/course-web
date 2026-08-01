@@ -15,7 +15,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <div className="font-mono text-sm text-neutral-500 mb-6">清華大學 科技藝術跨域學士班 · 115-1 · 選修 3 學分</div>
+          <div className="font-mono text-sm text-neutral-500 mb-6">選修課 · 3 學分 · 16 週</div>
 
           {/* 行動版：橫排標題 */}
           <h1 className="md:hidden font-display text-6xl leading-tight tracking-tight mb-6">
@@ -58,10 +58,10 @@ export default function Hero() {
             className="grid grid-cols-2 w-16 h-16 bg-seal text-paper font-display text-sm leading-none place-items-center select-none"
             aria-hidden="true"
           >
-            <span>清</span>
-            <span>大</span>
-            <span>科</span>
-            <span>藝</span>
+            <span>物</span>
+            <span>件</span>
+            <span>導</span>
+            <span>向</span>
           </div>
         </motion.div>
       </div>
