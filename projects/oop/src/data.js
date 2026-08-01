@@ -74,6 +74,37 @@ export const TOOLS = [
   { name: 'GitHub（Education 驗證）', role: '作業繳交＋作品集', cost: '免費', note: 'W1 完成註冊與學生驗證；Copilot Free 含終端機版可當備援', main: false },
 ]
 
+export const SETUP_ACCOUNTS = [
+  {
+    t: 'GitHub 帳號＋學生驗證',
+    d: '到 github.com 註冊 → 再到 github.com/education 用清大信箱＋學生證申請學生驗證（審核數天到數週，W1 就辦）。驗證後 Codespaces 額度升級（每月 180 core-hours）＋整包 Student Pack。',
+    url: 'https://github.com/education',
+  },
+  {
+    t: 'Claude 帳號',
+    d: '到 claude.ai 註冊。W2–3 再訂閱 Pro（約 US$20/月，一學期訂 3–4 個月即可）；經濟上不方便的同學用免費保底方案，直接找老師。',
+    url: 'https://claude.ai',
+  },
+  {
+    t: 'Google 帳號',
+    d: 'Gemini 免費層是全班保底（每天 1,000 次請求）——多數人已經有 Google 帳號，確認能登入 gemini.google.com 即可。',
+    url: 'https://gemini.google.com',
+  },
+  {
+    t: 'p5.js 網頁編輯器',
+    d: '到 editor.p5js.org 用 GitHub 帳號直接登入——草稿存雲端，任何電腦打開都在。',
+    url: 'https://editor.p5js.org',
+  },
+]
+
+export const SETUP_USAGE = [
+  { t: '複製課程 template', d: '打開課程 template repo → 按「Use this template」→ 建立你自己的作品集 repo。這一顆 repo 會裝下你整學期的作品和工作流。' },
+  { t: '開啟雲端環境', d: '你的 repo → 綠色 Code 按鈕 → Codespaces → Create codespace。幾十秒後瀏覽器出現 VS Code——這就是你的工作室，學校電腦被還原也不影響（它根本不在那台電腦上）。' },
+  { t: '登入 Claude Code', d: '下方終端機打 claude → 在登入網址上「連點三下」全選複製 → 新分頁授權 → 把授權碼貼回終端機。只需登入一次，之後環境都記得你。' },
+  { t: '做作業、交作業', d: '每次作業開一個資料夾（四件套：碼＋截圖＋反思＋AI 揭露）→ commit → push＝繳交。commit 時間戳就是紀錄。' },
+  { t: '三個習慣', d: '固定用 2-core 機型（額度才夠）；做完一定 push（閒置 30 天 codespace 會被回收，repo 裡的東西才是永遠的）；離開前關掉 codespace 省額度。' },
+]
+
 export const SUBMIT_STEPS = [
   { t: '開自己的作品集 repo', d: '從課程 template 建立，一人一個、整學期用同一個，每週一個資料夾。' },
   { t: '作業放進當週資料夾', d: '程式碼＋截圖＋README 四件套（作品說明、反思、AI 揭露）。不會終端機沒關係——網頁上傳就好。' },

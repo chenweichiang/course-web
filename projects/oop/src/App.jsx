@@ -5,6 +5,7 @@ import Weeks from './components/Weeks'
 import Assessment from './components/Assessment'
 import AIPolicy from './components/AIPolicy'
 import Tools from './components/Tools'
+import Setup from './components/Setup'
 import Submission from './components/Submission'
 
 const SECTIONS = [
@@ -13,7 +14,8 @@ const SECTIONS = [
   { id: 'assessment', num: '03', navLabel: '評量', label: '評量方式', summary: '零考試：課堂檢核＋文件化作業＋critique＋口頭答辯', Component: Assessment },
   { id: 'ai-policy', num: '04', navLabel: 'AI 公約', label: '課堂 AI 公約', summary: '本課獎勵透明，不獎勵僥倖——五條，開學就講明白', Component: AIPolicy },
   { id: 'tools', num: '05', navLabel: '工具', label: '工具配置', summary: 'p5.js 網頁編輯器＋分階段進場的 AI 工具', Component: Tools },
-  { id: 'submission', num: '06', navLabel: '繳交', label: '作業繳交', summary: 'GitHub 作品集 repo：作業繳交＝作品上線', Component: Submission },
+  { id: 'setup', num: '06', navLabel: '準備', label: '開課準備', summary: '四個帳號＋一間帶著走的工作室——學校電腦每次被還原也不怕', Component: Setup },
+  { id: 'submission', num: '07', navLabel: '繳交', label: '作業繳交', summary: 'GitHub 作品集 repo：作業繳交＝作品上線', Component: Submission },
 ]
 
 export default function App() {

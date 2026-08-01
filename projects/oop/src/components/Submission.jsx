@@ -18,7 +18,9 @@ export default function Submission() {
         <a href="gallery/" className="seal-btn inline-block px-6 py-2.5 font-bold text-sm">
           看全班作品牆 →
         </a>
-        <span className="text-sm text-neutral-500">課程 template repo 與詳細繳交步驟，開學第一週公布。</span>
+        <span className="text-sm text-neutral-500">
+          從 <a href="https://github.com/chenweichiang/nthu-oop-portfolio-template" target="_blank" rel="noopener" className="underline hover:text-seal">課程 template</a> 開自己的 repo，詳細步驟見上一節「開課準備」。
+        </span>
       </div>
     </div>
   )
