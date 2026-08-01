@@ -2,6 +2,8 @@ import { useEffect, useRef } from 'react'
 
 // Hero 背景：真的 p5.js flocking 群集系統（W10 課堂內容）。
 // p5 動態載入（不進主 bundle）；離開視窗暫停、prefers-reduced-motion 只畫一幀。
+const PAPER = [253, 252, 249] // 與 --color-paper 同步
+
 export default function HeroSketch() {
   const hostRef = useRef(null)
 
@@ -19,10 +21,11 @@ export default function HeroSketch() {
       const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
       const sketch = (p) => {
-        const N = 56
+        // 依畫布面積配額,手機不過密（56 是 1440 寬的量）
+        const N = Math.max(14, Math.min(56, Math.round((host.offsetWidth * host.offsetHeight) / 18000)))
         const boids = []
         // 單色墨點：安靜的群集，不搶文字
-        const INK = ['#e5e5e5', '#d4d4d4', '#d4d4d4', '#c4c4c4', '#a3a3a3']
+        const INK = ['#E5E3DE', '#D6D4CE', '#D6D4CE', '#C6C4BD', '#A5A39C']
 
         const mk = () => ({
           pos: p.createVector(p.random(p.width), p.random(p.height)),
@@ -64,7 +67,7 @@ export default function HeroSketch() {
           p.createCanvas(host.offsetWidth, host.offsetHeight)
           p.pixelDensity(Math.min(window.devicePixelRatio || 1, 2))
           for (let i = 0; i < N; i++) boids.push(mk())
-          p.background(255)
+          p.background(...PAPER)
           if (reduced) {
             for (let i = 0; i < 240; i++) step(false)
             p.noLoop()
@@ -72,7 +75,7 @@ export default function HeroSketch() {
         }
 
         const step = (fade = true) => {
-          if (fade) p.background(255, 48) // 尾跡收短:28 的長尾在留白處看起來像刮痕
+          if (fade) p.background(...PAPER, 85) // 尾跡收很短:只留一點動勢,不在紙上留刮痕
           p.noStroke()
           for (const b of boids) {
             steer(b)
@@ -90,7 +93,7 @@ export default function HeroSketch() {
 
         p.windowResized = () => {
           p.resizeCanvas(host.offsetWidth, host.offsetHeight)
-          p.background(255)
+          p.background(...PAPER)
         }
       }
 
