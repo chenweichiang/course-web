@@ -214,8 +214,8 @@ SK[5] = {
     return st
   },
   step: (st) => {
-    const { g } = st
     for (let w = 0; w < 3; w++) {
+      const g = st.g
       // 經典優化：出生半徑貼著結晶走、走失即棄，黏著率才夠
       const born = Math.min(28, st.maxR + 6)
       const kill = Math.min(31, st.maxR + 11)
@@ -231,7 +231,14 @@ SK[5] = {
           g[y * S + x] = 1
           st.ages.push([x, y])
           st.maxR = Math.max(st.maxR, dr)
-          if (st.ages.length > 900) return
+          if (st.ages.length > 780) {
+            // 長滿就重新結晶
+            st.g = new Uint8Array(S * S)
+            st.g[32 * S + 32] = 1
+            st.ages = [[32, 32]]
+            st.maxR = 2
+            return
+          }
           break
         }
       }
@@ -445,20 +452,24 @@ SK[10] = {
   },
 }
 
-// 11 康威生命遊戲：真實規則，新生格帶紅
+// 11 康威生命遊戲：真實規則，新生格帶紅；停滯就撒新的隨機湯
 SK[11] = {
+  seed: (st, seed) => {
+    const { N, g } = st
+    for (let i = 0; i < N * N; i++) g[i] = hash2(i % N, Math.floor(i / N), seed) < 0.34 ? 1 : 0
+  },
   init: () => {
     const N = 26
-    const g = new Uint8Array(N * N)
-    for (let i = 0; i < N * N; i++) g[i] = hash2(i % N, Math.floor(i / N), 42) < 0.32 ? 1 : 0
-    const st = { N, g, born: new Uint8Array(N * N), acc: 0 }
-    for (let i = 0; i < 6; i++) SK[11].tick(st)
+    const st = { N, g: new Uint8Array(N * N), born: new Uint8Array(N * N), acc: 0, calm: 0, seedN: 42 }
+    SK[11].seed(st, st.seedN)
+    for (let i = 0; i < 3; i++) SK[11].tick(st)
     return st
   },
   tick: (st) => {
     const { N, g } = st
     const ng = new Uint8Array(N * N)
     const nb = new Uint8Array(N * N)
+    let diff = 0
     for (let y = 0; y < N; y++)
       for (let x = 0; x < N; x++) {
         let n = 0
@@ -473,13 +484,21 @@ SK[11] = {
           ng[i] = n === 3 ? 1 : 0
           nb[i] = ng[i]
         }
+        if (ng[i] !== g[i]) diff++
       }
     st.g = ng
     st.born = nb
+    // 停滯偵測：連續幾代幾乎沒變化，就換一鍋新的隨機湯
+    st.calm = diff < 10 ? st.calm + 1 : 0
+    if (st.calm >= 4) {
+      st.seedN = (st.seedN * 16807 + 7) % 100000
+      SK[11].seed(st, st.seedN)
+      st.calm = 0
+    }
   },
   step: (st, dt) => {
     st.acc += dt
-    if (st.acc > 0.22) {
+    if (st.acc > 0.18) {
       st.acc = 0
       SK[11].tick(st)
     }
@@ -736,6 +755,15 @@ SK[16] = {
 
 // 17 Space Colonization：枝條朝吸引點生長
 SK[17] = {
+  reseed: (st) => {
+    st.atts = Array.from({ length: 46 }, () => ({
+      x: 8 + Math.random() * 48,
+      y: 4 + Math.random() * 40,
+      done: false,
+    }))
+    st.nodes = [{ x: 32, y: 60, parent: -1, fresh: 0 }]
+    st.stale = 0
+  },
   init: () => {
     const st = {
       atts: Array.from({ length: 46 }, (_, i) => ({
@@ -744,6 +772,7 @@ SK[17] = {
         done: false,
       })),
       nodes: [{ x: 32, y: 60, parent: -1, fresh: 0 }],
+      stale: 0,
     }
     for (let i = 0; i < 26; i++) SK[17].step(st, 0.1)
     return st
@@ -781,6 +810,9 @@ SK[17] = {
         nodes.push({ x: n.x + (g.x / len) * 3, y: n.y + (g.y / len) * 3, parent: bi, fresh: 1 })
     }
     for (const n of nodes) if (n.fresh > 0) n.fresh -= 0.05
+    // 完工偵測：長無可長（吸引點吃完或搆不到）就撒新的點重新生長
+    st.stale = grow.size === 0 || nodes.length >= 220 ? (st.stale ?? 0) + 1 : 0
+    if (st.stale > 18) SK[17].reseed(st)
   },
   render: (ctx, st) => {
     bg(ctx)
