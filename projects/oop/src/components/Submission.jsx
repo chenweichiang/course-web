@@ -16,7 +16,7 @@ export default function Submission() {
       </div>
       <div className="mt-8 flex flex-wrap items-center gap-5">
         <a href="gallery/" className="seal-btn inline-block px-6 py-2.5 font-bold text-sm">
-          看全班作品牆 →
+          參觀動物園 →
         </a>
         <span className="text-sm text-neutral-500">
           從 <a href="https://github.com/chenweichiang/oop-portfolio-template" target="_blank" rel="noopener" className="underline hover:text-seal">課程 template</a> 開自己的 repo，詳細步驟見上一節「開課準備」。

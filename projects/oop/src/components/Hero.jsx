@@ -32,6 +32,9 @@ export default function Hero() {
           <p className="heti mt-5 text-neutral-600 max-w-xl leading-loose text-[0.95rem]">
             AI 可以替你寫碼，但它會一本正經地錯——它不能替你驗證結果、不能替你在critique時說明每一個決定。這門課教三件事：看懂 AI（它怎麼運作、會出什麼問題）、指揮 AI（建構自己的工作流，動手前先讓它做深度研究、開源穩定熱門工具優先）、為作品負責（揭露、驗證、答辯）。
           </p>
+          <p className="heti mt-5 font-bold max-w-xl">
+            整學期只做一件事——<a href="#project" className="underline decoration-seal decoration-2 underline-offset-4 hover:text-seal">期末專案「後未來動物園」</a>：培育一個沒有人類之後的物種，直到牠開園。
+          </p>
           <div className="mt-8 flex flex-wrap gap-2">
             {CHIPS.map((c) => (
               <span key={c} className="px-3 py-1 border border-neutral-400 rounded-full bg-paper/85 font-mono text-[0.8rem] text-neutral-600">

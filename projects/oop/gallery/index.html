@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>作業牆 — 物件導向程式設計</title>
-    <meta name="description" content="「物件導向程式設計」全班作品牆：每週作業與期末專題的線上作品連結。" />
+    <title>後未來動物園 — 物件導向程式設計</title>
+    <meta name="description" content="後未來動物園——「物件導向程式設計」全班物種聚合：每個里程碑交付與期末展演的活體展示。" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -56,15 +56,15 @@
   </head>
   <body>
     <header>
-      <div class="crumb mono"><a href="../">← 物件導向程式設計</a> / 作業牆</div>
-      <h1>作業牆</h1>
-      <p>全班的每週作業與期末專題。每張卡片都連到同學自己 GitHub Pages 上「活的」作品——點開就會動。</p>
+      <div class="crumb mono"><a href="../">← 物件導向程式設計</a> / 動物園</div>
+      <h1>後未來動物園</h1>
+      <p>人類消失之後，這裡住著全班培育的物種。每張卡片都連到同學 GitHub Pages 上「活的」棲地——點開，牠就在動。</p>
     </header>
     <main id="wall">
       <div class="empty">作品牆載入中…</div>
     </main>
     <footer>
-      <div>物件導向程式設計 · 作業牆 · <a href="../">課程頁</a></div>
+      <div>物件導向程式設計 · 後未來動物園 · <a href="../">課程頁</a></div>
     </footer>
 
     <script type="module">
@@ -78,7 +78,7 @@
         const weeks = (data.weeks ?? []).filter((wk) => (wk.works ?? []).length > 0)
 
         if (weeks.length === 0) {
-          wall.innerHTML = `<div class="empty">還沒有作品——第一批作業上線後，這裡就會長出全班的作品牆。<br/>（同學：deadline 前 push 到你的作品集 repo 就會出現在這）</div>`
+          wall.innerHTML = `<div class="empty">動物園尚未開園——第一批物種上線後，這裡就會長出整座園區。<br/>（同學：deadline 前 push 到你的作品集 repo，你的物種就會入住）</div>`
         } else {
           wall.innerHTML = weeks
             .map(
