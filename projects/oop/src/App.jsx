@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
 import Hero from './components/Hero'
 import Project from './components/Project'
-import Milestones from './components/Milestones'
-import Assessment from './components/Assessment'
+import Method from './components/Method'
+import MilestoneGuide from './components/MilestoneGuide'
+import Algorithms from './components/Algorithms'
 import AIPolicy from './components/AIPolicy'
 import Tools from './components/Tools'
 import Setup from './components/Setup'
@@ -10,12 +11,13 @@ import Submission from './components/Submission'
 
 const SECTIONS = [
   { id: 'project', num: '01', navLabel: '期末專案', label: '期末專案：後未來動物園', summary: '整門課只做一件事——培育一個沒有人類之後的物種，直到牠開園', Component: Project },
-  { id: 'milestones', num: '02', navLabel: '里程碑', label: '七個里程碑', summary: '不用週次——完成里程碑＝完成課程。滑到某一格，小動畫會告訴你那一站在做什麼', Component: Milestones },
-  { id: 'assessment', num: '03', navLabel: '評量', label: '評量方式', summary: '零考試：課堂檢核＋文件化作業＋critique＋口頭答辯', Component: Assessment },
-  { id: 'ai-policy', num: '04', navLabel: 'AI 公約', label: '課堂 AI 公約', summary: '本課獎勵透明，不獎勵僥倖——五條，開學就講明白', Component: AIPolicy },
-  { id: 'tools', num: '05', navLabel: '工具', label: '工具配置', summary: 'p5.js 網頁編輯器＋分階段進場的 AI 工具', Component: Tools },
-  { id: 'setup', num: '06', navLabel: '準備', label: '開課準備', summary: '四個帳號＋一間帶著走的工作室——學校電腦每次被還原也不怕', Component: Setup },
-  { id: 'submission', num: '07', navLabel: '繳交', label: '作業繳交', summary: 'GitHub 作品集 repo：作業繳交＝作品上線', Component: Submission },
+  { id: 'method', num: '02', navLabel: '方法', label: '進行方法', summary: '研究先行迴圈——每個里程碑都跑同一套：研究→選型→查證→動手驗證', Component: Method },
+  { id: 'milestones', num: '03', navLabel: '里程碑', label: '里程碑指南', summary: '照著做就能走完的七站——每站有步驟、完成清單（會記住你的進度）與卡點提醒', Component: MilestoneGuide },
+  { id: 'algorithms', num: '04', navLabel: '圖鑑', label: '演算法圖鑑', summary: '19 個造物演算法——挑一個，複製起手式丟給你的 AI，看牠能長出什麼', Component: Algorithms },
+  { id: 'ai-policy', num: '05', navLabel: 'AI 公約', label: 'AI 公約', summary: '本專案獎勵透明，不獎勵僥倖——五條守則', Component: AIPolicy },
+  { id: 'tools', num: '06', navLabel: '工具', label: '工具配置', summary: 'p5.js 網頁編輯器＋你的 AI 工作流主力與保底', Component: Tools },
+  { id: 'setup', num: '07', navLabel: '準備', label: '開工準備', summary: '四個帳號＋一間帶著走的工作室——學校電腦每次被還原也不怕', Component: Setup },
+  { id: 'submission', num: '08', navLabel: '繳交', label: '交付方式', summary: 'GitHub 作品集 repo：每個里程碑一個資料夾，push＝交付', Component: Submission },
 ]
 
 export default function App() {

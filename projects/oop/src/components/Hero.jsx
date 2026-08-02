@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import HeroSketch from './HeroSketch'
 
-const CHIPS = ['16 週', '零基礎可修', '研究先行', '零考試', 'AI 揭露制']
+const CHIPS = ['零基礎可修', '研究先行', 'AI 揭露制', '一人一物種']
 
 export default function Hero() {
   return (
@@ -15,7 +15,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <div className="font-mono text-sm text-neutral-500 mb-6">選修課 · 3 學分 · 16 週</div>
+          <div className="font-mono text-sm text-neutral-500 mb-6">一學期的造物專案 · 16 週</div>
 
           {/* 行動版：橫排標題 */}
           <h1 className="md:hidden font-display text-6xl leading-tight tracking-tight mb-6">
