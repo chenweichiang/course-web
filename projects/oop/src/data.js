@@ -57,8 +57,8 @@ export const MILESTONE_GUIDE = [
     goal: '把工具全部就位，並且親眼看過 AI 出錯——之後你才有資格說「驗證是我的工作」。',
     steps: [
       '照「準備」一節申請四個帳號（GitHub 學生驗證要審核天數，第一個辦）。',
-      '從課程 template 按「Use this template」開你自己的 repo，開啟 Codespace，跑一次 README 裡的「第一次試跑」——看到會呼吸的圓＝環境 OK。',
-      '終端機打 claude 登入（README 有登入 SOP 與排錯）。',
+      '從[課程 template repo](https://github.com/chenweichiang/oop-portfolio-template) 按「Use this template」開你自己的 repo，開啟 Codespace，跑一次 [README 用法說明](https://github.com/chenweichiang/oop-portfolio-template#readme)裡的「第一次試跑」——看到會呼吸的圓＝環境 OK。',
+      '終端機打 claude 登入（[README 的登入 SOP](https://github.com/chenweichiang/oop-portfolio-template#readme) 有完整步驟與排錯）。',
       '請你的 AI 解釋給你聽：「用比喻解釋 LLM 的 token、預測下一個字、context window，以及為什麼會幻覺。每講完一段問我一個問題確認我懂了。」',
       '做「讓 AI 出錯」實驗（至少一種）：問一篇不存在的論文細節、給模稜兩可的指令、或要它算一題長算式再自己驗算。截圖它一本正經地錯的樣子。',
       '打開 repo 裡的 CLAUDE.md，在「我的工作流」區寫下至少三條你自己的規則，開始長你的工作流。',
@@ -70,7 +70,7 @@ export const MILESTONE_GUIDE = [
       'CLAUDE.md 有至少三條自己的規則',
       'm0-outfit/ 四件套已 push',
     ],
-    pitfalls: '登入卡關看 template README 的排錯（三連點複製網址）；出錯實驗不要拿真實個資或危險主題去試——用不存在的論文最安全。',
+    pitfalls: '登入卡關看 [template README](https://github.com/chenweichiang/oop-portfolio-template#readme) 的排錯（三連點複製網址）；出錯實驗不要拿真實個資或危險主題去試——用不存在的論文最安全。',
   },
   {
     id: 'M1', name: '世界', flag: '簽核',
@@ -174,7 +174,7 @@ export const MILESTONE_GUIDE = [
     steps: [
       '打磨：沒人操作 30 秒也要好看（idle 狀態）；重新整理能重來；當機要能快速復原。',
       '上線：把最終版放進 m6-zoo/，開 GitHub Pages（要 AI 帶你設定），拿到公開網址。',
-      '入住動物園：把「物種名＋一句話介紹＋作品網址」交給老師，你的物種就會出現在園區。',
+      '入住動物園：把「物種名＋一句話介紹＋作品網址」交給老師，你的物種就會出現在[園區](https://course.interaction.tw/oop/gallery/)。',
       '導覽準備：3 分鐘導覽稿——這個世界（哪一年、哪個角落）→ 這個物種（憑什麼活）→ 看牠活著（現場互動）→ 一段碼的導讀（你最想講的那段）。',
       '答辯練習：跟你的 AI 說「考我」，讓它隨機抽問你整份碼；答不順的段落回去重讀。',
       '開園日：展演＋導覽＋回答任何提問。',

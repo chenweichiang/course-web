@@ -2,6 +2,21 @@ import { useState } from 'react'
 import { MILESTONE_GUIDE } from '../data'
 import MilestoneSketch from './MilestoneSketch'
 
+// 步驟文字支援 [文字](網址) 內嵌連結
+function renderLinks(text) {
+  const parts = text.split(/(\[[^\]]+\]\([^)]+\))/g)
+  return parts.map((part, i) => {
+    const m = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/)
+    if (m)
+      return (
+        <a key={i} href={m[2]} target="_blank" rel="noopener" className="underline decoration-seal decoration-2 underline-offset-2 hover:text-seal">
+          {m[1]}
+        </a>
+      )
+    return part
+  })
+}
+
 // 可勾選的完成清單：進度存 localStorage，學生回來還在
 function CheckItem({ id, children }) {
   const [on, setOn] = useState(() => {
@@ -87,7 +102,7 @@ export default function MilestoneGuide() {
                 {m.steps.map((st, si) => (
                   <li key={si} className="flex gap-3">
                     <span className="font-mono text-sm text-seal shrink-0 w-5">{si + 1}</span>
-                    <span className="heti text-sm text-neutral-700 leading-relaxed">{st}</span>
+                    <span className="heti text-sm text-neutral-700 leading-relaxed">{renderLinks(st)}</span>
                   </li>
                 ))}
               </ol>
@@ -105,7 +120,7 @@ export default function MilestoneGuide() {
               </div>
               <div className="mt-auto pt-4 border-t border-neutral-900/15">
                 <div className="font-mono text-xs text-seal mb-1.5">卡點提醒</div>
-                <p className="heti text-sm text-neutral-600 leading-relaxed">{m.pitfalls}</p>
+                <p className="heti text-sm text-neutral-600 leading-relaxed">{renderLinks(m.pitfalls)}</p>
               </div>
             </div>
           </div>
