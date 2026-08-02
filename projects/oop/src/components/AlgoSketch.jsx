@@ -874,6 +874,248 @@ SK[18] = {
   },
 }
 
+
+// ── 感測互動（19–25）：模擬「感測資料長什麼樣」的視覺 ──
+
+// 19 faceMesh：臉部網格＋嘴開合訊號
+SK[19] = {
+  init: () => ({}),
+  step: () => {},
+  render: (ctx, st, t) => {
+    bg(ctx)
+    const cx = 32
+    const cy = 30
+    const mouth = (Math.sin(t * 1.8) + 1) / 2 // 0~1 開合度
+    ctx.strokeStyle = GRAY
+    ctx.lineWidth = 0.8
+    // 臉輪廓點
+    for (let i = 0; i < 22; i++) {
+      const a = (i / 22) * Math.PI * 2
+      const r = 17 + 1.5 * Math.sin(a * 3 + t)
+      dot(ctx, cx + r * Math.cos(a) * 0.85, cy + r * Math.sin(a), 0.9, INK)
+    }
+    // 眼
+    for (const ex of [-7, 7]) {
+      for (let i = 0; i < 8; i++) {
+        const a = (i / 8) * Math.PI * 2
+        dot(ctx, cx + ex + 3.4 * Math.cos(a), cy - 5 + 1.8 * Math.sin(a), 0.7, INK)
+      }
+    }
+    // 嘴（紅點，隨開合度張開）
+    for (let i = 0; i < 10; i++) {
+      const a = (i / 10) * Math.PI * 2
+      dot(ctx, cx + 5.5 * Math.cos(a), cy + 8 + (1 + mouth * 4.5) * Math.sin(a), 0.9, SEAL)
+    }
+    // 訊號條
+    ctx.strokeStyle = INK
+    ctx.strokeRect(10, 56, 44, 4)
+    ctx.fillStyle = SEAL
+    ctx.fillRect(11, 57, 42 * mouth, 2)
+  },
+}
+
+// 20 handPose：21 點手骨架
+SK[20] = {
+  init: () => ({}),
+  step: () => {},
+  render: (ctx, st, t) => {
+    bg(ctx)
+    const wx = 32
+    const wy = 54
+    ctx.strokeStyle = INK
+    ctx.lineWidth = 1.4
+    for (let f = 0; f < 5; f++) {
+      const curl = f === 0 ? 0.3 : (Math.sin(t * 1.5 + f) + 1) / 2 * 0.5
+      const spread = (f - 2) * 0.3 - 0.15
+      const a = -Math.PI / 2 + spread
+      let px = wx
+      let py = wy
+      for (let j = 1; j <= 3; j++) {
+        const seg = f === 0 ? 7 : 9 - j
+        const ja = a + curl * j * 0.5
+        const nx = px + seg * Math.cos(ja)
+        const ny = py + seg * Math.sin(ja)
+        ctx.beginPath()
+        ctx.moveTo(px, py)
+        ctx.lineTo(nx, ny)
+        ctx.stroke()
+        dot(ctx, nx, ny, 1.3, j === 3 ? SEAL : INK)
+        px = nx
+        py = ny
+      }
+    }
+    dot(ctx, wx, wy, 2.6, INK)
+  },
+}
+
+// 21 Gesture Recognizer：手勢分類（拳↔掌）＋判定框
+SK[21] = {
+  init: () => ({}),
+  step: () => {},
+  render: (ctx, st, t) => {
+    bg(ctx)
+    const open = Math.floor(t * 0.8) % 2 === 0
+    const wx = 26
+    const wy = 44
+    ctx.strokeStyle = INK
+    ctx.lineWidth = 1.6
+    for (let f = 0; f < 5; f++) {
+      const spread = (f - 2) * 0.28
+      const a = -Math.PI / 2 + spread
+      const len = open ? 14 : 5
+      const nx = wx + len * Math.cos(a)
+      const ny = wy + len * Math.sin(a)
+      ctx.beginPath()
+      ctx.moveTo(wx, wy)
+      ctx.lineTo(nx, ny)
+      ctx.stroke()
+      dot(ctx, nx, ny, 1.4)
+    }
+    dot(ctx, wx, wy, 3, INK)
+    // 分類結果框
+    ctx.font = 'bold 5px "IBM Plex Mono", monospace'
+    ctx.strokeStyle = SEAL
+    ctx.lineWidth = 1
+    ctx.strokeRect(38, 12, 20, 9)
+    ctx.fillStyle = SEAL
+    ctx.fillText(open ? 'PALM' : 'FIST', 41.5, 18.2)
+  },
+}
+
+// 22 bodyPose：17 點骨架揮手
+SK[22] = {
+  init: () => ({}),
+  step: () => {},
+  render: (ctx, st, t) => {
+    bg(ctx)
+    const cx = 32
+    const wave = Math.sin(t * 2.2)
+    const P = {
+      head: [cx, 14],
+      neck: [cx, 22],
+      hip: [cx, 38],
+      lSho: [cx - 7, 24],
+      rSho: [cx + 7, 24],
+      lElb: [cx - 10, 32],
+      rElb: [cx + 11, 27 - wave * 3],
+      lHand: [cx - 11, 40],
+      rHand: [cx + 14 + wave * 2, 18 - wave * 5],
+      lKnee: [cx - 4, 48],
+      rKnee: [cx + 4, 48],
+      lFoot: [cx - 5, 58],
+      rFoot: [cx + 5, 58],
+    }
+    const bones = [
+      ['neck', 'lSho'], ['neck', 'rSho'], ['lSho', 'lElb'], ['lElb', 'lHand'],
+      ['rSho', 'rElb'], ['rElb', 'rHand'], ['neck', 'hip'],
+      ['hip', 'lKnee'], ['lKnee', 'lFoot'], ['hip', 'rKnee'], ['rKnee', 'rFoot'],
+    ]
+    ctx.strokeStyle = INK
+    ctx.lineWidth = 1.6
+    for (const [a, b] of bones) {
+      ctx.beginPath()
+      ctx.moveTo(...P[a])
+      ctx.lineTo(...P[b])
+      ctx.stroke()
+    }
+    ctx.beginPath()
+    ctx.arc(...P.head, 4.5, 0, Math.PI * 2)
+    ctx.stroke()
+    Object.entries(P).forEach(([k, [x, y]]) => dot(ctx, x, y, 1.3, k === 'rHand' ? SEAL : INK))
+  },
+}
+
+// 23 bodySegmentation：人形剪影，生物向影子聚集
+SK[23] = {
+  init: () => ({ ps: Array.from({ length: 16 }, (_, i) => ({ x: hash2(i, 21, 5) * 64, y: hash2(i, 22, 5) * 64 })) }),
+  step: (st, dt, t) => {
+    const sx = 32 + 6 * Math.sin(t * 0.6)
+    for (const p of st.ps) {
+      const dx = sx - p.x
+      const dy = 36 - p.y
+      const d = Math.hypot(dx, dy) || 1
+      if (d > 20) {
+        p.x += (dx / d) * 0.5
+        p.y += (dy / d) * 0.5
+      } else {
+        p.x += (Math.random() - 0.5) * 1.2
+        p.y += (Math.random() - 0.5) * 1.2
+      }
+    }
+    st.sx = sx
+  },
+  render: (ctx, st, t) => {
+    bg(ctx)
+    const sx = st.sx ?? 32
+    // 人形剪影
+    ctx.fillStyle = 'rgba(26,25,23,0.16)'
+    ctx.beginPath()
+    ctx.arc(sx, 20, 6, 0, Math.PI * 2)
+    ctx.fill()
+    ctx.beginPath()
+    ctx.moveTo(sx - 8, 27)
+    ctx.quadraticCurveTo(sx, 24, sx + 8, 27)
+    ctx.lineTo(sx + 6, 52)
+    ctx.lineTo(sx - 6, 52)
+    ctx.closePath()
+    ctx.fill()
+    for (const p of st.ps) dot(ctx, p.x, p.y, 1.5, SEAL)
+  },
+}
+
+// 24 Frame Differencing：影格差動作偵測
+SK[24] = {
+  init: () => ({}),
+  step: () => {},
+  render: (ctx, st, t) => {
+    bg(ctx)
+    const N = 10
+    const c = S / N
+    const bx = 32 + 20 * Math.sin(t * 0.9)
+    const by = 32 + 12 * Math.sin(t * 1.7)
+    for (let gy = 0; gy < N; gy++)
+      for (let gx = 0; gx < N; gx++) {
+        const px = (gx + 0.5) * c
+        const py = (gy + 0.5) * c
+        const d = Math.hypot(px - bx, py - by)
+        const motion = Math.max(0, 1 - d / 14)
+        if (motion > 0.05) {
+          ctx.fillStyle = motion > 0.55 ? SEAL : `rgba(26,25,23,${motion * 0.8})`
+          ctx.fillRect(gx * c + 0.6, gy * c + 0.6, c - 1.2, c - 1.2)
+        } else {
+          ctx.strokeStyle = 'rgba(26,25,23,0.12)'
+          ctx.lineWidth = 0.5
+          ctx.strokeRect(gx * c + 0.6, gy * c + 0.6, c - 1.2, c - 1.2)
+        }
+      }
+  },
+}
+
+// 25 Teachable Machine：三類分類器信心值
+SK[25] = {
+  init: () => ({}),
+  step: () => {},
+  render: (ctx, st, t) => {
+    bg(ctx)
+    const labels = ['A', 'B', 'C']
+    const raw = labels.map((_, i) => 0.2 + 0.8 * Math.max(0, Math.sin(t * 0.9 + (i * Math.PI * 2) / 3)))
+    const sum = raw.reduce((a, b) => a + b, 0)
+    const conf = raw.map((v) => v / sum)
+    const best = conf.indexOf(Math.max(...conf))
+    ctx.font = 'bold 8px "IBM Plex Mono", monospace'
+    conf.forEach((v, i) => {
+      const y = 14 + i * 16
+      ctx.fillStyle = i === best ? SEAL : INK
+      ctx.fillText(labels[i], 8, y + 7)
+      ctx.strokeStyle = INK
+      ctx.lineWidth = 1
+      ctx.strokeRect(17, y, 40, 9)
+      ctx.fillStyle = i === best ? SEAL : GRAY
+      ctx.fillRect(18, y + 1, 38 * v, 7)
+    })
+  },
+}
+
 export default function AlgoSketch({ index, active = false }) {
   const wrapRef = useRef(null)
   const canvasRef = useRef(null)

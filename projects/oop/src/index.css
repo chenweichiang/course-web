@@ -75,7 +75,7 @@ body {
 
 /* Heti（赫蹏）只取其排版行為（齊行、標點規則），字體與字級一律繼承本站設定。
    中西文間距與標點擠壓改用原生 CSS（斷行處理正確、零 DOM 注入；
-   不支援的瀏覽器安靜降級）——不再呼叫 heti addon 的 autoSpacing。 */
+   不支援的瀏覽器安靜降級），不再呼叫 heti addon 的 autoSpacing。 */
 .heti {
   font-family: inherit;
   font-size: inherit;

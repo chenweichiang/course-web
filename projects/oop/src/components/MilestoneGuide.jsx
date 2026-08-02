@@ -7,12 +7,19 @@ function renderLinks(text) {
   const parts = text.split(/(\[[^\]]+\]\([^)]+\))/g)
   return parts.map((part, i) => {
     const m = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/)
-    if (m)
+    if (m) {
+      const ext = !m[2].startsWith('#')
       return (
-        <a key={i} href={m[2]} target="_blank" rel="noopener" className="underline decoration-seal decoration-2 underline-offset-2 hover:text-seal">
+        <a
+          key={i}
+          href={m[2]}
+          {...(ext ? { target: '_blank', rel: 'noopener' } : {})}
+          className="underline decoration-seal decoration-2 underline-offset-2 hover:text-seal"
+        >
           {m[1]}
         </a>
       )
+    }
     return part
   })
 }

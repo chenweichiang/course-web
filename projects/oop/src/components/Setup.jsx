@@ -6,7 +6,7 @@ export default function Setup() {
   return (
     <div className="grid lg:grid-cols-2 gap-8 items-start">
       <div>
-        <h3 className="font-display text-xl tracking-wide mb-4">申請四個帳號（W1 完成）</h3>
+        <h3 className="font-display text-xl tracking-wide mb-4">申請四個帳號（開學第一週完成）</h3>
         <div className="card-ink divide-y divide-neutral-900/15">
           {SETUP_ACCOUNTS.map((a) => (
             <div key={a.t} className="p-5">
@@ -42,7 +42,7 @@ export default function Setup() {
           >
             課程 template repo ↗
           </a>
-          <span className="text-sm text-neutral-500">詳細步驟與登入排錯都寫在 template 的 README 裡。</span>
+          <span className="text-sm text-neutral-500">詳細步驟與登入排錯都寫在 template 的 README 裡，卡住就先翻它。</span>
         </div>
       </div>
     </div>

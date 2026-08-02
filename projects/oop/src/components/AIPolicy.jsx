@@ -21,13 +21,13 @@ export default function AIPolicy() {
         <div className="card-ink p-6">
           <div className="font-mono text-xs text-neutral-500 mb-2">為什麼這樣設計</div>
           <p className="heti text-sm leading-loose text-neutral-700">
-            「用這些工具自動化無聊的部分，但保護有趣、有意義的部分——那種摩擦感正是滋養創造力之處。」
+            「用這些工具自動化無聊的部分，但保護有趣、有意義的部分，那種摩擦感正是滋養創造力之處。」
           </p>
           <div className="mt-2 font-mono text-xs text-neutral-500">— Zach Lieberman</div>
         </div>
         <p className="heti text-sm text-neutral-500 leading-loose px-1">
-          把這一頁的網址貼給你的 AI，它會讀到本課的助教規範：各階段能幫什麼、不能幫什麼。
-          它不會替你寫反思、不會替你決定概念——那些是你的。
+          把這一頁的網址交給你的 AI，它會讀到本專案的助教規範，知道該怎麼陪你研究、怎麼提醒你驗證，
+          它不會替你寫反思、不會替你決定概念，那些是你的。
         </p>
       </div>
     </div>

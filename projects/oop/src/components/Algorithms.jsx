@@ -4,7 +4,7 @@ import AlgoSketch from './AlgoSketch'
 
 const LV = ['★', '★★', '★★★']
 
-function CopyButton({ text }) {
+export function CopyButton({ text }) {
   const [done, setDone] = useState(false)
   const copy = async () => {
     try {
@@ -72,9 +72,9 @@ export default function Algorithms() {
         </div>
       ))}
       <p className="heti text-sm text-neutral-500 max-w-3xl leading-loose">
-        使用守則：先要「最小可跑版」看懂再加料（讀不懂的碼過不了答辯）；AI 給的參數只是起點，
-        「什麼參數像我的物種」只有你能回答；<strong>組合才是作品</strong>——斑紋＋軟身體＋群集＋演化，
-        你的物種是演算法的生態系。主參照《The Nature of Code》全書免費線上（natureofcode.com），
+        使用守則：先要最小可跑版，看懂再加料，讀不懂的碼過不了答辯。AI 給的參數只是起點，
+        什麼參數像你的物種，只有你能回答。<strong>組合才是作品</strong>，斑紋、軟身體、群集、演化疊起來，
+        你的物種就是演算法的生態系。主參照《The Nature of Code》全書免費線上（natureofcode.com），
         每一條都有原典，研究報告記得引用。
       </p>
     </div>
