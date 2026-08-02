@@ -30,7 +30,7 @@ export default function Hero() {
             跟它搶「<span className="underline decoration-4 decoration-seal underline-offset-4">知道自己在做什麼</span>」。
           </p>
           <p className="heti mt-5 text-neutral-600 max-w-xl leading-loose text-[0.95rem]">
-            AI 可以替你寫碼，但它是機率性的，會一本正經地錯，它不能替你驗證結果，也不能替你在 critique 時說明每個決定，因此這個專案教三件事：看懂 AI（它怎麼運作、會出什麼問題）、指揮 AI（建構自己的工作流，動手前先讓它進行深度研究，開源穩定熱門工具優先）、為你的物種負責（揭露、驗證、答辯）。
+            AI 可以替你寫碼，但它是機率性的，會一本正經地錯，它不能替你驗證結果，也不能替你在 critique 時說明每個決定，因此這個專案教三件事：看懂 AI（它怎麼運作、會出什麼問題）、指揮 AI（建構自己的工作流，動手前先讓它進行深度研究，開源穩定熱門工具優先）、為你的物種負責（揭露、驗證、把牠完整呈現出來）。
           </p>
           <p className="heti mt-5 font-bold max-w-xl">
             整學期只做一件事，就是<a href="#project" className="underline decoration-seal decoration-2 underline-offset-4 hover:text-seal">期末專案「後未來動物園」</a>：培育沒有人類之後的物種，直到牠開園。
