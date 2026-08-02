@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { ALGO_GROUPS } from '../data'
+import AlgoSketch from './AlgoSketch'
 
 const LV = ['★', '★★', '★★★']
 
@@ -26,6 +27,8 @@ function CopyButton({ text }) {
 }
 
 export default function Algorithms() {
+  const [hovered, setHovered] = useState(null)
+  let flat = -1
   return (
     <div className="space-y-12">
       {ALGO_GROUPS.map((g) => (
@@ -35,8 +38,16 @@ export default function Algorithms() {
             <span className="font-mono text-xs text-seal">{g.hint}</span>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 border-t border-l border-neutral-900">
-            {g.items.map((a) => (
-              <div key={a.name} className="border-b border-r border-neutral-900 bg-paper p-5 flex flex-col gap-2.5">
+            {g.items.map((a) => {
+              flat += 1
+              const idx = flat
+              return (
+              <div
+                key={a.name}
+                className="border-b border-r border-neutral-900 bg-paper p-5 flex flex-col gap-2.5"
+                onMouseEnter={() => setHovered(idx)}
+                onMouseLeave={() => setHovered(null)}
+              >
                 <div className="flex items-start justify-between gap-2">
                   <div>
                     <div className="font-mono text-sm font-bold leading-snug">{a.name}</div>
@@ -44,6 +55,7 @@ export default function Algorithms() {
                   </div>
                   <span className="font-mono text-xs text-seal shrink-0 mt-1" title="難度">{LV[a.lv - 1]}</span>
                 </div>
+                <AlgoSketch index={idx} active={hovered === idx} />
                 <p className="heti text-xs text-neutral-500 leading-relaxed">{a.what}</p>
                 <p className="heti text-sm text-neutral-700 leading-relaxed">
                   <span className="font-mono text-xs text-seal mr-1">用在</span>
@@ -54,7 +66,8 @@ export default function Algorithms() {
                   <CopyButton text={a.prompt} />
                 </div>
               </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       ))}
