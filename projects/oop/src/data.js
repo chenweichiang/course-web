@@ -261,6 +261,60 @@ export const SENSING = {
   ],
 }
 
+
+// 案例庫：期末專案的參照系（取得管道 2026-08 全查證）
+export const CASE_GROUPS = [
+  {
+    cat: '沒有人類之後', hint: 'M1 世界',
+    items: [
+      { name: '人類滅絕後', by: 'Dougal Dixon，1981', type: '書', what: '人類消失後五千萬年的動物誌，本專案題目的開山之作，整本書就是一座後未來動物園', get: '繁中版《人類滅絕後：未來地球的假想動物圖鑑》，台灣東販，圖書館與二手書可得' },
+      { name: '沒有我們的世界', by: 'Alan Weisman，2007', type: '書', what: '人類消失後城市與生態如何演變的科普經典，世界觀研究的底本', get: '繁中版，木馬文化，新書庫存有限，建議二手或圖書館' },
+      { name: 'Life After People', by: 'History Channel', type: '影集', what: '人類消失後 1 天到 1 萬年的推演，把時間尺度視覺化', get: 'History 官方 YouTube 播放清單免費看', url: 'https://www.youtube.com/playlist?list=PLob1mZcVWOagLL-shJOp-d5_qJOG2MvCJ' },
+      { name: 'The Future Is Wild', by: '2002 紀錄片', type: '影集', what: '五百萬年到兩億年後的推測演化，科學顧問陣容完整', get: '官方 YouTube 頻道全 13 集免費', url: 'https://www.youtube.com/@OfficialTheFutureIsWild' },
+    ],
+  },
+  {
+    cat: '想像另一種生命', hint: 'M2 物種',
+    items: [
+      { name: 'All Tomorrows', by: 'C.M. Kosemen，2006', type: '書', what: '十億年尺度的人類後裔演化史，邪典級推測生物學', get: '無繁中版，2025 年底出正式紙本後作者官網已不再提供免費 PDF，引用網路流傳版本時要交代這個轉折' },
+      { name: 'Expedition', by: 'Wayne Barlowe，1990', type: '書', what: '外星星球 Darwin IV 的生態調查圖鑑，畫家親手建構整套食物鏈', get: '英文原版絕版，合法免費管道為 Internet Archive 借閱', url: 'https://archive.org/details/expeditionbeinga0000barl' },
+      { name: 'Scavengers Reign', by: '2023 動畫影集', type: '影集', what: '異星生態動畫，近年最完整的「生態先於劇情」示範', get: '原 HBO Max 獨家，在台灣請於 Max App 內搜尋確認' },
+      { name: '風之谷', by: '宮崎駿', type: '動畫與漫畫', what: '腐海生態系，文明毀滅後的菌類森林與王蟲，最容易進入的參照', get: '動畫與漫畫在台灣皆易取得' },
+    ],
+  },
+  {
+    cat: '另一種感官與心智', hint: 'M2 設定 · M5 觀眾',
+    items: [
+      { name: '章魚，心智，演化', by: 'Peter Godfrey-Smith', type: '書', what: '從章魚追問心智的另一種可能，設計非人心智的思想資源', get: '繁中版，紅樹林' },
+      { name: '真菌微宇宙', by: 'Merlin Sheldrake', type: '書', what: '真菌網絡如何連結萬物，菌絲型物種的科學底本', get: '繁中版，果力文化，2021 與 2025 兩版副標不同，是同一本書' },
+      { name: '五感之外的世界', by: 'Ed Yong，2022', type: '書', what: '動物的環境界(Umwelt)，每種生物感知到的世界都不同，直接回答「你的生物怎麼感覺觀眾」', get: '繁中版，臉譜' },
+    ],
+  },
+  {
+    cat: '人工生命藝術', hint: 'M3 到 M6 的同行前輩',
+    items: [
+      { name: 'Evolved Virtual Creatures', by: 'Karl Sims，1994', type: '作品', what: '演化出泳姿與步態的虛擬生物，人工生命藝術的原點，也是遺傳演算法的祖師爺', get: '官方頁與原始影片', url: 'https://www.karlsims.com/evolved-virtual-creatures.html' },
+      { name: 'A-Volve', by: 'Sommerer & Mignonneau，1994', type: '作品', what: '觀眾畫的生物在水池裡游動、覓食、交配，互動人工生命的里程碑，概念與本專案幾乎同構', get: '官方頁已遷至林茲藝術大學', url: 'https://interface.ufg.ac.at/christa-laurent/A-Volve.html' },
+      { name: 'Strandbeest', by: 'Theo Jansen', type: '作品', what: '風力驅動的海灘巨獸，用物理材料做的新物種，造物不限於螢幕', get: '官方網站', url: 'https://www.strandbeest.com' },
+      { name: 'Neural Zoo', by: 'Sofia Crespo', type: '作品', what: '用神經網路生成的不存在生物，AI 時代的自然史圖鑑', get: '官方網站', url: 'https://sofiacrespo.com/neural-zoo' },
+      { name: 'Emissaries', by: 'Ian Cheng', type: '作品', what: '自己會一直演下去的活體模擬，作品是生態系而非畫面', get: 'MoMA PS1 展覽頁', url: 'https://www.moma.org/calendar/exhibitions/3656' },
+      { name: 'fishdraw', by: 'Lingdong Huang', type: '開源', what: '程序生成的魚類素描，開源可讀，示範一套規則長出一族生物', get: 'GitHub，MIT 授權', url: 'https://github.com/LingDong-/fishdraw' },
+      { name: 'Graffiti Nature', by: 'teamLab', type: '作品', what: '觀眾畫的動植物進入共同生態系，彼此捕食與繁衍，可以理解成全班一座動物園的實體版', get: '官方作品頁，京都與新加坡常設展出', url: 'https://www.team-lab.art/w/graffitinature/' },
+    ],
+  },
+  {
+    cat: '遊戲裡的生態', hint: '把生態當主角的遊戲',
+    items: [
+      { name: 'Rain World', by: 'Videocult', type: '遊戲', what: '整個世界是真的生態系，每隻生物有自己的生存目標，玩家只是食物鏈一環', get: 'Steam 上架中', url: 'https://store.steampowered.com/app/312520' },
+      { name: 'Spore', by: 'Will Wright，2008', type: '遊戲', what: '生物創造器加演化階段，把造物做成遊戲的先驅', get: 'Steam 上架中', url: 'https://store.steampowered.com/app/17390' },
+      { name: 'Everything', by: 'David OReilly', type: '遊戲', what: '你可以成為任何東西，從細菌到星系，尺度與視角的哲學遊戲', get: 'Steam 上架中', url: 'https://store.steampowered.com/app/582270' },
+    ],
+  },
+]
+
+export const CASE_NOTE =
+  '使用建議：M1 開工前先看 Life After People 任一集加《沒有我們的世界》任一章，時間尺度的直覺就有了。M2 卡關時翻《人類滅絕後》或《All Tomorrows》，看別人怎麼用規則推物種，再回來推自己的。M5 設計互動前讀《五感之外的世界》序章，先想牠的環境界(Umwelt)，再想牠怎麼感覺人。案例是參照系而非模板，看完要回答的問題始終是：在你的世界，牠憑什麼活下來。'
+
 export const AI_RULES = [
   { t: '研究先行', d: '動手做之前，先讓你的 AI 進行深度研究：比較做法與工具、開源穩定熱門優先，並查證來源，合成答案只當路標，關鍵事實回原始出處確認。' },
   { t: '驗證是你的工作', d: 'AI 是機率性的，會一本正經地錯，它給的每段程式碼、每個事實，跑過、查過才算數。' },

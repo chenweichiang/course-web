@@ -5,6 +5,7 @@ import Method from './components/Method'
 import MilestoneGuide from './components/MilestoneGuide'
 import Algorithms from './components/Algorithms'
 import Sensing from './components/Sensing'
+import Cases from './components/Cases'
 import AIPolicy from './components/AIPolicy'
 import Tools from './components/Tools'
 import Setup from './components/Setup'
@@ -16,10 +17,11 @@ const SECTIONS = [
   { id: 'milestones', num: '03', navLabel: '里程碑', label: '里程碑指南', summary: '照著做就能走完的七站，每站都有步驟、完成清單（會記住你的進度）與卡點提醒', Component: MilestoneGuide },
   { id: 'algorithms', num: '04', navLabel: '圖鑑', label: '演算法圖鑑', summary: '19 個造物演算法，挑一個複製起手式交給你的 AI，看牠能長出什麼', Component: Algorithms },
   { id: 'sensing', num: '05', navLabel: '感測', label: '感測互動', summary: '臉、手、身體都是棲地的輸入，開源感測工具與訊號設計方法都在這', Component: Sensing },
-  { id: 'ai-policy', num: '06', navLabel: 'AI 公約', label: 'AI 公約', summary: '本專案獎勵透明，不獎勵僥倖', Component: AIPolicy },
-  { id: 'tools', num: '07', navLabel: '工具', label: '工具配置', summary: 'p5.js 網頁編輯器，加上你的 AI 工作流主力與保底', Component: Tools },
-  { id: 'setup', num: '08', navLabel: '準備', label: '開工準備', summary: '四個帳號與帶著走的工作室，學校電腦每次被還原也不怕', Component: Setup },
-  { id: 'submission', num: '09', navLabel: '繳交', label: '交付方式', summary: 'GitHub 作品集 repo，每個里程碑一個資料夾，push 就算交付', Component: Submission },
+  { id: 'cases', num: '06', navLabel: '案例', label: '案例庫', summary: '看別人怎麼想像沒有人類的世界與另一種生命，二十三個案例分五類，取得管道都查證過', Component: Cases },
+  { id: 'ai-policy', num: '07', navLabel: 'AI 公約', label: 'AI 公約', summary: '本專案獎勵透明，不獎勵僥倖', Component: AIPolicy },
+  { id: 'tools', num: '08', navLabel: '工具', label: '工具配置', summary: 'p5.js 網頁編輯器，加上你的 AI 工作流主力與保底', Component: Tools },
+  { id: 'setup', num: '09', navLabel: '準備', label: '開工準備', summary: '四個帳號與帶著走的工作室，學校電腦每次被還原也不怕', Component: Setup },
+  { id: 'submission', num: '10', navLabel: '繳交', label: '交付方式', summary: 'GitHub 作品集 repo，每個里程碑一個資料夾，push 就算交付', Component: Submission },
 ]
 
 export default function App() {
