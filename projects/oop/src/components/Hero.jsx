@@ -43,7 +43,7 @@ export default function Hero() {
             ))}
           </div>
           <div className="mt-10 font-mono text-xs text-neutral-400 max-w-xl">
-            {'// 這個背景是 flocking 群集系統，到了 M4 你會用自己的工作流做出它'}
+            {'// 這個背景是程序化生成的樹林：同一個 Skeleton 類別，換一組物種參數就長成不同的樹'}
           </div>
         </motion.div>
 
