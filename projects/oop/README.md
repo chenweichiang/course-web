@@ -15,6 +15,26 @@ npm run build # 輸出到 ../../oop/
 cd ../.. && git add -A && git commit && git push   # push 後 GitHub Pages 自動上線
 ```
 
+## Hero 背景：程序化生成的一棵櫻
+
+`public/tree/` 底下的 `skeleton.js` / `presets.js` / `recursive.js` / `render.js` / `light.js`
+是從研究專案 [chenweichiang/202608-research-p5-tree](https://github.com/chenweichiang/202608-research-p5-tree)
+**原封不動複製**過來的，⚠️ **不要在這裡改**——要改演算法回研究專案改，再重新複製：
+
+```bash
+SRC=~/Documents/Developer/"202608 研究 p5畫樹"
+for f in skeleton presets recursive render light; do cp "$SRC/src/$f.js" public/tree/; done
+```
+
+只有 `public/tree/hero.js` 是本站專用的驅動：挑物種（櫻）、改成適合當背景的配色、決定取景。
+每次載入換一個 seed，所以每次重新整理都是不同的一棵——這是課程「同一個類別、不同實例」
+隱喻的現場示範。
+
+**為什麼用 p5 全域模式**：那五個檔是為全域模式寫的（直接呼叫 `noise` / `random` /
+`beginShape`…）。改成 instance 模式要逐一加 `p.` 前綴，等於分岔出第二份程式碼，
+研究專案一改就失去同步。`new p5()` 不帶參數即進入全域模式，原始碼一行都不用動。
+`HeroSketch.jsx` 只負責依序注入 script 與生命週期（離開視窗暫停、unmount 清理）。
+
 ## 標題字：朱雀仿宋（自架子集）
 
 - 檔案：`public/fonts/ZhuqueFangsong-subset.woff2`（226KB，涵蓋全站用字＋ASCII＋常用標點）
