@@ -27,6 +27,10 @@ for f in skeleton presets recursive render light; do cp "$SRC/src/$f.js" public/
 ```
 
 只有 `public/tree/hero.js` 是本站專用的驅動：挑物種（櫻）、改成適合當背景的配色、決定取景。
+登場時由下往上一塊一塊掀開（12 塊，約 1.3 秒）——做法是蓋住尚未輪到的橫帶，
+不是逐節點播放生長：`public/tree/` 不能改，而且整棵樹本來就一次畫好，遮罩便宜得多，
+風也照吹。`prefers-reduced-motion` 時直接跳過，整棵一次出現。
+
 每次載入換一個 seed，所以每次重新整理都是不同的一棵——這是課程「同一個類別、不同實例」
 隱喻的現場示範。
 

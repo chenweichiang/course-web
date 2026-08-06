@@ -17,6 +17,16 @@ let heroSk = null
 let heroView = { s: 1, tx: 0, ty: 0 }
 let heroReduced = false
 
+// 登場：由下往上一塊一塊掀開。
+// 做法是「蓋住尚未輪到的橫帶」，不是重寫渲染——public/tree/ 的檔案不能改，
+// 而且樹本來就整棵畫好了，遮罩比逐節點播放便宜得多，風也照吹。
+const REVEAL_BANDS = 12
+const REVEAL_STAGGER = 110 // ms，每塊之間的間隔
+// 單塊淡入要比間隔短：長於間隔會有兩三塊同時在變，前緣糊成一道漸層，
+// 看起來像抹除而不是一塊一塊。短於間隔則同時只有一塊在動，界線讀得出來
+const REVEAL_FADE = 90
+let heroReveal = { active: false, t0: 0, top: 0 }
+
 // 背景用的配色：研究專案的櫻是深樹皮＋飽和花色（那是主角的配色），
 // 當背景會壓過文字。這裡把樹皮提到淡墨灰、花壓到極低飽和度——
 // 朱印是全站唯一重點色，花不能跟它搶。
@@ -70,6 +80,8 @@ function heroFit(P, sk) {
   heroView.s = fit
   heroView.tx = cx - ((minX + maxX) / 2) * fit
   heroView.ty = height * 0.985 - maxY * fit
+  // 掀開的範圍：樹冠頂端到畫布底（底部要含地面與落葉，那些節點不在 bbox 裡）
+  heroReveal.top = heroView.ty + minY * fit
 }
 
 function heroBuild() {
@@ -96,7 +108,37 @@ function setup() {
   if (heroReduced) {
     noLoop()
     redraw() // noLoop 之後 p5 不會自動跑 draw，要顯式呼叫才有畫面
+  } else {
+    heroReveal.active = true
+    heroReveal.t0 = millis()
   }
+}
+
+// 蓋住尚未輪到的橫帶。邊界取整數並讓相鄰兩帶共用同一條界線——
+// 若各自 round 會差半像素：留縫會露出樹的一條線，重疊則因為半透明疊加
+// 在接縫處變得更不透明，兩種都會在動畫中看見水平條紋。
+function drawReveal() {
+  const el = millis() - heroReveal.t0
+  if (el >= REVEAL_STAGGER * (REVEAL_BANDS - 1) + REVEAL_FADE) {
+    heroReveal.active = false
+    return
+  }
+  const top = heroReveal.top
+  const bh = (height - top) / REVEAL_BANDS
+  push()
+  noStroke()
+  let y1 = height // 由下往上：k = 0 是最底下那塊
+  for (let k = 0; k < REVEAL_BANDS; k++) {
+    const y0 = Math.round(height - (k + 1) * bh)
+    const a = Math.min(1, Math.max(0, (el - k * REVEAL_STAGGER) / REVEAL_FADE))
+    if (a < 1) {
+      const e = a * a * (3 - 2 * a) // smoothstep：線性淡入的頭尾會看到硬切
+      fill(PAPER[0], PAPER[1], PAPER[2], 255 * (1 - e))
+      rect(0, y0, width, y1 - y0)
+    }
+    y1 = y0
+  }
+  pop()
 }
 
 function draw() {
@@ -109,6 +151,7 @@ function draw() {
   scale(heroView.s)
   renderTree(window, heroSk, P, false)
   pop()
+  if (heroReveal.active) drawReveal()
 }
 
 function windowResized() {
