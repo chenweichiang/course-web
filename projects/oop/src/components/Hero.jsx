@@ -43,7 +43,7 @@ export default function Hero() {
             ))}
           </div>
           <div className="mt-10 font-mono text-xs text-neutral-400 max-w-xl">
-            {'// 這個背景是程序化生成的樹林：同一個 Skeleton 類別，換一組物種參數就長成不同的樹'}
+            {'// 這個背景是程序化生成的櫻林：同一個類別、同一組物種參數，長出來的每一棵都不一樣'}
           </div>
         </motion.div>
 

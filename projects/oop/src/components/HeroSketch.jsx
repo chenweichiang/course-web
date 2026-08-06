@@ -183,13 +183,31 @@ export default function HeroSketch() {
           }
         }
 
-        // ── 物種：同一套演算法，換一組參數就長成不同的樹 ───────────────
-        const SPECIES = [
-          { name: '合軸', apical: 0.2, apicalLat: 0.2, forkAngle: 0.5, forkDecay: 0.79, curl: 0.008, trunkFrac: 0.2, latRate: 0.008 },
-          { name: '單軸', apical: 0.92, apicalLat: 0.22, forkAngle: 0.46, forkDecay: 0.76, curl: 0.004, trunkFrac: 0.3, latRate: 0.016, latAngle: 1.3 },
-          { name: '開展', apical: 0.4, apicalLat: 0.3, forkAngle: 0.56, forkDecay: 0.8, curl: 0.008, trunkFrac: 0.18, latRate: 0.018 },
-          { name: '扭曲', apical: 0.35, apicalLat: 0.3, forkAngle: 0.6, forkDecay: 0.74, curl: 0.016, trunkFrac: 0.24, latRate: 0.007, jitter: 0.55 },
-        ]
+        // ── 物種：單一樹種（櫻）───────────────────────────────────
+        // 一個 SAKURA 參數集；每棵樹在生成時對幾個關鍵參數做小幅抽樣，
+        // 所以是同一物種的不同個體，不是不同品種。
+        // 「同一個類別、不同的實例」——這門課要教的就是這件事。
+        const SAKURA = {
+          apical: 0.2,
+          apicalLat: 0.2,
+          forkAngle: 0.52,
+          forkDecay: 0.79,
+          curl: 0.008,
+          trunkFrac: 0.2,
+          latRate: 0.009,
+          bloom: 4,
+        }
+        // 個體變異的範圍（每棵樹各抽一次）
+        const VARY = {
+          apical: [0.14, 0.28],
+          forkAngle: [0.44, 0.62],
+          forkDecay: [0.75, 0.83],
+          curl: [0.006, 0.012],
+          trunkFrac: [0.17, 0.25],
+          latRate: [0.007, 0.013],
+          bloom: [3, 6],
+        }
+
         const BASE = {
           stepLen: 10,
           curlScale: 0.03,
@@ -198,6 +216,9 @@ export default function HeroSketch() {
           tropismK: 0.004,
           axisDecay: 0.9,
           trifurcate: 0.2,
+          tropismDir: -1, // -1 朝上、1 朝下（枝垂用）
+          droopFrom: 99, // 從第幾階起套用下垂，之前一律朝上
+          bloom: 3,
           latAngle: 0.85,
           latDecay: 0.52,
           latStart: 0.25,
@@ -229,8 +250,10 @@ export default function HeroSketch() {
             const nz = p.noise(node.pathLen * S.curlScale + S.seed, S.seed * 0.37)
             const curl = S.curl * (order === 0 ? S.trunkCurlScale : 1)
             let turn = (nz - 0.5) * 2 * curl * sl
+            // 下垂型（枝垂）只作用在高階細枝：連主幹一起往下拉會彎成拱門
+            const tDir = order >= S.droopFrom ? S.tropismDir * p.HALF_PI : -p.HALF_PI
             const k = order === 0 ? S.trunkUpright : S.tropismK
-            turn += Math.sin(-p.HALF_PI - dir) * k * sl
+            turn += Math.sin(tDir - dir) * k * sl
             // 樹幹 S 形（Weber-Penn 的 Curve / CurveBack）：完全筆直會被看成幾何體
             if (order === 0) {
               const amount = i >= steps / 2 ? -S.trunkCurveBack : S.trunkCurve
@@ -273,7 +296,28 @@ export default function HeroSketch() {
           sk.axisTaper(S)
           sk.silhouette(S)
           sk.resonance()
+          bloom(sk, S)
           return sk
+        }
+
+        // 花：只掛在末梢，簇狀。葉序用黃金角遞增——重點不是 137.5° 這個數字，
+        // 而是避開任何會造成週期性重疊的簡單分數角。
+        const GOLDEN = Math.PI * (3 - Math.sqrt(5))
+        function bloom(sk, S) {
+          let phi = 0
+          for (const n of sk.nodes) {
+            if (n.children.length) continue
+            const arr = []
+            for (let i = 0; i < S.bloom; i++) {
+              phi += GOLDEN
+              arr.push({
+                dx: Math.cos(phi) * p.random(1, 7),
+                dy: Math.sin(phi) * p.random(1, 7),
+                r: p.random(1.6, 3.4),
+              })
+            }
+            n.bloom = arr
+          }
         }
 
         // ── 渲染 ───────────────────────────────────────────────────
@@ -388,6 +432,21 @@ export default function HeroSketch() {
           }
           g.noStroke()
 
+          // 花：兩層錯位疊加（同樣的道理——單層填色就是向量圖）。
+          // 顏色要夠淡：朱紅是全站唯一重點色，花不能跟它搶。
+          if (tr.bloomCol) {
+            const bc = tr.bloomCol
+            for (const L of [{ o: 0, a: 200 }, { o: 0.8, a: 90 }]) {
+              g.fill(bc[0], bc[1], bc[2], L.a)
+              for (const n of sk.nodes) {
+                if (!n.bloom) continue
+                for (const b of n.bloom) {
+                  g.ellipse(n.x + b.dx + L.o, n.y + b.dy - L.o, b.r * 2, b.r * 1.7)
+                }
+              }
+            }
+          }
+
           // 地面線以下切平，再補一道柔邊接觸陰影。
           // 陰影要畫在切平之後：畫在之前會被地面線切掉下半部，留下硬邊。
           g.fill(...PAPER)
@@ -408,8 +467,99 @@ export default function HeroSketch() {
           g.pop()
         }
 
+
+        // ── 草 ─────────────────────────────────────────────────────
+        // 三個要點（都是「看起來不呆板」的關鍵，不是裝飾）：
+        //   1. 葉片要「填多邊形」不是「描線」——canvas 的 lineWidth 無法沿路徑漸細
+        //   2. 一叢草不是從一點放射：真實草是分蘗（新芽在既有葉鞘內長出把叢往外推），
+        //      所以要多個緊鄰但錯開的基點，否則會讀成海膽狀的蓮座
+        //   3. 彎曲要二段式：葉鞘段近直、葉舌以上才劇烈下垂。單調的彎曲曲線
+        //      數學上就表現不出「先上揚再翻折」
+        const BLADE_SEG = 5
+
+        function bendAt(t, b) {
+          if (t <= b.t0) return b.bend0 * Math.pow(t / b.t0, 1.7)
+          const u = (t - b.t0) / (1 - b.t0)
+          return b.bend0 + b.bend1 * Math.pow(u, 1.45)
+        }
+
+        function makeTuft(x, y, d, scale) {
+          const blades = []
+          const clumpR = p.random(6, 13) * scale
+          const nT = Math.floor(p.random(3, 6)) // 分蘗數
+          for (let i = 0; i < nT; i++) {
+            const bx = p.random(-1, 1) * clumpR * 0.4
+            const edge = Math.min(1, Math.abs(bx) / (clumpR * 0.4 + 1e-6))
+            const age = 1 - edge // 中心＝老分蘗，更外傾下垂
+            const side = bx >= 0 ? 1 : -1
+            const nb = Math.floor(p.random(2, 5))
+            for (let j = 0; j < nb; j++) {
+              const lean = side * p.random(0.02, 0.4) + p.random(-0.14, 0.14)
+              blades.push({
+                bx,
+                by: p.random(-2, 2) * scale,
+                len: p.random(16, 40) * scale * (0.8 + age * 0.35),
+                w: p.random(0.5, 1.1) * scale,
+                lean,
+                t0: p.random(0.36, 0.66),
+                bend0: lean * 0.25,
+                bend1: side * p.random(0.5, 1.4) * (0.65 + age * 0.7),
+                taper: p.random(1.5, 3.2),
+                phase: p.random(1000),
+                flex: p.random(0.7, 1.2),
+              })
+            }
+          }
+          return { x, y, d, blades }
+        }
+
+        function bladePolygon(g, x0, y0, len, halfW, baseAngle, bendFn, taper) {
+          const step = len / BLADE_SEG
+          const cx = []
+          const cy = []
+          const cw = []
+          let x = x0
+          let y = y0
+          for (let i = 0; i <= BLADE_SEG; i++) {
+            const t = i / BLADE_SEG
+            cx.push(x)
+            cy.push(y)
+            cw.push(halfW * (1 - Math.pow(t, taper)))
+            const a = baseAngle + bendFn(t)
+            x += Math.cos(a) * step
+            y += Math.sin(a) * step
+          }
+          g.beginShape()
+          for (let i = 0; i <= BLADE_SEG; i++) {
+            const a = i === BLADE_SEG ? 0 : Math.atan2(cy[i + 1] - cy[i], cx[i + 1] - cx[i]) + p.HALF_PI
+            g.vertex(cx[i] + Math.cos(a) * cw[i], cy[i] + Math.sin(a) * cw[i])
+          }
+          for (let i = BLADE_SEG; i >= 0; i--) {
+            const a = i === BLADE_SEG ? 0 : Math.atan2(cy[i + 1] - cy[i], cx[i + 1] - cx[i]) + p.HALF_PI
+            g.vertex(cx[i] - Math.cos(a) * cw[i], cy[i] - Math.sin(a) * cw[i])
+          }
+          g.endShape(g.CLOSE)
+        }
+
+        // 風：相位是「位置」的連續函數，波才會沿地面掃過去；
+        // 純逐株亂數相位等於把空間相關性抹掉，看起來會各搖各的
+        function drawTuft(g, tf, t, amp) {
+          g.noStroke()
+          g.fill(tf.col[0], tf.col[1], tf.col[2], 210)
+          for (const b of tf.blades) {
+            let sway = 0
+            if (amp > 0) {
+              const ph = t * 1.6 + (tf.x + b.bx) * 0.012
+              sway = (Math.sin(ph) * 0.75 + Math.sin(ph * 2.3 + 1.7) * 0.25) * amp * b.flex
+            }
+            const fn = (tt) => bendAt(tt, b) + sway * Math.pow(tt, 1.3)
+            bladePolygon(g, tf.x + b.bx, tf.y + b.by, b.len, b.w, -p.HALF_PI + b.lean, fn, b.taper)
+          }
+        }
+
         // ── 場景 ───────────────────────────────────────────────────
         let trees = []
+        let tufts = []
         let buffer = null
 
         function build() {
@@ -426,8 +576,12 @@ export default function HeroSketch() {
             // 深度分層：遠的小、地平線高、顏色溶進紙色
             // 深度不從 0 起算：最近的樹也要留一點距離，否則會有巨大樹幹壓在文字上
             const d = p.constrain(0.14 + ((i + 0.5) / count) * 0.86 + p.random(-0.4, 0.4) / count, 0, 1)
-            const base = SPECIES[Math.floor(p.random(SPECIES.length))]
-            const S = { ...BASE, ...base }
+            const S = { ...BASE, ...SAKURA }
+            // 個體差異：同一物種的不同實例
+            for (const k in VARY) {
+              const [lo, hi] = VARY[k]
+              S[k] = k === 'bloom' ? Math.round(p.random(lo, hi + 1)) : p.random(lo, hi)
+            }
             S.trunkLen = p.height * S.trunkFrac
             S.seed = p.random(1000)
             S.side = p.random() < 0.5 ? 1 : -1
@@ -452,9 +606,30 @@ export default function HeroSketch() {
               x: ((slots[i] + 0.5) / count + p.random(-0.6, 0.6) / count) * p.width * 1.2 - p.width * 0.1,
               y: p.height * (0.99 - 0.3 * d),
               col: ink.map((v, k) => v + (PAPER[k] - v) * mix * 0.9),
+              // 淡櫻色：與朱印同一個色相家族但飽和度極低，不搶重點色
+              bloomCol: [238, 214, 218].map((v, k) => v + (PAPER[k] - v) * mix * 0.9),
               live: false,
             })
           }
+          // ── 草：沿地面線分帶散布，密度用低頻噪聲決定（均勻撒點會讀成程式撒的）
+          tufts = []
+          const bands = 5
+          for (let bi = 0; bi < bands; bi++) {
+            const d = (bi + 0.5) / bands
+            const gy = p.height * (0.99 - 0.3 * d)
+            const gs = 1.5 - 1.15 * d
+            const n = Math.round((p.width < 720 ? 16 : 34) * (1 - 0.45 * d))
+            for (let i = 0; i < n; i++) {
+              const gx = p.random(-0.05, 1.05) * p.width
+              if (p.random() > p.noise(gx * 0.004, bi * 4.1) * 1.5) continue
+              const tf = makeTuft(gx, gy + p.random(-5, 5) * gs, d, gs)
+              const gm = 1 - Math.exp(-2.0 * Math.pow(d, 1.25))
+              const g0 = p.width < 720 ? 214 : 202
+              tf.col = [g0, g0 + 2, g0 - 6].map((v, k) => v + (PAPER[k] - v) * gm * 0.9)
+              tufts.push(tf)
+            }
+          }
+
           trees.sort((a, b) => b.d - a.d) // 由遠到近畫
           // 只有最近兩棵跟著風動，其餘一次畫進 buffer 不重畫
           for (let i = trees.length - 1; i >= 0 && i >= trees.length - 2; i--) trees[i].live = true
@@ -464,10 +639,18 @@ export default function HeroSketch() {
         function bake() {
           buffer = p.createGraphics(p.width, p.height)
           buffer.clear()
-          for (const tr of trees) {
-            if (tr.live) continue
-            tr.sk.resolve(0, 0)
-            drawTree(buffer, tr)
+          // 場景由遠到近：草與樹依深度交錯，近景的草才會蓋在近景的樹前面
+          const items = [
+            ...trees.filter((t) => !t.live).map((t) => ({ d: t.d, kind: 'tree', ref: t })),
+            ...tufts.filter((t) => t.d > 0.3).map((t) => ({ d: t.d, kind: 'grass', ref: t })),
+          ].sort((a, b) => b.d - a.d)
+          for (const it of items) {
+            if (it.kind === 'tree') {
+              it.ref.sk.resolve(0, 0)
+              drawTree(buffer, it.ref)
+            } else {
+              drawTuft(buffer, it.ref, 0, 0)
+            }
           }
         }
 
@@ -490,6 +673,11 @@ export default function HeroSketch() {
             if (!tr.live) continue
             tr.sk.resolve(t, 0.03)
             drawTree(p, tr)
+          }
+          // 近景的草跟著風動（遠景已烘進 buffer）
+          for (const tf of tufts) {
+            if (tf.d > 0.3) continue
+            drawTuft(p, tf, p.frameCount * 0.02, 0.5)
           }
         }
 
