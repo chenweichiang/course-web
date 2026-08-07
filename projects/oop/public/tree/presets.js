@@ -43,6 +43,9 @@ const BASE = {
   barkRough: 0.085,    // 輪廓左右不對稱擾動幅度（相對半徑）
   barkScale: 0.022,    // 輪廓噪聲沿枝長的取樣尺度
   collar: 0.5,         // 枝領隆起量（相對側枝半徑）
+  rootScale: 1,        // 表面根的整體尺度（櫻這種薄皮小喬木要調小）
+  lenticels: 0,        // 橫向皮目密度（Prunus 屬特徵；0 = 改畫縱紋）
+  gloss: 0,            // 樹皮光澤：0 = 霧面，1 = 光滑反光
   trunkCurve: 0.30,    // 樹幹前半段彎曲總角度（弧度）
   trunkCurveBack: 0.42, // 後半段反向彎曲，形成 S 形
   trunkStepScale: 0.5, // 樹幹分段細度（相對 stepLen）
@@ -52,6 +55,9 @@ const BASE = {
   contour: 1,          // 輪廓線風格化強度（樹林模式會依深度遞減）
   canopyAO: 1,         // 樹冠體積遮蔽（Hegeman 球殼近似的 2D 版）
   season: 0,           // 0=夏 1=深秋（葉綠素分解進度）
+  bloom: 0,            // 花期相位：1 = 只有花沒有葉，0 = 只有葉。需要 flower 才有作用
+  flower: null,        // 花的外觀（與 leaf 分開的第二個通道）
+  cluster: null,       // 花序：長花柄 + 一節多朵。null = 沿末梢灑點（原行為）
 
   // 外觀
   bg: [244, 241, 234],
@@ -81,10 +87,8 @@ const PRESETS = [
   {
     ...BASE,
     name: '櫻',
-    // 合軸分枝：主軸不延續，反覆分叉成開展的傘形樹冠
-    flare: 0.95,
-    buttress: 0.5,
-    barkRough: 0.075,
+    // 合軸分枝：主軸不延續，反覆分叉成開展的傘形樹冠。
+    // 物種特徵的依據全部在 docs/SAKURA_REALISM.md，動這一組之前先讀。
     apical: 0.18,
     apicalLateral: 0.20,
     forkAngle: 0.50,
@@ -94,7 +98,48 @@ const PRESETS = [
     lateralRate: 0.008,
     trunkFrac: 0.19,
     maxOrder: 11,
-    leaf: { shape: 'blob', color: [226, 158, 178], size: 6.5, clump: 7, spread: 12, alpha: 150, m: 5, n1: 0.7, n2: 1.5, n3: 1.5 }, // 五瓣近圓（櫻花）
+    // 花是全畫面數量最多的圖元，一朵要一組頂點呼叫；6000 朵時光是花就吃掉
+    // 19.6ms／幀。樹冠的視覺密度在四千朵左右就飽和了
+    leafBudget: 4200,
+
+    // 樹皮：「光滑、有光澤的紅褐色，帶明顯橫向皮目；樹皮薄而易損」
+    // ——所以粗糙度趨近零、板根稜幾乎沒有、紋理方向是橫的不是縱的。
+    bark: [82, 51, 45], // 深紅褐／桃花心木（仍是 Prunus 的紅棕調，只是壓暗）
+    barkRough: 0.018,
+    lenticels: 1,
+    gloss: 1,
+    flare: 0.78,
+    buttress: 0.05, // 櫻不是榕
+    contour: 0.55, // 光滑樹皮不該有粗黑的輪廓線
+    rootScale: 0.55,
+
+    // 花與葉是兩個通道。染井吉野開花時無葉 → 預設 bloom = 1
+    bloom: 1,
+    flower: {
+      color: [238, 178, 198],
+      throat: [206, 122, 152], // 花心較深，花瓣邊緣較淡
+      stamen: [250, 226, 150],
+      size: 8,
+      spread: 6.5,
+      alpha: 176,
+      petals: 5,
+      notch: 0.088, // 花瓣先端的切口深度；再深就讀成情人節愛心（sakura-idle 實測）
+    },
+    // 花柄長、一節 3–5 朵成簇下垂——這是櫻 vs 梅（無花柄）vs 桃（短柄兩朵）的判準
+    cluster: { pedicel: 12, count: [3, 5], droop: 0.8, jitter: 0.5, stem: [132, 116, 94] },
+
+    // 葉：互生、卵形至披針形、鋸齒緣、先端漸尖
+    leaf: {
+      shape: 'ovate', // 卵形至披針形、先端漸尖——Gielis 那一族做不出來，見 recursive.js
+      color: [104, 132, 84],
+      size: 11,
+      clump: 5,
+      spread: 11,
+      alpha: 172,
+      serrate: 0.055,
+      teeth: 26,
+      vein: 1,
+    },
   },
   {
     ...BASE,

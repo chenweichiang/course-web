@@ -13,7 +13,7 @@ import { useEffect, useRef } from 'react'
 //
 // 同步方式：研究專案改了演算法後，重新複製那五個檔即可（見 README）。
 
-const FILES = ['skeleton.js', 'presets.js', 'recursive.js', 'render.js', 'light.js', 'hero.js']
+const FILES = ['skeleton.js', 'presets.js', 'recursive.js', 'venation.js', 'render.js', 'light.js', 'hero.js']
 
 function loadScript(src) {
   return new Promise((resolve, reject) => {

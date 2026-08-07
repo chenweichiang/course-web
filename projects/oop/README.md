@@ -17,16 +17,19 @@ cd ../.. && git add -A && git commit && git push   # push 後 GitHub Pages 自�
 
 ## Hero 背景：程序化生成的一棵櫻
 
-`public/tree/` 底下的 `skeleton.js` / `presets.js` / `recursive.js` / `render.js` / `light.js`
+`public/tree/` 底下的 `skeleton.js` / `presets.js` / `recursive.js` / `venation.js` / `render.js` / `light.js`
 是從研究專案 [chenweichiang/202608-research-p5-tree](https://github.com/chenweichiang/202608-research-p5-tree)
 **原封不動複製**過來的，⚠️ **不要在這裡改**——要改演算法回研究專案改，再重新複製：
 
 ```bash
 SRC=~/Documents/Developer/"202608 研究 p5畫樹"
-for f in skeleton presets recursive render light; do cp "$SRC/src/$f.js" public/tree/; done
+for f in skeleton presets recursive venation render light; do cp "$SRC/src/$f.js" public/tree/; done
 ```
 
 只有 `public/tree/hero.js` 是本站專用的驅動：挑物種（櫻）、改成適合當背景的配色、決定取景。
+
+🔴 **粉色在 `P.flower` 不在 `P.leaf`**：櫻的 `leaf` 是綠色的葉子（盛花期 `bloom: 1`
+根本不畫），`flower` 才是花。改錯地方會得到一棵沒有顏色的樹。
 登場時由下往上一塊一塊掀開（12 塊，約 1.3 秒）——做法是蓋住尚未輪到的橫帶，
 不是逐節點播放生長：`public/tree/` 不能改，而且整棵樹本來就一次畫好，遮罩便宜得多，
 風也照吹。`prefers-reduced-motion` 時直接跳過，整棵一次出現。

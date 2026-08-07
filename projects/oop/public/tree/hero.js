@@ -32,23 +32,38 @@ let heroReveal = { active: false, t0: 0, top: 0 }
 // 朱印是全站唯一重點色，花不能跟它搶。
 function heroParams() {
   const base = PRESETS[0] // 0 = 櫻
-  const P = { ...base, leaf: { ...base.leaf } }
+  // leaf / flower / cluster 都要各自展開：淺拷貝下去改顏色會污染 PRESETS 本體
+  const P = {
+    ...base,
+    leaf: { ...base.leaf },
+    flower: { ...base.flower },
+    cluster: { ...base.cluster },
+  }
   P.trunkLen = height * 0.19
   P.budget = Math.round(base.budget * 0.55)
-  P.leafBudget = Math.round(base.leafBudget * 0.55)
+  P.leafBudget = Math.round(base.leafBudget * 0.8) // 花是背景的主要色塊，太少會空
   P.curlSeed = random(1000)
   P.curveSide = random() < 0.5 ? 1 : -1
   P.season = 0
+  P.bloom = 1 // 盛花無葉（染井吉野）
   P.bg = PAPER
   // 行動版的文字幾乎滿版、沒有留白區可放樹，只能整體再淡一階
   const narrow = width < 720
-  P.bark = narrow ? [206, 201, 195] : [176, 170, 163] // 淡墨灰
-  P.leaf = {
-    ...P.leaf,
-    color: narrow ? [240, 224, 227] : [232, 206, 211], // 極淡櫻色
-    alpha: narrow ? 96 : 132,
-    gielis: true,
+  // 樹皮：研究專案的櫻是深紅褐（主角的配色），當背景會壓過文字。
+  // 這裡提到淡暖灰——保留一點紅棕才不會變成無名的灰樹
+  P.bark = narrow ? [200, 190, 184] : [170, 156, 148]
+  // 🔴 粉色在 flower 不在 leaf。櫻的 leaf 是綠色的葉子，盛花期根本不畫——
+  // 改錯地方會得到一棵沒有顏色的樹
+  // 底色不能挑太亮：受光那一側會再被 litColor 推亮一階，本來就接近紙色的粉
+  // 會直接洗成白的（實測：整片樹冠在紙上消失）
+  P.flower = {
+    ...P.flower,
+    color: narrow ? [236, 214, 219] : [226, 190, 199],
+    throat: narrow ? [228, 202, 208] : [214, 178, 189],
+    stamen: narrow ? [240, 228, 208] : [234, 218, 188],
+    alpha: narrow ? 108 : 152,
   }
+  P.cluster = { ...P.cluster, stem: narrow ? [206, 198, 188] : [182, 172, 160] }
   P.contour = narrow ? 0.35 : 0.7
   P.canopyAO = narrow ? 0.25 : 0.5
   return P
@@ -62,7 +77,7 @@ function heroFit(P, sk) {
   let maxX = -Infinity
   let minY = Infinity
   let maxY = -Infinity
-  const margin = P.leaf ? P.leaf.spread + P.leaf.size : 2
+  const margin = canopyMargin(P) // 花柄會把樹冠往下延伸，不算進去會出框
   for (const n of sk.nodes) {
     const m = n.children.length === 0 ? margin : n.radius
     minX = Math.min(minX, n.x - m)
@@ -149,6 +164,8 @@ function draw() {
   push()
   translate(heroView.tx, heroView.ty)
   scale(heroView.s)
+  // 細節門檻要看畫出來幾像素，不是模型單位
+  P.lodScale = heroView.s
   renderTree(window, heroSk, P, false)
   pop()
   if (heroReveal.active) drawReveal()
