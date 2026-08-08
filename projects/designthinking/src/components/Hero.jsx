@@ -15,7 +15,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <div className="font-mono text-sm text-neutral-500 mb-6">一學期的推測設計專案 · 北商創產系 115-1</div>
+          <div className="font-mono text-sm text-neutral-500 mb-6">一學期的推測設計專案 · 北商創科系 115-1</div>
 
           {/* 行動版：橫排標題 */}
           <h1 className="md:hidden font-display text-6xl leading-tight tracking-tight mb-6">
