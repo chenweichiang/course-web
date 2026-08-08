@@ -28,7 +28,7 @@ export default function Hero() {
             做「<span className="underline decoration-4 decoration-plan underline-offset-4">對明天的世界提出疑問</span>」的產品。
           </p>
           <p className="heti mt-5 text-neutral-600 max-w-xl leading-loose text-[0.95rem]">
-            推測設計不是用來預測未來，而是幫助我們思考自己想要或不想要什麼樣的未來，因此這個專案教三件事：把時間拉遠（從 2026 的微弱信號推演 2050 的世界，每一條推演都要有真實的根）、看見脈絡的力量（產品從來不存在於真空中，先讓世界裡長出具體的人與他的矛盾）、建立批判性思維（科技進步不一定帶來美好生活，誠實面對你設計的產品的陰影面）。
+            推測設計不是用來預測未來，而是幫助我們思考自己想要或不想要什麼樣的未來，因此這個專案教三件事：把時間拉遠（從 2026 的微弱訊號推演 2050 的世界，每一條推演都要有真實的根）、看見脈絡的力量（產品從來不存在於真空中，先讓世界裡長出具體的人與他的矛盾）、建立批判性思維（科技進步不一定帶來美好生活，誠實面對你設計的產品的陰影面）。
           </p>
           <p className="heti mt-5 font-bold max-w-xl">
             整學期只做一件事，就是<a href="#project" className="underline decoration-plan decoration-2 underline-offset-4 hover:text-plan">期末專案「2050 未來產品的脈絡設計」</a>：推演一個世界，讓一個人活進去，為他的矛盾設計一件產品。
@@ -41,7 +41,7 @@ export default function Hero() {
             ))}
           </div>
           <div className="mt-10 font-mono text-xs text-neutral-400 max-w-xl">
-            {'// 這個背景是課程方法本身：左緣的微弱信號放大、碰撞，長成通往右緣 2050 的影響鏈，每次重新整理都是一個不同的未來'}
+            {'// 這個背景是課程方法本身：左緣的微弱訊號放大、碰撞，長成通往右緣 2050 的影響鏈，每次重新整理都是一個不同的未來'}
           </div>
         </motion.div>
 

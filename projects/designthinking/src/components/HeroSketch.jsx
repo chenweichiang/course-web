@@ -1,8 +1,8 @@
 import { useEffect, useRef } from 'react'
 
 // Hero 背景：課程方法本身的視覺化。
-// 左緣是 2026 的微弱信號（小點），其中幾個被「放大」成往右生長的推演線（趨勢），
-// 線與線靠近處出現「碰撞點」（方框節點，兩個信號結合成新趨勢），
+// 左緣是 2026 的微弱訊號（小點），其中幾個被「放大」成往右生長的推演線（趨勢），
+// 線與線靠近處出現「碰撞點」（方框節點，兩個訊號結合成新趨勢），
 // 最後抵達右緣的 2050（空心圓端點，未來情境）。
 // 對應 M1 的三個動作：放大與極端化、尋找碰撞點、建構未來情境。
 // 每次載入換一個 seed，每次重新整理都是一個不同的未來。
@@ -14,7 +14,7 @@ const PLAN = [29, 79, 165]
 function buildSketch(host) {
   return (p) => {
     let paths = [] // 每條推演線：{pts, main, born}
-    let idle = [] // 沒被放大的信號點
+    let idle = [] // 沒被放大的訊號點
     let nodes = [] // 碰撞點：{x, y, at}
     let total = 0 // 生長動畫總幀數
     const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -27,7 +27,7 @@ function buildSketch(host) {
       nodes = []
       p.noiseSeed(p.random(100000))
 
-      // 左緣信號帶：24 個微弱信號
+      // 左緣訊號帶：24 個微弱訊號
       const signals = []
       for (let i = 0; i < 24; i++) {
         signals.push({ x: p.random(0.02, 0.09) * W, y: p.random(0.08, 0.95) * H })
@@ -89,7 +89,7 @@ function buildSketch(host) {
       p.clear()
       const t = still ? total : Math.min(p.frameCount, total)
 
-      // 閒置的微弱信號：極小的墨點
+      // 閒置的微弱訊號：極小的墨點
       p.noStroke()
       for (const s of idle) {
         const tw = still ? 1 : 0.75 + 0.25 * p.sin(p.frameCount * 0.02 + s.y)
@@ -117,7 +117,7 @@ function buildSketch(host) {
         }
         p.endShape()
 
-        // 起點：實心信號點
+        // 起點：實心訊號點
         p.noStroke()
         p.fill(col[0], col[1], col[2], path.main ? 200 : 90)
         p.circle(path.pts[0].x, path.pts[0].y, path.main ? 5 : 3.5)
@@ -134,7 +134,7 @@ function buildSketch(host) {
         p.noFill()
       }
 
-      // 碰撞點：方框節點（兩個信號結合成新趨勢）
+      // 碰撞點：方框節點（兩個訊號結合成新趨勢）
       for (const n of nodes) {
         if (t / total < n.at / 70) continue
         p.noFill()

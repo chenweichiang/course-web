@@ -25,7 +25,7 @@ export default function Project() {
         <div className="card-ink p-6">
           <div className="font-mono text-xs text-neutral-500 mb-2">走過的路</div>
           <p className="heti text-sm text-neutral-600 leading-loose">
-            信號 → 世界 → 人 → 矛盾 → 問題 → 構想 → 敘事 → 批判，
+            訊號 → 世界 → 人 → 矛盾 → 問題 → 構想 → 敘事 → 批判，
             上半學期把問題找對，下半學期把解法做對，兩顆鑽石之間隔著期中發表這道閘門。
           </p>
         </div>
