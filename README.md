@@ -15,7 +15,7 @@
 | 物件導向程式設計（清大科藝 115-1） | 課程主頁 | <https://course.interaction.tw/oop/> | `projects/oop/`（Vite + React；課程內容單一來源 `src/data.js`） |
 | 物件導向程式設計（清大科藝 115-1） | 作業牆 | <https://course.interaction.tw/oop/gallery/> | 同上（名單資料 `projects/oop/public/gallery/students.json`） |
 
-根目錄 `index.html`＝課程總覽首頁（原為轉址頁，2026-08 改版；新增課程記得補卡片）。
+根目錄 `index.html`＝課程總覽首頁（原為轉址頁，2026-08 改版；新增課程記得補卡片）。首頁標題字用自己的子集 `fonts/ZhuqueFangsong-subset.woff2`——**首頁文字改動後要重新子集化**（SOP 見 `projects/designthinking/README.md`，來源文字改掃根目錄 `index.html`），否則新字會 fallback 成明體。
 
 ## 結構
 
