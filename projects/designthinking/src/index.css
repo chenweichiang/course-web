@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+/* 朱雀仿宋（OFL）：自架子集（涵蓋全站用字）。重新子集化指令見 projects/designthinking/README.md。 */
+@font-face {
+  font-family: 'Zhuque Fangsong';
+  src: url('/designthinking/fonts/ZhuqueFangsong-subset.woff2') format('woff2');
+  font-weight: 400 900;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: 'Inter', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', 'Heiti TC', sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Menlo', 'Monaco', 'Courier New', monospace;
+  /* 標題字：朱雀仿宋（民國活字書卷氣）→ 明體 fallback，與課程總站一致 */
+  --font-display: 'Zhuque Fangsong', 'Noto Serif TC', 'Songti TC', 'PMingLiU', serif;
+  /* 藍晒圖藍：本頁唯一重點色（產品設計圖的顏色，也是把未來畫在圖紙上的顏色） */
+  --color-plan: #1D4FA5;
+  --color-paper: #FDFCF9;
+  --color-ink: #1A1917;
+}
+
+/* 仿宋只有單一字重：關掉瀏覽器假粗體，讓大字級以原始筆畫呈現 */
+.font-display { font-synthesis: none; }
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 64px; }
+
+body {
+  font-family: 'Inter', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', 'Heiti TC', sans-serif;
+  background-color: #FDFCF9;
+  /* 方格稿紙：24px 極淡墨線（在這一頁同時是設計圖紙的格線） */
+  background-image:
+    linear-gradient(rgba(26, 25, 23, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26, 25, 23, 0.045) 1px, transparent 1px);
+  background-size: 24px 24px;
+  color: #1A1917;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* 直排標題：由右至左 */
+.vertical-title {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  letter-spacing: 0.12em;
+}
+
+/* 圖章鈕：藍晒圖藍方塊＋白字，唯一硬陰影給可點擊的它 */
+.plan-btn {
+  background: #1D4FA5;
+  color: #FDFCF9;
+  border: 2px solid #1A1917;
+  box-shadow: 4px 4px 0 0 #1A1917;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.plan-btn:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 0 #1A1917;
+}
+
+/* 編輯感卡片：1px 墨線、紙色底、無陰影 */
+.card-ink {
+  border: 1px solid #1A1917;
+  background: #FDFCF9;
+}
+
+/* 跨頁轉場（View Transitions）：不支援的瀏覽器自動一般跳轉 */
+@view-transition { navigation: auto; }
+@media (prefers-reduced-motion: reduce) {
+  @view-transition { navigation: none; }
+}
+
+/* Heti（赫蹏）只取其排版行為，字體與字級一律繼承本站設定 */
+.heti {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  text-autospace: normal;
+  text-spacing-trim: space-all;
+}
