@@ -1,4 +1,4 @@
-import { SUBMIT_STEPS } from '../data'
+import { SUBMIT_STEPS, SUBMIT_HOWTO } from '../data'
 
 const NUMS = ['一', '二', '三', '四']
 
@@ -14,6 +14,23 @@ export default function Submission() {
           </div>
         ))}
       </div>
+      {/* GitHub 實務：老師怎麼看到、檔案怎麼上去、簡報怎麼傳 */}
+      <div className="mt-10 grid lg:grid-cols-3 border-t border-l border-neutral-900">
+        {SUBMIT_HOWTO.map((b) => (
+          <div key={b.t} className="border-b border-r border-neutral-900 bg-paper p-6">
+            <h3 className="font-bold mb-4">{b.t}</h3>
+            <ol className="space-y-3 list-none">
+              {b.items.map((it, i) => (
+                <li key={i} className="flex gap-3">
+                  <span className="font-mono text-sm text-seal shrink-0 w-5">{i + 1}</span>
+                  <span className="heti text-sm text-neutral-600 leading-relaxed">{it}</span>
+                </li>
+              ))}
+            </ol>
+          </div>
+        ))}
+      </div>
+
       <div className="mt-8 flex flex-wrap items-center gap-5">
         <a href="gallery/" className="seal-btn inline-block px-6 py-2.5 font-bold text-sm">
           參觀動物園 →

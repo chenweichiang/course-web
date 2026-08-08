@@ -58,15 +58,17 @@ export const MILESTONE_GUIDE = [
     goal: '把工具全部就位，並且親眼看過 AI 出錯，之後你才有資格說「驗證是我的工作」。',
     steps: [
       '照「準備」小節申請四個帳號，GitHub 學生驗證需要審核天數，最先辦它。',
-      '從[課程 template repo](https://github.com/chenweichiang/oop-portfolio-template) 按「Use this template」開出自己的 repo，開啟 Codespace，照 [README 用法說明](https://github.com/chenweichiang/oop-portfolio-template#readme)跑「第一次試跑」，看到會呼吸的圓，環境就緒。',
+      '從[課程 template repo](https://github.com/chenweichiang/oop-portfolio-template) 按「Use this template」開出自己的 repo（記得選 Public，老師才看得到），開啟 Codespace，照 [README 用法說明](https://github.com/chenweichiang/oop-portfolio-template#readme)跑「第一次試跑」，看到會呼吸的圓，環境就緒。',
       '在終端機輸入 claude 登入（[README 的登入 SOP](https://github.com/chenweichiang/oop-portfolio-template#readme) 有完整步驟與排錯）。',
       '請你的 AI 解釋給你聽：「請用比喻解釋 LLM 的 token、預測下一個字、context window，以及為什麼會幻覺，每講完一段就問我問題，確認我懂了。」',
       '進行「讓 AI 出錯」實驗，至少一種：問不存在的論文細節、給模稜兩可的指令，或請它計算長算式再自己驗算，把它一本正經出錯的樣子截圖存下來。',
       '打開 repo 裡的 CLAUDE.md，在「我的工作流」區寫下至少三條自己的規則，開始養成你的工作流。',
+      '把 repo 網址交給老師，交一次就好，這是老師整學期看你進度的唯一入口，怎麼交付與傳簡報詳見[繳交](#submission)一節。',
     ],
     checks: [
       'Codespace 能開、試跑的動畫會動',
       'claude 能對話',
+      'repo 是公開的、網址已交給老師',
       '完成「讓 AI 出錯」實驗並留下截圖',
       'CLAUDE.md 有至少三條自己的規則',
       'm0-outfit/ 四件套已 push',
@@ -363,6 +365,35 @@ export const SETUP_USAGE = [
   { t: '登入 Claude Code', d: '在下方終端機輸入 claude，在登入網址上連點三下全選複製，開新分頁授權，再把授權碼貼回終端機，登入一次之後環境都記得你。' },
   { t: '完成交付', d: '每個里程碑開一個資料夾放四件套（程式碼、影像、反思、AI 揭露），commit 之後 push 就算交付，commit 的時間戳就是紀錄。' },
   { t: '三個習慣', d: '固定用 2-core 機型額度才夠，做完一定 push，因為閒置三十天 codespace 會被回收，repo 裡的東西才是永遠的，離開前記得關掉 codespace 節省額度。' },
+]
+
+// GitHub 實務指南：老師怎麼看到你、檔案怎麼上去、簡報怎麼傳
+export const SUBMIT_HOWTO = [
+  {
+    t: '讓老師看到你的東西，三個條件',
+    items: [
+      'repo 保持公開(public)：從課程 template 建立時選 Public，老師和同學才看得到，也才能上作業牆。想確認就開一個無痕視窗貼上你的 repo 網址，看得到內容就是公開。',
+      'M0 就把 repo 網址交給老師：網址長得像 github.com/你的帳號/你的repo名，交一次就好，之後老師都從這個網址看你的進度，不用每站另外通知。',
+      '東西要 push 上去才算存在：檔案只放在 Codespace 或自己電腦裡，老師看不到，push 之後到 repo 網頁上按重新整理、親眼看到檔案出現，才算交付完成，commit 的時間戳就是交付紀錄。',
+    ],
+  },
+  {
+    t: '把檔案放上 GitHub，三種方法挑一種',
+    items: [
+      'Codespace 點按鈕（推薦）：左側 Source Control（樹枝圖示）→ 在訊息欄寫一句這次做了什麼 → 按 Commit → 按 Sync Changes，全程不碰指令，做完到 repo 網頁確認檔案在。',
+      '網頁直接上傳：打開你的 repo → 點進該站資料夾 → Add file → Upload files → 把檔案拖進去 → 按 Commit changes。資料夾還不存在的話，先 Add file → Create new file，檔名打「m1-world/README.md」，斜線會自動建出資料夾。',
+      '終端機指令：git add -A 然後 git commit -m "訊息" 然後 git push，會用的人用這個最快，不會也完全沒關係，前兩種方法交出來的東西一模一樣。',
+    ],
+  },
+  {
+    t: '簡報怎麼傳上 GitHub 讓老師看',
+    items: [
+      '一律匯出成 PDF 再上傳：PowerPoint、Keynote、Google Slides、Canva 都有「匯出 PDF」，GitHub 網頁能直接翻頁預覽 PDF，老師點開就能看；pptx 傳上去只能下載、不能預覽，別用。',
+      '放對位置、取對名字：簡報放進該站資料夾，檔名照「站名-簡報.pdf」，例如 m1-world/m1-簡報.pdf、m3-creature/m3-簡報.pdf，老師一眼就找得到。',
+      '大小上限 25MB（網頁上傳）：超過幾乎都是簡報裡塞了影片，把影片抽出來另外放進資料夾，簡報裡留截圖就好。',
+      '用 Google Slides 報告的人，PDF 照傳一份，另外想附雲端連結的話，記得開「知道連結的使用者皆可檢視」再把連結放進該站反思檔，連結會失效、PDF 不會，所以 PDF 才是交付本體。',
+    ],
+  },
 ]
 
 export const SUBMIT_STEPS = [
