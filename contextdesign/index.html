@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>脈絡設計與實踐 — 115-1 課程頁</title>
+    <meta name="description" content="北商創意科技與產品設計系 115-1「脈絡設計與實踐」課程：從平鎮真實場域的田野觀察出發，以里程碑 M0–M6 完成一件從文化脈絡長出來的產品。" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@700;900&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+    <style>
+      @font-face {
+        font-family: 'Zhuque Fangsong';
+        src: url('fonts/ZhuqueFangsong-subset.woff2') format('woff2');
+        font-weight: 400 900;
+        font-display: swap;
+      }
+      @view-transition { navigation: auto; }
+      @media (prefers-reduced-motion: reduce) { @view-transition { navigation: none; } }
+      :root {
+        --paper: #FDFCF9;
+        --ink: #1A1917;
+        --gray: #737373;
+        --line: #E5E1DA;
+        --accent: #C3272B;
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+      body {
+        margin: 0;
+        font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+        background: var(--paper); color: var(--ink);
+        line-height: 1.85;
+        -webkit-font-smoothing: antialiased;
+      }
+      .mono { font-family: 'IBM Plex Mono', Menlo, monospace; }
+      .serif { font-family: 'Zhuque Fangsong', 'Noto Serif TC', 'Songti TC', serif; font-synthesis: none; }
+      main { max-width: 46rem; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+      /* hero */
+      .hero { position: relative; overflow: hidden; border-bottom: 2px solid var(--ink); }
+      .hero-inner { position: relative; max-width: 46rem; margin: 0 auto; padding: 6.5rem 1.5rem 4.5rem; }
+      #dots { position: absolute; inset: 0; width: 100%; height: 100%; }
+      .kicker { font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 0.8rem; color: var(--gray); letter-spacing: 0.05em; margin-bottom: 1.25rem; }
+      h1 {
+        font-family: 'Zhuque Fangsong', 'Noto Serif TC', 'Songti TC', serif; font-synthesis: none;
+        font-size: clamp(2.6rem, 8vw, 4.2rem); font-weight: 900; letter-spacing: 0.02em;
+        line-height: 1.15; margin: 0 0 1.25rem;
+      }
+      .lede { font-size: 1.05rem; max-width: 34rem; margin: 0; }
+      .lede b { border-bottom: 3px solid var(--accent); font-weight: 700; }
+
+      /* sections */
+      section { padding-top: 3.5rem; }
+      h2 {
+        font-family: 'Zhuque Fangsong', 'Noto Serif TC', 'Songti TC', serif; font-synthesis: none;
+        font-size: 1.7rem; font-weight: 900; letter-spacing: 0.02em; margin: 0 0 0.4rem;
+      }
+      .h2-code { font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 0.78rem; color: var(--accent); letter-spacing: 0.08em; margin-bottom: 0.3rem; }
+      .h2-note { color: var(--gray); font-size: 0.92rem; margin: 0 0 1.5rem; }
+      p { margin: 0 0 1rem; }
+      section > p, section > ul { max-width: 42rem; }
+
+      /* method list */
+      .methods { list-style: none; padding: 0; margin: 1rem 0 0; border-top: 1px solid var(--line); }
+      .methods li { padding: 0.8rem 0; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 11.5em 1fr; gap: 1rem; font-size: 0.95rem; }
+      .methods li b { font-weight: 700; }
+      @media (max-width: 640px) { .methods li { grid-template-columns: 1fr; gap: 0.15rem; } }
+
+      /* milestones */
+      .ms { border-left: 2px solid var(--ink); margin: 2rem 0 0 0.35rem; padding-left: 1.6rem; position: relative; }
+      .m { position: relative; padding-bottom: 2.8rem; }
+      .m:last-child { padding-bottom: 0.5rem; }
+      .m::before {
+        content: ''; position: absolute; left: calc(-1.6rem - 7px); top: 0.5em;
+        width: 10px; height: 10px; background: var(--paper); border: 2px solid var(--ink); border-radius: 50%;
+      }
+      .m.gate::before { background: var(--accent); border-color: var(--accent); }
+      .m-code { font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 0.75rem; color: var(--gray); letter-spacing: 0.06em; }
+      .m h3 { font-family: 'Zhuque Fangsong', 'Noto Serif TC', 'Songti TC', serif; font-synthesis: none; font-size: 1.28rem; font-weight: 900; margin: 0.1rem 0 0.7rem; letter-spacing: 0.02em; }
+      .badge {
+        display: inline-block; vertical-align: 0.18em; margin-left: 0.6rem;
+        font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em;
+        color: var(--accent); border: 1.5px solid var(--accent); padding: 0.1rem 0.45rem;
+      }
+      .qa { display: grid; grid-template-columns: 6em 1fr; gap: 0.5rem 1rem; margin: 0; font-size: 0.95rem; }
+      .qa dt { font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 0.75rem; letter-spacing: 0.06em; color: var(--gray); padding-top: 0.35em; }
+      .qa dd { margin: 0; }
+      .qa dd ul { margin: 0; padding-left: 1.1rem; }
+      .qa dd li { margin-bottom: 0.2rem; }
+      @media (max-width: 640px) { .qa { grid-template-columns: 1fr; gap: 0.1rem; } .qa dd { margin-bottom: 0.6rem; } }
+      .m .gatebox {
+        border: 2px solid var(--ink); padding: 0.7rem 1rem; margin-top: 1rem;
+        font-size: 0.92rem; background: #FFF;
+      }
+      .m .gatebox b { color: var(--accent); }
+
+      /* deliverables table */
+      .tablewrap { overflow-x: auto; margin-top: 1.25rem; border: 2px solid var(--ink); background: #FFF; }
+      table { border-collapse: collapse; width: 100%; min-width: 30rem; font-size: 0.9rem; }
+      th { font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 0.75rem; letter-spacing: 0.08em; text-align: left; border-bottom: 2px solid var(--ink); padding: 0.6rem 0.9rem; }
+      td { border-bottom: 1px solid var(--line); padding: 0.55rem 0.9rem; vertical-align: top; }
+      tr:last-child td { border-bottom: 0; }
+      td.code { font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 0.8rem; white-space: nowrap; }
+      .filename { font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 0.85rem; background: #F3F0EA; padding: 0.1rem 0.4rem; }
+
+      /* grading bars */
+      .bars { margin-top: 1.25rem; display: grid; gap: 0.7rem; max-width: 42rem; }
+      .bar { display: grid; grid-template-columns: 9.5em 1fr 3em; gap: 0.8rem; align-items: center; font-size: 0.9rem; }
+      .bar .track { height: 12px; background: #EFEBE4; position: relative; }
+      .bar .fill { position: absolute; inset: 0 auto 0 0; background: var(--ink); }
+      .bar:first-child .fill { background: var(--accent); }
+      .bar .pct { font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 0.8rem; text-align: right; }
+      @media (max-width: 640px) { .bar { grid-template-columns: 7.5em 1fr 2.6em; } }
+
+      /* faq */
+      .faq { border-top: 1px solid var(--line); margin-top: 1rem; max-width: 42rem; }
+      .faq div { border-bottom: 1px solid var(--line); padding: 1rem 0; }
+      .faq dt { font-weight: 700; margin-bottom: 0.3rem; }
+      .faq dd { margin: 0; font-size: 0.95rem; color: #3D3B37; }
+
+      /* resources */
+      .links { display: grid; gap: 0.8rem; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); margin-top: 1.25rem; }
+      .links a {
+        display: block; border: 2px solid var(--ink); background: #FFF; padding: 0.9rem 1.1rem;
+        text-decoration: none; color: inherit;
+        box-shadow: 4px 4px 0 0 var(--ink);
+        transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+      }
+      .links a:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 0 var(--ink); border-color: var(--accent); }
+      .links a .tag { font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 0.7rem; color: var(--gray); letter-spacing: 0.06em; margin-bottom: 0.25rem; }
+      .links a .name { font-weight: 700; font-size: 0.95rem; }
+
+      footer { margin-top: 4.5rem; padding-top: 1.5rem; border-top: 1px solid var(--line); font-size: 0.85rem; color: var(--gray); }
+      footer a { color: inherit; }
+      a { color: inherit; }
+      p a, li a, dd a { text-decoration-color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+    </style>
+  </head>
+  <body>
+    <header class="hero">
+      <canvas id="dots" aria-hidden="true"></canvas>
+      <div class="hero-inner">
+        <div class="kicker">北商 創意科技與產品設計系 · 115-1 · 專案制</div>
+        <h1 class="serif">脈絡設計與實踐</h1>
+        <p class="lede">整門課＝完成一個期末專案：<b>一件從平鎮文化脈絡長出來的產品</b>。走進全聯、傳統市場、土地公廟、夜市，把田野觀察一路做成經過使用者驗證的設計提案。</p>
+      </div>
+    </header>
+
+    <main>
+      <section id="how">
+        <div class="h2-code mono">HOW IT WORKS</div>
+        <h2 class="serif">這門課怎麼跑</h2>
+        <p>沒有「第幾週交什麼」。課程收攏成 <b>M0–M6 七個里程碑</b>：順序固定、節奏彈性，各組依自己的專案狀態推進；只有期中與期末兩個發表日依行事曆錨定。每個里程碑寫清楚四件事：<b>要做什麼、怎麼做、為什麼要做、要思考什麼</b>。</p>
+        <p>卡住不用等下週上課：可以隨時找<a href="https://wiki.interaction.tw/index.php/%E8%AA%B2%E7%A8%8B%E5%B0%8F%E5%8A%A9%E6%95%99_MIRA_%E7%9B%AE%E5%89%8D%E8%83%BD%E5%8A%9B%E8%AA%AA%E6%98%8E">課程小助教 MIRA</a> 討論，或直接跟老師約時間。</p>
+        <p>要學會的不是「想一個點子」，而是讓設計的每一步都能追溯回田野證據：觀察紀錄 → 痛點 → 問題定義 → 構想 → 經使用者驗證的原型，一條可追溯的鏈。</p>
+        <ul class="methods">
+          <li><b>設計思考五步驟</b><span>前三步（同理→定義→發想）為訓練重心，後段完成原型與測試全循環</span></li>
+          <li><b>雙鑽石模型</b><span>發現／定義＝找對問題；發展／傳遞＝做對解法</span></li>
+          <li><b>脈絡設計（Contextual Design）</b><span>田野方法學：脈絡訪查、詮釋會議、親和圖、願景分鏡、紙上原型</span></li>
+          <li><b>質性 × 量化交叉驗證</b><span>觀察訪談給深度、問卷給廣度，洞察要有資料支撐，不靠直覺猜測</span></li>
+        </ul>
+      </section>
+
+      <section id="milestones">
+        <div class="h2-code mono">MILESTONES M0–M6</div>
+        <h2 class="serif">里程碑</h2>
+        <p class="h2-note">紅點＝閘門。允許回頭：詮釋時資料不夠就回田野，原型撐不住就回發想。各里程碑標的是參考週次（北商 115-1 行事曆：9/7 開學；期中考週＝第 9 週、期末考週＝第 18 週），除兩個發表閘門外允許各組快慢；遇停課日（9/25、9/28、10/9、10/26、12/25、12/31、1/1）該週進度順延。</p>
+        <div class="ms">
+          <div class="m gate">
+            <div class="m-code">M0 · 第 1–2 週（9/7–9/18）</div>
+            <h3 class="serif">進場準備：小組、場域與文化經驗<span class="badge">場域確認</span></h3>
+            <dl class="qa">
+              <dt>要做什麼</dt><dd>4 人分組，選定一個平鎮場域；完成《場域選擇簡報》（照片、理由、初步觀察假設）與《文化經驗簡報》；填學習動機前測。</dd>
+              <dt>怎麼做</dt><dd>實地走一趟候選場域、拍照，小組討論為什麼選它、想觀察誰與什麼行為；把組員自己逛夜市、進廟、買菜的親身經驗攤開來，對照場域找連結，最後整理成 10–15 分鐘簡報。</dd>
+              <dt>為什麼要做</dt><dd>場域是整學期所有研究的地基，研究起點不是隨機的；文化經驗盤點讓你發現自己帶著什麼預設走進場域：你自己也在文化裡。</dd>
+              <dt>要思考什麼</dt><dd>為什麼選這個場域？它有什麼文化特色？可能觀察到哪些人與行為？我們的經驗會幫助觀察，還是變成偏見？</dd>
+            </dl>
+            <div class="gatebox"><b>場域確認：</b>未經老師確認不得進田野。檢核三件事：文化厚度夠不夠、能不能反覆造訪、能不能觀察而不打擾。場域選錯，整學期都在錯的地方觀察。</div>
+          </div>
+          <div class="m">
+            <div class="m-code">M1 · 第 3–6 週（9/21–10/16）</div>
+            <h3 class="serif">田野：觀察與量化驗證</h3>
+            <dl class="qa">
+              <dt>要做什麼</dt><dd>設計《觀察紀錄表》與《觀察計畫》；實地觀察至少一輪（鼓勵多輪），整理文字＋影像紀錄；問卷 5 題以上、回收 10 份以上並圖表化。</dd>
+              <dt>怎麼做</dt><dd>先決定「要觀察什麼」：行為、互動對象、時間地點、器物、氛圍做成紀錄表欄位；進場保持中立、不打擾，捕捉自然發生的互動，用照片與速寫補充，再從觀察假設提煉問卷題目（Likert 量表）發放回收。</dd>
+              <dt>為什麼要做</dt><dd>沒有工具的觀察會淪為隨意抄寫；觀察給深度、問卷給廣度，量化數據能檢驗你的直覺式觀察是不是真的。</dd>
+              <dt>要思考什麼</dt><dd>我該觀察什麼、如何紀錄？觀察到的是文化細節還是表面流水帳？數據支持還是挑戰了假設？有什麼意外發現？</dd>
+            </dl>
+          </div>
+          <div class="m">
+            <div class="m-code">M2 · 第 7–8 週（10/19–10/30）</div>
+            <h3 class="serif">詮釋：從資料到人物與痛點</h3>
+            <dl class="qa">
+              <dt>要做什麼</dt><dd>開詮釋會議、整理痛點清單；做親和圖；建 Persona 1–2 位＋「人物 × 空間 × 行為」關係圖；訪談 1–2 人並整理摘要與主題分類。</dd>
+              <dt>怎麼做</dt><dd>團隊輪流分享觀察，把語錄與片段寫成便利貼、用親和圖（KJ 法）聚類成主題；從聚類歸納典型角色，塑造有文化特徵的 Persona；訪談用開放式問題，避免引導性提問。</dd>
+              <dt>為什麼要做</dt><dd>單一視角有偏誤，詮釋會議統合團隊共識；零散資料要結構化才看得見模式；痛點是文化落差與價值衝突，這正是設計創新的切入點。</dd>
+              <dt>要思考什麼</dt><dd>哪些需求或抱怨重複出現？代表什麼文化張力？Persona 是從田野資料歸納的，還是先射箭再畫靶？</dd>
+            </dl>
+          </div>
+          <div class="m gate">
+            <div class="m-code">M3 · 第 9 週（11/2–11/6 期中發表週）</div>
+            <h3 class="serif">定錨：問題定義<span class="badge">期中發表</span></h3>
+            <dl class="qa">
+              <dt>要做什麼</dt><dd>寫出 POV（觀點句）2 句以上、HMW（我們如何能夠…）3 句以上、洞察邏輯圖；期中發表；拍文化訪談影片 3–5 分鐘。</dd>
+              <dt>怎麼做</dt><dd>從觀察、問卷、訪談抽出洞察，寫成「人物 × 需求 × 洞察」的 POV 句；轉成 HMW 開放式提問（不寬不窄）；把「資料→洞察→POV→HMW」畫成邏輯圖，推導全程可追溯。</dd>
+              <dt>為什麼要做</dt><dd>這是研究轉向設計的關鍵節點：把龐雜資料收斂成「值得解的問題」。問題定義錯了，後面的構想再漂亮都在解錯的題。</dd>
+              <dt>要思考什麼</dt><dd>洞察是從資料來的，還是憑直覺編的？問題夠聚焦、具文化意義嗎？值得花半學期做下去嗎？</dd>
+            </dl>
+            <div class="gatebox"><b>期中鐵則：不提產品構想。</b>期中只驗一件事：你們找到的問題，值不值得做。偷跑講解法，台下就會攻擊產品而忽略脈絡。</div>
+          </div>
+          <div class="m">
+            <div class="m-code">M4 · 第 10–11 週（11/9–11/20）</div>
+            <h3 class="serif">轉譯：文化轉譯創意發想</h3>
+            <dl class="qa">
+              <dt>要做什麼</dt><dd>提出 3 項以上構想，各附敘事草圖與文化連結說明；critique 後收斂為 1 個主力構想。</dd>
+              <dt>怎麼做</dt><dd>用 SCAMPER、隱喻思考、故事化敘事發想；每個構想寫清楚它回應哪一句 HMW、跟場域文化的關係；發想時量重於質、先不批評，收斂時用文化契合度挑選。</dd>
+              <dt>為什麼要做</dt><dd>發想要夠廣才有得選；文化轉譯讓構想不只是功能解法，而是能觸動在地情感與價值的設計（例：數位支付如何接上攤販與顧客的口頭信任）。</dd>
+              <dt>要思考什麼</dt><dd>構想如何呼應文化？能不能解決我們定義的問題？哪一個值得做成原型？</dd>
+            </dl>
+          </div>
+          <div class="m">
+            <div class="m-code">M5 · 第 12–15 週（11/23–12/18）</div>
+            <h3 class="serif">原型與驗證：做出來、測起來</h3>
+            <dl class="qa">
+              <dt>要做什麼</dt><dd>Prototype 1.0＋文化使用情境稿；使用者測試 3 人以上＋師生共訪紀錄；Prototype 2.0＋設計敘事稿。</dd>
+              <dt>怎麼做</dt><dd>用最低成本做出可被試用的形式（紙上原型、手工模型、互動模擬皆可）；測試時設定情境讓受測者實際操作，忠實記錄行為與情緒、不過度干預，再根據回饋改版，寫設計故事：為誰而做？回應什麼文化痛點？改變什麼行為與經驗？</dd>
+              <dt>為什麼要做</dt><dd>原型是驗證想法的工具，不是最終產品。低成本階段反覆修正，才不會把資源砸在錯的方向；驗的是文化適切性，不只是功能可行性。</dd>
+              <dt>要思考什麼</dt><dd>原型是否真實反映文化情境？受測者自然融入還是彆扭？回饋一致嗎？2.0 的每個改動接得回測試回饋嗎？</dd>
+            </dl>
+          </div>
+          <div class="m gate">
+            <div class="m-code">M6 · 第 16–18 週（12/21–1/8 期末發表排第 17–18 週）</div>
+            <h3 class="serif">開展：展覽與發表<span class="badge">期末答辯</span></h3>
+            <dl class="qa">
+              <dt>要做什麼</dt><dd>發表簡報 10–15 分鐘＋模型展示＋專題影片 5–8 分鐘；展板、研究報告（小組）；學習反思（個人）＋投稿摘要＋累積簡報；後測。</dd>
+              <dt>怎麼做</dt><dd>展板、模型、報告互相呼應說同一個故事；發表前先模擬一次，練時間控制與分工；報告結構＝動機→方法→觀察與資料→人物誌與洞察→問題定義→發想→原型與測試→最佳化→結論。</dd>
+              <dt>為什麼要做</dt><dd>成果要能被觀眾理解、感受並產生共鳴。這一段是從「研究者／設計者」轉成「說書人」；反思與摘要讓一學期的工作有下一步。</dd>
+              <dt>要思考什麼</dt><dd>設計故事吸引人嗎？文化深度展現了嗎？研究的限制與貢獻是什麼？有什麼可延伸投稿的議題？</dd>
+            </dl>
+            <div class="gatebox"><b>答辯原則：發表中解釋不出來的段落不計分。</b>研究是自己做的，就一定講得出來。</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="deliver">
+        <div class="h2-code mono">DELIVERABLES</div>
+        <h2 class="serif">交付慣例</h2>
+        <p>交付檔名一律 <span class="filename">M編號_交付物_組名_版本_日期</span>，例：<span class="filename">M1_觀察紀錄_平鎮夜市A組_v1_2026-09-24</span>。每份交付末頁附「本次輸入素材清單」（觀察照片、問卷連結、訪談錄音編號），並回答一句：這份交付如何對應我們場域的文化？</p>
+        <div class="tablewrap">
+          <table>
+            <thead><tr><th>里程碑</th><th>交付物</th></tr></thead>
+            <tbody>
+              <tr><td class="code">M0</td><td>場域選擇簡報、文化經驗簡報、前測</td></tr>
+              <tr><td class="code">M1</td><td>觀察紀錄表＋觀察計畫、觀察紀錄（文＋影像）、問卷與圖表</td></tr>
+              <tr><td class="code">M2</td><td>痛點清單＋親和圖、Persona＋關係圖、訪談摘要與主題分類</td></tr>
+              <tr><td class="code">M3</td><td>POV＋HMW＋洞察邏輯圖、期中簡報、文化訪談影片 3–5 分</td></tr>
+              <tr><td class="code">M4</td><td>3 項構想＋敘事草圖＋文化連結說明</td></tr>
+              <tr><td class="code">M5</td><td>原型 1.0＋情境稿、測試與共訪紀錄、原型 2.0＋設計敘事稿</td></tr>
+              <tr><td class="code">M6</td><td>簡報、模型、展板、報告、影片 5–8 分、反思、投稿摘要、累積簡報</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="grading">
+        <div class="h2-code mono">GRADING</div>
+        <h2 class="serif">評量</h2>
+        <p>零紙筆考試。評量＝里程碑產出＋課堂 critique＋期中／期末發表；單次課堂 critique 屬討論性質，不逐次評分。</p>
+        <div class="bars">
+          <div class="bar"><span>文化脈絡掌握</span><span class="track"><span class="fill" style="width:100%"></span></span><span class="pct">30%</span></div>
+          <div class="bar"><span>方法與工具</span><span class="track"><span class="fill" style="width:83%"></span></span><span class="pct">25%</span></div>
+          <div class="bar"><span>敘事與表達</span><span class="track"><span class="fill" style="width:67%"></span></span><span class="pct">20%</span></div>
+          <div class="bar"><span>原型與驗證</span><span class="track"><span class="fill" style="width:50%"></span></span><span class="pct">15%</span></div>
+          <div class="bar"><span>合作與紀律</span><span class="track"><span class="fill" style="width:33%"></span></span><span class="pct">10%</span></div>
+        </div>
+        <p style="margin-top:1.5rem; font-size:0.92rem;"><b>AI 使用公約：</b>標註來源（AI 生成的圖像／文字／影片一律標示）＋不准外包思考（AI 潤飾可以，觀察與洞察必須來自自己的田野）。誠實揭露不扣分。<br /><b>倫理鐵則：</b>觀察與訪談附受訪同意＋去識別化，影像放進交付物前先處理。</p>
+      </section>
+
+      <section id="faq">
+        <div class="h2-code mono">FAQ</div>
+        <h2 class="serif">常見問題</h2>
+        <dl class="faq">
+          <div><dt>這週要交什麼？</dt><dd>本課程不以週次派作業。看小組目前在哪個里程碑，交付物做完就往下走；卡住就先找 MIRA 討論，或跟老師約時間。</dd></div>
+          <div><dt>可以回頭改嗎？</dt><dd>可以，而且鼓勵：詮釋時資料不夠就回田野補觀察，原型測試撐不住就回發想換構想。回頭要在版本紀錄寫清楚原因。</dd></div>
+          <div><dt>期中可以先講產品嗎？</dt><dd>不行。期中只驗「問題值不值得做」；講了產品，台下就會攻擊解法而忽略你們的脈絡研究。</dd></div>
+        </dl>
+      </section>
+
+      <section id="resources">
+        <div class="h2-code mono">RESOURCES</div>
+        <h2 class="serif">課程資源</h2>
+        <div class="links">
+          <a href="https://chatgpt.com/g/g-6740a661a1648191bdb58e336536fb23-jiang-zhen-wei-ke-cheng-zhu-jiao">
+            <div class="tag mono">TA · CHATGPT</div>
+            <div class="name">課程小助教 MIRA（ChatGPT 分身）</div>
+          </a>
+          <a href="https://gemini.google.com/gem/1H835mKsgFEdLM8MM492-M2eo9Sk7KMpK?usp=sharing">
+            <div class="tag mono">TA · GEMINI</div>
+            <div class="name">課程小助教 MIRA（Gemini 分身）</div>
+          </a>
+          <a href="https://wiki.interaction.tw/index.php/%E8%AA%B2%E7%A8%8B%E5%B0%8F%E5%8A%A9%E6%95%99_MIRA_%E7%9B%AE%E5%89%8D%E8%83%BD%E5%8A%9B%E8%AA%AA%E6%98%8E">
+            <div class="tag mono">TA · GUIDE</div>
+            <div class="name">MIRA 能力說明</div>
+          </a>
+          <a href="https://wiki.interaction.tw/index.php/Course:115-1/%E8%84%88%E7%B5%A1%E8%A8%AD%E8%A8%88%E8%88%87%E5%AF%A6%E8%B8%90">
+            <div class="tag mono">WIKI</div>
+            <div class="name">課程完整說明頁</div>
+          </a>
+          <a href="https://wiki.interaction.tw/index.php/%E8%84%88%E7%B5%A1%E8%A8%AD%E8%A8%88%E8%AA%B2%E7%A8%8B">
+            <div class="tag mono">THEORY</div>
+            <div class="name">脈絡設計六步驟（理論）</div>
+          </a>
+          <a href="/">
+            <div class="tag mono">HOME</div>
+            <div class="name">課程總站</div>
+          </a>
+        </div>
+        <p style="margin-top:1rem; font-size:0.9rem; color:var(--gray);">MIRA 的兩個分身功能相同，擇一登入使用即可。</p>
+      </section>
+
+      <footer>
+        脈絡設計與實踐 · 115-1 · 江振維 ·
+        <a href="https://github.com/chenweichiang/course-web">原始碼（GitHub）</a> ·
+        <a href="https://interaction.tw">interaction.tw</a>
+      </footer>
+    </main>
+
+    <script>
+      // hero：觀察點聚類——散落的田野紀錄慢慢聚成親和圖群組，再散開重來
+      (function () {
+        var canvas = document.getElementById('dots');
+        var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var ctx = canvas.getContext('2d');
+        var dpr = Math.min(window.devicePixelRatio || 1, 2);
+        var W, H, dots = [], clusters = [];
+        var N = 42, K = 4;
+        var phase = 0; // 0=散落 1=聚類
+        var phaseT = 0;
+
+        function resize() {
+          W = canvas.offsetWidth; H = canvas.offsetHeight;
+          canvas.width = W * dpr; canvas.height = H * dpr;
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        }
+        function reseed() {
+          clusters = [];
+          for (var k = 0; k < K; k++) {
+            clusters.push({ x: (0.15 + 0.7 * Math.random()) * W, y: (0.2 + 0.6 * Math.random()) * H });
+          }
+          dots.forEach(function (d) { d.c = Math.floor(Math.random() * K); });
+        }
+        function init() {
+          resize();
+          dots = [];
+          for (var i = 0; i < N; i++) {
+            dots.push({
+              x: Math.random() * W, y: Math.random() * H,
+              vx: 0, vy: 0,
+              hx: Math.random() * W, hy: Math.random() * H,
+              c: 0, accent: Math.random() < 0.18, r: 1.6 + Math.random() * 1.6
+            });
+          }
+          reseed();
+        }
+        function step() {
+          phaseT++;
+          if (phase === 0 && phaseT > 420) { phase = 1; phaseT = 0; reseed(); }
+          else if (phase === 1 && phaseT > 520) {
+            phase = 0; phaseT = 0;
+            dots.forEach(function (d) { d.hx = Math.random() * W; d.hy = Math.random() * H; });
+          }
+          ctx.clearRect(0, 0, W, H);
+          dots.forEach(function (d) {
+            var tx = phase === 1 ? clusters[d.c].x : d.hx;
+            var ty = phase === 1 ? clusters[d.c].y : d.hy;
+            d.vx += (tx - d.x) * 0.0022 + (Math.random() - 0.5) * 0.08;
+            d.vy += (ty - d.y) * 0.0022 + (Math.random() - 0.5) * 0.08;
+            d.vx *= 0.94; d.vy *= 0.94;
+            d.x += d.vx; d.y += d.vy;
+          });
+          // 聚類時淡淡的群組連線
+          if (phase === 1) {
+            var t = Math.min(1, phaseT / 200);
+            ctx.strokeStyle = 'rgba(26,25,23,' + (0.07 * t) + ')';
+            ctx.lineWidth = 1;
+            for (var k = 0; k < K; k++) {
+              var members = dots.filter(function (d) { return d.c === k; });
+              for (var i = 0; i < members.length; i++) {
+                for (var j = i + 1; j < members.length; j++) {
+                  var a = members[i], b = members[j];
+                  var dist = Math.hypot(a.x - b.x, a.y - b.y);
+                  if (dist < 70) { ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke(); }
+                }
+              }
+            }
+          }
+          dots.forEach(function (d) {
+            ctx.beginPath();
+            ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
+            ctx.fillStyle = d.accent ? 'rgba(195,39,43,0.55)' : 'rgba(26,25,23,0.28)';
+            ctx.fill();
+          });
+          requestAnimationFrame(step);
+        }
+        init();
+        window.addEventListener('resize', function () { resize(); reseed(); });
+        if (reduced) {
+          // 靜態：直接畫一幀聚類完成的樣子
+          phase = 1;
+          dots.forEach(function (d) {
+            d.x = clusters[d.c].x + (Math.random() - 0.5) * 60;
+            d.y = clusters[d.c].y + (Math.random() - 0.5) * 60;
+          });
+          phaseT = 200;
+          ctx.clearRect(0, 0, W, H);
+          dots.forEach(function (d) {
+            ctx.beginPath(); ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
+            ctx.fillStyle = d.accent ? 'rgba(195,39,43,0.55)' : 'rgba(26,25,23,0.28)';
+            ctx.fill();
+          });
+        } else {
+          requestAnimationFrame(step);
+        }
+      })();
+    </script>
+  </body>
+</html>
