@@ -84,7 +84,7 @@ ssh research-server "ls /home/ccw/server/work/interactiondesign/"
 
 ```bash
 # 1. 開發本機目錄
-cd ~/Documents/Developer/interaction_design_finalwork
+cd ~/Developer/interaction_design_finalwork
 
 # 2. 確認本地 dev 看起來正常
 npm run dev
@@ -345,7 +345,7 @@ git commit -m "從版控移除 dist/"
 
 ### 6. macOS rsync 路徑有空格
 
-部署路徑沒空格，但本機開發路徑 `~/Documents/Developer/interaction_design_finalwork/` 也沒有，問題不大。
+部署路徑沒空格，但本機開發路徑 `~/Developer/interaction_design_finalwork/` 也沒有，問題不大。
 若改名含空格，所有 cd / rsync 都要 quote。
 
 ---

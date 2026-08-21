@@ -6,7 +6,7 @@
 - build 直接輸出到 `course-web/oop/`（`vite.config.js` 已設 base 與 outDir）
 - 課程內容單一來源＝`src/data.js`（週次／評量／AI 政策／工具都在這，改內容改它）
 - 作業牆資料＝`public/gallery/students.json`（名單與每週作品連結）
-- 課程設計依據＝備課專案 `~/Documents/Developer/202608 課程 清大物件導向程式設計/`（課綱草案＋國際調查報告）
+- 課程設計依據＝備課專案 `~/Developer/202608 課程 清大物件導向程式設計/`（課綱草案＋國際調查報告）
 - `index.html` 內嵌 AI ASSISTANT CONTEXT 註解：學生把課程頁網址貼給 AI 時，AI 會讀到分階段助教規範——改 AI 政策時兩處要同步（註解＋`src/data.js`）
 
 ```bash
@@ -22,7 +22,7 @@ cd ../.. && git add -A && git commit && git push   # push 後 GitHub Pages 自�
 **原封不動複製**過來的，⚠️ **不要在這裡改**——要改演算法回研究專案改，再重新複製：
 
 ```bash
-SRC=~/Documents/Developer/"202608 研究 p5畫樹"
+SRC=~/Developer/"202608 研究 p5畫樹"
 for f in skeleton presets recursive venation render light; do cp "$SRC/src/$f.js" public/tree/; done
 ```
 
