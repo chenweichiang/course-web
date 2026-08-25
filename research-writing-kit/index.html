@@ -7,6 +7,8 @@
     <meta name="description" content="用 AI 協助寫研究論文與計畫提案的方法，加一個會自我安裝的工具箱：骨架先行、絕不編造引用、效果量與信賴區間、資料留在本機。公開 GitHub 專案。" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href="https://course.interaction.tw/research-writing-kit/" />
+    <link rel="alternate" hreflang="zh-TW" href="https://course.interaction.tw/research-writing-kit/" />
+    <link rel="alternate" hreflang="en" href="https://course.interaction.tw/research-writing-kit/en/" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@700;900&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
@@ -44,7 +46,7 @@
       a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
       a:hover { color: var(--accent); }
 
-      .kicker { font-size: 0.8rem; color: var(--gray); letter-spacing: 0.08em; margin: 0 0 1.25rem; }
+      .kicker { font-size: 0.8rem; color: var(--gray); letter-spacing: 0.08em; margin: 0 0 1.25rem; display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
       .kicker a { text-decoration: none; }
       .kicker a:hover { text-decoration: underline; }
       h1 { font-size: clamp(2.4rem, 7vw, 3.4rem); font-weight: 900; letter-spacing: -0.02em; line-height: 1.15; margin: 0 0 0.75rem; }
@@ -106,7 +108,7 @@
   </head>
   <body>
     <main>
-      <p class="kicker mono"><a href="/">課程總站</a> / 研究方法 · 公開工具箱</p>
+      <p class="kicker mono"><span><a href="/">課程總站</a> / 研究方法 · 公開工具箱</span><a href="en/" lang="en">English →</a></p>
       <h1 class="display">研究寫作套件</h1>
       <p class="lede">一套用 AI 協助寫<strong>研究論文與計畫提案</strong>的方法，加一個會<strong>自己安裝、自己客製</strong>的小工具箱。你不用懂 AI、不用會設定：把資料夾交給你的 Claude，它會問你幾個問題，再把適合你的工具建好。</p>
       <a class="cta" href="https://github.com/chenweichiang/research-writing-kit">到 GitHub 取得 <span class="mono">research-writing-kit</span></a>
@@ -162,12 +164,12 @@ claude</code></pre>
 
       <section id="inside">
         <p class="label mono">裡面有什麼</p>
-        <h2 class="display">方法、範本、十五支工具</h2>
+        <h2 class="display">方法、範本、十六支工具</h2>
         <ul class="inv">
           <li><b>方法本體</b>四份：心法、鐵則、八個 Phase 的流程、論證工法。</li>
           <li><b>七個 skill 範本</b>與<b>兩個 subagent</b>：安裝時依你的領域、語言、場域改寫，不是原檔複製。</li>
-          <li><b>十五支本機腳本</b>，多數零安裝：台灣用語與中文 AI 味檢查、英文文法與 AI 指紋、圖表色覺可及性、撤稿掃描、無引用宣稱掃描、文件回歸、回應信與投稿狀態驗證。</li>
-          <li><b>空白模板</b>（文風檔、投稿筆記、論證骨架）、三份開放學術詞表、一份填好的骨架範例。</li>
+          <li><b>十六支本機腳本</b>，多數零安裝：台灣用語與中文 AI 味檢查、英文文法與 AI 指紋、圖表色覺可及性、撤稿掃描、無引用宣稱掃描、文件回歸、回應信與投稿狀態驗證。</li>
+          <li><b>空白模板</b>（文風檔、投稿筆記、論證骨架）、開放學術詞表（兩份隨包，AWL 因授權由腳本抓取）、一份填好的骨架範例。</li>
           <li><b>繁中在地化包</b>：陸用語對照、台／臺一致性、Typst 中文 PDF 配方。</li>
         </ul>
         <p class="note">全部細節在 repo 的 <code>README.md</code>：安裝後電腦會多出什麼、論文專案裡會長出哪些檔案、外部程式與線上服務各自被誰用到。</p>
@@ -181,7 +183,7 @@ claude</code></pre>
       </section>
 
       <footer>
-        <a href="/">課程總站</a> · <a href="https://github.com/chenweichiang/research-writing-kit">原始碼（GitHub）</a> · 江振維 Chiang Chenwei
+        <a href="/">課程總站</a> · <a href="en/" lang="en">English</a> · <a href="https://github.com/chenweichiang/research-writing-kit">原始碼（GitHub）</a> · 江振維 Chiang Chenwei
       </footer>
     </main>
   </body>
