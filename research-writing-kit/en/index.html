@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Research Writing Kit — Chiang Chenwei</title>
+    <meta name="description" content="A method for writing research papers and grant proposals with an AI, plus a small toolkit that installs and customizes itself: skeleton first, no fabricated citations, effect sizes with confidence intervals, data stays on your machine. Open source on GitHub." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href="https://course.interaction.tw/research-writing-kit/en/" />
+    <link rel="alternate" hreflang="zh-TW" href="https://course.interaction.tw/research-writing-kit/" />
+    <link rel="alternate" hreflang="en" href="https://course.interaction.tw/research-writing-kit/en/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Serif:wght@700;900&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+    <style>
+      @view-transition { navigation: auto; }
+      @media (prefers-reduced-motion: reduce) { @view-transition { navigation: none; } }
+      :root {
+        --paper: #FDFCF9;
+        --ink: #1A1917;
+        --gray: #737373;
+        --line: #E5E1DA;
+        --accent: #C3272B;
+        --code-bg: #F4F1EA;
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+      body {
+        margin: 0;
+        font-family: 'Inter', -apple-system, 'Segoe UI', sans-serif;
+        background: var(--paper); color: var(--ink);
+        -webkit-font-smoothing: antialiased;
+        line-height: 1.7;
+      }
+      .mono { font-family: 'IBM Plex Mono', Menlo, monospace; }
+      .display { font-family: 'Noto Serif', Georgia, 'Times New Roman', serif; font-synthesis: none; }
+      main { max-width: 44rem; margin: 0 auto; padding: 5rem 1.5rem 4rem; }
+      a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
+      a:hover { color: var(--accent); }
+
+      .kicker { font-size: 0.8rem; color: var(--gray); letter-spacing: 0.06em; margin: 0 0 1.25rem; display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+      .kicker a { text-decoration: none; }
+      .kicker a:hover { text-decoration: underline; }
+      h1 { font-size: clamp(2.4rem, 7vw, 3.4rem); font-weight: 900; letter-spacing: -0.025em; line-height: 1.1; margin: 0 0 0.75rem; }
+      .lede { font-size: 1.15rem; line-height: 1.65; margin: 0 0 1.75rem; max-width: 34em; }
+      .lede strong { font-weight: 700; }
+
+      .cta { display: inline-block; border: 2px solid #0a0a0a; border-radius: 0.5rem; padding: 0.6rem 1.1rem;
+             box-shadow: 4px 4px 0 0 #0a0a0a; background: var(--paper); text-decoration: none; font-weight: 700;
+             font-size: 0.95rem; transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s; }
+      .cta:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 0 #0a0a0a; border-color: var(--accent); color: inherit; }
+      .cta .mono { font-weight: 500; color: var(--gray); margin-left: 0.5em; font-size: 0.85em; }
+
+      section { margin-top: 3.5rem; padding-top: 2rem; border-top: 1px solid var(--line); }
+      section > .label { font-size: 0.75rem; color: var(--gray); letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 0.5rem; }
+      h2 { font-size: 1.7rem; font-weight: 900; letter-spacing: -0.02em; margin: 0 0 1.25rem; line-height: 1.2; }
+      p { margin: 0 0 1rem; }
+
+      ol.principles { list-style: none; counter-reset: p; padding: 0; margin: 0; }
+      ol.principles li { counter-increment: p; display: grid; grid-template-columns: 2.5rem 1fr; gap: 0.75rem;
+                         padding: 0.9rem 0; border-top: 1px dashed var(--line); }
+      ol.principles li:first-child { border-top: 0; }
+      ol.principles li::before { content: counter(p, decimal-leading-zero); grid-row: 1 / span 2; font-family: 'IBM Plex Mono', Menlo, monospace;
+                                 font-size: 0.85rem; color: var(--gray); padding-top: 0.3em; }
+      ol.principles b { grid-column: 2; display: block; font-weight: 700; margin-bottom: 0.15rem; }
+      ol.principles span { grid-column: 2; color: #525252; font-size: 0.95rem; }
+
+      ol.steps { list-style: none; padding: 0; margin: 0; counter-reset: s; }
+      ol.steps li { counter-increment: s; margin: 0 0 1.5rem; }
+      ol.steps li::before { content: 'Step ' counter(s); display: block; font-family: 'IBM Plex Mono', Menlo, monospace;
+                            font-size: 0.75rem; color: var(--gray); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.3rem; }
+      pre { margin: 0.5rem 0 0; padding: 0.85rem 1rem; background: var(--code-bg); border-radius: 0.4rem;
+            font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 0.88rem; line-height: 1.6; overflow-x: auto; }
+      code { font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 0.9em; background: var(--code-bg); padding: 0.1em 0.35em; border-radius: 0.25rem; }
+      pre code { background: none; padding: 0; font-size: inherit; }
+      .say { display: block; font-family: 'Noto Serif', Georgia, serif; font-synthesis: none; font-size: 1.3rem; font-weight: 700; font-style: italic;
+             margin: 0.5rem 0 0.25rem; }
+
+      dl.uses { margin: 0; display: grid; grid-template-columns: 1fr; gap: 0; }
+      dl.uses > div { display: grid; grid-template-columns: minmax(0, 16rem) 1fr; gap: 1rem; padding: 0.85rem 0; border-top: 1px dashed var(--line); }
+      dl.uses > div:first-child { border-top: 0; }
+      dl.uses dt { font-weight: 700; margin: 0; }
+      dl.uses dt small { display: block; font-family: 'IBM Plex Mono', Menlo, monospace; font-weight: 400; font-size: 0.75rem; color: var(--gray); margin-top: 0.2rem; }
+      dl.uses dd { margin: 0; color: #525252; font-size: 0.95rem; }
+      @media (max-width: 640px) {
+        dl.uses > div { grid-template-columns: 1fr; gap: 0.25rem; }
+        ol.principles li { grid-template-columns: 2rem 1fr; }
+      }
+
+      ul.inv { padding-left: 1.2em; margin: 0; }
+      ul.inv li { margin-bottom: 0.4rem; }
+      ul.inv code { white-space: nowrap; }
+
+      .note { border-left: 3px solid var(--ink); padding: 0.25rem 0 0.25rem 1rem; color: #525252; font-size: 0.95rem; margin: 1.5rem 0 0; }
+
+      footer { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--line); font-size: 0.85rem; color: var(--gray); }
+      footer a { color: inherit; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="kicker mono"><span><a href="/">Course hub</a> / Research method · Open toolkit</span><a href="../" lang="zh-TW">中文版 →</a></p>
+      <h1 class="display">Research Writing Kit</h1>
+      <p class="lede">A method for writing <strong>research papers and grant proposals</strong> with an AI, plus a small toolkit that <strong>installs and customizes itself</strong>. You don't need to know AI or do any setup. Hand the folder to your Claude; it asks you a few questions, then builds the tools that fit you.</p>
+      <a class="cta" href="https://github.com/chenweichiang/research-writing-kit">Get it on GitHub <span class="mono">research-writing-kit</span></a>
+
+      <section id="what">
+        <p class="label mono">What it is</p>
+        <h2 class="display">Not a template. A method.</h2>
+        <p>This is not something you paste in. You own the ideas and the argument; the AI does the legwork: finds and verifies sources, builds the argument skeleton, writes the prose, then checks its own work. Five principles run through the whole thing:</p>
+        <ol class="principles">
+          <li><b>Skeleton first</b><span>Never write prose from a blank page. That squeezing is where "AI prose" comes from. Build the argument structure first, then write to it.</span></li>
+          <li><b>No fabricated citations, ever</b><span>Every reference is actually fetched and its support direction verified. Can't verify it? It's marked "unverified", not faked. Before delivery it also scans for retractions and for claims with no citation at all.</span></li>
+          <li><b>Your voice</b><span>When you write in your native language, the prose matches your own habits instead of being sanded into generic AI prose. English drafts get a separate rhythm pass before delivery.</span></li>
+          <li><b>Honesty built in</b><span>Effect sizes with confidence intervals, not just p-values. Likert items are not treated as continuous. Before claiming an effect, the design is checked for whether it can answer the question at all.</span></li>
+          <li><b>Data stays on your machine</b><span>Unpublished drafts and raw research data are never uploaded. Online services only ever see bibliographic data such as DOIs and titles.</span></li>
+        </ol>
+      </section>
+
+      <section id="start">
+        <p class="label mono">Getting started</p>
+        <h2 class="display">Three steps, five minutes</h2>
+        <ol class="steps">
+          <li>
+            Get the folder. It's a public repository, no login needed. Clone it with git, or use <b>Code → Download ZIP</b> on the GitHub page.
+            <pre><code>git clone https://github.com/chenweichiang/research-writing-kit.git</code></pre>
+          </li>
+          <li>
+            Open <a href="https://claude.com/claude-code">Claude Code</a> inside that folder. It needs a paid Claude plan; a free claude.ai account won't work.
+            <pre><code>cd research-writing-kit
+claude</code></pre>
+          </li>
+          <li>
+            Paste one line and let it take over. It will ask what you write, in which language, where you submit, and whether you have past writing it can learn your voice from. Then it generates skills that are yours.
+            <span class="say">"Read CLAUDE.md and set me up."</span>
+          </li>
+        </ol>
+        <p class="note">Still on the claude.ai website with no Claude Code? Connect the repo to the web Claude and say the same line. It walks you onto Claude Code step by step (<code>setup/WEB.md</code>).</p>
+      </section>
+
+      <section id="daily">
+        <p class="label mono">Day to day</p>
+        <h2 class="display">Just say it</h2>
+        <p>Open Claude Code in the folder that holds your paper and say what you need, the way you'd say it to a person. You can also type <code>/skill-name</code> directly.</p>
+        <dl class="uses">
+          <div><dt>"Help me write this paper / proposal"<small>/co-author</small></dt><dd>Collaborative writing: sources, skeleton, prose, and six pre-delivery gates (retractions, uncited claims, numbers ledger, figure provenance, submission statements, final review).</dd></div>
+          <div><dt>"Check this draft before I submit"<small>/paper-review</small></dt><dd>Five layers: mechanical, diction, language, reviewer's-eye logic, delivery completeness. Checks only; it does not rewrite.</dd></div>
+          <div><dt>"Do these citations really support what I wrote?"<small>/verify-citations</small></dt><dd>Reads the cited PDFs sentence by sentence, judges support direction, verifies DOIs, and sends flagged items to a sceptical second reviewer.</dd></div>
+          <div><dt>"Get me the PDFs of these references"<small>/fetch-refs</small></dt><dd>Multi-source fetching, per-paper content check, filing. Includes citation snowballing.</dd></div>
+          <div><dt>"The reviews are back, help me respond"<small>/rebuttal</small></dt><dd>Split the points, rule on each, make the revisions, write the letter, verify completeness before sending.</dd></div>
+          <div><dt>"Don't make that mistake again"<small>/doc-regress</small></dt><dd>Turns a caught error into a standing check that scans the whole document and blocks recurrence. Includes the numbers ledger.</dd></div>
+          <div><dt>"Build the submission PDF"<small>/build-pdf</small></dt><dd>Formats to the venue template; second-language papers ship with the back-translation as a pair.</dd></div>
+        </dl>
+      </section>
+
+      <section id="inside">
+        <p class="label mono">What's inside</p>
+        <h2 class="display">Method, templates, sixteen tools</h2>
+        <ul class="inv">
+          <li><b>The method</b> in four documents: philosophy, iron rules, the eight-phase workflow, argumentation moves.</li>
+          <li><b>Seven skill templates</b> and <b>two subagents</b>: adapted to your field, language, and venues at install time, not copied verbatim.</li>
+          <li><b>Sixteen local scripts</b>, most with zero install: Taiwan-usage and Chinese AI-style checks, English grammar and AI-fingerprint diagnostics, figure colour-vision accessibility, retraction scan, uncited-claims scan, document regression, response-letter and submission-ledger checks.</li>
+          <li><b>Blank templates</b> (voice profile, venue notes, argument skeleton), open academic word lists (two bundled; the AWL is fetched by a script because of its licence), one worked skeleton example.</li>
+          <li><b>Traditional Chinese (Taiwan) add-on</b>: mainland-vs-Taiwan term check, 台/臺 consistency, a Typst recipe for Chinese PDFs.</li>
+        </ul>
+        <p class="note">Everything in detail is in the repo's <code>README.en.md</code>: what appears on your computer after install, what grows inside your paper project, and which external program or online service each feature uses.</p>
+      </section>
+
+      <section id="about">
+        <p class="label mono">Origin and licence</p>
+        <h2 class="display">Grown from one person's practice</h2>
+        <p>The method comes from how <a href="https://interaction.tw">Chiang Chenwei</a> writes papers, proposals, and reviewer responses; it was de-personalized and published so researchers and students can make it their own. Code is MIT; the method and documents are CC BY 4.0, so you may adapt, translate, and teach it as long as you credit the source. The third-party word lists carry their own licences (AWL is CC BY-NC-ND); see <code>NOTICE.md</code> in the repo.</p>
+        <a class="cta" href="https://github.com/chenweichiang/research-writing-kit">GitHub · chenweichiang/research-writing-kit</a>
+      </section>
+
+      <footer>
+        <a href="/">Course hub</a> · <a href="../" lang="zh-TW">中文版</a> · <a href="https://github.com/chenweichiang/research-writing-kit">Source (GitHub)</a> · Chiang Chenwei 江振維
+      </footer>
+    </main>
+  </body>
+</html>
