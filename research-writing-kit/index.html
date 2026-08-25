@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>研究寫作套件 — 江振維</title>
+    <meta name="description" content="用 AI 協助寫研究論文與計畫提案的方法，加一個會自我安裝的工具箱：骨架先行、絕不編造引用、效果量與信賴區間、資料留在本機。公開 GitHub 專案。" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href="https://course.interaction.tw/research-writing-kit/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@700;900&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+    <style>
+      @font-face {
+        font-family: 'Zhuque Fangsong';
+        src: url('/fonts/ZhuqueFangsong-subset.woff2') format('woff2');
+        font-weight: 400 900;
+        font-display: swap;
+      }
+      @view-transition { navigation: auto; }
+      @media (prefers-reduced-motion: reduce) { @view-transition { navigation: none; } }
+      :root {
+        --paper: #FDFCF9;
+        --ink: #1A1917;
+        --gray: #737373;
+        --line: #E5E1DA;
+        --accent: #C3272B;
+        --code-bg: #F4F1EA;
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+      body {
+        margin: 0;
+        font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+        background: var(--paper); color: var(--ink);
+        -webkit-font-smoothing: antialiased;
+        line-height: 1.85;
+        text-spacing-trim: space-first;
+      }
+      .mono { font-family: 'IBM Plex Mono', Menlo, monospace; }
+      .display { font-family: 'Zhuque Fangsong', 'Noto Serif TC', 'Songti TC', serif; font-synthesis: none; }
+      main { max-width: 46rem; margin: 0 auto; padding: 5rem 1.5rem 4rem; }
+      a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
+      a:hover { color: var(--accent); }
+
+      .kicker { font-size: 0.8rem; color: var(--gray); letter-spacing: 0.08em; margin: 0 0 1.25rem; }
+      .kicker a { text-decoration: none; }
+      .kicker a:hover { text-decoration: underline; }
+      h1 { font-size: clamp(2.4rem, 7vw, 3.4rem); font-weight: 900; letter-spacing: -0.02em; line-height: 1.15; margin: 0 0 0.75rem; }
+      .lede { font-size: 1.15rem; line-height: 1.8; margin: 0 0 1.75rem; max-width: 36em; }
+      .lede strong { font-weight: 700; }
+
+      .cta { display: inline-block; border: 2px solid #0a0a0a; border-radius: 0.5rem; padding: 0.6rem 1.1rem;
+             box-shadow: 4px 4px 0 0 #0a0a0a; background: var(--paper); text-decoration: none; font-weight: 700;
+             font-size: 0.95rem; transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s; }
+      .cta:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 0 #0a0a0a; border-color: var(--accent); color: inherit; }
+      .cta .mono { font-weight: 500; color: var(--gray); margin-left: 0.5em; font-size: 0.85em; }
+
+      section { margin-top: 3.5rem; padding-top: 2rem; border-top: 1px solid var(--line); }
+      section > .label { font-size: 0.75rem; color: var(--gray); letter-spacing: 0.08em; margin: 0 0 0.5rem; }
+      h2 { font-size: 1.7rem; font-weight: 900; letter-spacing: -0.01em; margin: 0 0 1.25rem; line-height: 1.3; }
+      p { margin: 0 0 1rem; }
+
+      ol.principles { list-style: none; counter-reset: p; padding: 0; margin: 0; }
+      ol.principles li { counter-increment: p; display: grid; grid-template-columns: 2.5rem 1fr; gap: 0.75rem;
+                         padding: 0.9rem 0; border-top: 1px dashed var(--line); }
+      ol.principles li:first-child { border-top: 0; }
+      ol.principles li::before { content: counter(p, decimal-leading-zero); font-family: 'IBM Plex Mono', Menlo, monospace;
+                                 font-size: 0.85rem; color: var(--gray); padding-top: 0.35em; }
+      ol.principles b { grid-column: 2; display: block; font-weight: 700; margin-bottom: 0.15rem; }
+      ol.principles span { grid-column: 2; color: #525252; font-size: 0.95rem; }
+      ol.principles li::before { grid-row: 1 / span 2; }
+
+      ol.steps { list-style: none; padding: 0; margin: 0; counter-reset: s; }
+      ol.steps li { counter-increment: s; margin: 0 0 1.5rem; }
+      ol.steps li::before { content: '步驟 ' counter(s); display: block; font-family: 'IBM Plex Mono', Menlo, monospace;
+                            font-size: 0.75rem; color: var(--gray); letter-spacing: 0.08em; margin-bottom: 0.3rem; }
+      pre { margin: 0.5rem 0 0; padding: 0.85rem 1rem; background: var(--code-bg); border-radius: 0.4rem;
+            font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 0.88rem; line-height: 1.6; overflow-x: auto; }
+      code { font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 0.9em; background: var(--code-bg); padding: 0.1em 0.35em; border-radius: 0.25rem; }
+      pre code { background: none; padding: 0; font-size: inherit; }
+      .say { display: block; font-family: 'Zhuque Fangsong', 'Noto Serif TC', serif; font-synthesis: none; font-size: 1.35rem; font-weight: 700;
+             margin: 0.5rem 0 0.25rem; }
+
+      dl.uses { margin: 0; display: grid; grid-template-columns: 1fr; gap: 0; }
+      dl.uses > div { display: grid; grid-template-columns: minmax(0, 15rem) 1fr; gap: 1rem; padding: 0.85rem 0; border-top: 1px dashed var(--line); }
+      dl.uses > div:first-child { border-top: 0; }
+      dl.uses dt { font-weight: 700; margin: 0; }
+      dl.uses dt small { display: block; font-family: 'IBM Plex Mono', Menlo, monospace; font-weight: 400; font-size: 0.75rem; color: var(--gray); margin-top: 0.2rem; }
+      dl.uses dd { margin: 0; color: #525252; font-size: 0.95rem; }
+      @media (max-width: 640px) {
+        dl.uses > div { grid-template-columns: 1fr; gap: 0.25rem; }
+        ol.principles li { grid-template-columns: 2rem 1fr; }
+      }
+
+      ul.inv { padding-left: 1.2em; margin: 0; }
+      ul.inv li { margin-bottom: 0.4rem; }
+      ul.inv code { white-space: nowrap; }
+
+      .note { border-left: 3px solid var(--ink); padding: 0.25rem 0 0.25rem 1rem; color: #525252; font-size: 0.95rem; margin: 1.5rem 0 0; }
+
+      footer { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--line); font-size: 0.85rem; color: var(--gray); }
+      footer a { color: inherit; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="kicker mono"><a href="/">課程總站</a> / 研究方法 · 公開工具箱</p>
+      <h1 class="display">研究寫作套件</h1>
+      <p class="lede">一套用 AI 協助寫<strong>研究論文與計畫提案</strong>的方法，加一個會<strong>自己安裝、自己客製</strong>的小工具箱。你不用懂 AI、不用會設定：把資料夾交給你的 Claude，它會問你幾個問題，再把適合你的工具建好。</p>
+      <a class="cta" href="https://github.com/chenweichiang/research-writing-kit">到 GitHub 取得 <span class="mono">research-writing-kit</span></a>
+
+      <section id="what">
+        <p class="label mono">這是什麼</p>
+        <h2 class="display">不是模板，是方法</h2>
+        <p>它不是那種「寫好給你貼上去」的東西。你擁有想法與論證，AI 負責跑腿——找文獻、查證引用、架論證骨架、寫成稿、再自己檢查。五個原則貫穿整套流程：</p>
+        <ol class="principles">
+          <li><b>先架骨架再寫字</b><span>不從空白頁硬擠出稿——那種硬擠就是「AI 味」的來源。先把論證結構立好，再照著它寫成文字。</span></li>
+          <li><b>絕不編造引用</b><span>每一條文獻都真的抓下來、確認方向對；查不到就標「未驗證」，不假裝。交付前還會掃撤稿與沒掛引用的宣稱。</span></li>
+          <li><b>像你的聲音</b><span>用母語寫時對齊你自己的文風，不磨成通用 AI 腔；英文稿交付前另有去節奏的複查。</span></li>
+          <li><b>誠實內建</b><span>效果量與信賴區間（不只 p 值）、Likert 不當連續變數、要主張效果先診斷設計能不能回答問題。</span></li>
+          <li><b>資料留在你電腦</b><span>未發表稿件與研究原始資料永遠不上傳；線上服務只拿到 DOI 與標題這類書目資料。</span></li>
+        </ol>
+      </section>
+
+      <section id="start">
+        <p class="label mono">怎麼開始</p>
+        <h2 class="display">三步，五分鐘</h2>
+        <ol class="steps">
+          <li>
+            拿到資料夾。公開 repo，不用登入；有 git 就 clone，沒有就在 GitHub 頁面按 <b>Code → Download ZIP</b>。
+            <pre><code>git clone https://github.com/chenweichiang/research-writing-kit.git</code></pre>
+          </li>
+          <li>
+            在資料夾裡打開 <a href="https://claude.com/claude-code">Claude Code</a>（需付費的 Claude 方案；免費的 claude.ai 帳號不能用）。
+            <pre><code>cd research-writing-kit
+claude</code></pre>
+          </li>
+          <li>
+            貼這一句話，剩下的交給它：它會問你寫什麼、用什麼語言、想投哪、有沒有舊稿可以學你的文風，然後生成專屬於你的 skill。
+            <span class="say">「讀 CLAUDE.md，幫我設定。」</span>
+          </li>
+        </ol>
+        <p class="note">還在 claude.ai 網頁版、沒有 Claude Code？把 repo 連給網頁版的 Claude 說同一句話，它會一步步帶你裝好再搬過去（<code>setup/WEB.md</code>）。</p>
+      </section>
+
+      <section id="daily">
+        <p class="label mono">之後每天怎麼用</p>
+        <h2 class="display">用講的就好</h2>
+        <p>在放論文的資料夾裡開 Claude Code，像平常講話一樣說要做什麼；也可以直接打 <code>/skill名</code>。</p>
+        <dl class="uses">
+          <div><dt>「幫我寫這篇論文／提案」<small>/co-author</small></dt><dd>協作寫作：找文獻、架骨架、寫成稿、交付前六道關卡（撤稿、無引用宣稱、數字帳本、圖表溯源、投稿聲明、終審）。</dd></div>
+          <div><dt>「幫我檢查這篇再投」<small>/paper-review</small></dt><dd>五層檢查：機械層、用字、語言、審稿視角的邏輯、交付完整性；只檢查不改稿。</dd></div>
+          <div><dt>「這些引用撐得住我寫的話嗎？」<small>/verify-citations</small></dt><dd>逐句對照 PDF 原文判定引用方向，DOI 權威查驗，被標記的再派懷疑論二審。</dd></div>
+          <div><dt>「幫我把引用的 PDF 收齊」<small>/fetch-refs</small></dt><dd>多源抓取、逐篇確認內容真的相符、歸檔；含引用滾雪球。</dd></div>
+          <div><dt>「審稿意見回來了，幫我回」<small>/rebuttal</small></dt><dd>拆點、逐點裁定、落實修訂、回應信、交付前完整性驗證。</dd></div>
+          <div><dt>「別再犯同樣的錯」<small>/doc-regress</small></dt><dd>把抓到的錯寫成常駐檢查，改完全庫重掃，復發就擋下；數字帳本勾稽。</dd></div>
+          <div><dt>「把這篇排成投稿 PDF」<small>/build-pdf</small></dt><dd>依場域模板排版；第二語言稿連同回譯稿成對交付。</dd></div>
+        </dl>
+      </section>
+
+      <section id="inside">
+        <p class="label mono">裡面有什麼</p>
+        <h2 class="display">方法、範本、十五支工具</h2>
+        <ul class="inv">
+          <li><b>方法本體</b>四份：心法、鐵則、八個 Phase 的流程、論證工法。</li>
+          <li><b>七個 skill 範本</b>與<b>兩個 subagent</b>：安裝時依你的領域、語言、場域改寫，不是原檔複製。</li>
+          <li><b>十五支本機腳本</b>，多數零安裝：台灣用語與中文 AI 味檢查、英文文法與 AI 指紋、圖表色覺可及性、撤稿掃描、無引用宣稱掃描、文件回歸、回應信與投稿狀態驗證。</li>
+          <li><b>空白模板</b>（文風檔、投稿筆記、論證骨架）、三份開放學術詞表、一份填好的骨架範例。</li>
+          <li><b>繁中在地化包</b>：陸用語對照、台／臺一致性、Typst 中文 PDF 配方。</li>
+        </ul>
+        <p class="note">全部細節在 repo 的 <code>README.md</code>：安裝後電腦會多出什麼、論文專案裡會長出哪些檔案、外部程式與線上服務各自被誰用到。</p>
+      </section>
+
+      <section id="about">
+        <p class="label mono">出處與授權</p>
+        <h2 class="display">從一個人的寫作實務長出來</h2>
+        <p>這套方法脫胎於<a href="https://interaction.tw">江振維</a>自己寫論文、提案與審稿回應的工作流，去個人化後公開；歡迎研究者與學生拿去改成自己的版本。方法文件保留著作權，改寫自用不限；第三方學術詞表各有授權（AWL 為 CC BY-NC-ND），細則見 repo 的 <code>NOTICE.md</code>。用到本方法請註明出處。</p>
+        <a class="cta" href="https://github.com/chenweichiang/research-writing-kit">GitHub · chenweichiang/research-writing-kit</a>
+      </section>
+
+      <footer>
+        <a href="/">課程總站</a> · <a href="https://github.com/chenweichiang/research-writing-kit">原始碼（GitHub）</a> · 江振維 Chiang Chenwei
+      </footer>
+    </main>
+  </body>
+</html>
