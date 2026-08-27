@@ -3,6 +3,7 @@ import Hero from './components/Hero'
 import Project from './components/Project'
 import Method from './components/Method'
 import MilestoneGuide from './components/MilestoneGuide'
+import Deliverables from './components/Deliverables'
 import Toolkit from './components/Toolkit'
 import Assessment from './components/Assessment'
 import AIPolicy from './components/AIPolicy'
@@ -11,9 +12,10 @@ const SECTIONS = [
   { id: 'project', num: '01', navLabel: '期末專案', label: '期末專案：2050 未來產品的脈絡設計', summary: '整個專案只做一件事：推演一個 2050 的世界，讓一個人活進去，為他的矛盾設計一件產品，並誠實面對它的陰影', Component: Project },
   { id: 'method', num: '02', navLabel: '方法', label: '方法骨架', summary: '五步驟是動作、雙鑽石是節奏、推測設計是視角，循環經濟是整學期的隱藏軸線', Component: Method },
   { id: 'milestones', num: '03', navLabel: '里程碑', label: '里程碑指南', summary: '照著做就能走完的七站，每站都有步驟、完成清單（會記住你的進度）與卡點提醒', Component: MilestoneGuide },
-  { id: 'toolkit', num: '04', navLabel: '方法卡', label: '方法卡', summary: '課程方法卡分五組，每張都有起手式，複製給你的 AI 就能開工', Component: Toolkit },
-  { id: 'assessment', num: '05', navLabel: '發表', label: '發表與評量', summary: '期中只講世界與問題，期末講完整的敘事與批判，沒有紙筆考試', Component: Assessment },
-  { id: 'ai-policy', num: '06', navLabel: 'AI 公約', label: 'AI 公約', summary: '本課程獎勵透明，不獎勵僥倖', Component: AIPolicy },
+  { id: 'deliverables', num: '04', navLabel: '交付物', label: '交付物規格', summary: '每一份要交的東西長什麼樣、要填哪些欄、填好是什麼樣子，依里程碑排好，範例用同一個示範專案從頭貫穿到尾', Component: Deliverables },
+  { id: 'toolkit', num: '05', navLabel: '方法卡', label: '方法卡', summary: '課程方法卡分五組，每張都有起手式，複製給你的 AI 就能開工', Component: Toolkit },
+  { id: 'assessment', num: '06', navLabel: '發表', label: '發表與評量', summary: '期中只講世界與問題，期末講完整的敘事與批判，沒有紙筆考試', Component: Assessment },
+  { id: 'ai-policy', num: '07', navLabel: 'AI 公約', label: 'AI 公約', summary: '本課程獎勵透明，不獎勵僥倖', Component: AIPolicy },
 ]
 
 export default function App() {

@@ -4,7 +4,7 @@
 
 - 上線網址：<https://course.interaction.tw/designthinking/>
 - build 直接輸出到 `course-web/designthinking/`（`vite.config.js` 已設 base 與 outDir）
-- 課程內容單一來源＝`src/data.js`（里程碑／方法卡／評量／AI 公約都在這，改內容改它）
+- 課程內容單一來源＝`src/data.js`（里程碑／方法卡／評量／AI 公約都在這，改內容改它）＋`src/deliverables.js`（交付物規格：31 份交付物的欄位與「2050 呼吸配額」示範範例；改完用 `node` 匯出到備課專案 `教材/交付物規格.md`，匯出腳本見 git log 2026-08-27）
 - 課程設計依據＝備課專案 `~/Developer/202608 課程 設計思考/`（課綱草案＋114-2 知識庫）
 - `index.html` 給 AI 讀的協作規範有兩層：`<div id="root">` 裡的**靜態正文**（抓取器真正讀到的那份，React 掛載後被整段取代；2026-08-27 實測 HTML 註解會被 AI 抓取器剝掉、單頁應用原始 HTML 只剩標題，所以必須放正文）＋頂端的 AI ASSISTANT CONTEXT 註解（給讀原始碼的人／AI）——改 AI 政策時**三處**要同步（靜態正文、註解、`src/data.js`）。驗證法：`curl -sL https://course.interaction.tw/designthinking/` 剝掉註解與 script 後仍應有 >1000 字
 - 課程小助教 MIRA 的連結在 `src/data.js` 的 `MIRA`，權威來源＝wiki 首頁的 MIRA 區塊
