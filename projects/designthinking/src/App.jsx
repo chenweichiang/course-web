@@ -11,7 +11,7 @@ const SECTIONS = [
   { id: 'project', num: '01', navLabel: '期末專案', label: '期末專案：2050 未來產品的脈絡設計', summary: '整個專案只做一件事：推演一個 2050 的世界，讓一個人活進去，為他的矛盾設計一件產品，並誠實面對它的陰影', Component: Project },
   { id: 'method', num: '02', navLabel: '方法', label: '方法骨架', summary: '五步驟是動作、雙鑽石是節奏、推測設計是視角，循環經濟是整學期的隱藏軸線', Component: Method },
   { id: 'milestones', num: '03', navLabel: '里程碑', label: '里程碑指南', summary: '照著做就能走完的七站，每站都有步驟、完成清單（會記住你的進度）與卡點提醒', Component: MilestoneGuide },
-  { id: 'toolkit', num: '04', navLabel: '方法卡', label: '方法卡', summary: '十二張課程方法卡，每張都有起手式，複製給你的 AI 就能開工', Component: Toolkit },
+  { id: 'toolkit', num: '04', navLabel: '方法卡', label: '方法卡', summary: '課程方法卡分五組，每張都有起手式，複製給你的 AI 就能開工', Component: Toolkit },
   { id: 'assessment', num: '05', navLabel: '發表', label: '發表與評量', summary: '期中只講世界與問題，期末講完整的敘事與批判，沒有紙筆考試', Component: Assessment },
   { id: 'ai-policy', num: '06', navLabel: 'AI 公約', label: 'AI 公約', summary: '本課程獎勵透明，不獎勵僥倖', Component: AIPolicy },
 ]
