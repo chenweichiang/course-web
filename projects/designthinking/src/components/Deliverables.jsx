@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { DELIVERABLES, DEMO } from '../deliverables'
+import { DELIVERABLES, DEMO, MIRO } from '../deliverables'
 import { MILESTONE_GUIDE } from '../data'
 
 function Label({ children }) {
@@ -89,6 +89,14 @@ export default function Deliverables() {
 
   return (
     <div className="space-y-10">
+      <div className="border-2 border-neutral-900 bg-paper p-5">
+        <div className="font-mono text-xs text-plan mb-2">{MIRO.title}</div>
+        <ol className="list-decimal pl-5 space-y-1">
+          {MIRO.rules.map((r) => (
+            <li key={r} className="heti text-sm text-neutral-700 leading-relaxed">{r}</li>
+          ))}
+        </ol>
+      </div>
       <div className="flex flex-wrap items-start justify-between gap-4">
         <p className="heti text-sm text-neutral-600 leading-loose max-w-3xl">{DEMO.note}</p>
         <button
