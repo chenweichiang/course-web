@@ -9,7 +9,7 @@
 
 | 課程 | 頁面 | 網址 | 原始碼 |
 |------|------|------|--------|
-| 設計思考（北商創科 115-1） | 課程主頁 | <https://course.interaction.tw/designthinking/> | `projects/designthinking/`（Vite + React；課程內容單一來源 `src/data.js`） |
+| 設計思考（北商創科 115-1） | 課程主頁 | <https://course.interaction.tw/designthinking/> | `projects/designthinking/`（Vite + React；課程內容單一來源 `src/data.js`＋`src/deliverables.js` 31 張九欄規格卡；`node scripts/export-specs.mjs` 匯出到備課 repo 教材與 wiki） |
 | 脈絡設計與實踐（北商創科 115-1） | 課程主頁 | <https://course.interaction.tw/contextdesign/> | `contextdesign/`（純手寫靜態 HTML；標題字子集 `contextdesign/fonts/`；「交付物規格」區段由備課 repo `202608 課程 脈絡設計與實踐/scripts/build_web.py` 從 `教材/*.md` 生成，SPECS 標記內勿手改） |
 | 互動設計 | 黑盒子 · 期末專案 | <https://course.interaction.tw/interactiondesign/blackbox/> | `projects/blackbox/`（Vite + React） |
 | 物件導向程式設計（清大科藝 115-1） | 課程主頁 | <https://course.interaction.tw/oop/> | `projects/oop/`（Vite + React；課程內容單一來源 `src/data.js`） |

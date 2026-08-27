@@ -2,6 +2,10 @@ import { useState } from 'react'
 import { DELIVERABLES, DEMO } from '../deliverables'
 import { MILESTONE_GUIDE } from '../data'
 
+function Label({ children }) {
+  return <div className="font-mono text-xs text-plan mt-4 mb-2">{children}</div>
+}
+
 function Item({ d, open, onToggle }) {
   return (
     <div className="border-b border-neutral-900">
@@ -19,19 +23,51 @@ function Item({ d, open, onToggle }) {
         <div className="px-5 pb-6 pl-13 grid lg:grid-cols-[1fr_1.3fr] gap-6">
           <div>
             <p className="heti text-sm text-neutral-700 leading-relaxed">{d.what}</p>
-            <div className="font-mono text-xs text-plan mt-4 mb-2">要有的欄位</div>
+            <Label>要有的欄位</Label>
             <ol className="list-decimal pl-5 space-y-1">
               {d.fields.map((f) => (
                 <li key={f} className="text-sm text-neutral-700 leading-relaxed">{f}</li>
               ))}
             </ol>
-            {d.tips && (
-              <p className="heti text-sm text-neutral-600 leading-relaxed mt-4 border-l-2 border-plan pl-3">{d.tips}</p>
+            {d.how && (
+              <>
+                <Label>怎麼做</Label>
+                <ol className="list-decimal pl-5 space-y-1">
+                  {d.how.map((f) => (
+                    <li key={f} className="text-sm text-neutral-700 leading-relaxed">{f}</li>
+                  ))}
+                </ol>
+              </>
+            )}
+            {d.accept && (
+              <>
+                <Label>驗收標準</Label>
+                <ul className="space-y-1">
+                  {d.accept.map((f) => (
+                    <li key={f} className="text-sm text-neutral-700 leading-relaxed">☐ {f}</li>
+                  ))}
+                </ul>
+              </>
             )}
           </div>
           <div>
             <div className="font-mono text-xs text-plan mb-2">填好的樣子（{DEMO.name}）</div>
             <pre className="heti whitespace-pre-wrap font-sans text-sm text-neutral-800 leading-relaxed bg-neutral-900/4 border border-neutral-900/20 p-4">{d.example}</pre>
+            {d.tips && (
+              <p className="heti text-sm text-neutral-600 leading-relaxed mt-4 border-l-2 border-plan pl-3">{d.tips}</p>
+            )}
+            {d.next && (
+              <>
+                <Label>下一站誰用它</Label>
+                <p className="heti text-sm text-neutral-700 leading-relaxed">{d.next}</p>
+              </>
+            )}
+            {d.ai && (
+              <>
+                <Label>AI 可以幫什麼</Label>
+                <p className="heti text-sm text-neutral-700 leading-relaxed">{d.ai}</p>
+              </>
+            )}
           </div>
         </div>
       )}
