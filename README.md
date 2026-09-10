@@ -14,6 +14,7 @@
 | 互動設計 | 黑盒子 · 期末專案 | <https://course.interaction.tw/interactiondesign/blackbox/> | `projects/blackbox/`（Vite + React） |
 | 物件導向程式設計（清大科藝 115-1） | 課程主頁 | <https://course.interaction.tw/oop/> | `projects/oop/`（Vite + React；課程內容單一來源 `src/data.js`） |
 | 物件導向程式設計（清大科藝 115-1） | 作業牆 | <https://course.interaction.tw/oop/gallery/> | 同上（名單資料 `projects/oop/public/gallery/students.json`） |
+| 課堂點名（三門課共用） | 學生說明頁（外站） | <https://attend.interaction.tw/help> | 不在本 repo；程式在 server repo `services/attend/`，首頁只放一張卡片連過去 |
 | 研究寫作套件（公開工具箱） | 專案頁 | <https://course.interaction.tw/research-writing-kit/> | `research-writing-kit/`（純手寫靜態 HTML；repo 本體在 [chenweichiang/research-writing-kit](https://github.com/chenweichiang/research-writing-kit)） |
 | 研究寫作套件（英文版） | 專案頁 | <https://course.interaction.tw/research-writing-kit/en/> | `research-writing-kit/en/`（同上；兩頁 hreflang 互連） |
 
