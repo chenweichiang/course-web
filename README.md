@@ -18,7 +18,7 @@
 | 研究寫作套件（公開工具箱） | 專案頁 | <https://course.interaction.tw/research-writing-kit/> | `research-writing-kit/`（純手寫靜態 HTML；repo 本體在 [chenweichiang/research-writing-kit](https://github.com/chenweichiang/research-writing-kit)） |
 | 研究寫作套件（英文版） | 專案頁 | <https://course.interaction.tw/research-writing-kit/en/> | `research-writing-kit/en/`（同上；兩頁 hreflang 互連） |
 
-根目錄 `index.html`＝課程總覽首頁（原為轉址頁，2026-08 改版；新增課程記得補卡片）。首頁標題字用自己的子集 `fonts/ZhuqueFangsong-subset.woff2`——**首頁文字改動後要重新子集化**（SOP 見 `projects/designthinking/README.md`，來源文字改掃根目錄 `index.html`），否則新字會 fallback 成明體。
+根目錄 `index.html`＝課程總覽首頁（原為轉址頁，2026-08 改版；新增課程記得補卡片）。首頁標題字用自己的子集 `fonts/ZhuqueFangsong-subset.woff2`——**首頁文字改動後要重新子集化**（SOP 見 `projects/designthinking/README.md`，來源文字改掃根目錄 `index.html`），否則新字會 fallback 成明體；子集化後把 `index.html` 裡字型網址的 `?v=` 版本號改成當天日期，否則使用者的瀏覽器會沿用舊字型（2026-09-10 踩過：「堂」字上線後仍顯示明體）。
 
 ## 結構
 
