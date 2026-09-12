@@ -1,0 +1,10 @@
+# 二進位交付物：不要產生文字 diff（2026-09-12 補）。
+# 重建 PDF／docx 後，讀 git diff 的工具會把它們當文字渲染，把 PDF 的壓縮內容串流
+# 整片吐到終端機，看起來像亂碼。檔案本身沒壞，是顯示層的問題。
+# `binary` ＝ `-diff -merge -text`：不做文字 diff、不做行尾轉換、衝突時不嘗試合併。
+*.jpg    binary
+*.png    binary
+
+# 文字類保持逐行 diff，固定 LF 行尾。
+*.txt    text eol=lf
+*.md     text eol=lf
