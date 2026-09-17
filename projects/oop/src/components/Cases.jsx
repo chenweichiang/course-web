@@ -28,10 +28,26 @@ export default function Cases() {
                 </div>
                 <div className="font-mono text-xs text-neutral-400">{c.by}</div>
                 <p className="heti text-sm text-neutral-700 leading-relaxed">{c.what}</p>
+                {c.teach && (
+                  <p className="heti text-sm text-neutral-800 leading-relaxed bg-seal/[0.06] border-l-2 border-seal px-2 py-1">
+                    <span className="font-mono text-xs text-seal mr-1">討論</span>
+                    {c.teach}
+                  </p>
+                )}
                 <p className="heti text-xs text-neutral-500 leading-relaxed mt-auto pt-1.5 border-t border-neutral-900/10">
                   <span className="font-mono text-seal mr-1">取得</span>
                   {c.get}
                 </p>
+                {c.video && (
+                  <a
+                    href={c.video}
+                    target="_blank"
+                    rel="noopener"
+                    className="self-start font-mono text-xs px-2 py-0.5 border border-seal text-seal hover:bg-seal hover:text-paper transition-colors"
+                  >
+                    看官方影片 ↗
+                  </a>
+                )}
               </div>
             ))}
           </div>

@@ -96,8 +96,12 @@ export default function WeekPlan() {
                 <h3 className="font-bold mb-2 leading-snug">{wk.title}</h3>
                 {wk.bring && (
                   <div className="mb-3 border border-seal/60 bg-paper px-3 py-2">
-                    <div className="font-mono text-xs text-seal mb-0.5">這次上課要帶來</div>
-                    <p className="heti text-sm text-neutral-700 leading-relaxed">{wk.bring}</p>
+                    <div className="font-mono text-xs text-seal mb-1">課前準備</div>
+                    <ul className="space-y-1 list-none">
+                      {wk.bring.map((b) => (
+                        <li key={b} className="heti text-sm text-neutral-700 leading-relaxed">{b}</li>
+                      ))}
+                    </ul>
                   </div>
                 )}
                 <div className="font-mono text-xs text-neutral-500 mb-1.5">課堂上討論與解決</div>

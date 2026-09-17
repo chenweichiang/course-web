@@ -13,6 +13,9 @@ import AIPolicy from './components/AIPolicy'
 import Tools from './components/Tools'
 import Setup from './components/Setup'
 import Submission from './components/Submission'
+import { CASE_GROUPS } from './data'
+
+const CASE_COUNT = CASE_GROUPS.reduce((n, g) => n + g.items.length, 0)
 
 const SECTIONS = [
   { id: 'project', num: '01', navLabel: '期末專案', label: '期末專案：後未來動物園', summary: '整個專案只做一件事：培育沒有人類之後的物種，直到牠開園', Component: Project },
@@ -22,7 +25,7 @@ const SECTIONS = [
   { id: 'milestones', num: '05', navLabel: '里程碑', label: '里程碑指南', summary: '照著做就能走完的七站，每站都有步驟、完成清單（會記住你的進度）、卡點提醒與延伸閱讀', Component: MilestoneGuide },
   { id: 'algorithms', num: '06', navLabel: '圖鑑', label: '演算法圖鑑', summary: '19 個造物演算法，挑一個複製起手式交給你的 AI，看牠能長出什麼', Component: Algorithms },
   { id: 'sensing', num: '07', navLabel: '感測', label: '感測互動', summary: '臉、手、身體都是棲地的輸入，開源感測工具與訊號設計方法都在這', Component: Sensing },
-  { id: 'cases', num: '08', navLabel: '案例', label: '案例庫', summary: '看別人怎麼想像沒有人類的世界與另一種生命，二十三個案例分五類，取得管道都查證過', Component: Cases },
+  { id: 'cases', num: '08', navLabel: '案例', label: '案例庫', summary: `看別人怎麼想像沒有人類的世界與另一種生命，${CASE_COUNT} 個案例分五類，都附官方圖、取得管道與討論題`, Component: Cases },
   { id: 'ai-policy', num: '09', navLabel: 'AI 公約', label: 'AI 公約', summary: '本專案獎勵透明，不獎勵僥倖', Component: AIPolicy },
   { id: 'tools', num: '10', navLabel: '工具', label: '工具配置', summary: 'p5.js 網頁編輯器、上課用的 agy，加上你的 AI 訂閱', Component: Tools },
   { id: 'setup', num: '11', navLabel: '準備', label: '開工準備', summary: '在自己的筆電裝好 agy、申請帳號，學校電腦被還原時還有雲端備援', Component: Setup },

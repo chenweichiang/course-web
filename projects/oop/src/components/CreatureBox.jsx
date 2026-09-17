@@ -94,18 +94,31 @@ export default function CreatureBox() {
               <div className="font-mono text-xs text-seal mb-2">{g.cat}</div>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 border-t border-l border-neutral-900">
                 {g.items.map((c) => (
-                  <a
+                  <div
                     key={c.name}
-                    href={c.url}
-                    target="_blank"
-                    rel="noopener"
-                    className="min-w-0 border-b border-r border-neutral-900 bg-paper p-5 hover:bg-neutral-900/5 transition-colors group"
+                    className="min-w-0 border-b border-r border-neutral-900 bg-paper p-5 flex flex-col"
                   >
                     <CaseImage img={c.img} credit={c.imgCredit} alt={c.name} />
-                    <h4 className="font-bold text-sm mb-1.5 group-hover:text-seal">{c.name} ↗</h4>
+                    <h4 className="font-bold text-sm mb-1.5">
+                      <a href={c.url} target="_blank" rel="noopener" className="hover:text-seal transition-colors">
+                        {c.name} ↗
+                      </a>
+                    </h4>
                     <p className="heti text-sm text-neutral-600 leading-relaxed">{c.fact}</p>
-                    <div className="mt-2 font-mono text-[0.7rem] text-neutral-400">{c.src}</div>
-                  </a>
+                    <div className="mt-auto pt-2 flex flex-wrap items-center justify-between gap-2">
+                      <span className="font-mono text-[0.7rem] text-neutral-400">{c.src}</span>
+                      {c.video && (
+                        <a
+                          href={c.video}
+                          target="_blank"
+                          rel="noopener"
+                          className="font-mono text-xs px-2 py-0.5 border border-seal text-seal hover:bg-seal hover:text-paper transition-colors"
+                        >
+                          看影片 ↗
+                        </a>
+                      )}
+                    </div>
+                  </div>
                 ))}
               </div>
             </div>

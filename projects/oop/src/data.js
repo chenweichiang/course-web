@@ -72,6 +72,7 @@ export const CREATURE = {
           name: '深海熱泉的生物群聚',
           img: 'vent-community.jpg',
           imgCredit: 'WHOI（攝影 John M. Edmond），1977 年加拉巴哥裂谷',
+          video: 'https://www.youtube.com/watch?v=rFHtVRKoaUM',
           fact: '1977 年研究團隊潛到加拉巴哥裂谷 2,500 公尺深處，在熱泉口發現大片生物，牠們不靠光合作用，靠硫氧化細菌的化學合成取得能量。',
           url: 'https://doi.org/10.1126/science.203.4385.1073',
           src: 'Corliss et al. 1979, Science',
@@ -80,6 +81,7 @@ export const CREATURE = {
           name: '熱泉管蟲的共生細菌',
           img: 'tubeworm-symbiont.jpg',
           imgCredit: 'WHOI（攝影 Amy Nevala），2005 年加拉巴哥裂谷探勘採到的巨型管蟲',
+          video: 'https://www.youtube.com/watch?v=8W_ywzhkR90',
           fact: '管蟲體內有能氧化硫、自己合成養分的共生細菌，研究者推測牠的養分就來自這些細菌。',
           url: 'https://doi.org/10.1126/science.213.4505.340',
           src: 'Cavanaugh et al. 1981, Science',
@@ -88,6 +90,7 @@ export const CREATURE = {
           name: '櫻花鉤吻鮭（台灣）',
           img: 'formosan-salmon.jpg',
           imgCredit: '雪霸國家公園',
+          video: 'https://www.youtube.com/watch?v=WGYVtCrK67E',
           fact: '冰河期時被留在大甲溪，演化後失去洄游能力，喜歡水溫 10 到 16°C 以下、清澈沒有污染的溪水。',
           url: 'https://www.trimt-nsa.gov.tw/zh-tw/ecology/58/',
           src: '交通部觀光署參山國家風景區管理處',
@@ -96,6 +99,7 @@ export const CREATURE = {
           name: 'Biosphere 2',
           img: 'biosphere2.jpg',
           imgCredit: '亞利桑那大學',
+          video: 'https://www.youtube.com/watch?v=l8ulXtBe658',
           fact: '亞利桑那州的密閉玻璃建築，封閉後頭 16 個月氧氣從 21% 降到 14%，原因是土壤裡的有機物被微生物分解耗掉氧氣。',
           url: 'https://doi.org/10.1029/94EO00285',
           src: 'Severinghaus et al. 1994, Eos',
@@ -104,7 +108,7 @@ export const CREATURE = {
           name: '吃塑膠的細菌',
           img: 'plastic-bacteria.jpg',
           imgCredit: 'Kohei Oda（京都工藝纖維大學），刊於慶應義塾大學研究介紹頁',
-          fact: '2016 年在日本的寶特瓶回收場附近發現 Ideonella sakaiensis，能分解並利用 PET 塑膠，人造物也可能變成食物。',
+          fact: '研究團隊從大阪一家寶特瓶回收工廠採了 250 份樣本，找到能分解並利用 PET 的細菌，2016 年發表，人造物也可能變成食物。',
           url: 'https://doi.org/10.1126/science.aad6359',
           src: 'Yoshida et al. 2016, Science',
         },
@@ -125,6 +129,7 @@ export const CREATURE = {
           name: '《The Future Is Wild》',
           img: 'future-is-wild.jpg',
           imgCredit: 'The Future Is Wild 官網',
+          video: 'https://www.youtube.com/watch?v=vm3LOneRR98',
           fact: '三集紀錄片，分別是 500 萬年後的冰河世界、1 億年後的溫室世界、2 億年後的新世界。',
           url: 'https://www.thefutureiswild.com/documentary/',
           src: 'The Future Is Wild 官方網站',
@@ -133,6 +138,7 @@ export const CREATURE = {
           name: 'Karl Sims《Evolving Virtual Creatures》',
           img: 'karl-sims.jpg',
           imgCredit: 'Karl Sims 官網',
+          video: 'https://www.youtube.com/watch?v=RZtZia4ZkX8',
           fact: '1994 年的研究，生物在模擬的水中或陸地上接受游泳、行走、跳躍等考驗，表現好的才留下來繼續演化，官網有影片。',
           url: 'https://www.karlsims.com/evolved-virtual-creatures.html',
           src: 'Karl Sims 官方網站',
@@ -146,6 +152,7 @@ export const CREATURE = {
           name: '菌根網路',
           img: 'mycorrhiza.jpg',
           imgCredit: 'Mother Tree Project',
+          video: 'https://www.youtube.com/watch?v=Un2yBgIAxYs',
           fact: '在野外，不同種的樹之間會透過地下的菌根真菌傳遞碳，交流不一定要見面。',
           url: 'https://doi.org/10.1038/41557',
           src: 'Simard et al. 1997, Nature',
@@ -162,6 +169,7 @@ export const CREATURE = {
           name: '發光細菌',
           img: 'luminous-bacteria.jpg',
           imgCredit: '費氏弧菌的宿主夏威夷短尾烏賊，McFall-Ngai Lab',
+          video: 'https://www.youtube.com/watch?v=KXWurAmtf78',
           fact: '剛接種時不發光，等族群長大、培養液被細菌改變之後，才大量合成發光酵素。',
           url: 'https://doi.org/10.1128/jb.104.1.313-322.1970',
           src: 'Nealson et al. 1970, J. Bacteriology',
@@ -191,6 +199,7 @@ export const CREATURE = {
           name: 'Tamagotchi 連線版',
           img: 'tamagotchi.jpg',
           imgCredit: 'BANDAI 2004 年新聞稿',
+          video: 'https://www.youtube.com/watch?v=jAJITJHVwI4',
           fact: '2004 年 Bandai 推出，用紅外線跟別台連線，交朋友、交換禮物，感情夠好就結婚生下第二代。',
           url: 'https://www.bandai.co.jp/releases/images/3/14090.pdf',
           src: 'Bandai 2004 新聞稿（日文）',
@@ -215,6 +224,7 @@ export const CREATURE = {
           name: 'A-Volve',
           img: 'a-volve.jpg',
           imgCredit: 'Sommerer & Mignonneau，林茲藝術大學官網',
+          video: 'https://www.youtube.com/watch?v=0WG45k93pCA',
           fact: 'Christa Sommerer & Laurent Mignonneau，1994。觀眾畫出外形，生物就在水槽裡游動、生下後代，強的吃掉弱的，觀眾的手也能保護牠們。',
           url: 'https://www.ntticc.or.jp/en/archive/works/a-volve/',
           src: 'NTT ICC',
@@ -223,6 +233,7 @@ export const CREATURE = {
           name: 'Electric Sheep',
           img: 'electric-sheep.jpg',
           imgCredit: 'Electric Sheep 官網',
+          video: 'https://www.youtube.com/watch?v=ipw4A6AXokk',
           fact: 'Scott Draves，1999。連網的電腦一起算動畫「羊」，觀眾投票，受歡迎的羊活得久，並依基因演算法繁殖。',
           url: 'https://electricsheep.org/',
           src: 'Electric Sheep 官方網站',
@@ -278,7 +289,7 @@ export const SESSION_FLOW = {
     { t: '創作與個別討論', time: '約 90 分鐘', d: '各自做自己的物種，老師與助教巡迴，卡住就來排隊討論，也可以找同學一起看。' },
     { t: '分享與收尾', time: '約 30 分鐘', d: '兩三位同學展示這週的進度或解法，每個人寫下下次上課前要推進的一件事。' },
   ],
-  prep: '每週表上都寫了「這次上課要帶來」的東西，上課前一天整理好，卡點用截圖加一句話先貼到課程 Discord 頻道，老師上課前會先看過，討論時間就能直接切進問題。',
+  prep: '每週都有「課前準備」，分成看、讀、寫、帶。要寫的部分寫在自己 repo 該站資料夾的 notes.md，上課前一天把卡點用截圖加一句話貼到課程 Discord 頻道，老師上課前會先看過，討論時間就能直接切進問題。準備得越完整，課堂上能討論得越深。',
   station: '報告站那一週（10/1、10/15、11/12、12/24）以上台報告與提問為主，每個人報告完，台下至少有一個人問「這個選擇的根據是什麼」。',
 }
 
@@ -286,7 +297,11 @@ export const SESSION_FLOW = {
 export const WEEKS = [
   {
     w: 1, date: '2026-09-10', m: 'M0', title: '開學：認識後未來動物園',
-    bring: '好奇心就好，想一部你看過、有「沒有人類的世界」的電影、動畫或遊戲。',
+    bring: [
+      '看：課程頁的「期末專案」與「想你的生物」兩節',
+      '想：一部你看過、出現「沒有人類的世界」的電影、動畫或遊戲，它的世界靠什麼規則運作',
+      '帶：自己的筆電（若有）',
+    ],
     inClass: [
       '課程導覽：後未來動物園要做什麼、七個里程碑怎麼走、四件套與報告站怎麼運作',
       'AI 公約四條與揭露方式',
@@ -296,7 +311,11 @@ export const WEEKS = [
   },
   {
     w: 2, date: '2026-09-17', m: 'M0', title: '裝好工作環境，開始想你的世界',
-    bring: '自己的筆電（充好電）、可以登入的個人 Google 帳號與 GitHub 帳號。',
+    bring: [
+      '帶：自己的筆電（充好電）、可以登入的個人 Google 帳號與 GitHub 帳號',
+      '看：3Blue1Brown〈Transformers, the tech behind LLMs〉（延伸閱讀 M0）',
+      '想：你用 AI 時遇過它一本正經講錯的例子，準備一分鐘講給同學聽',
+    ],
     inClass: [
       '在自己的筆電裝 agy，用個人 Google 帳號登入，Mac 與 Windows 的步驟都在開工準備',
       '終端機基本功：打開終端機、cd 進資料夾、啟動 agy、第一次對話',
@@ -307,7 +326,12 @@ export const WEEKS = [
   },
   {
     w: 3, date: '2026-09-24', m: 'M1', title: '世界研究：第一次完整跑研究迴圈',
-    bring: '三個世界候選，每個寫一句話並附一個你查到的來源；上週裝 agy 或使用時卡住的畫面截圖。',
+    bring: [
+      '看：《Life After People》與《The Future Is Wild》各一集（案例庫有官方連結）',
+      '讀：Mike Caulfield 的 SIFT 四步驟（延伸閱讀「方法」）',
+      '寫：三個世界候選，每個一句話，各附一個你追到原始出處的事實與連結',
+      '帶：上週裝 agy 或使用時卡住的畫面截圖',
+    ],
     inClass: [
       '討論：分組互看上週寫下的三個世界候選，互相追問「這個世界的根據在哪裡」',
       '全班一起解：挑一兩位同學的例子，示範怎麼把 AI 給的事實追回原始出處',
@@ -317,7 +341,12 @@ export const WEEKS = [
   },
   {
     w: 4, date: '2026-10-01', m: 'M1', station: '世界簡報', title: '世界簡報與確認',
-    bring: '世界簡報（PDF 已放進 m1-world/）與研究報告，準備好回答「你的根據是什麼」。',
+    bring: [
+      '做：世界簡報（PDF 放進 m1-world/）與研究報告',
+      '讀：Deryabina et al. 2015 與 Møller & Mousseau 2015 的摘要，看同一個車諾比，兩篇研究怎麼得到不同結論（延伸閱讀 M1）',
+      '寫：你的世界裡最沒把握的一個事實，以及你打算怎麼補證據',
+      '準備：預想同學會問你「根據是什麼」的三個問題',
+    ],
     inClass: [
       '每人三分鐘世界簡報，台下同學針對根據提問',
       '研究報告當場確認，老師會跟你聊來源',
@@ -327,7 +356,12 @@ export const WEEKS = [
   },
   {
     w: 5, date: '2026-10-08', m: 'M2', title: '從世界推出你的物種',
-    bring: '世界的一句話定案，以及三個物種的初步想像（能量從哪來、住在哪、怎麼繁殖），各附一種真實生物當參照。',
+    bring: [
+      '讀：「想你的生物」的真實世界案例，挑兩個跟你的世界最接近的',
+      '寫：物種的三個初步想像（能量從哪來、住在哪、怎麼繁殖），各附一種真實生物當參照',
+      '做：p5.js 官方教學的第一個單元，或吳哲宇的入門影片上集（延伸閱讀 M2）',
+      '帶：你世界的一句話定案',
+    ],
     inClass: [
       '討論：用「想你的生物」的養殖箱五問兩兩互相追問，找出設定裡最站不住的一環',
       '小組互看物種設定書五欄（型態、代謝、繁衍、行為、威脅），每人指出對方根據最弱的一欄',
@@ -338,7 +372,11 @@ export const WEEKS = [
   },
   {
     w: 6, date: '2026-10-15', m: 'M2', station: '物種簡報', title: '物種簡報與檢核',
-    bring: '物種簡報、設定書五欄，以及可以現場跑的雛形。',
+    bring: [
+      '做：物種簡報、設定書五欄，以及可以現場跑的雛形',
+      '看：Karl Sims《Evolved Virtual Creatures》官方影片，注意牠們的身體怎麼配合水中或陸地',
+      '寫：你的雛形跟設定書哪一欄最對不上，打算怎麼改',
+    ],
     inClass: [
       '每人三分鐘物種簡報，現場跑會動的雛形，台下同學提問',
       '檢核當場進行：設定書跟雛形對不對得上',
@@ -348,7 +386,12 @@ export const WEEKS = [
   },
   {
     w: 7, date: '2026-10-22', m: 'M3', title: '先設計，再寫碼',
-    bring: '依回饋修過的設定書，以及「牠有哪些特徵、哪些行為」的清單草稿，各至少三項。',
+    bring: [
+      '讀：Nature of Code 第 5 章 Autonomous Agents 的開頭（延伸閱讀 M3）',
+      '寫：「牠有哪些特徵、哪些行為」清單，各至少三項，每項標出對應設定書的哪一欄',
+      '帶：依回饋修過的設定書',
+      '想：Braitenberg《Vehicles》用最簡單的線路長出「性格」，你的生物最簡單的性格是什麼',
+    ],
     inClass: [
       '討論：把設定書翻成「牠有哪些特徵、哪些行為」，兩兩互看設計清單，先不寫碼',
       '全班一起解：怎麼請 AI 先給設計、比較兩三種做法，看懂了再請它寫碼',
@@ -358,7 +401,12 @@ export const WEEKS = [
   },
   {
     w: 8, date: '2026-10-29', m: 'M3', title: '讓行為對上設定書',
-    bring: '最小可跑版的網址或錄影，以及一個卡住的問題：完整錯誤訊息或截圖，加上你已經試過的方法。',
+    bring: [
+      '帶：最小可跑版的網址或錄影',
+      '寫：一個卡住的問題，附完整錯誤訊息或截圖，加上你已經試過的方法',
+      '讀：Craig Reynolds〈Steering Behaviors〉，挑一種行為想想牠會不會用到（延伸閱讀 M3）',
+      '想：觀眾第一眼看到牠，哪一個動作最能讓人認出牠是誰',
+    ],
     inClass: [
       '互看討論：兩兩交換，找出對方跑起來的行為哪裡跟設定書對不上',
       '全班一起解：從大家的程式挑一兩個常見卡點，例如動作不自然、一直跑出畫面',
@@ -368,7 +416,12 @@ export const WEEKS = [
   },
   {
     w: 9, date: '2026-11-05', m: 'M3', title: '長出天性，準備發表',
-    bring: '目前的程式、最多三個卡點（寫清楚想要的效果和現在的樣子），以及發表簡報草稿。',
+    bring: [
+      '帶：目前的程式與發表簡報草稿',
+      '寫：最多三個卡點，寫清楚想要的效果和現在的樣子',
+      '看：案例庫「人工生命藝術」挑一件作品，想想作者會怎麼用三分鐘介紹它',
+      '練：自己計時講一次三分鐘發表',
+    ],
     inClass: [
       '卡點診所：逐一討論每個人的卡點，同學可以旁聽別人的解法',
       '發表預演：小組內三分鐘試講，每個人給對方一個具體建議',
@@ -378,7 +431,10 @@ export const WEEKS = [
   },
   {
     w: 10, date: '2026-11-12', m: 'M3', station: '物種發表會', title: '物種發表會（期中）',
-    bring: '發表簡報與可以現場跑的程式。',
+    bring: [
+      '做：發表簡報與可以現場跑的程式',
+      '準備：兩個想問同學的問題，關於他們的世界或物種',
+    ],
     inClass: [
       '每人三分鐘發表，現場跑再加上導讀，台下同學提問',
       '同學互相回饋：每人寫一張回饋給兩位同學',
@@ -388,7 +444,12 @@ export const WEEKS = [
   },
   {
     w: 11, date: '2026-11-19', m: 'M4', title: '成群、變異、生與死',
-    bring: '你世界的生死法則草稿（壽命、能量、被吃、繁殖條件），以及你對「物種要不要相遇」的一個想法。',
+    bring: [
+      '讀：Craig Reynolds〈Boids〉頁面與 Volterra 1926 的摘要（延伸閱讀 M4）',
+      '寫：你世界的生死法則草稿（壽命、能量、被吃、繁殖條件）',
+      '想：你的物種要不要跟同學的物種相遇？寫下一個支持或反對的理由（參考「想你的生物」的全班約定表）',
+      '看：案例庫「遊戲裡的生態」挑一款遊戲的官方影片，看它怎麼把繁殖寫成規則',
+    ],
     inClass: [
       '討論：你世界的生死法則是什麼（壽命、能量、被吃、繁殖條件），跟同學的法則比一比',
       '全班決定：動物園裡的物種要不要相遇、怎麼交流，參考「想你的生物」的全班約定表',
@@ -399,7 +460,12 @@ export const WEEKS = [
   },
   {
     w: 12, date: '2026-11-26', m: 'M4', title: '演化與群體行為',
-    bring: '族群跑一段時間後的錄影或截圖，看得出牠們往哪個方向漂；效能卡住的地方；若全班決定交流，帶你物種的基因與訊號寫法。',
+    bring: [
+      '帶：族群跑一段時間後的錄影或截圖',
+      '寫：族群往哪個方向漂，你怎麼解釋',
+      '讀：Nature of Code 第 9 章演化運算（延伸閱讀 M4）',
+      '若全班決定交流：帶你物種的基因與訊號寫法',
+    ],
     inClass: [
       '討論：你的族群跑久了往哪個方向漂，為什麼',
       '若全班決定交流：定好基因與訊號的寫法，兩兩試著讓物種相遇',
@@ -410,7 +476,11 @@ export const WEEKS = [
   },
   {
     w: 13, date: '2026-12-03', m: 'M5', title: '造景，接上感官',
-    bring: '棲地的草圖或參考圖（說得出跟你的世界觀怎麼接），以及你想用手、臉或身體哪一種感測和理由。',
+    bring: [
+      '看：teamLab《Graffiti Nature》與《A-Volve》的官方資料，觀察觀眾怎麼變成環境的一部分',
+      '讀：ml5.js handPose 或 faceMesh 官方文件（延伸閱讀 M5）',
+      '帶：棲地草圖或參考圖，以及你想用的感測方式和理由',
+    ],
     inClass: [
       '討論：你的棲地長什麼樣，跟 M1 的世界觀對不對得上',
       '全班一起解：鏡頭權限、模型載入太慢、光線不足這類常見問題',
@@ -420,7 +490,11 @@ export const WEEKS = [
   },
   {
     w: 14, date: '2026-12-10', m: 'M5', title: '觀眾是誰',
-    bring: '「觀眾是誰」的一句話、兩三條刺激與反應規則草稿，以及可以讓同學試玩的版本。',
+    bring: [
+      '讀：個人資料保護法第 2 條（延伸閱讀「感測」），想想鏡頭拍到觀眾時要注意什麼',
+      '寫：「觀眾是誰」的一句話，以及兩三條刺激與反應規則',
+      '帶：可以讓同學試玩的版本',
+    ],
     inClass: [
       '討論：這個沒有人類的世界，鏡頭前的觀眾是誰，分組互相追問',
       '互測：交換電腦試玩彼此的互動，記下哪裡看不懂、哪裡沒反應',
@@ -431,7 +505,11 @@ export const WEEKS = [
   },
   {
     w: 15, date: '2026-12-17', m: 'M6', title: '開園準備與彩排',
-    bring: '上線網址、三分鐘導覽稿草稿，以及展演需要的設備清單。',
+    bring: [
+      '讀：V&A 的展覽文字寫作指南（延伸閱讀 M6）',
+      '寫：三分鐘導覽稿草稿',
+      '帶：上線網址與展演需要的設備清單',
+    ],
     inClass: [
       '彩排：小組內完整導覽一次，同學扮觀眾提問',
       '卡點診所：GitHub Pages 上線、別台電腦打不開、離線備援',
@@ -441,7 +519,10 @@ export const WEEKS = [
   },
   {
     w: 16, date: '2026-12-24', m: 'M6', station: '開園', title: '後未來動物園開園',
-    bring: '作品、導覽簡報與本機能跑的離線備援版本，提早到場架設。',
+    bring: [
+      '帶：作品、導覽簡報與本機能跑的離線備援版本',
+      '提早到場架設，先在展演的電腦上試跑一次',
+    ],
     inClass: [
       '展演與導覽：你以物種首席研究員的身分帶大家看牠',
       '回答關於牠的任何提問',
@@ -672,49 +753,64 @@ export const SENSING = {
 // 案例庫：期末專案的參照系（取得管道 2026-08 全查證）
 export const CASE_GROUPS = [
   {
-    cat: '沒有人類之後', hint: 'M1 世界',
+    cat: "沒有人類之後", hint: "M1 世界",
     items: [
-      { name: '人類滅絕後', by: 'Dougal Dixon，1981', type: '書', what: '人類消失後五千萬年的動物誌，本專案題目的開山之作，整本書就是一座後未來動物園', get: '繁中版《人類滅絕後：未來地球的假想動物圖鑑》，台灣東販，圖書館與二手書可得' },
-      { name: '沒有我們的世界', by: 'Alan Weisman，2007', type: '書', what: '人類消失後城市與生態如何演變的科普經典，世界觀研究的底本', get: '繁中版，木馬文化，新書庫存有限，建議二手或圖書館' },
-      { name: 'Life After People', by: 'History Channel', type: '影集', what: '人類消失後 1 天到 1 萬年的推演，把時間尺度視覺化', get: 'History 官方 YouTube 播放清單免費看', url: 'https://www.youtube.com/playlist?list=PLob1mZcVWOagLL-shJOp-d5_qJOG2MvCJ' },
-      { name: 'The Future Is Wild', by: '2002 紀錄片', type: '影集', what: '五百萬年到兩億年後的推測演化，科學顧問陣容完整', get: '官方 YouTube 頻道全 13 集免費', url: 'https://www.youtube.com/@OfficialTheFutureIsWild' },
+      { name: "人類滅絕後", img: "book-after-man-tw.jpg", imgCredit: "台灣東販書封", by: "Dougal Dixon，1981", type: "書", what: "英文原書1981年出版，描繪人類滅絕後五千萬年地球動物演化的想像圖鑑", get: "繁中版台灣東販2020年出版，官網現無此書頁，圖書館或二手可尋", teach: "作者替每一種棲地推出一種動物。你的世界裡，哪一個棲地最空，最需要一種新生物？", facts: "Dougal Dixon的《After Man: A Zoology of the Future》1981年由St. Martin's Press出版，描繪人類滅絕五千萬年後地球哺乳類與鳥類演化出的假想動物。繁體中文版《人類滅絕後：未來地球的假想動物圖鑑》曾由台灣東販於2020年8月26日出版(譯者黃品玟)，但現查證出版社官網該書頁已下架。", sources: ["https://openlibrary.org/search.json?q=After+Man+A+Zoology+of+the+Future+Dougal+Dixon", "https://www.abebooks.com/9780312011628/After-Man-Zoology-Future-Dougal-0312011628/plp"] },
+      { name: "沒有我們的世界", img: "book-world-without-us.jpg", imgCredit: "Alan Weisman 官網（英文版書封）", by: "Alan Weisman，2007", type: "書", what: "英文原書2007年出版，探討人類消失後城市與生態系統將如何演變", get: "有繁中譯本，可到圖書館查詢借閱", teach: "人類消失後，你的城市裡哪一種建材最先崩壞、哪一種撐最久？這會留下什麼樣的棲地？", facts: "Alan Weisman的《The World Without Us》2007年由Thomas Dunne Books/St. Martin's Press在美國出版，透過訪談工程師、氣候學家等專家推演人類消失後基礎建設與生態系統的變化。繁體中文版確有譯本流通，但本次查證未能在出版社官方通路上找到書目紀錄，出版社名稱待國家圖書館書目資料庫進一步確認。", sources: ["https://openlibrary.org/books/OL24096382M/The_World_Without_Us", "https://www.bookrep.com.tw/index.php?md=gwindex&cl=press&at=press"] },
+      { name: "Life After People", img: "life-after-people.jpg", imgCredit: "HISTORY 官網", video: "https://www.youtube.com/watch?v=ssi1SqVpUUw", videoTitle: "Life After People: Shaky Bridges | History", by: "HISTORY（History Channel）", type: "影集", what: "HISTORY頻道影集，推演人類全部消失後世界與建物的變化，共3季28集", get: "HISTORY官方YouTube播放清單，經頻道資料確認為官方帳號", url: "https://www.youtube.com/playlist?list=PLob1mZcVWOagLL-shJOp-d5_qJOG2MvCJ", teach: "影集用時間軸推演。你的世界在 10 年、100 年、1 萬年後，各長什麼樣子？", facts: "《Life After People》是HISTORY頻道製播的節目，前提為「如果地球上每個人類都消失了會發生什麼」，全系列共3季28集(history.com官方節目頁)。卡片提供的YouTube播放清單經oembed資料確認擁有頻道為官方帳號HISTORY(@HISTORY)。", sources: ["https://www.history.com/shows/life-after-people", "https://www.youtube.com/oembed?url=https://www.youtube.com/playlist?list=PLob1mZcVWOagLL-shJOp-d5_qJOG2MvCJ&format=json"] },
+      { name: "The Future Is Wild", img: "future-is-wild-series.jpg", imgCredit: "The Future Is Wild 官網", video: "https://www.youtube.com/watch?v=vm3LOneRR98", videoTitle: "The FUTURE is WILD Official Trailer", by: "The Future Is Wild 製作團隊", type: "影集", what: "官方稱3集紀錄片，各1小時，分述500萬、1億、2億年後三個時代的推測演化", get: "官方網站超連結確認為此YouTube官方頻道", url: "https://www.youtube.com/@OfficialTheFutureIsWild", teach: "三個時間點的生物差很多。你的物種如果再過一億年，會變成什麼？", facts: "官方網站documentary頁自述為3集、每集1小時，分別描繪500萬年(ICE WORLD)、1億年(HOTHOUSE WORLD)、2億年(NEW WORLD)後的地球，由BBC、ZDF、NHK、Animal Planet等頻道播出。官網另一頁面提及本企劃將於2026年12月屆滿30週年，但官方頁面未直接寫明電視首播年份為2002年，此點待進一步查證。", sources: ["https://www.thefutureiswild.com/documentary/", "https://www.thefutureiswild.com/elementor-1797/"] },
+      { name: "《Stray》", img: "stray.jpg", imgCredit: "Annapurna Interactive 官方網站", video: "https://www.youtube.com/watch?v=4uP2MyUL49s", videoTitle: "STRAY | Launch Trailer", by: "BlueTwelve Studio，2022", type: "遊戲", what: "玩家操作一隻走失的貓，穿越只剩機器人的地下賽博城市尋路回家。", get: "Steam、PlayStation 等平台付費購買，台灣可直接結帳。", url: "https://annapurnainteractive.com/en/games/stray", teach: "可以跟學生討論：當設計者選擇讓玩家扮演非人類物種時，移動方式、視角高度、能互動的物件會如何跟著改變。", facts: "《Stray》由法國團隊 BlueTwelve Studio 開發、Annapurna Interactive 發行，2022 年 7 月 19 日上市，使用 Unreal Engine 4 製作。故事設定在一座長年封閉的地下城市，人類已經消失，居民全是機器人，玩家扮演一隻與家人失散的貓，靠一台無人機夥伴 B-12 協助解謎逃脫。", sources: ["https://annapurnainteractive.com/en/games/stray", "https://store.steampowered.com/app/1332010/Stray"] },
+      { name: "《Horizon Zero Dawn》", img: "horizon-zero-dawn.jpg", imgCredit: "PlayStation 官方網站（© Sony Interactive Entertainment LLC）", video: "https://www.youtube.com/watch?v=wzx96gYA8ek", videoTitle: "Horizon Zero Dawn - Launch Trailer | PS4", by: "Guerrilla Games，2017", type: "遊戲", what: "人類文明崩壞數百年後，機械化的野生動物取代真實動物成為生態系主角。", get: "PlayStation、Steam、Epic 付費購買，台灣有中文版。", url: "https://www.playstation.com/en-us/games/horizon-zero-dawn", teach: "可以跟學生討論：把每種動物的生態棲位換成機械獸之後，物種之間的獵食關係、群體行為要怎麼重新設計才合理。", facts: "《Horizon Zero Dawn》由荷蘭阿姆斯特丹的 Guerrilla Games 開發，2017 年 2 月 28 日於 PS4 首發，是該工作室首款動作角色扮演遊戲。世界設定在遙遠未來，機械巨獸取代已滅絕的動物，倖存人類退回部落社會，玩家操作獵人愛洛伊（Aloy）追查文明毀滅的真相。", sources: ["https://www.playstation.com/en-us/games/horizon-zero-dawn", "https://www.guerrilla-games.com"] },
     ],
   },
   {
-    cat: '想像另一種生命', hint: 'M2 物種',
+    cat: "想像另一種生命", hint: "M2 物種",
     items: [
-      { name: 'All Tomorrows', by: 'C.M. Kosemen，2006', type: '書', what: '十億年尺度的人類後裔演化史，邪典級推測生物學', get: '無繁中版，2025 年底出正式紙本後作者官網已不再提供免費 PDF，引用網路流傳版本時要交代這個轉折' },
-      { name: 'Expedition', by: 'Wayne Barlowe，1990', type: '書', what: '外星星球 Darwin IV 的生態調查圖鑑，畫家親手建構整套食物鏈', get: '英文原版絕版，合法免費管道為 Internet Archive 借閱', url: 'https://archive.org/details/expeditionbeinga0000barl' },
-      { name: 'Scavengers Reign', by: '2023 動畫影集', type: '影集', what: '異星生態動畫，近年最完整的「生態先於劇情」示範', get: '原 HBO Max 獨家，在台灣請於 Max App 內搜尋確認' },
-      { name: '風之谷', by: '宮崎駿', type: '動畫與漫畫', what: '腐海生態系，文明毀滅後的菌類森林與王蟲，最容易進入的參照', get: '動畫與漫畫在台灣皆易取得' },
+      { name: "All Tomorrows", img: "all-tomorrows.jpg", imgCredit: "Eye Books Group（Wilton Square Books）書封", by: "C.M. Kosemen，2006", type: "書", what: "推測近未來到十億年後人類演化為多物種的命運，2006年由作者網路自行發表", get: "精裝版2025年11至12月出版，作者官網已下架免費全文，無繁中版", url: "https://www.eyebooksgroup.com/products/all-tomorrows", teach: "如果你的物種是人類的後代，牠還保留了人類的哪一個特徵？為什麼留下來？", facts: "《All Tomorrows》最早於2006年由作者C. M. Kösemen(當時筆名Nemo Ramjet)在個人網站自行發布PDF，內容推測人類演化為多個後裔物種、時間尺度上看跨越十億年。2025年英國Wilton Square Books將其製成精裝紙本正式出版，作者官網同時把原本免費下載的連結改為向出版社購買。", sources: ["http://www.cmkosemen.com/books.html", "https://web.archive.org/web/20061124141617/http://www.nemoramjet.com/alltomorrows.pdf", "https://www.eyebooksgroup.com/products/all-tomorrows"] },
+      { name: "Expedition", img: "expedition.jpg", imgCredit: "Wayne Barlowe 官網（Daggerwrist）", by: "Wayne Barlowe，1990", type: "書", what: "1990年出版，描繪外星球Darwin IV生態的圖文書，作者身兼探勘畫家", get: "1990年原版已絕版，現有Echo Point重新發行版，亦可線上借閱", url: "https://waynebarlowe.com/artwork/expedition/", teach: "作者替整個星球設計食物鏈。你的物種在食物鏈的哪一層？誰吃牠、牠吃誰？", facts: "Wayne Barlowe的《Expedition: Being an Account in Words and Artwork of the 2358 A.D. Voyage to Darwin IV》1990年由Workman Publishing出版，以假想的2358年星際考察為敘事框架描繪外星球Darwin IV的生態系。原版長期絕版，作者官方網站明確寫著該書現由Echo Point Books and Media重新發行；Internet Archive也收藏1990年版原書全文供借閱：https://archive.org/details/expeditionbeinga0000barl。", sources: ["https://waynebarlowe.com/artwork/expedition/", "https://archive.org/details/expeditionbeinga0000barl"] },
+      { name: "Scavengers Reign", img: "scavengers-reign.jpg", imgCredit: "HBO Max 官網", video: "https://www.youtube.com/watch?v=NWQH8cMpWTU", videoTitle: "Scavengers Reign | Official Trailer | Max", by: "2023 動畫影集", type: "影集", what: "講述貨運太空船船員受困外星球，呈現該星球的生態系", get: "原為Max(HBO Max)獨家影集，官方台灣站目錄查無此劇，應尚未在台上架", url: "https://www.titmouse.net/portfolio-item/scavengers-reign/", teach: "作品裡的生物彼此依存。你的物種要靠哪一種別的生物，才活得下去？", facts: "《Scavengers Reign》由Joseph Bennett與Charles Huettner共同創作，Titmouse, Inc.為Max(當時稱HBO Max)製作，2023年10月19日在Max首播。查證Max台灣官網，此劇專屬頁面回傳404、台灣站完整劇集目錄頁也未列出，判斷目前應未在台灣Max上架。", sources: ["https://www.titmouse.net/portfolio-item/scavengers-reign/", "https://www.hbomax.com/tw/zh/shows"] },
+      { name: "風之谷", img: "nausicaa.jpg", imgCredit: "吉卜力工作室官網劇照（© 1984 Studio Ghibli・H）", video: "https://www.youtube.com/watch?v=zaskbIZtfxQ", videoTitle: "NAUSICAÄ OF THE VALLEY OF THE WIND | Official English Trailer", by: "宮崎駿", type: "動畫與漫畫", what: "腐海生態系，文明毀滅後菌類森林與王蟲共生，1984年宮崎駿執導動畫上映", get: "漫畫由台灣東販代理，電影由甲上娛樂發行(2025年在台重映)", url: "https://www.ghibli.jp/works/nausicaa/", teach: "腐海會改變它所在的土地。你的物種對牠的環境有沒有影響？是變好還是變壞？", facts: "《風の谷のナウシカ》電影版於1984年3月11日在日本上映，由宮崎駿原作、編劇、監督(Studio Ghibli官方作品頁所載，當時Studio Ghibli尚未成立)。台灣代理方面，漫畫由台灣東販發行，電影則由甲上娛樂於2025年3月6日在台重新上映。", sources: ["https://www.ghibli.jp/works/nausicaa/", "https://www.tohan.com.tw/product.php?act=view&id=1753"] },
+      { name: "《Kunstformen der Natur》（自然界的藝術形態）", img: "haeckel.jpg", imgCredit: "Biodiversity Heritage Library（公有領域掃描）", by: "Ernst Haeckel，1904", type: "圖鑑", what: "海克爾繪製一百幅生物圖版，把水母、放射蟲等微小生物畫成對稱裝飾圖案。", get: "BHL 全書掃描公開瀏覽，公有領域，免費下載，不必借閱。", url: "https://www.biodiversitylibrary.org/bibliography/102214", teach: "可以跟學生討論：把真實生物的顯微構造放大成圖案化的視覺語言時，哪些細節被保留、哪些被簡化，這對設計虛構生物有什麼啟發。", facts: "《Kunstformen der Natur》原以 10 期分冊在 1899 至 1904 年間出版，1904 年集結成書，共 100 幅石版印刷圖版，取材自海克爾自己的顯微鏡觀察與航海採集紀錄。圖中第 88 版名為〈Discomedusae〉（水母綱），呈現多種水母的傘狀與觸手構造，強調生物形態本身的幾何對稱。", sources: ["https://www.biodiversitylibrary.org/bibliography/102214", "https://www.biodiversitylibrary.org/page/33543670"] },
+      { name: "《Codex Seraphinianus》", img: "codex-seraphinianus.jpg", imgCredit: "Rizzoli New York 官方書頁", by: "Luigi Serafini，1981", type: "書", what: "義大利藝術家自繪的百科全書，用無法破解的文字描述虛構世界的動植物。", get: "Rizzoli 官方書頁有介紹與購買資訊，台灣需代購或館際借閱", url: "https://www.rizzoliusa.com/book/9780847842131", teach: "可以跟學生討論：一部作品如果連文字系統都是虛構的，讀者要靠圖像本身的結構線索理解陌生物種，這對後未來動物圖鑑的呈現方式有什麼參考價值。", facts: "《Codex Seraphinianus》1981 年由米蘭的 Franco Maria Ricci 首度出版，作者 Luigi Serafini 是建築師出身的藝術家，全書以自創的無法翻譯文字寫成，內容包含虛構的動物、植物、機械與人體構造圖。Rizzoli 於 2013 年推出重新設計的英文市場版，2021 年再推 40 週年紀念版。", sources: ["https://www.rizzoliusa.com/book/9780847842131", "https://www.rizzoliusa.com/book/9780847871049"] },
     ],
   },
   {
-    cat: '另一種感官與心智', hint: 'M2 設定 · M5 觀眾',
+    cat: "另一種感官與心智", hint: "M2 設定 · M5 觀眾",
     items: [
-      { name: '章魚，心智，演化', by: 'Peter Godfrey-Smith', type: '書', what: '從章魚追問心智的另一種可能，設計非人心智的思想資源', get: '繁中版，紅樹林' },
-      { name: '真菌微宇宙', by: 'Merlin Sheldrake', type: '書', what: '真菌網絡如何連結萬物，菌絲型物種的科學底本', get: '繁中版，果力文化，2021 與 2025 兩版副標不同，是同一本書' },
-      { name: '五感之外的世界', by: 'Ed Yong，2022', type: '書', what: '動物的環境界(Umwelt)，每種生物感知到的世界都不同，直接回答「你的生物怎麼感覺觀眾」', get: '繁中版，臉譜' },
+      { name: "章魚，心智，演化", img: "book-octopus.jpg", imgCredit: "紅樹林出版書封", video: "https://www.youtube.com/watch?v=iENXfnOobzw", videoTitle: "The Octopus, the Sea, and the Deep Origins of Consciousness | Peter Godfrey Smith | Talks at Google", by: "Peter Godfrey-Smith", type: "書", what: "以章魚的演化與行為，探問心智與意識起源的另一種可能", get: "紅樹林出版繁體中文版，2017年9月，譯者王惟芬", teach: "如果思考不一定集中在頭部，你的物種的「判斷」發生在身體的哪裡？", facts: "原書英文書名為《Other Minds: The Octopus, the Sea, and the Deep Origins of Consciousness》，2016年由Farrar, Straus and Giroux出版(作者官網確認)。繁體中文版《章魚，心智，演化：探尋大海及意識的起源》由紅樹林出版，2017年9月發行，譯者王惟芬(國家圖書館ISBN全國新書資訊網CIP書目紀錄確認)。", sources: ["https://petergodfreysmith.com/publications", "https://us.macmillan.com/books/9780374537197/otherminds/"] },
+      { name: "真菌微宇宙", img: "book-entangled-life.jpg", imgCredit: "果力文化書封", video: "https://www.youtube.com/watch?v=ZRFmCXBv5R4", videoTitle: "Merlin Sheldrake - How Fungi Make our Worlds", by: "Merlin Sheldrake", type: "書", what: "真菌地下網絡連結生態與心智，可作菌絲型物種設計參考", get: "繁體中文版由果力文化出版，2021年與2025年各出一版，副標不同", url: "https://www.azothbooks.com/shop/rc0016r", teach: "真菌靠菌絲連成一大片。你的物種是一個一個的個體，還是一整片網路？", facts: "原書英文書名為《Entangled Life: How Fungi Make Our Worlds, Change Our Minds and Shape Our Futures》，2020年出版(作者官網確認)。繁體中文版由果力文化出版、周沛郁翻譯，國家圖書館CIP資料庫顯示先有2021年8月版(副標「看生態煉金師如何驅動世界、推展生命，連結地球萬物」)，後有2025年6月版(副標「地球上最高生存智慧的『類神經』網絡，最優雅的生態鍊金師」)，確為同一本書的改版重出。", sources: ["https://www.merlinsheldrake.com/entangled-life", "https://www.azothbooks.com/shop/rc0016r"] },
+      { name: "五感之外的世界", img: "book-immense-world.jpg", imgCredit: "臉譜出版書封", video: "https://www.youtube.com/watch?v=dVPN165wz1Y", videoTitle: "The hidden world of animal senses – with Ed Yong", by: "Ed Yong，2022", type: "書", what: "動物各有獨特感知世界(Umwelt)，可用來設計你的生物如何感受觀眾", get: "繁體中文版由臉譜出版，2023年8月，譯者孟令函", teach: "寫下一種你的物種有、人類沒有的感官。牠會用這個感官怎麼感覺到觀眾？", facts: "原書英文書名為《An Immense World: How Animal Senses Reveal the Hidden Realms Around Us》，2022年6月由Random House出版(作者官網與出版社官方書頁確認)。繁體中文版《五感之外的世界》由臉譜出版，2023年8月發行，譯者孟令函(國家圖書館CIP紀錄確認)。", sources: ["https://edyong.me/an-immense-world", "https://www.penguinrandomhouse.com/books/616914/an-immense-world-by-ed-yong/"] },
+      { name: "黏菌解出東京鐵路網", img: "physarum-tokyo.jpg", imgCredit: "科学技術振興機構（JST）官方新聞稿", by: "Tero, A. 等，2010", type: "論文", what: "研究者讓沒有大腦的黏菌在仿關東地形的培養皿上覓食，長出的網路效率與東京鐵路網相當", get: "論文需訂閱下載，JST 官方新聞稿可免費讀圖文摘要。", url: "https://www.jst.go.jp/pr/info/info708/index.html", teach: "可以跟學生討論：沒有大腦與神經系統的單細胞生物，如何靠局部規則的重複運作解出人類需要工程規劃才能得到的網路結構，對設計「非人類心智」的行為邏輯有什麼啟發。", facts: "Tero 等人 2010 年發表於 Science（doi:10.1126/science.1177894）。研究者在培養皿上依關東地形擺放燕麥片代表城市，讓多頭絨泡黏菌從東京的位置向外生長，長出的管狀網路在成本、效率與抗斷線能力上與東京鐵路網相當。", sources: ["https://www.jst.go.jp/pr/info/info708/index.html", "https://api.crossref.org/works/10.1126/science.1177894"] },
+      { name: "《A Foray into the Worlds of Animals and Humans》", img: "uexkull.jpg", imgCredit: "University of Minnesota Press 官方書頁", by: "Jakob von Uexküll，1934（2010 英譯本）", type: "書", what: "生物學家提出環境界概念，主張每種動物只活在牠感官能及的那部分世界。", get: "University of Minnesota Press 官方書頁，可館際借閱", url: "https://www.upress.umn.edu/9780816659005/a-foray-into-the-worlds-of-animals-and-humans", teach: "可以跟學生討論：設計一個物種時，與其先畫外形，不如先決定牠能感知什麼、不能感知什麼，環境界的邊界會反過來決定牠的行為與外形。", facts: "原著《Streifzüge durch die Umwelten von Tieren und Menschen》由愛沙尼亞出生的生物學家 Jakob von Uexküll（1864–1944）於 1934 年出版，明尼蘇達大學出版社 2010 年推出 Joseph D. O'Neil 的新英譯本，收錄於 Posthumanities 系列。書中以蜱蟲為例，說明蜱蟲只感知光、體溫與汗酸氣味三種訊號，牠所建構的「環境界」與人類所見的世界完全不同。", sources: ["https://www.upress.umn.edu/9780816659005/a-foray-into-the-worlds-of-animals-and-humans"] },
     ],
   },
   {
-    cat: '人工生命藝術', hint: 'M3 到 M6 的同行前輩',
+    cat: "人工生命藝術", hint: "M3 到 M6 的同行前輩",
     items: [
-      { name: 'Evolved Virtual Creatures', img: 'case-karl-sims.jpg', imgCredit: 'Karl Sims 官網', by: 'Karl Sims，1994', type: '作品', what: '演化出泳姿與步態的虛擬生物，人工生命藝術的原點，也是遺傳演算法的祖師爺', get: '官方頁與原始影片', url: 'https://www.karlsims.com/evolved-virtual-creatures.html' },
-      { name: 'A-Volve', img: 'case-a-volve.jpg', imgCredit: 'Sommerer & Mignonneau，林茲藝術大學官網', by: 'Sommerer & Mignonneau，1994', type: '作品', what: '觀眾畫的生物在水池裡游動、覓食、交配，互動人工生命的里程碑，概念與本專案幾乎同構', get: '官方頁已遷至林茲藝術大學', url: 'https://interface.ufg.ac.at/christa-laurent/A-Volve.html' },
-      { name: 'Strandbeest', img: 'strandbeest.jpg', imgCredit: 'Theo Jansen 官網（攝影 Loek van der Klis）', by: 'Theo Jansen', type: '作品', what: '風力驅動的海灘巨獸，用物理材料做的新物種，造物不限於螢幕', get: '官方網站', url: 'https://www.strandbeest.com' },
-      { name: 'Neural Zoo', img: 'neural-zoo.jpg', imgCredit: 'Sofia Crespo 官網', by: 'Sofia Crespo', type: '作品', what: '用神經網路生成的不存在生物，AI 時代的自然史圖鑑', get: '官方網站', url: 'https://sofiacrespo.com/neural-zoo' },
-      { name: 'Emissaries', img: 'emissaries.jpg', imgCredit: 'Ian Cheng 官網', by: 'Ian Cheng', type: '作品', what: '自己會一直演下去的活體模擬，作品本身就是一個持續運作的生態系', get: 'MoMA PS1 展覽頁', url: 'https://www.moma.org/calendar/exhibitions/3656' },
-      { name: 'fishdraw', img: 'fishdraw.jpg', imgCredit: 'Lingdong Huang，GitHub fishdraw（MIT）', by: 'Lingdong Huang', type: '開源', what: '程序生成的魚類素描，開源可讀，示範一套規則長出一族生物', get: 'GitHub，MIT 授權', url: 'https://github.com/LingDong-/fishdraw' },
-      { name: 'Graffiti Nature', img: 'graffiti-nature.jpg', imgCredit: 'teamLab 官網', by: 'teamLab', type: '作品', what: '觀眾畫的動植物進入共同生態系，彼此捕食與繁衍，可以理解成全班一座動物園的實體版', get: '官方作品頁，京都與新加坡常設展出', url: 'https://www.team-lab.art/w/graffitinature/' },
+      { name: "河口洋一郎《Growth Model》", img: "kawaguchi.jpg", imgCredit: "河口洋一郎作品，東京大學總合研究博物館小石川分館《BIOMECANICA》展（2011），出處intermediatheque.jp", by: "河口洋一郎，1982起", type: "作品", what: "河口洋一郎提出Growth Model演算法，讓造形依規則自動增殖生長", get: "ACM SIGGRAPH 歷史檔案人物頁與東京大學博物館展覽紀錄", url: "https://history.siggraph.org/person/yoichiro-kawaguchi", teach: "如果你的生物造形也用固定演算法生長，要怎麼讓觀眾在30秒內看出它正在「生長」？", facts: "河口洋一郎1982年在SIGGRAPH發表論文〈A morphological study of the form of nature〉，提出以幾何級數規則生成貝殼、獸角等自然造形的GROWTH演算法（DOI 10.1145/965145.801284，經Crossref核實，刊於SIGGRAPH Computer Graphics 16卷3期223–232頁）。他自1998年起任東京大學教授至2018年退休，2010年獲ACM SIGGRAPH Distinguished Artist Award for Lifetime Achievement in Digital Art（東京大學情報學環官方頁iii.u-tokyo.ac.jp、ACM SIGGRAPH History Archives official bio）。", sources: ["https://api.crossref.org/works/10.1145/965145.801284", "https://history.siggraph.org/person/yoichiro-kawaguchi", "https://www.intermediatheque.jp/ja/schedule/view/index/preevents/mode/PREEVENT/id/P_EVE0012", "https://www.iii.u-tokyo.ac.jp/research/180322ykawaguchi"] },
+      { name: "William Latham《Mutator》", img: "latham.jpg", imgCredit: "Seaq1, William Latham, IBM, 1992，出處mutatorvr.co.uk", video: "https://vimeo.com/413899416", videoTitle: "Evolution of Form", by: "William Latham與Stephen Todd，1987–1993（IBM UK）", type: "作品", what: "William Latham與IBM工程師合作，讓造形依類基因規則在螢幕上一代代演化", get: "Latham 官方網站 mutatorvr.co.uk 的 IBM 專頁與官方影片", url: "https://mutatorvr.co.uk/ibm/", teach: "Mutator讓觀眾挑選喜歡的造形來決定下一代演化方向，你的物種設定要不要也讓觀眾的選擇改變生長或演化的走向？", facts: "mutatorvr.co.uk官方IBM專頁記載，William Latham與Stephen Todd自1987至1993年在英國溫徹斯特IBM UK Scientific Centre合作發展這套演化造形系統，同頁列出《Evolutionary Art and Computers》即Stephen Todd與William Latham於1992年出版的專書（OpenLibrary記錄OL3990144W）。Latham現為Goldsmiths, University of London電腦系教授，官方頁面列出Mutator VR（2016–2020）曾在龐畢度中心（2020）、林茲Ars Electronica藝術節（2017）展出（gold.ac.uk教職員頁）。", sources: ["https://mutatorvr.co.uk/ibm/", "https://www.gold.ac.uk/computing/people/w-latham", "https://openlibrary.org/works/OL3990144W", "https://doi.org/10.1162/leon_a_01857"] },
+      { name: "Strandbeest", img: "strandbeest.jpg", imgCredit: "Theo Jansen 官網（攝影 Loek van der Klis）", video: "https://www.youtube.com/watch?v=C97kMKwZ2-g", videoTitle: "STRANDBEEST EVOLUTION 2021", by: "Theo Jansen", type: "作品", what: "風力驅動的塑膠管海灘生物，1990年起演化至今，已分12個演化期", get: "官方網站，含族譜與12個演化期介紹", url: "https://www.strandbeest.com", teach: "這些生物用風和管子活在沙灘上。你的物種一定要待在螢幕裡嗎？", facts: "Theo Jansen自1990年起以黃色塑膠管打造骨架，做出靠風力行走的Strandbeest，迄今已演化出12個時期(依官網Evolution頁的結構特徵分期)。官網族譜也記載最早的生命形式Vermiculus Antramentum(1989)原本只存在電腦螢幕上，之後才發展成實體海灘生物。", sources: ["https://www.strandbeest.com"] },
+      { name: "Evolved Virtual Creatures", img: "case-karl-sims.jpg", imgCredit: "Karl Sims 官網", video: "https://www.youtube.com/watch?v=RZtZia4ZkX8", videoTitle: "Evolved Virtual Creatures (1994)", by: "Karl Sims，1994", type: "作品", what: "用遺傳演算法演化虛擬生物的游泳、行走、跳躍等行為，1994年SIGGRAPH發表", get: "官方頁，含1994年SIGGRAPH原始影片連結", url: "https://www.karlsims.com/evolved-virtual-creatures.html", teach: "如果讓電腦演化你的物種，你會出什麼考驗題？考驗改了，身體會怎麼跟著變？", facts: "Karl Sims於1994年在SIGGRAPH發表論文與影片《Evolving Virtual Creatures》，在電腦中建立數百隻虛擬生物族群，用遺傳演算法反覆選拔、複製、突變其虛擬基因，演化出游泳、行走、跳躍、追逐與爭奪方塊等行為。遺傳演算法本身是John Holland於1970年代提出的既有技術，Sims是應用者而非發明者。", sources: ["https://www.karlsims.com/evolved-virtual-creatures.html"] },
+      { name: "A-Volve", img: "case-a-volve.jpg", imgCredit: "Sommerer & Mignonneau，林茲藝術大學官網", video: "https://www.youtube.com/watch?v=0WG45k93pCA", videoTitle: "A-Volve", by: "Sommerer & Mignonneau，1994", type: "作品", what: "觀眾用觸控螢幕畫形狀，生物在水池中游動、掠食與交配，1994年東京ICC首展", get: "官方頁，現由林茲藝術大學(UfG Linz)典藏", url: "https://interface.ufg.ac.at/christa-laurent/A-Volve.html", teach: "觀眾畫出生物、把手伸進水裡保護牠。你的作品裡，觀眾能改變什麼？", facts: "A-Volve由Christa Sommerer與Laurent Mignonneau於1994年在東京ICC-NTT Intercommunication Gallery首展。觀眾在觸控螢幕手繪二維形狀，系統即時生成對應的虛擬三維生物放進實體水池中依外形游動，生物可因觸摸逃離、可交配產生帶雙親基因的後代，也可能因飢餓、死亡或被掠食而消亡。", sources: ["https://interface.ufg.ac.at/christa-laurent/A-Volve.html"] },
+      { name: "Karl Sims《Galápagos》", img: "sims-galapagos.jpg", imgCredit: "© Karl Sims，karlsims.com（Galápagos 於東京 ICC 展場實景）", by: "Karl Sims，1997", type: "作品", what: "觀眾踩踏感應墊為螢幕上的虛擬生物投票，中選者存活、交配、產生突變後代", get: "官方頁 karlsims.com/galapagos，裝置已下展", url: "https://www.karlsims.com/galapagos/", teach: "可連結到人擇（觀眾美感偏好）如何取代自然選擇，成為虛擬物種演化的環境條件。", facts: "Karl Sims於1997年為東京NTT ICC打造《Galápagos》，十二台電腦各自演化一隻3D虛擬生物並顯示於弧形排列的螢幕。觀眾站上感應踏墊選擇喜歡的生物，中選者存活、交配並產生帶隨機突變的後代，未中選者遭淘汰後由新後代取代。裝置1997至2000年於ICC展出，1999年也在美國DeCordova美術館展出。", sources: ["https://www.karlsims.com/galapagos/", "https://www.karlsims.com/galapagos/decordova-text.html"] },
+      { name: "Emissaries", img: "emissaries.jpg", imgCredit: "Ian Cheng 官網", video: "https://www.youtube.com/watch?v=XFmMrcW2ZsM", videoTitle: "Ian Cheng: BOB, Emissaries | Serpentine", by: "Ian Cheng", type: "作品", what: "MoMA官方形容為會自己玩下去的電子遊戲，模擬持續演化為自成一體的生態系", get: "MoMA PS1展覽頁，2017年4至9月於紐約展出的Emissary三部曲", url: "https://www.moma.org/calendar/exhibitions/3656", teach: "作品沒人看的時候也在繼續演。你的動物園沒有觀眾時，生物在做什麼？", facts: "MoMA PS1於2017年4月9日至9月24日展出Ian Cheng首次美國美術館個展《Emissaries》，呈現以電玩引擎製作的Emissary三部曲(2015–17)。MoMA官方頁面形容作品是「a video game that plays itself」，模擬會無限演化成自成一體的生態系，三部曲已由MoMA典藏。", sources: ["https://www.moma.org/calendar/exhibitions/3656"] },
+      { name: "林珮淳《夏娃克隆創造計畫 I》", img: "lin-eve-clone.jpg", imgCredit: "林珮淳提供，linpeychwen.com", by: "林珮淳，2016", type: "作品", what: "以3D動畫重現創造夏娃克隆的過程，將維特魯威人與人獸合體美女疊合演變", get: "官方頁 linpeychwen.com作品頁，9分鐘錄像裝置，無公開線上播放", url: "https://linpeychwen.com/making-of-eve-clone-i/", teach: "可用來討論創作者如何把生物身體被創造的過程本身變成作品，對照課程要求的物種設定。", facts: "林珮淳2016年完成《Making of Eve Clone I》，是一件片長9分鐘的3D動畫暨聲音裝置。作品挪用達文西《維特魯威人》，畫面從線稿逐步旋轉演變成人形皮膚、金屬皮膚、全像式綠光皮膚，最後成為《但以理書》所述金頭銀身銅腹鐵腿的巨像身體，比喻科技文明以人形創造夏娃克隆。該作2019年獲義大利佛羅倫斯雙年展新媒體藝術類首獎。", sources: ["https://linpeychwen.com/making-of-eve-clone-i/"] },
+      { name: "池上高志、石黒浩《Alter》", img: "ikegami-alter.jpg", imgCredit: "Alter, 2018, 出處Ars Electronica S+T+ARTS Prize官方頁ars.electronica.art", video: "https://www.youtube.com/watch?v=lhIASPh94yE", videoTitle: "パネルトーク　～生命らしさを持つ機械人間「オルタ(Alter)」", by: "池上高志、石黒浩，2016", type: "作品", what: "池上高志與石黒浩合作機器人，靠中樞模式產生器與類神經網路即時生成動作", get: "Ars Electronica 官方作品頁與日本科學未來館官方影片", url: "https://ars.electronica.art/starts-prize/en/alter", teach: "Alter靠感測器訊號即時牽動類神經網路產生動作，沒有固定動作腳本，你的生物要不要也拿掉『固定動畫循環』改成即時規則生成？", facts: "Ars Electronica S+T+ARTS Prize官方頁記載，Alter由大阪大學石黒浩、東京大學池上高志、小川浩平、土井樹輝共同開發，機身42組氣動致動器由中樞模式產生器（CPG）與模擬1000個神經細胞的類神經網路即時驅動，動作不預先寫定，2018年獲S+T+ARTS Prize卓越獎（Award of Distinction）。日本科學未來館官方YouTube頻道（MiraikanChannel）2016年9月上傳的座談影片說明，該座談於2016年8月6日在科學未來館舉行，主題即為Alter開發團隊對談。", sources: ["https://ars.electronica.art/starts-prize/en/alter", "https://www.youtube.com/watch?v=lhIASPh94yE", "https://www.sacral.c.u-tokyo.ac.jp/project/art-projects", "https://www.miraikan.jst.go.jp/lab/facilities/AndroidALTER/"] },
+      { name: "Graffiti Nature", img: "graffiti-nature.jpg", imgCredit: "teamLab 官網", video: "https://www.youtube.com/watch?v=OomhbW3bffs", videoTitle: "Graffiti Nature", by: "teamLab", type: "作品", what: "官方描述為觀眾所繪生物構成的生態系，彼此捕食與繁衍，吃不夠或被吃掉就會消失", get: "teamLab官方作品頁，常設展於京都與新加坡", url: "https://www.teamlab.art/w/graffitinature/", teach: "觀眾畫的生物會進入同一個生態系。你的動物園要不要讓觀眾也放生物進來？", facts: "teamLab的《Graffiti Nature》(2016年起)是由觀眾繪製的生物構成的互動生態系，觀眾在紙上畫生物並掃描，生物會投影到展場中彼此捕食與繁衍，吃不夠或被吃掉就會消失。根據官方頁面的關聯展覽資訊，目前常設展出於日本teamLab Biovortex Kyoto(2025年10月起)與新加坡ArtScience Museum的Future World常設展(2016年3月起)。", sources: ["https://www.teamlab.art/w/graffitinature/"] },
+      { name: "Pierre Huyghe《After ALife Ahead》", img: "huyghe-after-alife.jpg", imgCredit: "攝影 Ola Rindal，Esther Schipper 畫廊提供", by: "Pierre Huyghe，2017", type: "作品", what: "把停業溜冰場改造成會隨時間演化的生物科技系統，內含培養細胞、蜂巢與水族箱", get: "官方典藏頁 skulptur-projekte-archiv.de，裝置已不存在", url: "https://skulptur-projekte-archiv.de/en-us/2017/projects/186", teach: "可用來討論環境設定本身如何被做成活的、觀眾無法完全掌控的共生系統。", facts: "2017年明斯特雕塑計畫展中，法國藝術家Pierre Huyghe把明斯特Steinfurterstraße 113–115一座2016年停業的室內溜冰場改造成裝置《After ALife Ahead》。他鑿開混凝土地面，底下設有培養中的人類癌細胞、細菌與藻類群落、蜂巢，以及內含GloFish與芋螺的水族箱，並用擴增實境與可自動開闔的天花板玻璃裝置串連這些生命歷程。裝置僅在展覽期間存在，如今已不存在。", sources: ["https://skulptur-projekte-archiv.de/en-us/2017/projects/186", "https://www.estherschipper.com/exhibitions/448-after-alife-ahead-pierre-huyghe"] },
+      { name: "Neural Zoo", img: "neural-zoo.jpg", imgCredit: "Sofia Crespo 官網", video: "https://www.youtube.com/watch?v=80LCWXh4FfM", videoTitle: "AI-Generated Creatures That Stretch the Boundaries of Imagination | Sofia Crespo | TED", by: "Sofia Crespo", type: "作品", what: "用卷積神經網路生成的想像生物影像，創作期間2018至2022年，探討自然與資料重組", get: "官方網站，含作品年份與技術說明", url: "https://sofiacrespo.com/neural-zoo", teach: "用 AI 生成的生物，怎麼判斷牠合不合理？你會用什麼標準檢查自己的物種？", facts: "Sofia Crespo的Neural Zoo創作於2018至2022年間，用卷積神經網路(CNN)生成外觀類似自然生物、實為重新排列的想像影像，探討創意是否只是已知元素的重組。", sources: ["https://sofiacrespo.com/neural-zoo"] },
+      { name: "fishdraw", img: "fishdraw.jpg", imgCredit: "Lingdong Huang，GitHub fishdraw（MIT）", by: "Lingdong Huang", type: "開源", what: "程序生成的魚類插畫程式，輸出折線供繪圖機使用，單一檔案無外部依賴", get: "GitHub repo，LICENSE檔標示MIT授權，2021年首次提交", url: "https://github.com/LingDong-/fishdraw", teach: "一套規則畫出一整族魚。你的物種要靠哪幾個參數，才能生出彼此不同的個體？", facts: "GitHub帳號LingDong-(Lingdong Huang)於2021年建立fishdraw repo，README描述為程序生成魚類插畫程式，可輸出svg/json/csv等折線格式，單一檔案無外部依賴，以繪圖機(plotter)為主要用途。LICENSE檔確認為MIT授權，著作權標示Copyright (c) 2021 Lingdong Huang。", sources: ["https://github.com/LingDong-/fishdraw", "https://raw.githubusercontent.com/LingDong-/fishdraw/master/LICENSE"] },
     ],
   },
   {
-    cat: '遊戲裡的生態', hint: '把生態當主角的遊戲',
+    cat: "遊戲裡的生態", hint: "把生態當主角的遊戲",
     items: [
-      { name: 'Rain World', img: 'rain-world.jpg', imgCredit: 'Steam 官方商店頁', by: 'Videocult', type: '遊戲', what: '整個世界是真的生態系，每隻生物有自己的生存目標，玩家只是食物鏈一環', get: 'Steam 上架中', url: 'https://store.steampowered.com/app/312520' },
-      { name: 'Spore', img: 'spore.jpg', imgCredit: 'Steam 官方商店頁', by: 'Will Wright，2008', type: '遊戲', what: '生物創造器加演化階段，把造物做成遊戲的先驅', get: 'Steam 上架中', url: 'https://store.steampowered.com/app/17390' },
-      { name: 'Everything', img: 'everything.jpg', imgCredit: 'Steam 官方商店頁', by: 'David OReilly', type: '遊戲', what: '你可以成為任何東西，從細菌到星系，尺度與視角的哲學遊戲', get: 'Steam 上架中', url: 'https://store.steampowered.com/app/582270' },
+      { name: "Rain World", img: "rain-world.jpg", imgCredit: "Steam 官方商店頁", video: "https://www.youtube.com/watch?v=kMfWWQJx0dE", videoTitle: "Rain World Trailer | Fate of a Slugcat | Adult Swim Games", by: "Videocult", type: "遊戲", what: "整個世界是模擬生態系，每隻生物各有生存目標，玩家只是食物鏈一環", get: "Steam 商店頁目前上架販售，發行商為 Akupara Games", url: "https://store.steampowered.com/app/312520/Rain_World/", teach: "每隻生物都有自己的生存目標。觀眾不在時，你的物種在追求什麼？", facts: "Rain World由Videocult開發，2017年3月28日發售，Steam商店頁標示發行商為Akupara Games。目前該商店頁仍可購買，有基礎版、豪華版與含DLC合集等選項在架上。", sources: ["https://store.steampowered.com/app/312520/Rain_World/"] },
+      { name: "Spore", img: "spore.jpg", imgCredit: "Steam 官方商店頁", video: "https://www.youtube.com/watch?v=zi2GvqboQfY", videoTitle: "Spore Trailer", by: "Maxis／Electronic Arts，2008", type: "遊戲", what: "生物創造工具加五個演化階段：細胞、生物、部落、文明、太空", get: "Steam 商店頁目前上架販售，開發商為 Maxis，發行商為 EA", url: "https://store.steampowered.com/app/17390/SPORE/", teach: "遊戲把演化分成幾個階段。你的物種從出生到死亡，分成哪幾個階段？", facts: "SPORE由Maxis開發、Electronic Arts發行，2008年12月19日發售，Steam官方頁面列出五個演化階段：Cell、Creature、Tribe、Civilization、Space。", sources: ["https://store.steampowered.com/app/17390/SPORE/", "https://www.ea.com/games/spore"] },
+      { name: "Everything", img: "everything.jpg", imgCredit: "Steam 官方商店頁", video: "https://www.youtube.com/watch?v=aIMlcRCjjPw", videoTitle: "Double Fine Presents: Everything by David OReilly - Launch Trailer", by: "David OReilly", type: "遊戲", what: "你可以化身宇宙萬物，從細菌到星系，由 Alan Watts 的哲學旁白貫穿", get: "Steam 商店頁目前上架，發行為 David OReilly、PLAYISM", url: "https://store.steampowered.com/app/582270/Everything/", teach: "視角可以從細菌切到星系。你的動物園要用什麼尺度讓觀眾看牠？", facts: "Everything由David OReilly開發，2017年最初以Double Fine Presents旗下作品名義發行，同年4月21日登上Steam。Steam商店頁「About This Game」原文寫道遊戲由Alan Watts的哲學旁白貫穿(narrated by the inspiring philosophy of Alan Watts)，目前Steam頁面列出的發行方為David OReilly本人與PLAYISM(Japan)。", sources: ["https://store.steampowered.com/app/582270/Everything/", "https://www.doublefine.com/news/everything-from-david-oreilly-is-out-on-march-21st"] },
+      { name: "《Niche》", img: "niche.jpg", imgCredit: "Stray Fawn Studio，Steam 官方商店頁遊戲截圖", video: "https://www.youtube.com/watch?v=nKOao3U-QVQ", videoTitle: "Niche - a genetic survival game, Gameplay Teaser", by: "Stray Fawn Studio，2017", type: "遊戲", what: "依真實孟德爾遺傳學交配選育貓狐熊犬混合外貌物種，撐過天災與掠食者", get: "Steam 與 Nintendo Switch 上架販售", url: "https://store.steampowered.com/app/440650/Niche__a_genetics_survival_game", teach: "可用來討論物種設定如何直接建立在可運算的基因規則上，把繁殖機制當成遊戲系統設計。", facts: "Stray Fawn Studio的《Niche - a genetics survival game》2016年由Kickstarter集資、於2017年9月21日正式發售。玩家依真實遺傳學機制（顯性隱性、共顯性、基因流動、遺傳漂變、天擇與性擇）替一群貓狐熊犬混合外貌的動物選育基因，讓牠們撐過掠食者、氣候變遷與疾病，物種滅絕遊戲就結束。", sources: ["https://store.steampowered.com/app/440650/Niche__a_genetics_survival_game", "https://strayfawnstudio.com/presskit/sheet.php?p=niche_a_genetics_survival_game"] },
+      { name: "《Thrive》", img: "thrive.jpg", imgCredit: "Revolutionary Games Studio，Steam 官方商店頁遊戲截圖", video: "https://www.youtube.com/watch?v=LmIwSBvXGQA", videoTitle: "Thrive Microbe Stage Trailer", by: "Revolutionary Games Studio，2013起", type: "開源", what: "從潮池單細胞開始，玩家編輯自己物種身體並在多階段中持續演化求生", get: "官方網站與 GitHub 免費下載，原始碼 GPL 授權，也有 Steam 版", url: "https://revolutionarygamesstudio.com/", teach: "可用來討論物種設定如何被拆成可持續編輯的基因與器官模組，對照學生自己設計的滅絕後生物。", facts: "Revolutionary Games Studio自2013年起開發《Thrive》，是一款完全免費、開源（GPL授權）的演化模擬遊戲，玩家從潮池中的單細胞開始，親自編輯物種的身體構造，並經歷細胞、多細胞等預定九個演化階段。目前只有微生物階段（Microbe Stage）完整可玩，原始碼公開在GitHub的Revolutionary-Games組織下。", sources: ["https://revolutionarygamesstudio.com/", "https://github.com/Revolutionary-Games/Thrive", "https://store.steampowered.com/app/1779200/Thrive"] },
+      { name: "《Equilinox》", img: "equilinox.jpg", imgCredit: "ThinMatrix，Steam 官方商店頁遊戲截圖", video: "https://www.youtube.com/watch?v=XuTXzLZMLUE", videoTitle: "Equilinox - Launch Trailer", by: "ThinMatrix，2018", type: "遊戲", what: "在沙盒地圖種植與飼養上百種動植物，基因改造物種讓生態系持續演化", get: "Steam 上架販售", url: "https://store.steampowered.com/app/853550/Equilinox", teach: "可用來討論如何把環境與物種做成可互動的參數系統，讓觀眾像園丁一樣調整生態平衡。", facts: "獨立開發者ThinMatrix的《Equilinox》於2018年11月23日在Steam發售，售價US$9.99。玩家在沙盒地圖上栽種與飼養上百種動植物，經營一個會自行演化的生態系，也能在創作模式基因改造物種的顏色、大小與行為做出變種。", sources: ["https://store.steampowered.com/app/853550/Equilinox", "https://www.youtube.com/watch?v=XuTXzLZMLUE"] },
     ],
   },
 ]
