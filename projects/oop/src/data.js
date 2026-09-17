@@ -70,30 +70,40 @@ export const CREATURE = {
       items: [
         {
           name: '深海熱泉的生物群聚',
+          img: 'vent-community.jpg',
+          imgCredit: 'WHOI（攝影 John M. Edmond），1977 年加拉巴哥裂谷',
           fact: '1977 年研究團隊潛到加拉巴哥裂谷 2,500 公尺深處，在熱泉口發現大片生物，牠們不靠光合作用，靠硫氧化細菌的化學合成取得能量。',
           url: 'https://doi.org/10.1126/science.203.4385.1073',
           src: 'Corliss et al. 1979, Science',
         },
         {
           name: '熱泉管蟲的共生細菌',
+          img: 'tubeworm-symbiont.jpg',
+          imgCredit: 'WHOI（攝影 Amy Nevala），2005 年加拉巴哥裂谷探勘採到的巨型管蟲',
           fact: '管蟲體內有能氧化硫、自己合成養分的共生細菌，研究者推測牠的養分就來自這些細菌。',
           url: 'https://doi.org/10.1126/science.213.4505.340',
           src: 'Cavanaugh et al. 1981, Science',
         },
         {
           name: '櫻花鉤吻鮭（台灣）',
+          img: 'formosan-salmon.jpg',
+          imgCredit: '雪霸國家公園',
           fact: '冰河期時被留在大甲溪，演化後失去洄游能力，喜歡水溫 10 到 16°C 以下、清澈沒有污染的溪水。',
           url: 'https://www.trimt-nsa.gov.tw/zh-tw/ecology/58/',
           src: '交通部觀光署參山國家風景區管理處',
         },
         {
           name: 'Biosphere 2',
+          img: 'biosphere2.jpg',
+          imgCredit: '亞利桑那大學',
           fact: '亞利桑那州的密閉玻璃建築，封閉後頭 16 個月氧氣從 21% 降到 14%，原因是土壤裡的有機物被微生物分解耗掉氧氣。',
           url: 'https://doi.org/10.1029/94EO00285',
           src: 'Severinghaus et al. 1994, Eos',
         },
         {
           name: '吃塑膠的細菌',
+          img: 'plastic-bacteria.jpg',
+          imgCredit: 'Kohei Oda（京都工藝纖維大學），刊於慶應義塾大學研究介紹頁',
           fact: '2016 年在日本的寶特瓶回收場附近發現 Ideonella sakaiensis，能分解並利用 PET 塑膠，人造物也可能變成食物。',
           url: 'https://doi.org/10.1126/science.aad6359',
           src: 'Yoshida et al. 2016, Science',
@@ -105,18 +115,24 @@ export const CREATURE = {
       items: [
         {
           name: 'Dougal Dixon《After Man》',
+          img: 'after-man.jpg',
+          imgCredit: 'Breakdown Press 書封',
           fact: '1981 年出版，把場景設在大約 5,000 萬年後，替未來的地球推想出一整套動物。',
           url: 'https://www.breakdownpress.com/store/after-man',
           src: 'Breakdown Press（出版社）',
         },
         {
           name: '《The Future Is Wild》',
+          img: 'future-is-wild.jpg',
+          imgCredit: 'The Future Is Wild 官網',
           fact: '三集紀錄片，分別是 500 萬年後的冰河世界、1 億年後的溫室世界、2 億年後的新世界。',
           url: 'https://www.thefutureiswild.com/documentary/',
           src: 'The Future Is Wild 官方網站',
         },
         {
           name: 'Karl Sims《Evolving Virtual Creatures》',
+          img: 'karl-sims.jpg',
+          imgCredit: 'Karl Sims 官網',
           fact: '1994 年的研究，生物在模擬的水中或陸地上接受游泳、行走、跳躍等考驗，表現好的才留下來繼續演化，官網有影片。',
           url: 'https://www.karlsims.com/evolved-virtual-creatures.html',
           src: 'Karl Sims 官方網站',
@@ -128,30 +144,40 @@ export const CREATURE = {
       items: [
         {
           name: '菌根網路',
+          img: 'mycorrhiza.jpg',
+          imgCredit: 'Mother Tree Project',
           fact: '在野外，不同種的樹之間會透過地下的菌根真菌傳遞碳，交流不一定要見面。',
           url: 'https://doi.org/10.1038/41557',
           src: 'Simard et al. 1997, Nature',
         },
         {
           name: '細菌交換基因',
+          img: 'bacteria-recombination.jpg',
+          imgCredit: 'Joshua Lederberg，洛克斐勒大學百年紀念網站',
           fact: '1946 年發現不同菌株的大腸桿菌之間會重組基因，雙方的遺傳性狀可以組合在一起。',
           url: 'https://doi.org/10.1038/158558a0',
           src: 'Lederberg & Tatum 1946, Nature',
         },
         {
           name: '發光細菌',
+          img: 'luminous-bacteria.jpg',
+          imgCredit: '費氏弧菌的宿主夏威夷短尾烏賊，McFall-Ngai Lab',
           fact: '剛接種時不發光，等族群長大、培養液被細菌改變之後，才大量合成發光酵素。',
           url: 'https://doi.org/10.1128/jb.104.1.313-322.1970',
           src: 'Nealson et al. 1970, J. Bacteriology',
         },
         {
           name: '騾',
+          img: 'mule.jpg',
+          imgCredit: '1942 年的馱運騾隊，USDA ARS（Historic Fort Reno）',
           fact: '馬（2n＝64）和驢（2n＝62）的後代，有 63 條染色體，科學上認為牠無法自然交配生下後代。',
           url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9778318/',
           src: 'Ren et al. 2022, Genes',
         },
         {
           name: '雜頭翁（台灣）',
+          img: 'zatouweng.jpg',
+          imgCredit: '烏頭翁，陳王時攝，農業部農業知識入口網',
           fact: '烏頭翁和白頭翁原本被地理隔開，人為開發與放生讓牠們在野外雜交，後代還能繁殖。',
           url: 'https://www.tbri.gov.tw/view.php?id=239&subtheme=&theme=qa',
           src: '農業部生物多樣性研究所',
@@ -163,30 +189,40 @@ export const CREATURE = {
       items: [
         {
           name: 'Tamagotchi 連線版',
+          img: 'tamagotchi.jpg',
+          imgCredit: 'BANDAI 2004 年新聞稿',
           fact: '2004 年 Bandai 推出，用紅外線跟別台連線，交朋友、交換禮物，感情夠好就結婚生下第二代。',
           url: 'https://www.bandai.co.jp/releases/images/3/14090.pdf',
           src: 'Bandai 2004 新聞稿（日文）',
         },
         {
           name: '《Creatures》',
+          img: 'creatures.jpg',
+          imgCredit: 'Steam 官方商店頁（Creatures: The Albian Years）',
           fact: '1996 年的遊戲，父母的基因在基因邊界交叉拼接並加上突變，生物還能用電子郵件從一台電腦寄到另一台。',
           url: 'https://doi.org/10.1145/267658.267663',
           src: 'Grand et al. 1997, Agents ’97',
         },
         {
           name: '寶可夢《紅／綠》',
+          img: 'pokemon-rg.jpg',
+          imgCredit: 'The Pokémon Company 官網',
           fact: '1996 年發售，用 Game Boy 專用通信線和朋友交換寶可夢。',
           url: 'https://www.pokemon.co.jp/game/other/gb-rg/',
           src: 'The Pokémon Company（日文）',
         },
         {
           name: 'A-Volve',
+          img: 'a-volve.jpg',
+          imgCredit: 'Sommerer & Mignonneau，林茲藝術大學官網',
           fact: 'Christa Sommerer & Laurent Mignonneau，1994。觀眾畫出外形，生物就在水槽裡游動、生下後代，強的吃掉弱的，觀眾的手也能保護牠們。',
           url: 'https://www.ntticc.or.jp/en/archive/works/a-volve/',
           src: 'NTT ICC',
         },
         {
           name: 'Electric Sheep',
+          img: 'electric-sheep.jpg',
+          imgCredit: 'Electric Sheep 官網',
           fact: 'Scott Draves，1999。連網的電腦一起算動畫「羊」，觀眾投票，受歡迎的羊活得久，並依基因演算法繁殖。',
           url: 'https://electricsheep.org/',
           src: 'Electric Sheep 官方網站',
@@ -227,15 +263,30 @@ export const METHOD_RHYTHM = [
 // 學期節奏：每週四上課，16 次（依本學期行事曆排定）
 export const CALENDAR = {
   intro:
-    '每週四上課，共 16 次，從 9/10 到 12/24。課程仍以里程碑為主，這張表告訴你每次上課做什麼、回家要推進到哪，全班同步的報告站有四個：10/1 世界簡報、10/15 物種簡報、11/12 物種發表會、12/24 開園。期末考週（12/21 到 12/24）本課不考試，開園展演就排在 12/24 那堂課。',
+    '每週四上課，共 16 次，從 9/10 到 12/24，每次三小時。課程仍以里程碑為主，作品在課外推進，課堂拿來討論與解決問題，這張表告訴你每次上課討論什麼、下次上課前要推進到哪，全班同步的報告站有四個：10/1 世界簡報、10/15 物種簡報、11/12 物種發表會、12/24 開園。期末考週（12/21 到 12/24）本課不考試，開園展演就排在 12/24 那堂課。',
   offdays:
     '學期內的停課日（中秋節 9/25、教師節 9/28、國慶日補假 10/9、光復節補假 10/26、全校運動大會 11/11）都不在週四，16 次上課照常進行，臨時異動以課堂公告為準。',
 }
 
-// 每週進度：date＝上課日（週四），m＝所在里程碑，station＝報告站
+// 每次上課怎麼進行：創作在課外，課堂時間拿來討論與解決問題（報告站那週以上台與提問為主）
+export const SESSION_FLOW = {
+  intro:
+    '每次上課三小時，作品主要靠你自己在課外推進，課堂時間拿來討論和解決問題。老師的講解不固定，每週看大家帶來的問題再補充需要的觀念或工具，所以帶著問題來，收穫最多。',
+  steps: [
+    { t: '進度巡迴', time: '約 20 分鐘', d: '每個人用一兩句話說這週做到哪、卡在哪，老師把卡點記在卡點牆上。' },
+    { t: '共同討論', time: '約 30 分鐘', d: '從卡點牆挑出最多人遇到的一兩個問題，或當週的討論題，全班一起想、一起解，老師視情況補充短講。' },
+    { t: '創作與個別討論', time: '約 90 分鐘', d: '各自做自己的物種，老師與助教巡迴，卡住就來排隊討論，也可以找同學一起看。' },
+    { t: '分享與收尾', time: '約 30 分鐘', d: '兩三位同學展示這週的進度或解法，每個人寫下下次上課前要推進的一件事。' },
+  ],
+  prep: '每週表上都寫了「這次上課要帶來」的東西，上課前一天整理好，卡點用截圖加一句話先貼到課程 Discord 頻道，老師上課前會先看過，討論時間就能直接切進問題。',
+  station: '報告站那一週（10/1、10/15、11/12、12/24）以上台報告與提問為主，每個人報告完，台下至少有一個人問「這個選擇的根據是什麼」。',
+}
+
+// 每週進度：date＝上課日（週四），m＝所在里程碑，station＝報告站；inClass＝課堂上討論與解決的事
 export const WEEKS = [
   {
     w: 1, date: '2026-09-10', m: 'M0', title: '開學：認識後未來動物園',
+    bring: '好奇心就好，想一部你看過、有「沒有人類的世界」的電影、動畫或遊戲。',
     inClass: [
       '課程導覽：後未來動物園要做什麼、七個里程碑怎麼走、四件套與報告站怎麼運作',
       'AI 公約四條與揭露方式',
@@ -245,128 +296,156 @@ export const WEEKS = [
   },
   {
     w: 2, date: '2026-09-17', m: 'M0', title: '裝好工作環境，開始想你的世界',
+    bring: '自己的筆電（充好電）、可以登入的個人 Google 帳號與 GitHub 帳號。',
     inClass: [
       '在自己的筆電裝 agy，用個人 Google 帳號登入，Mac 與 Windows 的步驟都在開工準備',
       '終端機基本功：打開終端機、cd 進資料夾、啟動 agy、第一次對話',
       '讓 AI 出錯實驗，親眼看它一本正經地錯',
-      '開始想你的世界與生物：用「想你的生物」一節的養殖箱五個問題，先想年代與環境，再想牠怎麼生存、棲息、繁殖',
+      '討論：用「想你的生物」一節的養殖箱五個問題，分組聊聊各自想像的年代與環境，再想牠怎麼生存、棲息、繁殖',
     ],
     after: '完成 M0 四件套並 push，把 repo 網址交給老師，寫下三個你有感覺的「沒有人類之後」的世界候選。',
   },
   {
     w: 3, date: '2026-09-24', m: 'M1', title: '世界研究：第一次完整跑研究迴圈',
+    bring: '三個世界候選，每個寫一句話並附一個你查到的來源；上週裝 agy 或使用時卡住的畫面截圖。',
     inClass: [
-      '用研究先行迴圈比較時間尺度（50 年、500 年、5 萬年），再比較兩三個棲地的環境條件',
-      '查證練習：把 AI 給的關鍵事實追回原始出處',
-      '案例庫導讀：別人怎麼想像沒有人類的世界',
+      '討論：分組互看上週寫下的三個世界候選，互相追問「這個世界的根據在哪裡」',
+      '全班一起解：挑一兩位同學的例子，示範怎麼把 AI 給的事實追回原始出處',
+      '創作與個別討論：各自跑研究迴圈，比較時間尺度與棲地，卡住就來討論',
     ],
     after: '寫出世界的一句話定案，找齊至少三個查證過的事實，研究報告寫出初稿，世界簡報做好。',
   },
   {
     w: 4, date: '2026-10-01', m: 'M1', station: '世界簡報', title: '世界簡報與確認',
+    bring: '世界簡報（PDF 已放進 m1-world/）與研究報告，準備好回答「你的根據是什麼」。',
     inClass: [
-      '每人三分鐘世界簡報',
+      '每人三分鐘世界簡報，台下同學針對根據提問',
       '研究報告當場確認，老師會跟你聊來源',
+      '收尾討論：大家的世界有哪些共同點，哪幾個世界有機會相鄰',
     ],
     after: '通過確認就開始從世界推物種，還沒通過的照回饋補強，再找老師確認。',
   },
   {
     w: 5, date: '2026-10-08', m: 'M2', title: '從世界推出你的物種',
+    bring: '世界的一句話定案，以及三個物種的初步想像（能量從哪來、住在哪、怎麼繁殖），各附一種真實生物當參照。',
     inClass: [
-      '從世界推物種：能量從哪裡來、碳基還撐不撐得住、矽基或其他代謝方式的根據與困難',
-      '物種設定書五欄：型態、代謝、繁衍、行為、威脅，每欄都要有根據',
-      'p5.js 快速入門：setup 與 draw、座標與圖形、noise',
+      '討論：用「想你的生物」的養殖箱五問兩兩互相追問，找出設定裡最站不住的一環',
+      '小組互看物種設定書五欄（型態、代謝、繁衍、行為、威脅），每人指出對方根據最弱的一欄',
+      '全班一起解：p5.js 起步最常卡的地方（畫不出來、動不起來、座標搞混），從大家的問題裡挑來解',
+      '創作與個別討論：做會動、有生命感的最小雛形',
     ],
     after: '設定書初稿完成，做出一個會動、有生命感的最小雛形，物種簡報做好。',
   },
   {
     w: 6, date: '2026-10-15', m: 'M2', station: '物種簡報', title: '物種簡報與檢核',
+    bring: '物種簡報、設定書五欄，以及可以現場跑的雛形。',
     inClass: [
-      '每人三分鐘物種簡報，現場跑會動的雛形',
+      '每人三分鐘物種簡報，現場跑會動的雛形，台下同學提問',
       '檢核當場進行：設定書跟雛形對不對得上',
+      '收尾討論：哪些物種的能量來源或繁殖方式有機會互相影響',
     ],
     after: '照回饋修設定書，想好牠的三個特徵與三種行為。',
   },
   {
     w: 7, date: '2026-10-22', m: 'M3', title: '先設計，再寫碼',
+    bring: '依回饋修過的設定書，以及「牠有哪些特徵、哪些行為」的清單草稿，各至少三項。',
     inClass: [
-      '把設定書交給 AI，一起討論出設計清單，這一步先不寫碼',
-      '做出最小可跑版，一隻會動的就好',
+      '討論：把設定書翻成「牠有哪些特徵、哪些行為」，兩兩互看設計清單，先不寫碼',
+      '全班一起解：怎麼請 AI 先給設計、比較兩三種做法，看懂了再請它寫碼',
+      '創作與個別討論：做出最小可跑版，一隻會動的就好',
     ],
     after: '最小可跑版 push 上去，確認牠長得像設定書裡的那隻。',
   },
   {
     w: 8, date: '2026-10-29', m: 'M3', title: '讓行為對上設定書',
+    bring: '最小可跑版的網址或錄影，以及一個卡住的問題：完整錯誤訊息或截圖，加上你已經試過的方法。',
     inClass: [
-      '對照關：跑起來的行為逐欄對照設定書',
-      '演算法圖鑑導讀（行為類）：steering 的追與逃、Braitenberg 的性格、IK 觸手',
+      '互看討論：兩兩交換，找出對方跑起來的行為哪裡跟設定書對不上',
+      '全班一起解：從大家的程式挑一兩個常見卡點，例如動作不自然、一直跑出畫面',
+      '創作與個別討論：從演算法圖鑑的行為類挑一兩個，讓牠長出第一個天性',
     ],
     after: '從圖鑑挑一兩個演算法，讓牠長出第一個天性。',
   },
   {
     w: 9, date: '2026-11-05', m: 'M3', title: '長出天性，準備發表',
+    bring: '目前的程式、最多三個卡點（寫清楚想要的效果和現在的樣子），以及發表簡報草稿。',
     inClass: [
-      'studio time：逐一討論每個人的卡點',
-      '發表簡報怎麼做：你的世界、牠是什麼、現場跑、導讀最得意的段落',
+      '卡點診所：逐一討論每個人的卡點，同學可以旁聽別人的解法',
+      '發表預演：小組內三分鐘試講，每個人給對方一個具體建議',
+      '創作與個別討論：補齊三個特徵、三種行為與發表簡報',
     ],
     after: '三個特徵、三種行為都做出來，發表簡報完成，m3-creature/ 四件套 push。',
   },
   {
     w: 10, date: '2026-11-12', m: 'M3', station: '物種發表會', title: '物種發表會（期中）',
+    bring: '發表簡報與可以現場跑的程式。',
     inClass: [
-      '每人三分鐘發表，現場跑再加上導讀',
-      '同學互相回饋',
+      '每人三分鐘發表，現場跑再加上導讀，台下同學提問',
+      '同學互相回饋：每人寫一張回饋給兩位同學',
+      '收尾討論：成群之後，誰的物種最可能跟誰相遇',
     ],
     after: '整理回饋，想想牠成群之後會是什麼樣子。',
   },
   {
     w: 11, date: '2026-11-19', m: 'M4', title: '成群、變異、生與死',
+    bring: '你世界的生死法則草稿（壽命、能量、被吃、繁殖條件），以及你對「物種要不要相遇」的一個想法。',
     inClass: [
-      '先十隻再往上加，每隻出生就帶著隨機基因',
-      '定義你世界的法則：壽命、能量耗盡、被吃掉、繁殖條件',
+      '討論：你世界的生死法則是什麼（壽命、能量、被吃、繁殖條件），跟同學的法則比一比',
+      '全班決定：動物園裡的物種要不要相遇、怎麼交流，參考「想你的生物」的全班約定表',
+      '全班一起解：族群一多就變慢、全滅或爆量時怎麼調',
+      '創作與個別討論：先十隻再往上加，讓族群有出生也有死亡',
     ],
     after: '族群跑起來，有出生也有死亡。',
   },
   {
     w: 12, date: '2026-11-26', m: 'M4', title: '演化與群體行為',
+    bring: '族群跑一段時間後的錄影或截圖，看得出牠們往哪個方向漂；效能卡住的地方；若全班決定交流，帶你物種的基因與訊號寫法。',
     inClass: [
-      '子代繼承親代基因再加一點突變，觀察族群往哪個方向漂',
-      '群體演算法：boids 群集、生命遊戲改造、掠食者與獵物',
-      '效能檢查：一百隻還順不順',
+      '討論：你的族群跑久了往哪個方向漂，為什麼',
+      '若全班決定交流：定好基因與訊號的寫法，兩兩試著讓物種相遇',
+      '全班一起解：一百隻還順不順，效能卡住時先從哪裡查',
+      '創作與個別討論：演化與群體行為',
     ],
     after: 'm4-population/ 四件套 push，把讓族群崩潰過的參數記下來。',
   },
   {
     w: 13, date: '2026-12-03', m: 'M5', title: '造景，接上感官',
+    bring: '棲地的草圖或參考圖（說得出跟你的世界觀怎麼接），以及你想用手、臉或身體哪一種感測和理由。',
     inClass: [
-      '造景：noise 地形與流場、藤蔓、WFC 廢墟，族群不要再活在白底上',
-      '接上鏡頭：handPose 或 faceMesh 最小版，畫面上看到自己的手骨架就算通',
+      '討論：你的棲地長什麼樣，跟 M1 的世界觀對不對得上',
+      '全班一起解：鏡頭權限、模型載入太慢、光線不足這類常見問題',
+      '創作與個別討論：造景，接上 handPose 或 faceMesh 最小版',
     ],
     after: '棲地場景完成，鏡頭互動能跑。',
   },
   {
     w: 14, date: '2026-12-10', m: 'M5', title: '觀眾是誰',
+    bring: '「觀眾是誰」的一句話、兩三條刺激與反應規則草稿，以及可以讓同學試玩的版本。',
     inClass: [
-      '用一句話定義鏡頭前的觀眾是誰',
-      '設計兩三條刺激與反應規則，接進族群的行為',
-      '教室實地測試：換光線、換距離',
+      '討論：這個沒有人類的世界，鏡頭前的觀眾是誰，分組互相追問',
+      '互測：交換電腦試玩彼此的互動，記下哪裡看不懂、哪裡沒反應',
+      '全班一起解：互動規則不穩、換光線換距離就失靈的問題',
+      '創作與個別討論：調整刺激與反應規則',
     ],
     after: 'm5-habitat/ 四件套 push，互動規則要穩。',
   },
   {
     w: 15, date: '2026-12-17', m: 'M6', title: '開園準備與彩排',
+    bring: '上線網址、三分鐘導覽稿草稿，以及展演需要的設備清單。',
     inClass: [
-      '打磨：沒人操作也好看、重新整理能重來、當機能快速復原',
-      'GitHub Pages 上線，物種入住動物園',
-      '三分鐘導覽彩排',
+      '彩排：小組內完整導覽一次，同學扮觀眾提問',
+      '卡點診所：GitHub Pages 上線、別台電腦打不開、離線備援',
+      '展場討論：全班一起排動線、設備與誰顧哪一區',
     ],
     after: '導覽簡報完成，另外準備一份本機能跑的離線備援。',
   },
   {
     w: 16, date: '2026-12-24', m: 'M6', station: '開園', title: '後未來動物園開園',
+    bring: '作品、導覽簡報與本機能跑的離線備援版本，提早到場架設。',
     inClass: [
       '展演與導覽：你以物種首席研究員的身分帶大家看牠',
       '回答關於牠的任何提問',
+      '收尾：全班一起看整座動物園，說說哪兩個物種最該相遇',
     ],
     after: '四件套加導覽簡報齊全，含完整 AI 揭露。',
   },
@@ -621,21 +700,21 @@ export const CASE_GROUPS = [
   {
     cat: '人工生命藝術', hint: 'M3 到 M6 的同行前輩',
     items: [
-      { name: 'Evolved Virtual Creatures', by: 'Karl Sims，1994', type: '作品', what: '演化出泳姿與步態的虛擬生物，人工生命藝術的原點，也是遺傳演算法的祖師爺', get: '官方頁與原始影片', url: 'https://www.karlsims.com/evolved-virtual-creatures.html' },
-      { name: 'A-Volve', by: 'Sommerer & Mignonneau，1994', type: '作品', what: '觀眾畫的生物在水池裡游動、覓食、交配，互動人工生命的里程碑，概念與本專案幾乎同構', get: '官方頁已遷至林茲藝術大學', url: 'https://interface.ufg.ac.at/christa-laurent/A-Volve.html' },
-      { name: 'Strandbeest', by: 'Theo Jansen', type: '作品', what: '風力驅動的海灘巨獸，用物理材料做的新物種，造物不限於螢幕', get: '官方網站', url: 'https://www.strandbeest.com' },
-      { name: 'Neural Zoo', by: 'Sofia Crespo', type: '作品', what: '用神經網路生成的不存在生物，AI 時代的自然史圖鑑', get: '官方網站', url: 'https://sofiacrespo.com/neural-zoo' },
-      { name: 'Emissaries', by: 'Ian Cheng', type: '作品', what: '自己會一直演下去的活體模擬，作品本身就是一個持續運作的生態系', get: 'MoMA PS1 展覽頁', url: 'https://www.moma.org/calendar/exhibitions/3656' },
-      { name: 'fishdraw', by: 'Lingdong Huang', type: '開源', what: '程序生成的魚類素描，開源可讀，示範一套規則長出一族生物', get: 'GitHub，MIT 授權', url: 'https://github.com/LingDong-/fishdraw' },
-      { name: 'Graffiti Nature', by: 'teamLab', type: '作品', what: '觀眾畫的動植物進入共同生態系，彼此捕食與繁衍，可以理解成全班一座動物園的實體版', get: '官方作品頁，京都與新加坡常設展出', url: 'https://www.team-lab.art/w/graffitinature/' },
+      { name: 'Evolved Virtual Creatures', img: 'case-karl-sims.jpg', imgCredit: 'Karl Sims 官網', by: 'Karl Sims，1994', type: '作品', what: '演化出泳姿與步態的虛擬生物，人工生命藝術的原點，也是遺傳演算法的祖師爺', get: '官方頁與原始影片', url: 'https://www.karlsims.com/evolved-virtual-creatures.html' },
+      { name: 'A-Volve', img: 'case-a-volve.jpg', imgCredit: 'Sommerer & Mignonneau，林茲藝術大學官網', by: 'Sommerer & Mignonneau，1994', type: '作品', what: '觀眾畫的生物在水池裡游動、覓食、交配，互動人工生命的里程碑，概念與本專案幾乎同構', get: '官方頁已遷至林茲藝術大學', url: 'https://interface.ufg.ac.at/christa-laurent/A-Volve.html' },
+      { name: 'Strandbeest', img: 'strandbeest.jpg', imgCredit: 'Theo Jansen 官網（攝影 Loek van der Klis）', by: 'Theo Jansen', type: '作品', what: '風力驅動的海灘巨獸，用物理材料做的新物種，造物不限於螢幕', get: '官方網站', url: 'https://www.strandbeest.com' },
+      { name: 'Neural Zoo', img: 'neural-zoo.jpg', imgCredit: 'Sofia Crespo 官網', by: 'Sofia Crespo', type: '作品', what: '用神經網路生成的不存在生物，AI 時代的自然史圖鑑', get: '官方網站', url: 'https://sofiacrespo.com/neural-zoo' },
+      { name: 'Emissaries', img: 'emissaries.jpg', imgCredit: 'Ian Cheng 官網', by: 'Ian Cheng', type: '作品', what: '自己會一直演下去的活體模擬，作品本身就是一個持續運作的生態系', get: 'MoMA PS1 展覽頁', url: 'https://www.moma.org/calendar/exhibitions/3656' },
+      { name: 'fishdraw', img: 'fishdraw.jpg', imgCredit: 'Lingdong Huang，GitHub fishdraw（MIT）', by: 'Lingdong Huang', type: '開源', what: '程序生成的魚類素描，開源可讀，示範一套規則長出一族生物', get: 'GitHub，MIT 授權', url: 'https://github.com/LingDong-/fishdraw' },
+      { name: 'Graffiti Nature', img: 'graffiti-nature.jpg', imgCredit: 'teamLab 官網', by: 'teamLab', type: '作品', what: '觀眾畫的動植物進入共同生態系，彼此捕食與繁衍，可以理解成全班一座動物園的實體版', get: '官方作品頁，京都與新加坡常設展出', url: 'https://www.team-lab.art/w/graffitinature/' },
     ],
   },
   {
     cat: '遊戲裡的生態', hint: '把生態當主角的遊戲',
     items: [
-      { name: 'Rain World', by: 'Videocult', type: '遊戲', what: '整個世界是真的生態系，每隻生物有自己的生存目標，玩家只是食物鏈一環', get: 'Steam 上架中', url: 'https://store.steampowered.com/app/312520' },
-      { name: 'Spore', by: 'Will Wright，2008', type: '遊戲', what: '生物創造器加演化階段，把造物做成遊戲的先驅', get: 'Steam 上架中', url: 'https://store.steampowered.com/app/17390' },
-      { name: 'Everything', by: 'David OReilly', type: '遊戲', what: '你可以成為任何東西，從細菌到星系，尺度與視角的哲學遊戲', get: 'Steam 上架中', url: 'https://store.steampowered.com/app/582270' },
+      { name: 'Rain World', img: 'rain-world.jpg', imgCredit: 'Steam 官方商店頁', by: 'Videocult', type: '遊戲', what: '整個世界是真的生態系，每隻生物有自己的生存目標，玩家只是食物鏈一環', get: 'Steam 上架中', url: 'https://store.steampowered.com/app/312520' },
+      { name: 'Spore', img: 'spore.jpg', imgCredit: 'Steam 官方商店頁', by: 'Will Wright，2008', type: '遊戲', what: '生物創造器加演化階段，把造物做成遊戲的先驅', get: 'Steam 上架中', url: 'https://store.steampowered.com/app/17390' },
+      { name: 'Everything', img: 'everything.jpg', imgCredit: 'Steam 官方商店頁', by: 'David OReilly', type: '遊戲', what: '你可以成為任何東西，從細菌到星系，尺度與視角的哲學遊戲', get: 'Steam 上架中', url: 'https://store.steampowered.com/app/582270' },
     ],
   },
 ]

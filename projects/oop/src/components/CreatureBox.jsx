@@ -1,5 +1,6 @@
 import { CREATURE } from '../data'
 import { CopyButton } from './Algorithms'
+import CaseImage from './CaseImage'
 
 const ARROW = '→'
 
@@ -98,8 +99,9 @@ export default function CreatureBox() {
                     href={c.url}
                     target="_blank"
                     rel="noopener"
-                    className="min-w-0 border-b border-r border-neutral-900 bg-paper p-4 hover:bg-neutral-900/5 transition-colors group"
+                    className="min-w-0 border-b border-r border-neutral-900 bg-paper p-5 hover:bg-neutral-900/5 transition-colors group"
                   >
+                    <CaseImage img={c.img} credit={c.imgCredit} alt={c.name} />
                     <h4 className="font-bold text-sm mb-1.5 group-hover:text-seal">{c.name} ↗</h4>
                     <p className="heti text-sm text-neutral-600 leading-relaxed">{c.fact}</p>
                     <div className="mt-2 font-mono text-[0.7rem] text-neutral-400">{c.src}</div>

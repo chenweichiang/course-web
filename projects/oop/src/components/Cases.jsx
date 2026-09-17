@@ -1,4 +1,5 @@
 import { CASE_GROUPS, CASE_NOTE } from '../data'
+import CaseImage from './CaseImage'
 
 export default function Cases() {
   return (
@@ -11,7 +12,8 @@ export default function Cases() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 border-t border-l border-neutral-900">
             {g.items.map((c) => (
-              <div key={c.name} className="border-b border-r border-neutral-900 bg-paper p-5 flex flex-col gap-2">
+              <div key={c.name} className="border-b border-r border-neutral-900 bg-paper p-5 min-w-0 flex flex-col gap-2">
+                <CaseImage img={c.img} credit={c.imgCredit} alt={c.name} />
                 <div className="flex items-start justify-between gap-2">
                   <h4 className="font-display text-lg leading-snug">
                     {c.url ? (

@@ -1,4 +1,4 @@
-import { WEEKS, CALENDAR } from '../data'
+import { WEEKS, CALENDAR, SESSION_FLOW } from '../data'
 
 // 上課日（週四）前後三天都算「這一週」，用來標出本週
 function weekState(dateStr, now) {
@@ -38,6 +38,26 @@ export default function WeekPlan() {
         </div>
       </div>
 
+      {/* 每次上課怎麼進行 */}
+      <div className="mb-8">
+        <h3 className="font-display text-xl tracking-wide mb-2">每次上課怎麼進行</h3>
+        <p className="heti text-sm text-neutral-600 leading-relaxed max-w-3xl mb-4">{SESSION_FLOW.intro}</p>
+        <p className="heti text-sm text-neutral-700 leading-relaxed max-w-3xl mb-4 border-l-4 border-seal pl-3">{SESSION_FLOW.prep}</p>
+        <ol className="grid sm:grid-cols-2 lg:grid-cols-4 border-t border-l border-neutral-900 list-none">
+          {SESSION_FLOW.steps.map((st, i) => (
+            <li key={st.t} className="min-w-0 border-b border-r border-neutral-900 bg-paper p-5">
+              <div className="flex items-baseline justify-between gap-2 mb-2">
+                <span className="font-display text-2xl text-seal select-none" aria-hidden="true">{i + 1}</span>
+                <span className="font-mono text-xs text-neutral-500">{st.time}</span>
+              </div>
+              <h4 className="font-bold mb-1">{st.t}</h4>
+              <p className="heti text-sm text-neutral-600 leading-relaxed">{st.d}</p>
+            </li>
+          ))}
+        </ol>
+        <p className="heti text-sm text-neutral-500 leading-relaxed max-w-3xl mt-3">{SESSION_FLOW.station}</p>
+      </div>
+
       <ol className="border-t border-neutral-900 list-none">
         {WEEKS.map((wk) => {
           const state = weekState(wk.date, now)
@@ -71,9 +91,16 @@ export default function WeekPlan() {
                 </div>
               </div>
 
-              {/* 課堂 */}
+              {/* 課堂：討論與解決問題 */}
               <div>
                 <h3 className="font-bold mb-2 leading-snug">{wk.title}</h3>
+                {wk.bring && (
+                  <div className="mb-3 border border-seal/60 bg-paper px-3 py-2">
+                    <div className="font-mono text-xs text-seal mb-0.5">這次上課要帶來</div>
+                    <p className="heti text-sm text-neutral-700 leading-relaxed">{wk.bring}</p>
+                  </div>
+                )}
+                <div className="font-mono text-xs text-neutral-500 mb-1.5">課堂上討論與解決</div>
                 <ul className="space-y-1.5 list-none">
                   {wk.inClass.map((it, i) => (
                     <li key={i} className="flex gap-2.5">
@@ -86,7 +113,7 @@ export default function WeekPlan() {
 
               {/* 回家推進 */}
               <div className="md:border-l md:border-neutral-900/15 md:pl-6">
-                <div className="font-mono text-xs text-seal mb-1.5">下次上課前</div>
+                <div className="font-mono text-xs text-seal mb-1.5">下次上課前（課外）</div>
                 <p className="heti text-sm text-neutral-600 leading-relaxed">{wk.after}</p>
               </div>
             </li>
