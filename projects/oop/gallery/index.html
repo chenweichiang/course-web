@@ -78,13 +78,13 @@
         const weeks = (data.weeks ?? []).filter((wk) => (wk.works ?? []).length > 0)
 
         if (weeks.length === 0) {
-          wall.innerHTML = `<div class="empty">動物園尚未開園，第一批物種上線後，這裡就會長出整座園區。<br/>（同學：deadline 前 push 到你的作品集 repo，你的物種就會入住）</div>`
+          wall.innerHTML = `<div class="empty">動物園尚未開園，第一批物種上線後，這裡就會長出整座園區。<br/>（同學：M6 把物種名、一句話介紹與作品網址貼到課程 Discord，你的物種就會入住）</div>`
         } else {
           wall.innerHTML = weeks
             .map(
               (wk) => `
               <section class="week">
-                <h2><span class="w mono">W${wk.w}</span>${wk.title ?? ''}</h2>
+                <h2><span class="w mono">${wk.w}</span>${wk.title ?? ''}</h2>
                 <div class="grid">
                   ${wk.works
                     .map((work) => {

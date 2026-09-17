@@ -7,7 +7,7 @@ export const READINGS = {
   "project": [
     {"type": "書", "lang": "en", "title": "After Man: A Zoology of the Future", "by": "Dougal Dixon", "year": "1981", "url": "https://www.dougal-dixon.co.uk/after-man", "note": "推測演化經典，想像人類滅絕後動物如何演化成新物種。"},
     {"type": "書", "lang": "en", "title": "On the Origin of Species（1859 初版全文）", "by": "Charles Darwin", "year": "1859", "url": "https://darwin-online.org.uk/content/frameset?itemID=F373&viewtype=text&pageseq=1", "note": "天擇論的原典全文，想像人類消失後生物怎麼重新演化，可以從這裡讀起。"},
-    {"type": "官方文件", "lang": "en", "title": "The Future Is Wild（官方網站）", "by": "The Future Is Wild 製作團隊", "year": "2002", "url": "https://www.thefutureiswild.com/", "note": "製作方官網，三集分別推演 500 萬年、1 億年、2 億年後的地球與生物。"},
+    {"type": "官方文件", "lang": "en", "title": "The Future Is Wild（官方網站）", "by": "The Future Is Wild 製作團隊", "year": "", "url": "https://www.thefutureiswild.com/", "note": "製作方官網，三集分別推演 500 萬年、1 億年、2 億年後的地球與生物。"},
     {"type": "書", "lang": "en", "title": "All Tomorrows: A Billion Year Chronicle of the Myriad Species and Mixed Fortunes of Man", "by": "C. M. Kösemen", "year": "2006", "url": "http://cmkosemen.com/books.html", "note": "作者本人的書目頁，2006 年的推測演化作品，想像人類在十億年間變成各種物種。"},
   ],
   "creature": [
@@ -44,8 +44,6 @@ export const READINGS = {
     {"type": "官方文件", "lang": "en", "title": "p5.js Reference", "by": "p5.js Foundation", "year": "", "url": "https://p5js.org/reference/", "note": "查每個函式怎麼用，寫程式卡住時第一個查的地方。"},
     {"type": "官方文件", "lang": "en", "title": "p5.js Web Editor", "by": "p5.js Foundation", "year": "", "url": "https://editor.p5js.org/", "note": "免安裝直接寫程式碼跑畫面，上課與交作業都用它。"},
     {"type": "教學", "lang": "en", "title": "Code! Programming with p5.js", "by": "Daniel Shiffman / The Coding Train", "year": "", "url": "https://thecodingtrain.com/tracks/code-programming-with-p5-js", "note": "跟著影片從形狀、變數練到迴圈，零基礎入門的完整路線。"},
-    {"type": "影片", "lang": "zh", "title": "p5.js 互動藝術程式創作入門（程度：初階）｜吳哲宇（上）", "by": "吳哲宇 Che-Yu Wu / 臺灣當代文化實驗場 C-LAB", "year": "", "url": "https://www.youtube.com/watch?v=USBfICElYQ8", "note": "台灣創作者中文講解，適合完全沒寫過程式的人先看。"},
-    {"type": "影片", "lang": "zh", "title": "p5.js 互動藝術程式創作入門（程度：初階）｜吳哲宇（下）", "by": "吳哲宇 Che-Yu Wu / 臺灣當代文化實驗場 C-LAB", "year": "", "url": "https://www.youtube.com/watch?v=o_nPnNjDPxk", "note": "接續上集，練習用程式畫出會動的互動圖形效果。"},
   ],
   "M3": [
     {"type": "書", "lang": "en", "title": "The Nature of Code — Chapter 5: Autonomous Agents", "by": "Daniel Shiffman", "year": "", "url": "https://natureofcode.com/autonomous-agents/", "note": "講清楚轉向力怎麼讓一個點看起來像有意志地移動。"},

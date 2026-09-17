@@ -22,8 +22,8 @@ export default function Tools() {
       </div>
       <p className="heti mt-5 text-sm text-neutral-500 max-w-3xl leading-loose">
         <span className="inline-block w-2.5 h-2.5 bg-seal mr-1.5 align-baseline" aria-hidden="true" />
-        為專案主力。第 2 週（9/17）上課就要用，因此<strong>上課前把 agy 裝好、登入好</strong>，訂閱建議學期訂三四個月即可。
-        經濟上不方便訂閱的同學，先用 agy 免費帳號的額度上手，不會因為工具吃虧，有狀況直接找老師。
+        為專案主力。第 2 週（9/17）課堂上一起安裝 agy，<strong>上課帶充好電的筆電與可以登入的個人 Google 帳號</strong>。
+        訂閱是選配，先用 agy 免費帳號的額度上手，常常不夠再訂，訂的話學期訂三四個月即可，經濟上不方便的同學不會因為工具吃虧，有狀況直接找老師。
       </p>
     </div>
   )

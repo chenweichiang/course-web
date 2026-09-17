@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { AGY_INSTALL } from '../data'
 import { CopyButton } from './Algorithms'
 
-function Cmd({ text }) {
+export function Cmd({ text }) {
   return (
     <div className="mt-2 flex items-stretch border border-neutral-900 bg-ink">
       <code className="flex-1 min-w-0 overflow-x-auto px-3 py-2.5 font-mono text-[0.82rem] leading-relaxed text-paper whitespace-pre">
@@ -55,11 +55,11 @@ export default function AgyInstall() {
           <p className="heti text-sm text-neutral-700 leading-relaxed mb-4">{p.open}</p>
           <ol className="space-y-4 list-none">
             {p.steps.map((st, i) => (
-              <li key={st.cmd} className="flex gap-3">
+              <li key={st.t} className="flex gap-3">
                 <span className="font-mono text-sm text-seal shrink-0 w-5 pt-0.5">{i + 1}</span>
                 <div className="flex-1 min-w-0">
                   <div className="heti text-sm text-neutral-700 leading-relaxed">{st.t}</div>
-                  <Cmd text={st.cmd} />
+                  {st.cmd && <Cmd text={st.cmd} />}
                 </div>
               </li>
             ))}

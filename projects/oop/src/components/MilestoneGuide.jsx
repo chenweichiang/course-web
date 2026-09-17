@@ -107,6 +107,12 @@ export default function MilestoneGuide() {
                 {m.when && <span className="font-mono text-xs text-neutral-500">{m.when}</span>}
               </div>
               <p className="heti text-neutral-600 mt-1.5 leading-relaxed max-w-2xl">{m.goal}</p>
+              {m.due && (
+                <p className="heti mt-1.5 text-sm text-neutral-700">
+                  <span className="font-bold text-seal mr-1.5">截止</span>
+                  {m.due}
+                </p>
+              )}
             </div>
           </div>
 
