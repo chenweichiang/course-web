@@ -108,13 +108,13 @@
       <section id="what">
         <p class="label mono">What it is</p>
         <h2 class="display">Not a template. A method.</h2>
-        <p>This is not something you paste in. You own the ideas and the argument; the AI does the legwork: finds and verifies sources, builds the argument skeleton, writes the prose, then checks its own work. Five principles run through the whole thing:</p>
+        <p>You own the ideas and the argument; the AI does the legwork: finds and verifies sources, builds the argument skeleton, writes the prose, then checks its own work. Five principles run through the whole thing:</p>
         <ol class="principles">
-          <li><b>Skeleton first</b><span>Never write prose from a blank page. That squeezing is where "AI prose" comes from. Build the argument structure first, then write to it.</span></li>
-          <li><b>No fabricated citations, ever</b><span>Every reference is actually fetched and its support direction verified. Can't verify it? It's marked "unverified", not faked. Before delivery it also scans for retractions and for claims with no citation at all.</span></li>
-          <li><b>Your voice</b><span>When you write in your native language, the prose matches your own habits instead of being sanded into generic AI prose. English drafts get a separate rhythm pass before delivery.</span></li>
+          <li><b>Skeleton first</b><span>Don't squeeze prose out of a blank page. Text written that way tends to read like AI prose. Build the argument structure first, then write to it.</span></li>
+          <li><b>No fabricated citations, ever</b><span>Every reference is actually fetched and its support direction verified. Anything that can't be verified is marked "unverified". Before delivery it also scans for retractions and for claims with no citation at all.</span></li>
+          <li><b>Your voice</b><span>When you write in your native language, the prose follows your own writing habits. English drafts get a separate rhythm pass before delivery.</span></li>
           <li><b>Honesty built in</b><span>Effect sizes with confidence intervals, not just p-values. Likert items are not treated as continuous. Before claiming an effect, the design is checked for whether it can answer the question at all.</span></li>
-          <li><b>Data stays on your machine</b><span>Unpublished drafts and raw research data are never uploaded. Online services only ever see bibliographic data such as DOIs and titles.</span></li>
+          <li><b>Data stays local where it can</b><span>The bundled check tools and the statistics run on your machine. Unpublished drafts and raw research data are not sent to online search services or AI detectors, and online lookups send only bibliographic data such as DOIs and titles. Anything Claude Code reads, drafts and data included, is still processed on Anthropic's model servers.</span></li>
         </ol>
       </section>
 
@@ -159,7 +159,7 @@ claude</code></pre>
         <h2 class="display">Method, templates, sixteen tools</h2>
         <ul class="inv">
           <li><b>The method</b> in four documents: philosophy, iron rules, the eight-phase workflow, argumentation moves.</li>
-          <li><b>Seven skill templates</b> and <b>two subagents</b>: adapted to your field, language, and venues at install time, not copied verbatim.</li>
+          <li><b>Seven skill templates</b> and <b>two subagents</b>: adapted to your field, language, and venues at install time.</li>
           <li><b>Sixteen local scripts</b>, most with zero install: Taiwan-usage and Chinese AI-style checks, English grammar and AI-fingerprint diagnostics, figure colour-vision accessibility, retraction scan, uncited-claims scan, document regression, response-letter and submission-ledger checks.</li>
           <li><b>Blank templates</b> (voice profile, venue notes, argument skeleton), open academic word lists (two bundled; the AWL is fetched by a script because of its licence), one worked skeleton example.</li>
           <li><b>Traditional Chinese (Taiwan) add-on</b>: mainland-vs-Taiwan term check, 台/臺 consistency, a Typst recipe for Chinese PDFs.</li>

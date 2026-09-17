@@ -38,12 +38,12 @@ export default function AIPolicy() {
         <div className="card-ink p-6">
           <div className="font-mono text-xs text-neutral-500 mb-2">為什麼這樣設計</div>
           <p className="heti text-sm leading-loose text-neutral-700">
-            「推測設計幫我們解開對現實的束縛，去想像其他的可能性。它不是用來預測未來，而是用來幫助我們思考我們想要（或不想要）什麼樣的未來。」
+            「我們對預測未來毫無興趣。我們感興趣的是可能的未來，把它們當成工具，用來更理解現在，並討論人們想要什麼樣的未來，當然也包括不想要的。」
           </p>
-          <div className="mt-2 font-mono text-xs text-neutral-500">— Dunne & Raby</div>
+          <div className="mt-2 font-mono text-xs text-neutral-500">— Dunne & Raby，《Speculative Everything》（2013），頁 2–3，中譯</div>
         </div>
         <p className="heti text-sm text-neutral-500 leading-loose px-1">
-          把這一頁的網址交給你的 AI，它會讀到本課程的協作規範，知道該怎麼陪你們推演、怎麼扮演你們的角色、怎麼提醒你們查證，它不會替你們想產品，也不會在期中前讓你們偷跑講解法，那些是你們的。
+          把本頁的網址交給你的 AI，它會讀到本課程的協作規範，知道該怎麼陪你們推演、怎麼扮演你們的角色、怎麼提醒你們查證，它不會替你們想產品，也不會在期中前讓你們偷跑講解法，那些是你們的。
         </p>
       </div>
     </div>

@@ -72,11 +72,11 @@ const LAYERS = [
 ]
 
 const RULES = [
-  { ok: true, text: '開孔（喇叭孔、感測器窗口、LED 透光槽）——洞不是突出物' },
+  { ok: true, text: '開孔（喇叭孔、感測器開窗、LED 透光槽）：洞不是突出物' },
   { ok: true, text: '嵌入式開關，按鍵面與盒子表面齊平' },
   { ok: true, text: '磁吸充電介面（凹入設計）' },
   { ok: true, text: '隱藏式 USB 維護艙蓋（靠蓋子鎖合）' },
-  { ok: false, text: '任何突出盒面的物件——無論是按鍵、USB 插頭、天線' },
+  { ok: false, text: '任何突出盒面的物件：無論是按鍵、USB 插頭、天線' },
   { ok: false, text: 'USB 線從側面伸出（使用中不可接線）' },
   { ok: false, text: '外掛電池盒貼在盒子外部' },
   { ok: false, text: '任何線材從接縫處穿出' },
@@ -117,8 +117,8 @@ export default function BoxVisualization() {
             15cm 正立方體
           </h2>
           <p className="text-zinc-500 text-lg max-w-xl leading-relaxed">
-            這是你工作的邊界。它不是限制——<br />
-            它是設計的一部分。
+            這是你工作的邊界，<br />
+            也是設計的一部分。
           </p>
         </motion.div>
 

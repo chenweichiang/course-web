@@ -26,7 +26,7 @@ export default function AIPolicy() {
           <div className="mt-2 font-mono text-xs text-neutral-500">— Zach Lieberman</div>
         </div>
         <p className="heti text-sm text-neutral-500 leading-loose px-1">
-          把這一頁的網址交給你的 AI，它會讀到本專案的助教規範，知道該怎麼陪你研究、怎麼提醒你驗證，
+          把本頁網址交給你的 AI，它會讀到本專案的助教規範，知道該怎麼陪你研究、怎麼提醒你驗證，
           它不會替你寫反思、不會替你決定概念，那些是你的。
         </p>
       </div>

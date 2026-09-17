@@ -10,7 +10,7 @@ const COMM_METHODS = [
     difficulty: 2,
     icon: '◉',
     color: '#fb923c',
-    desc: '有方向性，需要對準才能傳送——就像你必須「看著」對方才能說話。這種限制本身就是設計語言。',
+    desc: '有方向性，需要對準才能傳送，就像你必須「看著」對方才能說話。這種限制本身就是設計語言。',
     design_idea: '盒子 A 發射 IR 訊號 → 需要物理旋轉盒子 B 對準接收器才觸發。傳遞「需要主動去面對才能接收的東西」。',
     code: 'IRremote library\n發送：IrSender.sendNEC(0x01, 0x01, 0)\n接收：IrReceiver.decode()',
   },
@@ -21,8 +21,8 @@ const COMM_METHODS = [
     difficulty: 3,
     icon: '◈',
     color: '#60a5fa',
-    desc: '隔牆可傳，100m 內無需對準。訊號無形——盒子之間有「看不見的連結」。',
-    design_idea: '盒子 A 的觸摸事件無線通知盒子 B，B 做出反應——即使兩個盒子不在同一個房間。傳遞「看不見的牽絆」。',
+    desc: '隔牆可傳，100m 內無需對準。訊號無形：盒子之間有「看不見的連結」。',
+    design_idea: '盒子 A 的觸摸事件無線通知盒子 B，B 做出反應，即使兩個盒子不在同一個房間。傳遞「看不見的牽絆」。',
     code: 'RF24 library\nradio.begin()\nradio.write(&data, sizeof(data))\nradio.read(&data, sizeof(data))',
   },
   {
@@ -202,7 +202,7 @@ export default function MultiBoxSystem() {
           <div className="mono text-zinc-400 text-xs mb-3 tracking-widest">先想清楚這件事</div>
           <p className="text-zinc-600 leading-relaxed">
             串聯不是為了讓作品看起來更複雜。<br />
-            如果兩組的概念本來就有關係，串聯才有意義——而且做了會加分。
+            如果兩組的概念本來就有關係，串聯才有意義，而且做了會加分。
           </p>
           <div className="mt-4 grid grid-cols-2 gap-4">
             <div className="p-4 rounded-xl border border-zinc-200">

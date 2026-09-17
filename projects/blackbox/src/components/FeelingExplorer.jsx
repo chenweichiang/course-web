@@ -186,8 +186,8 @@ export default function FeelingExplorer() {
 
               <div className="pt-4 border-t border-zinc-200">
                 <p className="text-zinc-300 text-sm leading-relaxed italic">
-                  注意：「快樂」不是一個感受，是一個分類。<br />
-                  真正的感受是身體的狀態——試著更具體。
+                  注意：「快樂」只是一個分類。<br />
+                  真正的感受是身體的狀態。試著更具體。
                 </p>
               </div>
 
@@ -384,8 +384,8 @@ export default function FeelingExplorer() {
 
               <div className="p-4 rounded-xl border border-zinc-200 bg-zinc-50">
                 <p className="text-zinc-500 text-sm leading-relaxed">
-                  ⚠️ 這只是<span className="text-zinc-700">出發點</span>，不是答案。<br />
-                  你需要親自測試、感受、修改——直到它真的說出你想說的話。
+                  ⚠️ 這只是<span className="text-zinc-700">出發點</span>。<br />
+                  你需要親自測試、感受、修改，直到它真的說出你想說的話。
                 </p>
               </div>
 

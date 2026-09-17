@@ -40,7 +40,7 @@ function SimulatedTest() {
           <div className="p-4 rounded-xl border border-zinc-200">
             <div className="text-zinc-900 font-medium text-sm mb-2">2. 記錄在報告裡</div>
             <p className="text-zinc-500 text-xs leading-relaxed">
-              不是為了證明你成功了——是為了誠實地記錄<br />
+              目的是誠實地記錄<br />
               設計意圖和實際效果之間的距離。
             </p>
           </div>
@@ -194,7 +194,7 @@ export default function BlindTest() {
             讓別人感受你的設計
           </h2>
           <p className="text-zinc-500 text-lg max-w-xl leading-relaxed">
-            盲測的目的不是「證明你成功了」——<br />
+            盲測的目的不是「證明你成功了」，<br />
             而是誠實地找出設計意圖和實際感受之間的距離。
           </p>
         </motion.div>
@@ -232,7 +232,7 @@ export default function BlindTest() {
                   {[
                     {
                       title: '找誰測',
-                      content: '找 3–5 位同學，最好是不知道你設計了什麼的人。告訴他們「這是一個實驗，請誠實回答」，不要事先說明盒子的用途。',
+                      content: '找 3–5 位同學，盡量找不知道你設計了什麼的人。告訴他們「這是一個實驗，請誠實回答」，不要事先說明盒子的用途。',
                     },
                     {
                       title: '測試流程',
@@ -284,9 +284,9 @@ export default function BlindTest() {
                 「陌生人能不能不用你解釋，就感受到你想傳遞的東西？」
               </p>
               <p className="text-zinc-500 text-sm mt-4 leading-relaxed">
-                這是這個作業唯一重要的問題。<br />
-                如果受測者感受到的和你意圖的完全一致——那很好。<br />
-                如果有差異——那差異本身就是最值得討論的設計洞察。
+                這是這個作業的核心問題。<br />
+                如果受測者感受到的和你意圖的完全一致，那很好。<br />
+                如果有差異，那差異本身就是很值得討論的設計洞察。
               </p>
             </div>
 

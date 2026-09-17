@@ -60,13 +60,13 @@ const CATEGORIES = [
     label: '震動 · 觸覺',
     color: '#60a5fa',
     Icon: HapticIcon,
-    principle: '震動的頻率、強度、節奏是情感的語言。低頻（20–80Hz）帶來重量感；高頻（200Hz+）帶來緊張感；不規律節奏製造不確定感。',
+    principle: '震動的頻率、強度、節奏是情感的語言。低頻（20–80Hz）帶來重量感。高頻（200Hz+）帶來緊張感。不規律節奏製造不確定感。',
     cases: [
       {
         title: 'aSpire — 呼吸率調節穿戴裝置',
         org: 'MIT Media Lab',
         desc: '可夾式觸覺裝置，透過個性化觸覺回饋引導使用者的呼吸節奏，用於壓力調節。氣壓膨脹/收縮模擬呼吸，讓人的身體自然跟隨。',
-        insight: '設計重點：觸覺不是在「告訴」使用者怎麼呼吸，而是讓身體自然地跟隨。',
+        insight: '設計重點：觸覺讓身體自然地跟隨呼吸節奏。',
         url: 'https://www.media.mit.edu/projects/aspire/overview/',
         keywords: '穿戴 · 氣壓 · 呼吸 · 身體引導',
       },
@@ -74,7 +74,7 @@ const CATEGORIES = [
         title: 'Feel My Speech',
         org: 'arXiv / HCI Research',
         desc: '自動將語音的情感內容轉換為觸覺、觸近感應輸出。說「憤怒」的話時，穿戴裝置震動的方式不同於說「悲傷」的話。',
-        insight: '設計重點：同一個感受在不同觸覺形式之間的轉換——哪些屬性是核心？',
+        insight: '設計重點：同一個感受在不同觸覺形式之間的轉換，哪些屬性是核心？',
         url: 'https://arxiv.org/html/2412.07722',
         keywords: '情感 · 語音 · 觸覺映射 · 穿戴',
       },
@@ -82,7 +82,7 @@ const CATEGORIES = [
         title: 'Haptic Shoes（Arduino）',
         org: 'Arduino Project Hub',
         desc: '震動感測器結合超音波測距，鞋底的震動強度隨障礙物距離變化，協助視障者感知周圍環境。',
-        insight: '設計重點：震動頻率如何對應距離——近→強烈，遠→微弱。這個映射邏輯就是你的「轉譯設計」。',
+        insight: '設計重點：震動頻率如何對應距離：近→強烈，遠→微弱。這個映射邏輯就是你的「轉譯設計」。',
         url: 'https://projecthub.arduino.cc/chitritapant/haptic-shoes-e13168',
         keywords: 'Arduino · 震動馬達 · 超音波 · 感知替代',
       },
@@ -93,13 +93,13 @@ const CATEGORIES = [
     label: '聲音 · 聽覺',
     color: '#34d399',
     Icon: AudioIcon,
-    principle: '次聲波（20Hz 以下）讓人感到不安而找不到來源；中頻（200–2000Hz）最接近人聲；高頻（>4000Hz）製造緊迫感。靜默本身也是設計元素。',
+    principle: '次聲波（20Hz 以下）讓人感到不安而找不到來源。中頻（200–2000Hz）最接近人聲。高頻（>4000Hz）製造緊迫感。靜默本身也是設計元素。',
     cases: [
       {
         title: 'Blendie — 用聲音控制的果汁機',
         org: 'Kelly Dobson / MIT Media Lab',
-        desc: '果汁機只對使用者的聲音有反應——你叫得越像馬達，馬達轉得越快。建立了人與機器之間一種奇特的對等關係。',
-        insight: '設計重點：聲音不只是「指令」，聲音的質地本身就是互動的媒介。你的聲音形式決定了機器的回應形式。',
+        desc: '果汁機只對使用者的聲音有反應，你叫得越像馬達，馬達轉得越快。建立了人與機器之間一種奇特的對等關係。',
+        insight: '設計重點：聲音的質地本身就是互動的媒介。你的聲音形式決定了機器的回應形式。',
         url: 'https://tangible.media.mit.edu/',
         keywords: 'MIT · 聲音控制 · 情感機器 · 身體參與',
       },
@@ -118,13 +118,13 @@ const CATEGORIES = [
     label: '光 · 視覺',
     color: '#fbbf24',
     Icon: LightIcon,
-    principle: '光的設計不是「燈亮了」——是顏色溫度（暖光 vs 冷光）、擴散方式（點光源 vs 漫射）、變化速率（呼吸燈 vs 閃爍）的組合。光從哪裡「洩漏」出來本身就是設計決策。',
+    principle: '光的設計是顏色溫度（暖光 vs 冷光）、擴散方式（點光源 vs 漫射）、變化速率（呼吸燈 vs 閃爍）的組合。光從哪裡「洩漏」出來本身就是設計決策。',
     cases: [
       {
         title: 'SURFACE X — 互動裝置',
         org: 'Arduino Project Hub',
         desc: '探索數位身份與物理身份碰撞的互動裝置。LED 陣列隨使用者的接觸方式呈現不同的光影模式，讓人感受到「自己」的存在如何影響空間。',
-        insight: '設計重點：光的反應不是功能性的，而是情感性的。「我的存在讓空間有了什麼變化？」',
+        insight: '設計重點：光的反應是情感性的。「我的存在讓空間有了什麼變化？」',
         url: 'https://projecthub.arduino.cc/Picaroon/1f9c6815-e296-4ffe-9765-1461079e190a',
         keywords: 'Arduino · LED · 互動裝置 · 身份',
       },
@@ -148,7 +148,7 @@ const CATEGORIES = [
       {
         title: 'Soft Manipulator — 互動裝置',
         org: 'Arduino Project Hub',
-        desc: '軟性機械臂對觀眾的靠近做出反應——有時退縮，有時伸展。使用者嘗試不同的接觸節奏，機械臂也改變自己的節奏反應。',
+        desc: '軟性機械臂對觀眾的靠近做出反應，有時退縮，有時伸展。使用者嘗試不同的接觸節奏，機械臂也改變自己的節奏反應。',
         insight: '設計重點：機械動作的「意圖感」讓人感受到它是有生命的。它「想要」什麼？它「拒絕」什麼？',
         url: 'https://projecthub.arduino.cc/simongeist/soft-manipulator-interactive-robotic-installation-1ca4ad',
         keywords: 'Arduino · 伺服馬達 · 軟機器人 · 反應性',
@@ -156,7 +156,7 @@ const CATEGORIES = [
       {
         title: 'Tangible Bits — MIT Tangible Media',
         org: 'MIT Media Lab（Hiroshi Ishii）',
-        desc: '「具體位元」研究計畫：讓數位資訊有物理形體。水流、風向、光影——這些都是傳遞數位資訊的物理媒介，同時也是情感的媒介。',
+        desc: '「具體位元」研究計畫：讓數位資訊有物理形體。水流、風向、光影，這些都是傳遞數位資訊的物理媒介，同時也是情感的媒介。',
         insight: '設計重點：實驗室的核心問題和你的黑盒子一樣：「如何讓看不見的東西變得可以感受？」',
         url: 'https://tangible.media.mit.edu/projects/',
         keywords: 'MIT · 具身設計 · 物理計算 · 資訊轉譯',
@@ -224,7 +224,7 @@ export default function CaseStudies() {
           <div className="mono text-[#CC0000] text-xs mb-4 tracking-widest font-bold">10 / 設計靈感與案例</div>
           <h2 className="text-5xl font-black text-zinc-900 mb-4">案例與資源</h2>
           <p className="text-zinc-500 text-lg max-w-xl leading-relaxed">
-            不是要你模仿——是要你看懂設計決策背後的邏輯，<br />
+            目的是看懂設計決策背後的邏輯，<br />
             然後做出屬於你的版本。
           </p>
         </motion.div>

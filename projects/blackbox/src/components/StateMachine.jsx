@@ -16,8 +16,8 @@ function StateMachineFlowchart({ activeState }) {
 
   const transitions = [
     { from: 'idle', to: 'sensing', label: '偵測到輸入訊號', cx: 420, cy: 80 },
-    { from: 'sensing', to: 'active', label: '超過觸發閾值', cx: 430, cy: 200 },
-    { from: 'sensing', to: 'idle', label: '訊號消失 / 未達閾值', cx: 380, cy: 100 },
+    { from: 'sensing', to: 'active', label: '超過觸發門檻值', cx: 430, cy: 200 },
+    { from: 'sensing', to: 'idle', label: '訊號消失 / 未達門檻值', cx: 380, cy: 100 },
     { from: 'active', to: 'release', label: '觸發條件結束', cx: 130, cy: 200 },
     { from: 'release', to: 'idle', label: '衰退計時完成', cx: 100, cy: 80 },
   ]
@@ -176,7 +176,7 @@ const STATE_DETAILS = {
   sensing: {
     label: 'SENSING — 偵測',
     color: '#a78bfa',
-    desc: '偵測到觸發訊號，但還未達到足夠強度或持續時間。這是一個「猶豫期」——讓使用者感覺到盒子意識到了他的存在，但還沒有完全回應。',
+    desc: '偵測到觸發訊號，但還未達到足夠強度或持續時間。這是一個「猶豫期」，讓使用者感覺到盒子意識到了他的存在，但還沒有完全回應。',
     code: `case SENSING:
   // 確認輸入持續存在
   if (sensorValue > TRIGGER_THRESHOLD) {
@@ -197,7 +197,7 @@ const STATE_DETAILS = {
   active: {
     label: 'ACTIVE — 輸出',
     color: '#34d399',
-    desc: '主要的情感輸出狀態。這裡是你設計的核心——你的感受如何以物理形式出現。輸出可以是靜態的（持續輸出），也可以隨時間變化（建立→高峰→等待）。',
+    desc: '主要的情感輸出狀態。這裡是你設計的核心：你的感受如何以物理形式出現。輸出可以是靜態的（持續輸出），也可以隨時間變化（建立→高峰→等待）。',
     code: `case ACTIVE:
   unsigned long elapsed = millis() - stateStartTime;
 
@@ -224,7 +224,7 @@ const STATE_DETAILS = {
   release: {
     label: 'RELEASE — 衰退',
     color: '#fb923c',
-    desc: '觸發結束後的衰退期。不要讓感受突然消失——衰退方式本身就是設計的一部分。一個緩慢消退的震動和一個突然中止的震動，傳遞完全不同的感受。',
+    desc: '觸發結束後的衰退期。不要讓感受突然消失，衰退方式本身就是設計的一部分。一個緩慢消退的震動和一個突然中止的震動，傳遞完全不同的感受。',
     code: `case RELEASE:
   unsigned long elapsed = millis() - stateStartTime;
   unsigned long decayTime = 3000; // 3秒衰退
@@ -331,11 +331,11 @@ export default function StateMachine() {
           <h2 className="text-5xl font-black text-zinc-900 mb-4">狀態機</h2>
           <p className="text-zinc-500 text-lg max-w-xl leading-relaxed">
             管理複雜互動流程的核心設計模式。<br />
-            你的黑盒子在任何時刻都處於某個「狀態」——<br />
+            你的黑盒子在任何時刻都處於某個「狀態」，<br />
             事件發生才切換狀態。
           </p>
           <p className="text-zinc-400 text-sm max-w-xl mt-3 leading-relaxed">
-            你不需要自己從頭寫這些程式——但你需要理解這個架構，才能清楚告訴 AI 要做什麼、讓它做出你真正想要的結果。
+            你不需要自己從頭寫這些程式，但你需要理解這個架構，才能清楚告訴 AI 要做什麼、讓它做出你真正想要的結果。
           </p>
         </motion.div>
 

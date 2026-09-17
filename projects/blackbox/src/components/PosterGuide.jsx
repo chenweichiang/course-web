@@ -432,7 +432,7 @@ export default function PosterGuide() {
                   { label: '作品名稱（中英文）', desc: '大標題，建議 24pt 以上，放在海報最顯眼位置' },
                   { label: '感受定義', desc: '用感官語言（不是情緒詞）描述要傳遞的感受，例：「胸口微緊、呼吸變淺的等待感」' },
                   { label: '設計意圖', desc: '一句話說明為什麼設計這個盒子、希望使用者感受到什麼' },
-                  { label: '感官屬性', desc: '頻率、強度、節奏、方向——量化你的感受，例：0.25Hz · 不規律節奏' },
+                  { label: '感官屬性', desc: '頻率、強度、節奏、方向，用來量化你的感受，例：0.25Hz · 不規律節奏' },
                   { label: '輸出機制選擇理由', desc: '為什麼選這個輸出方式？為什麼不是別的？（需說明被排除的選項）' },
                 ],
               },
@@ -441,7 +441,7 @@ export default function PosterGuide() {
                 zone: '主視覺 LEFT — 中段',
                 items: [
                   { label: '每種材料名稱與規格', desc: '精確描述，例：2mm 黑色 PLA · 霧面磨砂處理' },
-                  { label: '材料感官特性', desc: '觸感、重量、溫度、敲擊聲音——描述與使用者的接觸體驗' },
+                  { label: '材料感官特性', desc: '觸感、重量、溫度、敲擊聲音，用以描述與使用者的接觸體驗' },
                   { label: '設計理由', desc: '這些感官特性如何支持你要傳遞的感受？必須有明確的因果關係' },
                   { label: '替代方案比較', desc: '考慮過哪些其他材料？為什麼最終沒有選？' },
                 ],
@@ -522,7 +522,7 @@ export default function PosterGuide() {
                 '作品照片或等角插圖清晰，解析度 ≥ 300dpi',
                 '資訊列四欄完整填寫',
                 '海報方向：橫式（寬 420 > 高 297）',
-                '尺寸確認：420 × 297 mm（A3）——非其他尺寸',
+                '尺寸確認：420 × 297 mm（A3）',
                 '出血已設定 3mm，安全區 5mm，重要內容在安全區內',
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-2">
@@ -549,7 +549,7 @@ export default function PosterGuide() {
             <p className="text-sm text-zinc-600 leading-relaxed">
               想像沒有格線時，每張內容都歪一點點，整張海報像被風吹過的便條紙。
               有格線後，所有元素被放在隱形軌道上，讀者的視線可以沿著預期的路徑流動，資訊就被清楚傳達。
-              格線本身不會被印出來——它是工作時的<strong>輔助結構</strong>，不是最終視覺。
+              格線本身不會被印出來，它只是工作時的<strong>輔助結構</strong>。
             </p>
           </div>
 
@@ -562,7 +562,7 @@ export default function PosterGuide() {
                   era: '1920s',
                   title: '包浩斯 BAUHAUS',
                   place: '德國威瑪',
-                  text: '德國 Bauhaus 學校的設計師（Herbert Bayer、László Moholy-Nagy）首次把建築的模組化思維帶進排版，用幾何方塊組織頁面，奠定「設計可以系統化」的基本信念。',
+                  text: '德國 Bauhaus 學校的設計師（Herbert Bayer、László Moholy-Nagy）把建築的模組化思維帶進排版，用幾何方塊組織頁面，奠定「設計可以系統化」的基本信念。',
                 },
                 {
                   era: '1950s',
@@ -574,7 +574,7 @@ export default function PosterGuide() {
                   era: 'NOW',
                   title: '所有螢幕與印刷',
                   place: '全球',
-                  text: 'Bootstrap 12 欄、Material Design、Apple HIG、Tailwind CSS、所有報紙雜誌——你今天看到的一切「看起來專業」的版面，都建立在 70 年前瑞士人定下的格線系統上。',
+                  text: 'Bootstrap 12 欄、Material Design、Apple HIG、Tailwind CSS、所有報紙雜誌，你今天看到的一切「看起來專業」的版面，都建立在 70 年前瑞士人定下的格線系統上。',
                 },
               ].map((item, i) => (
                 <div key={i} className="border border-zinc-200 p-5 bg-white">
@@ -598,12 +598,12 @@ export default function PosterGuide() {
                 {
                   num: '01',
                   title: '視覺秩序',
-                  text: '人類視覺對「對齊」極度敏感。元素只要差個 1mm，看起來就是「亂」。格線消除這種無意識的不安。',
+                  text: '人類視覺對「對齊」很敏感。元素只要差個 1mm，看起來就是「亂」。格線消除這種無意識的不安。',
                 },
                 {
                   num: '02',
                   title: '建立資訊階層',
-                  text: '主標題占 6 欄、副標題占 4 欄、內文占 3 欄——欄寬本身就在告訴讀者「哪個更重要」。',
+                  text: '主標題占 6 欄、副標題占 4 欄、內文占 3 欄，欄寬本身就在告訴讀者「哪個更重要」。',
                 },
                 {
                   num: '03',
@@ -613,7 +613,7 @@ export default function PosterGuide() {
                 {
                   num: '04',
                   title: '看起來「專業」',
-                  text: '大部分「看起來很 pro」的設計感都來自隱形格線。學生作品與專業作品的差別，常常就在這一點。',
+                  text: '大部分「看起來很 pro」的設計感都來自隱形格線。學生作品與專業作品的差別，常常就在這裡。',
                 },
               ].map((item, i) => (
                 <div key={i} className="flex gap-4 p-5 border border-zinc-200">
@@ -647,7 +647,7 @@ export default function PosterGuide() {
                 {
                   cn: '欄間距',
                   en: 'GUTTER',
-                  text: '欄與欄之間的留白。讓相鄰欄位的內容不會擠在一起。內容絕對不能跨進 Gutter——這是視覺呼吸的關鍵。',
+                  text: '欄與欄之間的留白。讓相鄰欄位的內容不會擠在一起。內容絕對不能跨進 Gutter，這是視覺呼吸的關鍵。',
                   spec: '本課程：5 mm Gutter · 共 11 條',
                 },
                 {
@@ -733,7 +733,7 @@ export default function PosterGuide() {
                 {[
                   { cols: '1–6',     role: '左側文字區',  desc: '設計概要、步驟說明、材料 / 系統說明（對應主視覺左 ≈ 53%）', fill: 'bg-zinc-300' },
                   { cols: '7–12',    role: '右側圖片區',  desc: '作品照片或插圖，可延伸至版心邊（對應主視覺右 ≈ 47%）',      fill: 'bg-zinc-700' },
-                  { cols: '1–12',    role: '全版帶狀',    desc: '上帶、資訊列、下帶——橫跨全版寬',                            fill: 'bg-zinc-900' },
+                  { cols: '1–12',    role: '全版帶狀',    desc: '上帶、資訊列、下帶，橫跨全版寬',                            fill: 'bg-zinc-900' },
                   { cols: '1–3',     role: '邊欄備用',    desc: '小圖說、技術標注、元件清單、尺寸箭頭',                       fill: 'bg-[#CC0000]' },
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-4">
@@ -757,7 +757,7 @@ export default function PosterGuide() {
                 ['先建格線，再排版',         '把格線當底圖打開，所有元素才有錨點。即使要打破，也必須有「我正在打破」的意識。'],
                 ['對齊欄線或欄間距中線',     '元素邊緣不可隨意放置，要對到既定的線上。Figma / Illustrator 開啟 Snap to Grid。'],
                 ['文字頂部對齊基線格',       '8mm 的倍數，讓不同欄的文字水平也整齊。'],
-                ['Gutter 是聖地',           '欄間距內絕對不放任何內容。留白本身就是設計，不是浪費。'],
+                ['Gutter 是聖地',           '欄間距內絕對不放任何內容。留白本身就是設計。'],
                 ['知道規則才有資格打破規則', '專業設計才有資格刻意違規。新手請先嚴守，等熟練後再考慮例外。'],
               ].map(([title, desc], i) => (
                 <div key={i} className="flex gap-3">
@@ -821,8 +821,8 @@ export default function PosterGuide() {
             <p className="text-xs text-zinc-600 leading-relaxed">
               海報同時要在<strong>螢幕設計階段</strong>（80cm 觀看距離）與<strong>印刷成品</strong>（展場 1–2m 觀看距離）兩種情境下易讀。
               全部使用<strong>無襯線字體（Sans-Serif）</strong>，避免細襯線在印刷縮放時消失。
-              字面寬（字寬與字高比例）大、x-height 高的字型在小尺寸下辨識度最佳。
-              本網站本身也使用以下相同字型——你在預覽中看到的效果即為印刷後的視覺。
+              字面寬（字寬與字高比例）大、x-height 高的字型在小尺寸下辨識度很好。
+              本網站本身也使用以下相同字型，你在預覽中看到的效果即為印刷後的視覺。
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -840,7 +840,7 @@ export default function PosterGuide() {
                     lang: '英文 / 數字',
                     font: 'Inter',
                     sub: 'UI 介面字體（Google 開源）',
-                    use: 'Rasmus Andersson 設計，為螢幕閱讀優化。高 x-height、字面開放，小尺寸（9pt）仍可清晰辨識。印刷品質同樣優秀。',
+                    use: 'Rasmus Andersson 設計，為螢幕閱讀最佳化。高 x-height、字面開放，小尺寸（9pt）仍可清晰辨識。印刷品質同樣優秀。',
                   },
                   {
                     lang: '技術標注 / 等寬',

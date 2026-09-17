@@ -95,7 +95,7 @@ export const MILESTONE_GUIDE = [
       'AI 揭露欄完整',
       '確認通過',
     ],
-    pitfalls: '最常見的死法是直接把 AI 的整理貼上，確認時老師會跟你聊來源，聊不下去就得重寫。查證並非儀式，而是你對自己世界的主權。',
+    pitfalls: '最常見的死法是直接把 AI 的整理貼上，確認時老師會跟你聊來源，聊不下去就得重寫。查證是你對自己世界的主權。',
   },
   {
     id: 'M2', name: '物種', flag: '檢核', when: '第 5–6 週（10/5–10/16）',
@@ -155,13 +155,13 @@ export const MILESTONE_GUIDE = [
       '有出生也有死亡，世界法則說得出來',
       '群體行為明顯、用了圖鑑至少一個演算法',
     ],
-    pitfalls: '參數一調就全滅或爆量？這並非失敗，而是生態學，把崩潰的參數記下來，發表時它會是好故事。效能卡頓先減隻數再改善，別硬撐。',
+    pitfalls: '參數一調就全滅或爆量？這也是生態學，把崩潰的參數記下來，發表時它會是好故事。效能卡頓先減隻數再改善，別硬撐。',
   },
   {
     id: 'M5', name: '棲地', flag: null, when: '第 13–14 週（11/30–12/11）',
     goal: '給族群一個世界，接著讓觀眾走進來，透過鏡頭把面前的人變成環境刺激。這個世界已經沒有人類，那觀眾是誰？',
     steps: [
-      '造景：從圖鑑的棲地類挑工具（noise 地形與流場、space colonization 藤蔓、WFC 廢墟）做出環境，族群要活在場景裡，而非白底上。',
+      '造景：從圖鑑的棲地類挑工具（noise 地形與流場、space colonization 藤蔓、WFC 廢墟）做出環境，族群要活在場景裡，不要留在白底上。',
       '接上感官：到[感測互動](#sensing)小節挑工具，handPose 或 faceMesh 起步最穩，先做最小版，畫面上看到自己的手骨架就算通。',
       '定義觀眾：這個沒有人類的世界，鏡頭前的是誰？時間旅人、外星訪客、最後的倖存者都行，用一句話寫進設定，這決定生物怎麼回應。',
       '刺激與反應：設計兩三條規則（觀眾靠近就散開、揮手就好奇聚過來、沒有人就回到自己的節奏），接進族群的行為。',
@@ -169,7 +169,7 @@ export const MILESTONE_GUIDE = [
       '交付 m5-habitat/ 四件套並 push。',
     ],
     checks: [
-      '有環境場景，而非白底',
+      '背景是環境場景，不留白底',
       '鏡頭互動穩定可靠',
       '至少兩條「觀眾對生物」的反應規則',
       '「觀眾是誰」有一句話敘事',
@@ -183,7 +183,7 @@ export const MILESTONE_GUIDE = [
       '打磨：沒人操作三十秒也要好看（idle 狀態）、重新整理能重來、當機要能快速復原。',
       '上線：把最終版放進 m6-zoo/，開 GitHub Pages（請 AI 帶你設定），拿到公開網址。',
       '入住動物園：把物種名、一句話介紹、作品網址交給老師，你的物種就會出現在[園區](https://course.interaction.tw/oop/gallery/)。',
-      '導覽簡報三分鐘：這個世界（哪一年、哪個角落）、這個物種（憑什麼活）、看牠活著（現場互動）、設計導讀（你最想講的那個選擇），簡報是導覽的背景不是主角，觀眾要看的是牠活著。',
+      '導覽簡報三分鐘：這個世界（哪一年、哪個角落）、這個物種（憑什麼活）、看牠活著（現場互動）、設計導讀（你最想講的那個選擇），簡報只是導覽的背景，觀眾要看的是牠活著。',
       '導覽練習：用三分鐘把牠的一生說給同學或你的 AI 聽，聽的人有疑問，就把答案補進導覽稿。',
       '開園日：展演、導覽、回答任何提問。',
     ],
@@ -193,7 +193,7 @@ export const MILESTONE_GUIDE = [
       '三分鐘導覽至少練過一次',
       '四件套加導覽簡報齊全，含完整 AI 揭露',
     ],
-    pitfalls: '展場網路難以預料，準備離線備援，也就是本機能跑的版本。導覽最動人的往往不是功能清單，而是牠為什麼活成這樣。',
+    pitfalls: '展場網路難以預料，準備離線備援，也就是本機能跑的版本。導覽最動人的往往是牠為什麼活成這樣。',
   },
 ]
 
@@ -234,7 +234,7 @@ export const ALGO_GROUPS = [
     cat: '棲地，牠的世界長什麼樣', hint: 'M5 棲地',
     items: [
       { name: 'Flow Field', zh: 'Noise 地形與流場', what: '透過雜訊生成地形或風場，環境的呼吸', use: '起伏地景、洋流、輻射塵飄移，族群順著環境流動', lv: 2, prompt: '用 p5.js 做 noise flow field，粒子順著場漂流，接著把場當成輻射濃度，讓我的生物只在低輻射區聚集。', ref: 'Nature of Code Ch.5' },
-      { name: 'Space Colonization', zh: '空間拓殖', what: '枝條朝吸引點生長，葉脈與根系的算法', use: '爬滿廢墟的藤蔓、血管網、根系', lv: 3, prompt: '用 p5.js 做 space colonization 長一棵樹，接著把吸引點改成廢墟照片的邊緣，讓藤蔓爬滿那棟建築。', ref: 'Coding Train 有完整實作' },
+      { name: 'Space Colonization', zh: '空間拓殖', what: '枝條朝吸引點生長，葉脈與根系的演算法', use: '爬滿廢墟的藤蔓、血管網、根系', lv: 3, prompt: '用 p5.js 做 space colonization 長一棵樹，接著把吸引點改成廢墟照片的邊緣，讓藤蔓爬滿那棟建築。', ref: 'Coding Train 有完整實作' },
       { name: 'Wave Function Collapse', zh: '波函數塌縮', what: '從局部規則拼出全局一致的地圖', use: '無限延伸的廢墟園區，每次重整都不同的棲地', lv: 3, prompt: '先解釋 WFC 的直覺，再用 p5.js 做最簡 tile 版：五種廢墟 tile，生成每次都不同但接縫合理的地圖。', ref: 'mxgmn/WaveFunctionCollapse' },
     ],
   },
@@ -248,7 +248,7 @@ export const SENSING = {
     { t: '① 取點', d: '感測模型給你的是關鍵點(landmark)，臉 478 點、手 21 點、身體 17 點，先把點畫出來，看懂資料長什麼樣。' },
     { t: '② 算訊號', d: '把點變成數字：兩點距離（嘴巴開合、手指捏合）、點的速度（揮手快慢）、骨架大小（人靠多近）、角度（頭轉向哪），這些數字才是生物能理解的刺激。' },
     { t: '③ 映射', d: '設計訊號與行為的對應：靠近就散開、揮手就聚過來、張嘴就餵食，一條訊號接一條行為，寫成你世界的規則。' },
-    { t: '④ 平滑', d: '原始訊號會抖，用 lerp 濾波讓數值滑順，再用閾值加遲滯(hysteresis)避免狀態狂切，生物的反應才顯得從容。' },
+    { t: '④ 平滑', d: '原始訊號會抖，用 lerp 濾波讓數值滑順，再用門檻值加遲滯(hysteresis)避免狀態狂切，生物的反應才顯得從容。' },
   ],
   venue: [
     '載入畫面：ml5 模型第一次載入需要幾秒，空白畫面會讓觀眾以為作品壞了。',
@@ -304,7 +304,7 @@ export const CASE_GROUPS = [
       { name: 'A-Volve', by: 'Sommerer & Mignonneau，1994', type: '作品', what: '觀眾畫的生物在水池裡游動、覓食、交配，互動人工生命的里程碑，概念與本專案幾乎同構', get: '官方頁已遷至林茲藝術大學', url: 'https://interface.ufg.ac.at/christa-laurent/A-Volve.html' },
       { name: 'Strandbeest', by: 'Theo Jansen', type: '作品', what: '風力驅動的海灘巨獸，用物理材料做的新物種，造物不限於螢幕', get: '官方網站', url: 'https://www.strandbeest.com' },
       { name: 'Neural Zoo', by: 'Sofia Crespo', type: '作品', what: '用神經網路生成的不存在生物，AI 時代的自然史圖鑑', get: '官方網站', url: 'https://sofiacrespo.com/neural-zoo' },
-      { name: 'Emissaries', by: 'Ian Cheng', type: '作品', what: '自己會一直演下去的活體模擬，作品是生態系而非畫面', get: 'MoMA PS1 展覽頁', url: 'https://www.moma.org/calendar/exhibitions/3656' },
+      { name: 'Emissaries', by: 'Ian Cheng', type: '作品', what: '自己會一直演下去的活體模擬，作品本身就是一個持續運作的生態系', get: 'MoMA PS1 展覽頁', url: 'https://www.moma.org/calendar/exhibitions/3656' },
       { name: 'fishdraw', by: 'Lingdong Huang', type: '開源', what: '程序生成的魚類素描，開源可讀，示範一套規則長出一族生物', get: 'GitHub，MIT 授權', url: 'https://github.com/LingDong-/fishdraw' },
       { name: 'Graffiti Nature', by: 'teamLab', type: '作品', what: '觀眾畫的動植物進入共同生態系，彼此捕食與繁衍，可以理解成全班一座動物園的實體版', get: '官方作品頁，京都與新加坡常設展出', url: 'https://www.team-lab.art/w/graffitinature/' },
     ],
@@ -320,7 +320,7 @@ export const CASE_GROUPS = [
 ]
 
 export const CASE_NOTE =
-  '使用建議：M1 開工前先看 Life After People 任一集加《沒有我們的世界》任一章，時間尺度的直覺就有了。M2 卡關時翻《人類滅絕後》或《All Tomorrows》，看別人怎麼用規則推物種，再回來推自己的。M5 設計互動前讀《五感之外的世界》序章，先想牠的環境界(Umwelt)，再想牠怎麼感覺人。案例是參照系而非模板，看完要回答的問題始終是：在你的世界，牠憑什麼活下來。'
+  '使用建議：M1 開工前先看 Life After People 任一集加《沒有我們的世界》任一章，時間尺度的直覺就有了。M2 卡關時翻《人類滅絕後》或《All Tomorrows》，看別人怎麼用規則推物種，再回來推自己的。M5 設計互動前讀《五感之外的世界》序章，先想牠的環境界(Umwelt)，再想牠怎麼感覺人。案例用來參照，看完要回答的問題始終是：在你的世界，牠憑什麼活下來。'
 
 export const AI_RULES = [
   { t: '研究先行', d: '動手做之前，先讓你的 AI 進行深度研究：比較做法與工具、開源穩定熱門優先，並查證來源，合成答案只當路標，關鍵事實回原始出處確認。' },
@@ -364,7 +364,7 @@ export const SETUP_USAGE = [
   { t: '開啟雲端環境', d: '進入你的 repo，按綠色 Code 按鈕，選 Codespaces 並建立，幾十秒後瀏覽器出現 VS Code，這就是你的工作室，學校電腦被還原也不受影響，因為它根本不在那台電腦上。' },
   { t: '登入 Claude Code', d: '在下方終端機輸入 claude，在登入網址上連點三下全選複製，開新分頁授權，再把授權碼貼回終端機，登入一次之後環境都記得你。' },
   { t: '完成交付', d: '每個里程碑開一個資料夾放四件套（程式碼、影像、反思、AI 揭露），commit 之後 push 就算交付，commit 的時間戳就是紀錄。' },
-  { t: '三個習慣', d: '固定用 2-core 機型額度才夠，做完一定 push，因為閒置三十天 codespace 會被回收，repo 裡的東西才是永遠的，離開前記得關掉 codespace 節省額度。' },
+  { t: '三個習慣', d: '固定用 2-core 機型額度才夠，做完一定 push，因為閒置三十天 codespace 會被回收，repo 裡的東西才會留下來，離開前記得關掉 codespace 節省額度。' },
 ]
 
 // GitHub 實務指南：老師怎麼看到你、檔案怎麼上去、簡報怎麼傳
@@ -388,7 +388,7 @@ export const SUBMIT_HOWTO = [
   {
     t: '簡報怎麼傳上 GitHub 讓老師看',
     items: [
-      '一律匯出成 PDF 再上傳：PowerPoint、Keynote、Google Slides、Canva 都有「匯出 PDF」，GitHub 網頁能直接翻頁預覽 PDF，老師點開就能看；pptx 傳上去只能下載、不能預覽，別用。',
+      '一律匯出成 PDF 再上傳：PowerPoint、Keynote、Google Slides、Canva 都有「匯出 PDF」，GitHub 網頁能直接翻頁預覽 PDF，老師點開就能看。pptx 傳上去只能下載、不能預覽，別用。',
       '放對位置、取對名字：簡報放進該站資料夾，檔名照「站名-簡報.pdf」，例如 m1-world/m1-簡報.pdf、m3-creature/m3-簡報.pdf，老師一眼就找得到。',
       '大小上限 25MB（網頁上傳）：超過幾乎都是簡報裡塞了影片，把影片抽出來另外放進資料夾，簡報裡留截圖就好。',
       '用 Google Slides 報告的人，PDF 照傳一份，另外想附雲端連結的話，記得開「知道連結的使用者皆可檢視」再把連結放進該站反思檔，連結會失效、PDF 不會，所以 PDF 才是交付本體。',

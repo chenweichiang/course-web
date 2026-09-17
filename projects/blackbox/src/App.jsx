@@ -44,7 +44,7 @@ const SECTIONS = [
     num: '04',
     navLabel: '程式',
     label: '程式架構',
-    summary: 'State machine 四狀態框架（IDLE → SENSING → ACTIVE → RELEASE）——先看懂架構，再把模板交給 AI 實作',
+    summary: 'State machine 四狀態框架（IDLE → SENSING → ACTIVE → RELEASE）：先看懂架構，再把模板交給 AI 實作',
     Component: StateMachine,
   },
   {
