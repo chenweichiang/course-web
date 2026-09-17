@@ -91,7 +91,7 @@ export default function CreatureBox() {
           {caseGroups.map((g) => (
             <div key={g.cat}>
               <div className="font-mono text-xs text-seal mb-2">{g.cat}</div>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-4 border-t border-l border-neutral-900">
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 border-t border-l border-neutral-900">
                 {g.items.map((c) => (
                   <a
                     key={c.name}
