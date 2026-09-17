@@ -1,6 +1,7 @@
 import { useState } from 'react'
-import { MILESTONE_GUIDE, CALENDAR } from '../data'
+import { MILESTONE_GUIDE } from '../data'
 import MilestoneSketch from './MilestoneSketch'
+import FurtherReading from './FurtherReading'
 
 // 步驟文字支援 [文字](網址) 內嵌連結
 function renderLinks(text) {
@@ -81,12 +82,11 @@ export default function MilestoneGuide() {
         ))}
       </div>
 
-      {/* 學期節奏：日期是參考，里程碑是主軸 */}
-      <div className="border border-neutral-900 bg-paper p-6">
-        <div className="font-mono text-xs text-neutral-500 mb-3">學期節奏</div>
-        <p className="heti text-sm text-neutral-700 leading-relaxed max-w-3xl">{CALENDAR.intro}</p>
-        <p className="heti text-sm text-neutral-600 leading-relaxed max-w-3xl mt-2.5">{CALENDAR.offdays}</p>
-      </div>
+      <p className="heti text-sm text-neutral-600 leading-relaxed max-w-3xl -mt-6">
+        每一站排在哪幾週、每次上課做什麼，看
+        <a href="#schedule" className="underline decoration-seal decoration-2 underline-offset-2 hover:text-seal">每週進度</a>
+        。
+      </p>
 
       {/* 各里程碑詳解 */}
       {MILESTONE_GUIDE.map((m, i) => (
@@ -138,6 +138,9 @@ export default function MilestoneGuide() {
                 <p className="heti text-sm text-neutral-600 leading-relaxed">{renderLinks(m.pitfalls)}</p>
               </div>
             </div>
+          </div>
+          <div className="mt-4">
+            <FurtherReading id={m.id} compact />
           </div>
         </article>
       ))}

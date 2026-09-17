@@ -12,7 +12,176 @@ export const PROJECT = {
   ],
   statement:
     '每位學生培育自己的物種，從世界觀研究、物種設定，一路做到透過程式讓牠活起來，會動、會繁衍、成群、對觀眾有反應，學期末全班的物種聚合成「後未來動物園」公開展演，你以該物種首席研究員的身分導覽，並回答關於牠的任何問題：牠的世界、牠的習性，以及你的每個選擇。',
-  motto: '一人一物種，全班一座動物園。完成里程碑就是完成專案，沒有週進度表，只有你的物種一步步活起來。',
+  motto: '一人一物種，全班一座動物園。完成里程碑就是完成專案，週進度表讓你知道每次上課做什麼，你的物種就照著這個節奏一步步活起來。',
+}
+
+// 想你的生物：把物種想成住在自己的養殖箱（案例事實 2026-09-17 查證）
+export const CREATURE = {
+  intro:
+    '把你的生物想成住在一個養殖箱裡，箱子裡的條件由你決定，但每一條都要有根據。順序很重要，年代決定環境，環境決定牠怎麼生存、住在哪、怎麼繁殖，先畫出一隻很酷的生物再回頭硬湊牠住哪裡，是最常見的死法。',
+  box: [
+    {
+      k: '年代',
+      q: ['人類消失後多久？幾十年、幾萬年，還是幾千萬年', '地形與氣候變了多少', '人造物還剩下什麼，塑膠、混凝土、金屬各自變成什麼樣子'],
+      ask: '人類消失後 50 年、5 萬年、5,000 萬年，地球的氣候、地形與人造物各會變成什麼樣子？請列出關鍵差異，每一點附上可以點開的來源。',
+    },
+    {
+      k: '環境',
+      q: ['溫度範圍多大、有沒有光', '水、空氣、化學物質的狀態', '最大的危險是什麼'],
+      ask: '我的世界是人類消失後＿＿年的＿＿，請列出這裡的溫度範圍、光照、水與化學物質、殘留的人造物與主要危險，每一項附上來源。',
+    },
+    {
+      k: '生存',
+      q: ['能量從哪裡來', '吃什麼、被誰吃', '最怕什麼，什麼會殺死牠'],
+      ask: '在這樣的環境，生物可能的能量來源有哪些？請舉地球上真實存在、生活在類似極端環境的生物當例子，說明牠們怎麼活下來，並附來源。',
+    },
+    {
+      k: '棲息',
+      q: ['住在哪一層，地底、水裡、廢墟裡還是空中', '群居還是獨居', '白天晚上各在做什麼、會不會遷移'],
+      ask: '在這樣的環境，生物住在哪裡最安全？群居和獨居各有什麼好處與代價？請舉真實動物的例子並附來源。',
+    },
+    {
+      k: '繁殖',
+      q: ['怎麼生下一代，分裂、產卵、還是別的方式', '多久一代、一次生幾隻', '下一代像誰，會不會變異'],
+      ask: '在資源＿＿的環境，生物用什麼方式繁殖比較划算？一次生很多還是生少但照顧久？請舉真實生物的例子說明，並附來源。',
+    },
+  ],
+  exchange: {
+    intro:
+      '一人一物種，全班一座動物園，動物園裡的生物有沒有關係，可以由全班一起決定。下面這些留給全班討論後再決定，想清楚了，M4 的族群跟 M6 的開園就能真的接在一起。',
+    questions: [
+      '大家是不是活在同一個年代、同一個世界？不一樣的話，牠們要在哪裡相遇',
+      '牠們能交換什麼，訊號（顏色、聲音、動作）、食物、地盤，還是基因',
+      '差不多的物種能不能生出下一代？下一代長什麼樣，還能不能再生',
+      '交流要有共同的語言，全班要先約好訊號與基因用什麼格式記錄',
+    ],
+    rules: [
+      { t: '相遇的地方', d: '每個人的年代與環境不同，要不要設一個交界區讓牠們相遇' },
+      { t: '交換的東西', d: '訊號、食物、地盤，還是基因，交換之後雙方各自會改變什麼' },
+      { t: '基因的寫法', d: '要混種，基因就要用同一種寫法，例如幾個數字分別代表大小、速度、顏色' },
+      { t: '相容的規則', d: '怎樣算差不多的物種，不相容的時候會發生什麼事' },
+      { t: '下一代歸誰', d: '混出來的後代住在誰的養殖箱，由誰記錄牠的一生' },
+    ],
+    ask: '我的生物是＿＿（貼上設定），同學的生物是＿＿，如果牠們相遇，可能交換什麼？能不能混種？請用真實生物的例子說明相容的條件與可能的結果，並附來源。',
+  },
+  caseGroups: [
+    {
+      cat: '環境決定生存',
+      items: [
+        {
+          name: '深海熱泉管蟲',
+          fact: '1977 年在加拉巴哥裂谷的熱泉發現，沒有嘴也沒有胃，靠體內共生細菌用硫化氫做化學合成，沒有陽光也活得下去。',
+          url: 'https://animaldiversity.org/accounts/Riftia_pachyptila/',
+          src: 'Animal Diversity Web',
+        },
+        {
+          name: '櫻花鉤吻鮭（台灣）',
+          fact: '冰河期後被陸封在大甲溪上游，只能活在水溫約 17°C 以下的溪流，2025 年調查約 1 萬 6 千尾，合歡溪已是數量最多的溪流。',
+          url: 'https://news.pts.org.tw/article/790716',
+          src: '公視新聞網 2026',
+        },
+        {
+          name: 'Biosphere 2',
+          fact: '1991 到 1993 年，8 個人在密閉溫室生活兩年，箱內氧氣從 20.9% 降到 14.5%，只好從外面補氧，封閉的箱子會失衡。',
+          url: 'https://en.wikipedia.org/wiki/Biosphere_2',
+          src: 'Wikipedia',
+        },
+        {
+          name: '吃塑膠的細菌',
+          fact: '2016 年在日本的寶特瓶回收場附近發現 Ideonella sakaiensis，能分解並利用 PET 塑膠，人造物也可能變成食物。',
+          url: 'https://doi.org/10.1126/science.aad6359',
+          src: 'Yoshida et al. 2016, Science',
+        },
+      ],
+    },
+    {
+      cat: '前人怎麼從環境推出生物',
+      items: [
+        {
+          name: 'Dougal Dixon《After Man》',
+          fact: '1981 年出版，設定在人類消失 5,000 萬年後，依各地環境推出一百多種新動物。',
+          url: 'https://en.wikipedia.org/wiki/After_Man',
+          src: 'Wikipedia',
+        },
+        {
+          name: '《The Future Is Wild》',
+          fact: '2002 年的影集，分成 500 萬年、1 億年、2 億年後三個時間點，每個時間點的大陸與氣候都不同。',
+          url: 'https://en.wikipedia.org/wiki/The_Future_Is_Wild',
+          src: 'Wikipedia',
+        },
+        {
+          name: 'Karl Sims《Evolving Virtual Creatures》',
+          fact: '1994 年在模擬的水中與陸地，讓身體與行為一起演化，環境不同，長出的身體就不同，官網有影片。',
+          url: 'https://www.karlsims.com/evolved-virtual-creatures.html',
+          src: 'Sims 1994, SIGGRAPH',
+        },
+      ],
+    },
+    {
+      cat: '自然界的交流與混種',
+      items: [
+        {
+          name: '菌根網路',
+          fact: '樹與樹透過地下的真菌把碳傳給旁邊的樹，交流不一定要見面，土壤就是媒介。',
+          url: 'https://doi.org/10.1038/41557',
+          src: 'Simard et al. 1997, Nature',
+        },
+        {
+          name: '水平基因轉移',
+          fact: '不同的細菌可以直接交換基因，抗藥性就是這樣在細菌之間傳開的。',
+          url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6718914/',
+          src: 'Sun et al. 2019, Frontiers in Microbiology',
+        },
+        {
+          name: '群體感應',
+          fact: '費氏弧菌用化學訊號數數量，族群夠多了才一起發光。',
+          url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1698510/',
+          src: 'González & Keshavan 2006, MMBR',
+        },
+        {
+          name: '騾',
+          fact: '馬有 64 條染色體、驢有 62 條，後代騾有 63 條，基因體不相容，通常不能再生。',
+          url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9778318/',
+          src: 'Ren et al. 2022, Genes',
+        },
+      ],
+    },
+    {
+      cat: '遊戲與作品怎麼做交流',
+      items: [
+        {
+          name: 'Tamagotchi 連線版',
+          fact: '2004 年推出，兩台機器用紅外線連線，交朋友、送禮，條件符合就結婚生下一代。',
+          url: 'https://tamagotchi.fandom.com/wiki/Tamagotchi_Connection_Version_1',
+          src: 'Tamagotchi Wiki',
+        },
+        {
+          name: '《Creatures》',
+          fact: '1996 年的遊戲，Norn 有數位基因，後代帶著父母的基因與突變，玩家把生物匯出成檔案互相交換。',
+          url: 'https://en.wikipedia.org/wiki/Creatures_(1996_video_game)',
+          src: 'Wikipedia',
+        },
+        {
+          name: '寶可夢的蛋群',
+          fact: '《金／銀》（1999）起，兩隻要屬於同一個蛋群才生得出蛋，相容的規則是事先設計好的。',
+          url: 'https://bulbapedia.bulbagarden.net/wiki/Egg_Group',
+          src: 'Bulbapedia',
+        },
+        {
+          name: 'A-Volve',
+          fact: 'Christa Sommerer & Laurent Mignonneau，1994。觀眾畫出外形，生物就在水池裡游動、交配、互相捕食，觀眾的手也是環境。',
+          url: 'https://www.ntticc.or.jp/en/archive/works/a-volve/',
+          src: 'NTT ICC',
+        },
+        {
+          name: 'Electric Sheep',
+          fact: 'Scott Draves，1999。全球的電腦一起算動畫「羊」，觀眾投票，受歡迎的羊會配種產生下一代。',
+          url: 'https://electricsheep.org/',
+          src: 'electricsheep.org',
+        },
+      ],
+    },
+  ],
 }
 
 // 進行方法：研究先行迴圈，每個里程碑都跑同一套
@@ -43,40 +212,180 @@ export const METHOD_RHYTHM = [
   '報告站（M1、M2、M3、M6）每個人都要上台簡報：針對該站進度講清楚你做了什麼、為什麼這樣選、卡過哪裡怎麼解，三分鐘、做重點不做逐字稿，簡報檔放進該站資料夾一起 push。',
 ]
 
-// 學期節奏：日期只是參考，課程進行以里程碑為主（依本學期行事曆換算）
+// 學期節奏：每週四上課，16 次（依本學期行事曆排定）
 export const CALENDAR = {
   intro:
-    '課程進行以里程碑為主，日期只是讓你知道自己走到哪，全班同步的站點只有確認、檢核、發表會、開園四個。時段依本學期行事曆換算：開學 9/7、共 16 週、期末考週 12/21 到 12/24，本課零考試，開園展演就排在那一週。',
+    '每週四上課，共 16 次，從 9/10 到 12/24。課程仍以里程碑為主，這張表告訴你每次上課做什麼、回家要推進到哪，全班同步的報告站有四個：10/1 世界簡報、10/15 物種簡報、11/12 物種發表會、12/24 開園。期末考週（12/21 到 12/24）本課不考試，開園展演就排在 12/24 那堂課。',
   offdays:
-    '學期內停課日：中秋節 9/25、教師節 9/28、國慶日補假 10/9、光復節補假 10/26、全校運動大會 11/11。上課日遇到停課日，該週進度順延，站點的確切日期以課堂公告為準。',
+    '學期內的停課日（中秋節 9/25、教師節 9/28、國慶日補假 10/9、光復節補假 10/26、全校運動大會 11/11）都不在週四，16 次上課照常進行，臨時異動以課堂公告為準。',
 }
+
+// 每週進度：date＝上課日（週四），m＝所在里程碑，station＝報告站
+export const WEEKS = [
+  {
+    w: 1, date: '2026-09-10', m: 'M0', title: '開學：認識後未來動物園',
+    inClass: [
+      '課程導覽：後未來動物園要做什麼、七個里程碑怎麼走、四件套與報告站怎麼運作',
+      'AI 公約四條與揭露方式',
+      '選課程助教，說明要準備的帳號',
+    ],
+    after: '辦 GitHub 學生驗證（審核要好幾天，最先辦），確認自己的個人 Google 帳號，第二週帶自己的筆電來。',
+  },
+  {
+    w: 2, date: '2026-09-17', m: 'M0', title: '裝好工作環境，開始想你的世界',
+    inClass: [
+      '在自己的筆電裝 agy，用個人 Google 帳號登入，Mac 與 Windows 的步驟都在開工準備',
+      '終端機基本功：打開終端機、cd 進資料夾、啟動 agy、第一次對話',
+      '讓 AI 出錯實驗，親眼看它一本正經地錯',
+      '開始想你的世界與生物：用「想你的生物」一節的養殖箱五個問題，先想年代與環境，再想牠怎麼生存、棲息、繁殖',
+    ],
+    after: '完成 M0 四件套並 push，把 repo 網址交給老師，寫下三個你有感覺的「沒有人類之後」的世界候選。',
+  },
+  {
+    w: 3, date: '2026-09-24', m: 'M1', title: '世界研究：第一次完整跑研究迴圈',
+    inClass: [
+      '用研究先行迴圈比較時間尺度（50 年、500 年、5 萬年），再比較兩三個棲地的環境條件',
+      '查證練習：把 AI 給的關鍵事實追回原始出處',
+      '案例庫導讀：別人怎麼想像沒有人類的世界',
+    ],
+    after: '寫出世界的一句話定案，找齊至少三個查證過的事實，研究報告寫出初稿，世界簡報做好。',
+  },
+  {
+    w: 4, date: '2026-10-01', m: 'M1', station: '世界簡報', title: '世界簡報與確認',
+    inClass: [
+      '每人三分鐘世界簡報',
+      '研究報告當場確認，老師會跟你聊來源',
+    ],
+    after: '通過確認就開始從世界推物種，還沒通過的照回饋補強，再找老師確認。',
+  },
+  {
+    w: 5, date: '2026-10-08', m: 'M2', title: '從世界推出你的物種',
+    inClass: [
+      '從世界推物種：能量從哪裡來、碳基還撐不撐得住、矽基或其他代謝方式的根據與困難',
+      '物種設定書五欄：型態、代謝、繁衍、行為、威脅，每欄都要有根據',
+      'p5.js 快速入門：setup 與 draw、座標與圖形、noise',
+    ],
+    after: '設定書初稿完成，做出一個會動、有生命感的最小雛形，物種簡報做好。',
+  },
+  {
+    w: 6, date: '2026-10-15', m: 'M2', station: '物種簡報', title: '物種簡報與檢核',
+    inClass: [
+      '每人三分鐘物種簡報，現場跑會動的雛形',
+      '檢核當場進行：設定書跟雛形對不對得上',
+    ],
+    after: '照回饋修設定書，想好牠的三個特徵與三種行為。',
+  },
+  {
+    w: 7, date: '2026-10-22', m: 'M3', title: '先設計，再寫碼',
+    inClass: [
+      '把設定書交給 AI，一起討論出設計清單，這一步先不寫碼',
+      '做出最小可跑版，一隻會動的就好',
+    ],
+    after: '最小可跑版 push 上去，確認牠長得像設定書裡的那隻。',
+  },
+  {
+    w: 8, date: '2026-10-29', m: 'M3', title: '讓行為對上設定書',
+    inClass: [
+      '對照關：跑起來的行為逐欄對照設定書',
+      '演算法圖鑑導讀（行為類）：steering 的追與逃、Braitenberg 的性格、IK 觸手',
+    ],
+    after: '從圖鑑挑一兩個演算法，讓牠長出第一個天性。',
+  },
+  {
+    w: 9, date: '2026-11-05', m: 'M3', title: '長出天性，準備發表',
+    inClass: [
+      'studio time：逐一討論每個人的卡點',
+      '發表簡報怎麼做：你的世界、牠是什麼、現場跑、導讀最得意的段落',
+    ],
+    after: '三個特徵、三種行為都做出來，發表簡報完成，m3-creature/ 四件套 push。',
+  },
+  {
+    w: 10, date: '2026-11-12', m: 'M3', station: '物種發表會', title: '物種發表會（期中）',
+    inClass: [
+      '每人三分鐘發表，現場跑再加上導讀',
+      '同學互相回饋',
+    ],
+    after: '整理回饋，想想牠成群之後會是什麼樣子。',
+  },
+  {
+    w: 11, date: '2026-11-19', m: 'M4', title: '成群、變異、生與死',
+    inClass: [
+      '先十隻再往上加，每隻出生就帶著隨機基因',
+      '定義你世界的法則：壽命、能量耗盡、被吃掉、繁殖條件',
+    ],
+    after: '族群跑起來，有出生也有死亡。',
+  },
+  {
+    w: 12, date: '2026-11-26', m: 'M4', title: '演化與群體行為',
+    inClass: [
+      '子代繼承親代基因再加一點突變，觀察族群往哪個方向漂',
+      '群體演算法：boids 群集、生命遊戲改造、掠食者與獵物',
+      '效能檢查：一百隻還順不順',
+    ],
+    after: 'm4-population/ 四件套 push，把讓族群崩潰過的參數記下來。',
+  },
+  {
+    w: 13, date: '2026-12-03', m: 'M5', title: '造景，接上感官',
+    inClass: [
+      '造景：noise 地形與流場、藤蔓、WFC 廢墟，族群不要再活在白底上',
+      '接上鏡頭：handPose 或 faceMesh 最小版，畫面上看到自己的手骨架就算通',
+    ],
+    after: '棲地場景完成，鏡頭互動能跑。',
+  },
+  {
+    w: 14, date: '2026-12-10', m: 'M5', title: '觀眾是誰',
+    inClass: [
+      '用一句話定義鏡頭前的觀眾是誰',
+      '設計兩三條刺激與反應規則，接進族群的行為',
+      '教室實地測試：換光線、換距離',
+    ],
+    after: 'm5-habitat/ 四件套 push，互動規則要穩。',
+  },
+  {
+    w: 15, date: '2026-12-17', m: 'M6', title: '開園準備與彩排',
+    inClass: [
+      '打磨：沒人操作也好看、重新整理能重來、當機能快速復原',
+      'GitHub Pages 上線，物種入住動物園',
+      '三分鐘導覽彩排',
+    ],
+    after: '導覽簡報完成，另外準備一份本機能跑的離線備援。',
+  },
+  {
+    w: 16, date: '2026-12-24', m: 'M6', station: '開園', title: '後未來動物園開園',
+    inClass: [
+      '展演與導覽：你以物種首席研究員的身分帶大家看牠',
+      '回答關於牠的任何提問',
+    ],
+    after: '四件套加導覽簡報齊全，含完整 AI 揭露。',
+  },
+]
 
 // 里程碑指南：詳細步驟、完成清單、常見卡點
 export const MILESTONE_GUIDE = [
   {
-    id: 'M0', name: '裝備', flag: null, when: '第 1–2 週（9/7–9/18）',
+    id: 'M0', name: '裝備', flag: null, when: '第 1–2 週（9/10、9/17）',
     goal: '把工具全部就位，並且親眼看過 AI 出錯，之後你才有資格說「驗證是我的工作」。',
     steps: [
-      '照「準備」小節申請四個帳號，GitHub 學生驗證需要審核天數，最先辦它。',
-      '從[課程 template repo](https://github.com/chenweichiang/oop-portfolio-template) 按「Use this template」開出自己的 repo（記得選 Public，老師才看得到），開啟 Codespace，照 [README 用法說明](https://github.com/chenweichiang/oop-portfolio-template#readme)跑「第一次試跑」，看到會呼吸的圓，環境就緒。',
-      '在終端機輸入 claude 登入（[README 的登入 SOP](https://github.com/chenweichiang/oop-portfolio-template#readme) 有完整步驟與排錯）。',
+      '照「準備」小節申請帳號，GitHub 學生驗證需要審核天數，最先辦它。',
+      '在自己的筆電裝 agy，Mac 與 Windows 的步驟都在[開工準備](#setup)，裝好後輸入 agy，用個人 Google 帳號登入。已經有 Claude 訂閱的同學，也可以照 [README 的登入 SOP](https://github.com/chenweichiang/oop-portfolio-template#readme) 改用 Codespace 裡的 claude。',
+      '從[課程 template repo](https://github.com/chenweichiang/oop-portfolio-template) 按「Use this template」開出自己的 repo（記得選 Public，老師才看得到）。',
       '請你的 AI 解釋給你聽：「請用比喻解釋 LLM 的 token、預測下一個字、context window，以及為什麼會幻覺，每講完一段就問我問題，確認我懂了。」',
       '進行「讓 AI 出錯」實驗，至少一種：問不存在的論文細節、給模稜兩可的指令，或請它計算長算式再自己驗算，把它一本正經出錯的樣子截圖存下來。',
-      '打開 repo 裡的 CLAUDE.md，在「我的工作流」區寫下至少三條自己的規則，開始養成你的工作流。',
+      '打開 repo 裡的 CLAUDE.md，在「我的工作流」區寫下至少三條自己的規則，開始養成你的工作流，用 agy 的同學每次開工先請它讀這個檔。',
       '把 repo 網址交給老師，交一次就好，這是老師整學期看你進度的唯一入口，怎麼交付與傳簡報詳見[繳交](#submission)一節。',
     ],
     checks: [
-      'Codespace 能開、試跑的動畫會動',
-      'claude 能對話',
+      'agy 裝好、能登入（或 Codespace 裡的 claude 能用）',
+      '能在終端機跟你的 AI 代理對話',
       'repo 是公開的、網址已交給老師',
       '完成「讓 AI 出錯」實驗並留下截圖',
       'CLAUDE.md 有至少三條自己的規則',
       'm0-outfit/ 四件套已 push',
     ],
-    pitfalls: '登入卡關就看 [template README](https://github.com/chenweichiang/oop-portfolio-template#readme) 的排錯（在網址上連點三下再複製），出錯實驗不要拿真實個資或危險主題去試，問不存在的論文最安全。',
+    pitfalls: 'agy 裝好卻說找不到指令，先關掉終端機重開，其他狀況看[開工準備](#setup)的排錯。Codespace 登入卡關看 [template README](https://github.com/chenweichiang/oop-portfolio-template#readme) 的排錯（在網址上連點三下再複製）。出錯實驗不要拿真實個資或危險主題去試，問不存在的論文最安全。',
   },
   {
-    id: 'M1', name: '世界', flag: '確認', when: '第 2–4 週，10/2 前完成確認',
+    id: 'M1', name: '世界', flag: '確認', when: '第 2–4 週（9/17–10/1），10/1 世界簡報與確認',
     goal: '透過研究先行迴圈的第一次完整實戰，把「沒有人類之後」從想像變成有根據的世界，你的物種能不能成立，全看這一站打的地基。',
     steps: [
       '選時間尺度：先問你的 AI「人類消失後 50 年、500 年、5 萬年，地球環境各會是什麼樣子？請列出關鍵差異與依據來源」，從中挑出你有感覺的尺度。',
@@ -98,7 +407,7 @@ export const MILESTONE_GUIDE = [
     pitfalls: '最常見的死法是直接把 AI 的整理貼上，確認時老師會跟你聊來源，聊不下去就得重寫。查證是你對自己世界的主權。',
   },
   {
-    id: 'M2', name: '物種', flag: '檢核', when: '第 5–6 週（10/5–10/16）',
+    id: 'M2', name: '物種', flag: '檢核', when: '第 5–6 週（10/8、10/15），10/15 物種簡報與檢核',
     goal: '在你的世界裡長出站得住腳的物種，並讓牠第一次動起來，親手寫或全用你的工作流都可以，重點是你能說出牠是什麼、為什麼這樣設計。',
     steps: [
       '從世界推物種：問你的 AI「在我的世界（貼上你的一句話定案），生命可能的能量來源有哪些？碳基還撐得住嗎？矽基、塑膠代謝、金屬呼吸的科學根據與困難各是什麼？請附來源。」',
@@ -119,7 +428,7 @@ export const MILESTONE_GUIDE = [
     pitfalls: '雛形不求像、求活，會呼吸的圓就夠格。先想清楚牠該怎麼動再動手，雛形對不上設定書，發表會就少了故事。',
   },
   {
-    id: 'M3', name: '個體', flag: '發表', when: '第 7–10 週，發表會約第 10 週（11/9–11/13）',
+    id: 'M3', name: '個體', flag: '發表', when: '第 7–10 週（10/22–11/12），11/12 物種發表會',
     goal: '把設定書翻譯成程式，做出活的、行為對得上設定書的個體，並在物種發表會亮相。',
     steps: [
       '先設計後寫碼：把設定書交給 AI，「請把這個物種設計成 p5.js 的程式，牠有哪些特徵、哪些天性？先給設計清單，先不要寫碼」，透過來回討論把設計吵清楚。',
@@ -139,7 +448,7 @@ export const MILESTONE_GUIDE = [
     pitfalls: '最大的陷阱是一次要太多功能。記住節奏：最小可跑、確認像牠、再加一個，功能塞太多，故事反而說不清楚。',
   },
   {
-    id: 'M4', name: '族群', flag: null, when: '第 11–12 週（11/16–11/27）',
+    id: 'M4', name: '族群', flag: null, when: '第 11–12 週（11/19、11/26）',
     goal: '一隻不算生態，要讓牠成群、帶變異、會生會死，族群跑起來，你世界的法則才算數。',
     steps: [
       '成群：先十隻再往上加，每隻出生就帶隨機基因，大小、速度、顏色都給變異範圍。',
@@ -158,7 +467,7 @@ export const MILESTONE_GUIDE = [
     pitfalls: '參數一調就全滅或爆量？這也是生態學，把崩潰的參數記下來，發表時它會是好故事。效能卡頓先減隻數再改善，別硬撐。',
   },
   {
-    id: 'M5', name: '棲地', flag: null, when: '第 13–14 週（11/30–12/11）',
+    id: 'M5', name: '棲地', flag: null, when: '第 13–14 週（12/3、12/10）',
     goal: '給族群一個世界，接著讓觀眾走進來，透過鏡頭把面前的人變成環境刺激。這個世界已經沒有人類，那觀眾是誰？',
     steps: [
       '造景：從圖鑑的棲地類挑工具（noise 地形與流場、space colonization 藤蔓、WFC 廢墟）做出環境，族群要活在場景裡，不要留在白底上。',
@@ -177,7 +486,7 @@ export const MILESTONE_GUIDE = [
     pitfalls: 'ml5 模型第一次載入需要幾秒，記得做載入畫面，別讓觀眾看白屏。鏡頭權限要允許，環境太暗偵測會失準，先在教室實測。',
   },
   {
-    id: 'M6', name: '開園', flag: '開園', when: '第 15–16 週，開園於期末考週（12/21–12/24）',
+    id: 'M6', name: '開園', flag: '開園', when: '第 15–16 週（12/17、12/24），12/24 開園',
     goal: '後未來動物園開園，你的物種入住園區，你以首席研究員的身分導覽，說出牠的世界、牠的一生，以及你的每個選擇。',
     steps: [
       '打磨：沒人操作三十秒也要好看（idle 狀態）、重新整理能重來、當機要能快速復原。',
@@ -331,8 +640,8 @@ export const AI_RULES = [
 
 export const TOOLS = [
   { name: 'p5.js 網頁編輯器', role: '創作環境，全程的畫布與閱讀對象', cost: '免費', note: 'editor.p5js.org，瀏覽器打開就能寫，全程用它', main: true },
-  { name: 'Claude Pro（自行訂閱）', role: '你的工作流主力', cost: '約 US$20/月', note: 'M0 建工作流就要用，建議開學前兩三週內完成訂閱，學期訂三四個月即可', main: true },
-  { name: 'Gemini 免費層', role: '免費保底', cost: '免費', note: '個人 Google 帳號即可使用，額度足以完成所有專案要求', main: false },
+  { name: 'agy（Google Antigravity CLI）', role: '終端機裡的 AI 代理，上課用它', cost: '免費起', note: '個人 Google 帳號登入就能用，免費帳號額度每週重置，第 2 週（9/17）上課就要裝好，安裝步驟見開工準備', main: true },
+  { name: 'AI 訂閱一家（自行訂閱）', role: '你的工作流主力', cost: 'NT$650/月', note: '建議訂 Google AI Pro，agy 額度改成每五小時重置。已經有 Claude Pro 或 ChatGPT Plus 的同學不用再訂，終端機改用 Claude Code 或 Codex', main: true },
   { name: 'GitHub（Education 驗證）', role: '交付與作品集', cost: '免費', note: '開學第一週完成註冊與學生驗證，Copilot Free 含終端機版可當備援', main: false },
 ]
 
@@ -343,14 +652,14 @@ export const SETUP_ACCOUNTS = [
     url: 'https://github.com/education',
   },
   {
-    t: 'Claude 帳號',
-    d: '到 claude.ai 註冊，接著訂閱 Pro，約 US$20/月，學期訂三四個月即可，經濟上不方便的同學改用免費保底方案，直接找老師。',
-    url: 'https://claude.ai',
+    t: '個人 Google 帳號（登入 agy 用）',
+    d: '用個人帳號，學校信箱的 Google 帳號可能登不進去。免費帳號就能先用，常用再訂 Google AI Pro（NT$650/月），經濟上不方便的同學直接找老師。',
+    url: 'https://gemini.google/tw/subscriptions/',
   },
   {
-    t: 'Google 帳號',
-    d: 'Gemini 免費層是全班保底，每天 1,000 次請求，多數人已經有 Google 帳號，確認能登入 gemini.google.com 即可。',
-    url: 'https://gemini.google.com',
+    t: 'Claude 或 ChatGPT（已經有訂閱才需要）',
+    d: '已經訂了 Claude Pro 或 ChatGPT Plus 的同學，可以用 Claude Code 或 Codex 當終端機代理，裝法跟 agy 很像，課堂上會示範，沒有訂的不用另外申請。',
+    url: 'https://claude.ai',
   },
   {
     t: 'p5.js 網頁編輯器',
@@ -362,10 +671,56 @@ export const SETUP_ACCOUNTS = [
 export const SETUP_USAGE = [
   { t: '複製課程 template', d: '打開課程 template repo，按「Use this template」建立自己的作品集 repo，它會裝下你整學期的物種與工作流。' },
   { t: '開啟雲端環境', d: '進入你的 repo，按綠色 Code 按鈕，選 Codespaces 並建立，幾十秒後瀏覽器出現 VS Code，這就是你的工作室，學校電腦被還原也不受影響，因為它根本不在那台電腦上。' },
-  { t: '登入 Claude Code', d: '在下方終端機輸入 claude，在登入網址上連點三下全選複製，開新分頁授權，再把授權碼貼回終端機，登入一次之後環境都記得你。' },
+  { t: '登入 Claude Code（有 Claude 訂閱的同學）', d: '在下方終端機輸入 claude，在登入網址上連點三下全選複製，開新分頁授權，再把授權碼貼回終端機，登入一次之後環境都記得你。' },
   { t: '完成交付', d: '每個里程碑開一個資料夾放四件套（程式碼、影像、反思、AI 揭露），commit 之後 push 就算交付，commit 的時間戳就是紀錄。' },
   { t: '三個習慣', d: '固定用 2-core 機型額度才夠，做完一定 push，因為閒置三十天 codespace 會被回收，repo 裡的東西才會留下來，離開前記得關掉 codespace 節省額度。' },
 ]
+
+// agy（Google Antigravity CLI）安裝：指令依官方文件 antigravity.google/docs/cli/install（2026-09-17 核對）
+export const AGY_INSTALL = {
+  intro:
+    '本學期上課用 agy（Google Antigravity CLI），它是終端機裡的 AI 代理，會自己讀檔、改檔、跑指令，用個人 Google 帳號登入就能用。Gemini CLI 從 2026 年 6 月 18 日起不再服務個人帳號，網路上教 npm install -g @google/gemini-cli 的舊教學都不要照做。',
+  platforms: [
+    {
+      os: 'Mac',
+      shell: '終端機',
+      open: '打開「終端機」：在「應用程式」的「工具程式」資料夾裡，或按 ⌘＋空白鍵搜尋 Terminal。',
+      steps: [
+        { t: '安裝：整行複製、貼上，按 Enter', cmd: 'curl -fsSL https://antigravity.google/cli/install.sh | bash' },
+        { t: '關掉終端機視窗，重開一個新的，出現版本號就是裝好了', cmd: 'agy --version' },
+        { t: '建一個放作品的資料夾並進去（名字可以自己取）', cmd: 'mkdir -p ~/Documents/my-zoo && cd ~/Documents/my-zoo' },
+        { t: '啟動 agy，第一次會請你登入', cmd: 'agy' },
+      ],
+      where: '裝在 ~/.local/bin/agy，只動你自己的家目錄，不用輸入系統管理員密碼，Apple 晶片與 Intel 的 Mac 都支援。',
+    },
+    {
+      os: 'Windows',
+      shell: 'PowerShell',
+      open: '打開 PowerShell：按開始功能表搜尋 PowerShell，一般權限打開就好，不用「以系統管理員身分執行」。',
+      steps: [
+        { t: '安裝：整行複製、貼上，按 Enter', cmd: 'irm https://antigravity.google/cli/install.ps1 | iex' },
+        { t: '關掉 PowerShell，重開一個新的，出現版本號就是裝好了', cmd: 'agy --version' },
+        { t: '建一個放作品的資料夾並進去（名字可以自己取）', cmd: 'mkdir -Force "$HOME\\Documents\\my-zoo"; cd "$HOME\\Documents\\my-zoo"' },
+        { t: '啟動 agy，第一次會請你登入', cmd: 'agy' },
+      ],
+      alt: {
+        t: '習慣用「命令提示字元」（CMD）的話，第 1 步改貼這一行',
+        cmd: 'curl -fsSL https://antigravity.google/cli/install.cmd -o install.cmd && install.cmd && del install.cmd',
+      },
+      where: '裝在 %LOCALAPPDATA%\\agy\\bin，裝在自己的使用者資料夾，x64 與 ARM 的 64 位元 Windows 都支援。',
+    },
+  ],
+  firstRun: [
+    { t: '第一次輸入 agy', d: '依序選配色、登入方式選 Google OAuth、在跳出的瀏覽器登入個人 Google 帳號（畫面若給你一串授權碼，就複製貼回終端機），最後確認信任這個資料夾。' },
+    { t: '說找不到 agy 這個指令', d: '先關掉終端機重開，還是不行就把安裝位置加進 PATH，Mac 是 ~/.local/bin，Windows 是 %LOCALAPPDATA%\\agy\\bin，卡住就帶著畫面來找老師。' },
+    { t: '學校信箱的 Google 帳號登不進去', d: '改用個人 Google 帳號，這是老師實際遇過的狀況。' },
+    { t: '想先看它打算怎麼做', d: '輸入 /plan 請它先給計畫，輸入 /help 可以看所有指令與快捷鍵。' },
+    { t: '額度還剩多少', d: '輸入 /usage 查看。免費帳號每週重置，訂 Google AI Pro 之後改成每五小時重置，到每週上限為止。' },
+    { t: '離開、登出、更新', d: '輸入 /quit 或連按兩次 Ctrl+D 離開，/logout 登出。agy 會自己在背景更新，也可以輸入 agy update。' },
+  ],
+  source: '指令依 Google 官方文件整理（2026-09-17 核對），官方若有更新以官方頁為準。',
+  sourceUrl: 'https://antigravity.google/docs/cli/install/',
+}
 
 // GitHub 實務指南：老師怎麼看到你、檔案怎麼上去、簡報怎麼傳
 export const SUBMIT_HOWTO = [

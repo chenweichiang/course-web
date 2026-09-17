@@ -22,8 +22,8 @@ export default function Tools() {
       </div>
       <p className="heti mt-5 text-sm text-neutral-500 max-w-3xl leading-loose">
         <span className="inline-block w-2.5 h-2.5 bg-seal mr-1.5 align-baseline" aria-hidden="true" />
-        為專案主力。M0 建工作流就要用，因此<strong>開學前兩三週內完成訂閱</strong>，學期訂三四個月即可。
-        經濟上不方便訂閱的同學改用免費保底方案，功能足以完成所有專案要求，不會因為工具吃虧，有狀況直接找老師。
+        為專案主力。第 2 週（9/17）上課就要用，因此<strong>上課前把 agy 裝好、登入好</strong>，訂閱建議學期訂三四個月即可。
+        經濟上不方便訂閱的同學，先用 agy 免費帳號的額度上手，不會因為工具吃虧，有狀況直接找老師。
       </p>
     </div>
   )

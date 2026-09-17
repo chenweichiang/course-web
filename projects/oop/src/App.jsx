@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react'
 import Hero from './components/Hero'
 import Project from './components/Project'
+import CreatureBox from './components/CreatureBox'
+import FurtherReading from './components/FurtherReading'
 import Method from './components/Method'
+import WeekPlan from './components/WeekPlan'
 import MilestoneGuide from './components/MilestoneGuide'
 import Algorithms from './components/Algorithms'
 import Sensing from './components/Sensing'
@@ -13,15 +16,17 @@ import Submission from './components/Submission'
 
 const SECTIONS = [
   { id: 'project', num: '01', navLabel: '期末專案', label: '期末專案：後未來動物園', summary: '整個專案只做一件事：培育沒有人類之後的物種，直到牠開園', Component: Project },
-  { id: 'method', num: '02', navLabel: '方法', label: '進行方法', summary: '研究先行迴圈，每個里程碑都跑同一套：研究、選型、查證、動手驗證', Component: Method },
-  { id: 'milestones', num: '03', navLabel: '里程碑', label: '里程碑指南', summary: '照著做就能走完的七站，每站都有步驟、完成清單（會記住你的進度）與卡點提醒', Component: MilestoneGuide },
-  { id: 'algorithms', num: '04', navLabel: '圖鑑', label: '演算法圖鑑', summary: '19 個造物演算法，挑一個複製起手式交給你的 AI，看牠能長出什麼', Component: Algorithms },
-  { id: 'sensing', num: '05', navLabel: '感測', label: '感測互動', summary: '臉、手、身體都是棲地的輸入，開源感測工具與訊號設計方法都在這', Component: Sensing },
-  { id: 'cases', num: '06', navLabel: '案例', label: '案例庫', summary: '看別人怎麼想像沒有人類的世界與另一種生命，二十三個案例分五類，取得管道都查證過', Component: Cases },
-  { id: 'ai-policy', num: '07', navLabel: 'AI 公約', label: 'AI 公約', summary: '本專案獎勵透明，不獎勵僥倖', Component: AIPolicy },
-  { id: 'tools', num: '08', navLabel: '工具', label: '工具配置', summary: 'p5.js 網頁編輯器，加上你的 AI 工作流主力與保底', Component: Tools },
-  { id: 'setup', num: '09', navLabel: '準備', label: '開工準備', summary: '四個帳號與帶著走的工作室，學校電腦每次被還原也不怕', Component: Setup },
-  { id: 'submission', num: '10', navLabel: '繳交', label: '交付方式', summary: 'GitHub 作品集 repo，每個里程碑一個資料夾，push 就算交付', Component: Submission },
+  { id: 'creature', num: '02', navLabel: '想生物', label: '想你的生物：養殖箱', summary: '年代、環境、生存、棲息、繁殖依序想，再想牠會不會遇見同學的生物', Component: CreatureBox },
+  { id: 'method', num: '03', navLabel: '方法', label: '進行方法', summary: '研究先行迴圈，每個里程碑都跑同一套：研究、選型、查證、動手驗證', Component: Method },
+  { id: 'schedule', num: '04', navLabel: '週進度', label: '每週進度', summary: '每週四上課，16 次從 9/10 到 12/24，每次上課做什麼、下次上課前推進到哪', Component: WeekPlan },
+  { id: 'milestones', num: '05', navLabel: '里程碑', label: '里程碑指南', summary: '照著做就能走完的七站，每站都有步驟、完成清單（會記住你的進度）、卡點提醒與延伸閱讀', Component: MilestoneGuide },
+  { id: 'algorithms', num: '06', navLabel: '圖鑑', label: '演算法圖鑑', summary: '19 個造物演算法，挑一個複製起手式交給你的 AI，看牠能長出什麼', Component: Algorithms },
+  { id: 'sensing', num: '07', navLabel: '感測', label: '感測互動', summary: '臉、手、身體都是棲地的輸入，開源感測工具與訊號設計方法都在這', Component: Sensing },
+  { id: 'cases', num: '08', navLabel: '案例', label: '案例庫', summary: '看別人怎麼想像沒有人類的世界與另一種生命，二十三個案例分五類，取得管道都查證過', Component: Cases },
+  { id: 'ai-policy', num: '09', navLabel: 'AI 公約', label: 'AI 公約', summary: '本專案獎勵透明，不獎勵僥倖', Component: AIPolicy },
+  { id: 'tools', num: '10', navLabel: '工具', label: '工具配置', summary: 'p5.js 網頁編輯器、上課用的 agy，加上你的 AI 訂閱', Component: Tools },
+  { id: 'setup', num: '11', navLabel: '準備', label: '開工準備', summary: '在自己的筆電裝好 agy、申請帳號，學校電腦被還原時還有雲端備援', Component: Setup },
+  { id: 'submission', num: '12', navLabel: '繳交', label: '交付方式', summary: 'GitHub 作品集 repo，每個里程碑一個資料夾，push 就算交付', Component: Submission },
 ]
 
 export default function App() {
@@ -79,6 +84,7 @@ export default function App() {
               </div>
             </div>
             <Component />
+            <FurtherReading id={id} />
           </section>
         ))}
       </main>

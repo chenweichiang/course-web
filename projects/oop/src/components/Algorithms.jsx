@@ -4,7 +4,7 @@ import AlgoSketch from './AlgoSketch'
 
 const LV = ['★', '★★', '★★★']
 
-export function CopyButton({ text }) {
+export function CopyButton({ text, label = '複製起手式' }) {
   const [done, setDone] = useState(false)
   const copy = async () => {
     try {
@@ -21,7 +21,7 @@ export function CopyButton({ text }) {
         done ? 'border-seal text-seal' : 'border-neutral-400 text-neutral-500 hover:border-neutral-900 hover:text-neutral-900'
       }`}
     >
-      {done ? '已複製 ✓' : '複製起手式'}
+      {done ? '已複製 ✓' : label}
     </button>
   )
 }
