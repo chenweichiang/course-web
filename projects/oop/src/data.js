@@ -999,6 +999,42 @@ export const SUBMIT_HOWTO = [
   },
 ]
 
+// repo 的資料夾結構（單一來源；template 與各 repo 的 issue 用的是同一份規格）
+export const REPO_TREE = {
+  intro:
+    '整學期七站的作品都累積在同一個 repo，老師從同樣的七個資料夾看你的進度。從課程 template 開的 repo 已經有這七個資料夾，每個裡面都有一份 README.md 寫著那一站要交什麼。比較早自己開 repo 的同學，你的 repo 裡有一個 issue，裡面有一段可以直接貼給 AI 的指令，照著做就會補齊。',
+  tree: `你的 repo/
+├── AGENTS.md
+├── CLAUDE.md
+├── m0-outfit/
+│   ├── README.md
+│   ├── index.html
+│   └── sketch.js
+├── m1-world/
+│   ├── README.md
+│   └── m1-簡報.pdf
+├── m2-species/
+├── m3-creature/
+├── m4-population/
+├── m5-habitat/
+└── m6-zoo/`,
+  rows: [
+    { f: 'm0-outfit', m: 'M0 裝備', due: '9/24', talk: '' },
+    { f: 'm1-world', m: 'M1 世界', due: '10/1', talk: '報告站' },
+    { f: 'm2-species', m: 'M2 物種', due: '10/15', talk: '報告站' },
+    { f: 'm3-creature', m: 'M3 個體', due: '11/12', talk: '報告站' },
+    { f: 'm4-population', m: 'M4 族群', due: '12/3', talk: '' },
+    { f: 'm5-habitat', m: 'M5 棲地', due: '12/17', talk: '' },
+    { f: 'm6-zoo', m: 'M6 開園', due: '12/24', talk: '報告站' },
+  ],
+  notes: [
+    '資料夾名稱不要改、不要搬位置，老師整學期都從這七個資料夾看你的進度。',
+    '作品檔案直接放進該站資料夾，README.md 填反思與 AI 揭露欄（範本已經在裡面），過程筆記與物種日誌寫 notes.md。',
+    '報告站的簡報一律轉 PDF，檔名照「站名-簡報.pdf」，例如 m1-world/m1-簡報.pdf。',
+    'repo 要保持 Public，老師與同學看得到才算交付。',
+  ],
+}
+
 export const SUBMIT_STEPS = [
   { t: '開自己的作品集 repo', d: '從課程 template 建立，用 GitHub Desktop 下載到筆電，一人一個、整學期用同一個，可以理解成你物種的培育艙。' },
   { t: '交付放進里程碑資料夾', d: '資料夾名稱照這七個：m0-outfit、m1-world、m2-species、m3-creature、m4-population、m5-habitat、m6-zoo。每個資料夾放四件套：程式碼、截圖或影片、README.md（反思與 AI 揭露欄），報告站（M1、M2、M3、M6）另加簡報 PDF。不會用終端機也沒關係，GitHub Desktop 或網頁上傳都可以。' },
