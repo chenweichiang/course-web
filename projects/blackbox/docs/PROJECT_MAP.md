@@ -192,12 +192,13 @@
 - `index.html` 內的 AI ASSISTANT CONTEXT comment：那是給 AI 工具讀的，移掉會讓助教辨識 AI 生成的功能消失
 - `src/AIHint.jsx`：同上
 - Tailwind 4 `@import` + `@theme`：不能改回 Tailwind 3 寫法
-- `.gitignore` 內的 `dist/`：絕對不要 commit `dist/`，部署走 rsync
+- `.gitignore` 內的 `dist/`：舊流程殘留，不要 commit `dist/`；現在的上線目錄是 `course-web/interactiondesign/blackbox/`，那份才要 commit
 
 ---
 
 ## 部署相關
 
-- 來源 → 目標：本地 `dist/` → `research-server:/home/ccw/server/work/interactiondesign/blackbox/`
-- 工具：`rsync -avz --delete`
+- 來源 → 目標：`npm run build` → `course-web/interactiondesign/blackbox/`（vite `outDir`），commit 後 push 上線
+- 工具：GitHub Pages（repo `chenweichiang/course-web`，自訂網域 course.interaction.tw）
+- 2026-07 以前是 rsync 推到自架 VPS `work.interaction.tw`，已除役
 - 詳見 [`DEVELOPMENT.md`](DEVELOPMENT.md) → 部署流程

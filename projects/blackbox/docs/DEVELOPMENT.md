@@ -33,14 +33,13 @@ npm run build
 npm run preview
 # → http://localhost:4173
 
-# 部署到 Vultr VPS
-rsync -avz --delete dist/ research-server:/home/ccw/server/work/interactiondesign/blackbox/
+# （build 就是部署的第一步：輸出直接落在上線路徑 course-web/interactiondesign/blackbox/）
 ```
 
 **典型部署一氣呵成**
 
 ```bash
-npm run build && rsync -avz --delete dist/ research-server:/home/ccw/server/work/interactiondesign/blackbox/
+npm run build && cd ../.. && git add -A interactiondesign/blackbox projects/blackbox && git commit -m "更新黑盒子頁" && git push origin main
 ```
 
 ---
@@ -51,70 +50,56 @@ npm run build && rsync -avz --delete dist/ research-server:/home/ccw/server/work
 
 | 項目 | 值 |
 |---|---|
-| **正式網址** | https://work.interaction.tw/interactiondesign/blackbox/ |
-| **網域** | `work.interaction.tw` |
-| **伺服器路徑** | `/home/ccw/server/work/interactiondesign/blackbox/` |
-| **SSH alias** | `research-server` |
-| **服務軟體** | Caddy（系統級 systemd 服務） |
-| **HTTPS** | 自動由 Caddy 簽發與更新 |
+| **正式網址** | https://course.interaction.tw/interactiondesign/blackbox/ |
+| **代管** | GitHub Pages（repo `chenweichiang/course-web`，自訂網域 course.interaction.tw） |
+| **本專案位置** | `course-web/projects/blackbox/`（原始碼） |
+| **build 輸出** | `course-web/interactiondesign/blackbox/`（上線目錄，vite `base` 與 `outDir` 已設好） |
+| **HTTPS** | GitHub Pages 自動簽發與更新 |
 
-Caddy 設定關鍵片段（讀者參考用，**不要在這裡修改**，要改伺服器端）：
+> 沿革：2026-07 以前本頁掛在自架 VPS `work.interaction.tw`，用 rsync 推 `dist/`、由 Caddy serve。
+> 該網域已除役（DNS 現在查不到），舊的 rsync／Caddy／SSH 部署流程全部作廢，不要再照著做。
 
-```caddy
-work.interaction.tw {
-  handle /interactiondesign/blackbox/* {
-    root * /home/ccw/server/work
-    file_server
-  }
-}
-```
+### 前置設定
 
-### 前置設定（首次部署需要）
-
-要在 `~/.ssh/config` 加 `research-server` alias。SSH 連線細節（HostName / User / IdentityFile）由維護者私下提供，本文件**不公開隱私資訊**。
-
-配好之後驗證連線：
-
-```bash
-ssh research-server "ls /home/ccw/server/work/interactiondesign/"
-# （此為舊 VPS rsync 部署驗證，2026-07 已除役——現以 GitHub Pages/course-web 發佈，見 README「部署」段）
-```
+只要能 push 到 `chenweichiang/course-web` 即可，不需要 SSH 到任何伺服器。
 
 ### 部署步驟
 
 ```bash
-# 1. 開發本機目錄
-cd ~/Developer/interaction_design_finalwork
+# 1. 進原始碼目錄
+cd ~/Developer/course-web/projects/blackbox
 
 # 2. 確認本地 dev 看起來正常
 npm run dev
 # → http://localhost:5173 (Ctrl-C 結束)
 
-# 3. 建置生產版本
+# 3. 建置（直接輸出到 ../../interactiondesign/blackbox/）
 npm run build
-ls dist/    # 確認有 index.html / assets/ / *.jpg / *.png
 
-# 4. 推送到伺服器
-rsync -avz --delete dist/ research-server:/home/ccw/server/work/interactiondesign/blackbox/
+# 4. commit + push，GitHub Pages 幾分鐘後自動上線
+cd ~/Developer/course-web
+git add -A interactiondesign/blackbox projects/blackbox
+git commit -m "更新黑盒子頁"
+git push origin main
 
-# 5. 開瀏覽器確認
-open https://work.interaction.tw/interactiondesign/blackbox/
+# 5. 開瀏覽器確認（Cmd-Shift-R 強制重新整理，避開舊的 assets 快取）
+open https://course.interaction.tw/interactiondesign/blackbox/
 ```
 
 ### 安全 / 操作注意
 
-- **絕對不透過 git push 觸發部署**——沒有 CI/CD，git 只是版本管理
-- `--delete` 旗標會刪除伺服器上 dist 沒有的檔案，**確認 build 完整再執行**
-- 部署立刻生效（Caddy 直接從目錄 serve 檔案，無需重啟）
-- 不要把 SSH 私鑰、`~/.ssh/config` 內的伺服器 IP / Port / User 寫進任何 commit 或公開文件
+- **部署就是 git push**——GitHub Pages 讀 repo 上的 `interactiondesign/blackbox/`，所以 build 產物要進版控
+- build 用 `emptyOutDir`，會清掉上線目錄裡不在這次 build 內的檔案，**確認 build 完整再 commit**
+- push 後不是立刻生效，GitHub Pages 要幾分鐘；瀏覽器也會沿用舊的 `assets/*.js`，驗收一律強制重新整理
+- course-web 是公開 repo，不要把任何私密資訊寫進這個專案
 
 ### 故障排除
 
 | 症狀 | 排查 |
 |---|---|
-| `ssh research-server` 失敗 | 檢查 `~/.ssh/config`、私鑰權限（`chmod 600`）、防火牆 |
-| `rsync` 完成但網頁沒更新 | Cmd-Shift-R 強制重新整理；確認 build 是最新 |
-| HTTPS 憑證錯誤 | Caddy 會自動處理，若持續可 SSH 進去 `sudo systemctl status caddy` |
+| push 完但網頁沒更新 | GitHub Pages 要幾分鐘；再 Cmd-Shift-R；確認 `interactiondesign/blackbox/` 的新檔真的進了 commit |
+| 頁面停在舊版 | 比對線上 `index.html` 引用的 `assets/*.js` 檔名與本地 build 是否一致 |
+| HTTPS 憑證錯誤 | GitHub Pages 自動處理；確認 repo 根目錄 `CNAME` 還在 |
 | 樣式 / JS 路徑 404 | 檢查 `vite.config.js` 的 `base` 設定是否對應 `/interactiondesign/blackbox/` |
 
 ---
@@ -270,7 +255,7 @@ className="fixed top-0 z-50 flex items-center px-5 py-4 border-b-2 bg-white text
 
 - **訊息語言**：繁體中文
 - **格式**：第一行為摘要（< 50 字），空一行後寫詳細變更
-- **co-authored**：AI 協作的 commit 加 `Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>`
+- **不加 AI 署名**：commit 不寫任何 AI 協作標記或生成標記
 
 範例：
 
@@ -281,17 +266,15 @@ className="fixed top-0 z-50 flex items-center px-5 py-4 border-b-2 bg-white text
 - 全站字體改為 Inter + Noto Sans TC + IBM Plex Mono
 - 頂部 nav 行動裝置改 hamburger 抽屜選單
 ...
-
-Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
 ```
 
 ### Remote
 
 ```bash
-# 已設定
-origin   https://github.com/chenweichiang/course-interaction.git
+# 已設定（本專案沒有自己的 remote，跟著課程總站 course-web 一起版控）
+origin   https://github.com/chenweichiang/course-web.git
 
-# Push（不會觸發部署，純版控）
+# Push（GitHub Pages 會在幾分鐘後自動上線）
 git push origin main
 ```
 
@@ -334,19 +317,20 @@ SVG 沒有 `z-index`。後寫的會疊在先寫的上面。需要疊加層次時
 
 不要硬編碼 `/poster-reference.jpg`——子路徑部署時會壞。
 
-### 5. 不要 commit `dist/`
+### 5. build 產物要進版控，但不是 `dist/`
 
-`dist/` 已在 `.gitignore`。若不慎被加入索引：
+vite 的 `outDir` 已改成 `../../interactiondesign/blackbox`，那份**要 commit**（GitHub Pages 服務的就是它）。
+`dist/` 仍留在 `.gitignore`，是舊流程的殘留；若不慎產生並被加入索引：
 
 ```bash
 git rm -r --cached dist/
 git commit -m "從版控移除 dist/"
 ```
 
-### 6. macOS rsync 路徑有空格
+### 6. 本機路徑含空格與中文
 
-部署路徑沒空格，但本機開發路徑 `~/Developer/interaction_design_finalwork/` 也沒有，問題不大。
-若改名含空格，所有 cd / rsync 都要 quote。
+本專案位於 `~/Developer/course-web/projects/blackbox/`，路徑沒有空格；但 `~/Developer` 底下多數專案是
+中文帶空格的資料夾名，跨專案複製素材時所有 `cd` / `cp` 都要 quote。
 
 ---
 
@@ -371,11 +355,11 @@ npm run dev
 - 大量 `motion` 元素同時動畫 → 用 `viewport={{ once: true }}` 只執行一次
 - 拖曳卡頓 → 確認用 `useRef` 而非 `useState` 儲存高頻更新值
 
-### rsync 部署後沒生效
+### push 後線上沒生效
 
-1. 確認 `dist/` 內容是最新 build（不是舊的）
-2. 確認部署目標路徑正確
-3. 確認 server 端 Caddy 服務正常（可 SSH 進去 `docker ps`）
+1. 確認 `interactiondesign/blackbox/` 的新檔真的進了 commit（`git show --stat`）
+2. 確認 GitHub Pages 已跑完（repo 的 Actions／Pages 頁）
+3. 強制重新整理，並比對線上 `index.html` 引用的 `assets/*.js` 檔名
 
 ---
 

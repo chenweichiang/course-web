@@ -24,7 +24,7 @@
 
 **技術棧**：Vite 8 + React 19 + Tailwind CSS 4 + Framer Motion 12
 
-**部署**：自製 Vultr VPS，透過 rsync 推到 `research-server:/home/ccw/server/work/interactiondesign/blackbox/`
+**部署**：GitHub Pages，`npm run build` 輸出到 `course-web/interactiondesign/blackbox/`，commit 後 push 即上線
 
 ---
 
@@ -125,18 +125,23 @@
 
 ### 🔒 部署規則
 
-**部署統一走 rsync，禁止透過 git push 觸發部署。**
+**部署走 GitHub Pages：build 輸出直接進版控，push 即上線。**
 
-- **正式網址**：https://work.interaction.tw/interactiondesign/blackbox/
-- **伺服器路徑**：`/home/ccw/server/work/interactiondesign/blackbox/`
-- **SSH alias**：`research-server`（隱私資訊不寫進文件）
+- **正式網址**：https://course.interaction.tw/interactiondesign/blackbox/
+- **上線目錄**：`course-web/interactiondesign/blackbox/`（vite `outDir` 已指向這裡，要 commit）
+- **代管**：GitHub Pages（repo `chenweichiang/course-web`，自訂網域 course.interaction.tw）
 
 ```bash
 npm run build
-rsync -avz --delete dist/ research-server:/home/ccw/server/work/interactiondesign/blackbox/
+cd ~/Developer/course-web
+git add -A interactiondesign/blackbox projects/blackbox
+git commit -m "更新黑盒子頁"
+git push origin main
 ```
 
-Git 只用於原始碼版本管理，不負責部署。詳細部署流程見 [`docs/DEVELOPMENT.md`](docs/DEVELOPMENT.md)。
+> 2026-07 以前掛在自架 VPS `work.interaction.tw`、用 rsync 部署；該網域已除役，舊流程作廢。
+
+詳細部署流程見 [`docs/DEVELOPMENT.md`](docs/DEVELOPMENT.md)。
 
 ### 🔒 不要 commit 的東西
 

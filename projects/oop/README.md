@@ -20,7 +20,7 @@ cd ../.. && git add -A && git commit && git push   # push 後 GitHub Pages 自�
 ## Hero 背景：程序化生成的一棵櫻
 
 `public/tree/` 底下的 `skeleton.js` / `presets.js` / `recursive.js` / `venation.js` / `render.js` / `light.js`
-是從研究專案 [chenweichiang/202608-research-p5-tree](https://github.com/chenweichiang/202608-research-p5-tree)
+是從研究專案 `202608 研究 p5畫樹`（GitHub repo `chenweichiang/202608-research-p5-tree`，**私有，外部無法瀏覽**）
 **原封不動複製**過來的，⚠️ **不要在這裡改**——要改演算法回研究專案改，再重新複製：
 
 ```bash

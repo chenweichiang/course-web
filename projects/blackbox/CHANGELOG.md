@@ -83,7 +83,7 @@
 ### Commit
 
 - `58c8a9c`：19 files changed, +2097 / -812
-- Push 至 `https://github.com/chenweichiang/course-interaction`
+- Push 至 `https://github.com/chenweichiang/course-interaction`（當時的 repo；後已改名 `202605-course-interaction-design` 並轉為私有，此連結不再有效。本頁 2026-07 併入 `chenweichiang/course-web`）
 
 ---
 

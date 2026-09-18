@@ -102,7 +102,7 @@ npm run preview
 ## 部署
 
 > ⚠️ 2026-07 起本專案已併入課程總站 **course-web**，改由 GitHub Pages 發佈（舊的 rsync 到
-> `work.interaction.tw` 已除役失效）。以下 `docs/` 內若仍有舊部署座標，以本段為準。
+> `work.interaction.tw` 已除役失效）。`docs/` 內的部署座標已於 2026-09-18 一併更新。
 
 | 項目 | 值 |
 |---|---|
