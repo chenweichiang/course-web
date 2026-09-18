@@ -941,6 +941,35 @@ export const AGY_INSTALL = {
   sourceUrl: 'https://antigravity.google/docs/cli/install/',
 }
 
+// Windows 的終端機與 shell 分層（Microsoft 官方部落格與各專案 repo，2026-09-18 核對）
+export const WIN_TERMINAL = {
+  intro:
+    '很多人以為「終端機」就是 PowerShell，其實是兩層：視窗是一層，讀你指令的程式是另一層。知道這件事，換工具的時候才不會換錯地方。',
+  layers: [
+    {
+      t: '終端機（那個視窗）',
+      d: '負責顯示與操作：分頁、切割視窗、字型大小、複製貼上。',
+      pick:
+        'Windows Terminal 是微軟自己做的開源軟體（MIT 授權），Windows 11 從 22H2 起就是預設的那個。想換別的也可以，Rio、WezTerm、Alacritty 都是開源、Mac 與 Windows 都能裝。',
+    },
+    {
+      t: 'shell（讀指令的程式）',
+      d: '真正讀懂你打進去的每一行字，決定指令怎麼執行。',
+      pick:
+        'Windows 預設是 PowerShell。不想用它的話，可以換 Git Bash（裝 Git for Windows 就有）、WSL 裡的 bash，或適合看資料的 Nushell。',
+    },
+    {
+      t: 'WSL（選配，之後有興趣再裝）',
+      d: '在 Windows 裡開一整套 Linux，檔案與指令都照 Linux 的規矩走。',
+      pick:
+        '微軟自己維護，2025 年 5 月起用 MIT 開源。裝了它，網路上以 Mac 或 Linux 為準的教學就能照著做，不用自己換算成 Windows 的寫法。',
+    },
+  ],
+  course:
+    '這門課不用挑：Windows Terminal 開 PowerShell 就夠用，agy、Claude Code、Codex 在這個組合下都正常。Mac 的對照是「終端機」或 Ghostty 是視窗，zsh 是 shell。',
+  source: '依 Microsoft 官方部落格（Windows Terminal is now the Default in Windows 11）與 microsoft/terminal、microsoft/WSL、rio、wezterm、nushell 各 repo 整理，2026-09-18 核對。',
+}
+
 // GitHub 實務指南：老師怎麼看到你、檔案怎麼上去、簡報怎麼傳
 export const SUBMIT_HOWTO = [
   {

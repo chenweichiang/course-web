@@ -1,4 +1,4 @@
-import { SETUP_ACCOUNTS, SETUP_USAGE, REPO_SETUP, OTHER_CLI } from '../data'
+import { SETUP_ACCOUNTS, SETUP_USAGE, REPO_SETUP, OTHER_CLI, WIN_TERMINAL } from '../data'
 import AgyInstall, { Cmd } from './AgyInstall'
 
 const NUMS = ['一', '二', '三', '四', '五']
@@ -24,6 +24,27 @@ function NumList({ items }) {
           </div>
         </div>
       ))}
+    </div>
+  )
+}
+
+// 終端機與 shell 是兩層：接在 agy 安裝卡之後，解釋剛剛打開的那個視窗是什麼
+function TerminalLayers() {
+  return (
+    <div>
+      <h3 className="font-display text-xl tracking-wide mb-2">終端機是視窗，shell 才是讀你指令的程式</h3>
+      <p className="heti text-sm text-neutral-600 leading-relaxed max-w-3xl mb-4">{WIN_TERMINAL.intro}</p>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {WIN_TERMINAL.layers.map((l) => (
+          <div key={l.t} className="card-ink p-5">
+            <h4 className="font-bold mb-1">{l.t}</h4>
+            <p className="heti text-sm text-neutral-600 leading-relaxed">{l.d}</p>
+            <p className="heti text-sm text-neutral-600 leading-relaxed mt-2">{l.pick}</p>
+          </div>
+        ))}
+      </div>
+      <p className="heti mt-4 text-sm text-neutral-700 leading-relaxed">{WIN_TERMINAL.course}</p>
+      <p className="mt-2 text-xs text-neutral-500 leading-relaxed">{WIN_TERMINAL.source}</p>
     </div>
   )
 }
@@ -65,6 +86,8 @@ export default function Setup() {
       </div>
 
       <AgyInstall />
+
+      <TerminalLayers />
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
         <div className="min-w-0">
