@@ -79,6 +79,7 @@ function StepCard({ step, isActive, onClick }) {
   return (
     <motion.button
       onClick={onClick}
+      aria-pressed={isActive}
       whileHover={{ y: -2 }}
       className={`flex-1 p-5 rounded-2xl border text-left transition-all ${
         isActive

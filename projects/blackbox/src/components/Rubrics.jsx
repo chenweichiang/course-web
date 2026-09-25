@@ -118,6 +118,7 @@ export default function Rubrics() {
             <button
               key={c.id}
               onClick={() => setActiveCategory(activeCategory === c.id ? null : c.id)}
+              aria-pressed={activeCategory === c.id}
               className={`p-4 rounded-2xl border text-left transition-all ${
                 activeCategory === c.id
                   ? 'border-zinc-900 bg-zinc-50'

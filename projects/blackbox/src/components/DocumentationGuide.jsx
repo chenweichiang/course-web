@@ -128,6 +128,7 @@ export default function DocumentationGuide() {
             <motion.button
               key={d.id}
               onClick={() => { setActiveDoc(activeDoc === d.id ? null : d.id); setTab('what') }}
+              aria-pressed={activeDoc === d.id}
               whileHover={{ y: -2 }}
               className={`p-6 rounded-2xl border text-left transition-all ${
                 activeDoc === d.id
