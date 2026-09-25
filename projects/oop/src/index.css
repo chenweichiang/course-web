@@ -3,7 +3,7 @@
 /* 朱雀仿宋（OFL）：自架子集（涵蓋全站用字）。重新子集化指令見 projects/oop/README.md。 */
 @font-face {
   font-family: 'Zhuque Fangsong';
-  src: url('/oop/fonts/ZhuqueFangsong-subset.woff2?v=20260917') format('woff2');
+  src: url('/oop/fonts/ZhuqueFangsong-subset.woff2?v=20260925') format('woff2');
   font-weight: 400 900;
   font-display: swap;
 }
