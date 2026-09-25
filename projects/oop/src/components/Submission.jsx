@@ -21,7 +21,7 @@ export default function Submission() {
           <p className="heti text-sm text-neutral-600 leading-relaxed max-w-3xl">{REPO_TREE.intro}</p>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr]">
-          <div className="min-w-0 p-6 border-b lg:border-b-0 lg:border-r border-neutral-900 overflow-x-auto">
+          <div tabIndex={0} className="min-w-0 p-6 border-b lg:border-b-0 lg:border-r border-neutral-900 overflow-x-auto">
             <pre className="font-mono text-[0.8rem] leading-relaxed text-neutral-700 whitespace-pre">{REPO_TREE.tree}</pre>
           </div>
           <div className="min-w-0 p-6">
@@ -31,7 +31,7 @@ export default function Submission() {
                   <th className="pb-2 font-mono text-xs text-neutral-500 font-normal">資料夾</th>
                   <th className="pb-2 font-mono text-xs text-neutral-500 font-normal">里程碑</th>
                   <th className="pb-2 font-mono text-xs text-neutral-500 font-normal">截止</th>
-                  <th className="pb-2 font-mono text-xs text-neutral-500 font-normal"></th>
+                  <th className="pb-2 font-mono text-xs text-neutral-500 font-normal"><span className="sr-only">報告</span></th>
                 </tr>
               </thead>
               <tbody>

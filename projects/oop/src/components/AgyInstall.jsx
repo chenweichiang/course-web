@@ -5,7 +5,7 @@ import { CopyButton } from './Algorithms'
 export function Cmd({ text }) {
   return (
     <div className="mt-2 flex items-stretch border border-neutral-900 bg-ink">
-      <code className="flex-1 min-w-0 overflow-x-auto px-3 py-2.5 font-mono text-[0.82rem] leading-relaxed text-paper whitespace-pre">
+      <code tabIndex={0} className="flex-1 min-w-0 overflow-x-auto px-3 py-2.5 font-mono text-[0.82rem] leading-relaxed text-paper whitespace-pre">
         {text}
       </code>
       <div className="shrink-0 flex items-center px-2 bg-paper border-l border-neutral-900">
