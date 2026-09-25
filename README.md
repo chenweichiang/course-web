@@ -26,6 +26,9 @@
 借用當下看不出問題（缺的字剛好在別頁的來源文字裡），是改了標題文字才爆，所以要在建頁時就給它自己的子集。
 查法：開頁面在 console 對每個字比對 `"Zhuque Fangsong", serif` 與 `serif` 的 canvas 像素，相同＝該字不在子集裡
 （`document.fonts.check()` 只看 @font-face 宣告，對 subset 一律回 true，**不能用來驗**）。
+自動檢查：`python3 tools/check_font_subsets.py`（需 fonttools＋brotli；PR 與 push 到 main 時由
+`.github/workflows/font-check.yml` 執行），缺字、借用別頁子集、未登記的頁面會失敗，字型網址沒帶 `?v=` 或
+`?v=` 早於子集更新日列為警告。**新增用朱雀標題字的頁面，要在腳本的 `PAGES` 登記。**
 
 ## 結構
 
