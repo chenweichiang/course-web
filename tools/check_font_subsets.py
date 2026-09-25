@@ -162,9 +162,12 @@ def load_full_font(arg: str | None) -> Path:
 
 
 def last_commit_date(rel: str) -> str | None:
-    """子集檔最後一次 commit 的日期（臺北時間 YYYYMMDD）。"""
-    r = subprocess.run(['git', 'log', '-1', '--format=%ad', '--date=format-local:%Y%m%d', '--', rel],
-                       cwd=ROOT, capture_output=True, text=True, env={**os.environ, 'TZ': 'Asia/Taipei'})
+    """子集檔最後一次 commit 的日期（YYYYMMDD，以該 commit 自己記錄的時區計）。
+
+    ?v= 是提交者照自己當地日期填的，所以比對要用 commit 的時區，不能用執行檢查那台機器的時區：
+    在 UTC 的雲端容器提交、再到臺北的 Mac 上跑檢查，換算成臺北時間會跨日而誤報。"""
+    r = subprocess.run(['git', 'log', '-1', '--format=%ad', '--date=format:%Y%m%d', '--', rel],
+                       cwd=ROOT, capture_output=True, text=True)
     return r.stdout.strip() or None
 
 
