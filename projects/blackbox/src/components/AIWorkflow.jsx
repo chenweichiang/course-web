@@ -6,7 +6,7 @@ import AIHint from '../AIHint'
 
 function AntigravityDiagram() {
   return (
-    <svg viewBox="0 0 600 260" className="w-full max-w-2xl mx-auto" aria-label="Antigravity IDE 結構圖">
+    <svg viewBox="0 0 600 260" className="w-full max-w-2xl mx-auto" role="img" aria-label="Antigravity IDE 結構圖">
       <defs>
         <linearGradient id="ag-grad" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stopColor="#4ade80" stopOpacity="0.15" />
@@ -76,7 +76,7 @@ function GitFlowDiagram() {
     { x: 540, y: 120, label: 'GitHub', sub: '雲端備份', color: '#f472b6' },
   ]
   return (
-    <svg viewBox="0 0 620 200" className="w-full max-w-2xl mx-auto" aria-label="Git 工作流程圖">
+    <svg viewBox="0 0 620 200" className="w-full max-w-2xl mx-auto" role="img" aria-label="Git 工作流程圖">
       <defs>
         <marker id="git-arr" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
           <path d="M0,0 L8,4 L0,8 Z" fill="#33333360" />
@@ -110,7 +110,7 @@ function GitFlowDiagram() {
 
 function DebugFlowDiagram() {
   return (
-    <svg viewBox="0 0 560 300" className="w-full max-w-xl mx-auto" aria-label="AI 除錯流程圖">
+    <svg viewBox="0 0 560 300" className="w-full max-w-xl mx-auto" role="img" aria-label="AI 除錯流程圖">
       <defs>
         <marker id="dbg-arr" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto">
           <path d="M0,0 L7,3.5 L0,7 Z" fill="#33333360" />
@@ -532,7 +532,7 @@ function SectionScripts({ copied, copyText }) {
               {copied === `script-${activeScript}` ? '已複製 ✓' : '複製腳本'}
             </button>
           </div>
-          <pre className="p-5 overflow-x-auto">
+          <pre tabIndex={0} className="p-5 overflow-x-auto">
             <code className="mono text-zinc-600 text-xs leading-relaxed">{SCRIPTS[activeScript].code}</code>
           </pre>
         </motion.div>
@@ -605,6 +605,7 @@ export default function AIWorkflow() {
               {/* Row */}
               <button
                 onClick={() => toggle(item.id)}
+                aria-expanded={open === item.id}
                 className="w-full flex items-center gap-5 px-6 py-5 text-left hover:bg-zinc-50 transition-colors group"
               >
                 <span className="mono text-zinc-300 text-xs w-6 shrink-0">{item.num}</span>
@@ -621,7 +622,7 @@ export default function AIWorkflow() {
                   </div>
                   <p className="text-zinc-400 text-xs leading-relaxed">{item.summary}</p>
                 </div>
-                <span className={`mono text-zinc-400 text-sm transition-transform duration-200 ${open === item.id ? 'rotate-180' : ''}`}>
+                <span aria-hidden="true" className={`mono text-zinc-400 text-sm transition-transform duration-200 ${open === item.id ? 'rotate-180' : ''}`}>
                   ↓
                 </span>
               </button>

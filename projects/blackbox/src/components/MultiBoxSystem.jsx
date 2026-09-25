@@ -234,6 +234,7 @@ export default function MultiBoxSystem() {
             <button
               key={m.id}
               onClick={() => setSelected(selected === m.id ? null : m.id)}
+              aria-pressed={selected === m.id}
               className={`p-4 rounded-xl border text-left transition-all ${
                 selected === m.id
                   ? 'border-zinc-900 bg-zinc-50'
@@ -279,7 +280,7 @@ export default function MultiBoxSystem() {
               </div>
               <div>
                 <div className="mono text-xs mb-3" style={{ color: method.color }}>程式碼起點</div>
-                <pre className="mono text-zinc-600 text-xs leading-relaxed bg-white p-4 rounded-xl border border-zinc-200 whitespace-pre overflow-x-auto">
+                <pre tabIndex={0} className="mono text-zinc-600 text-xs leading-relaxed bg-white p-4 rounded-xl border border-zinc-200 whitespace-pre overflow-x-auto">
                   {method.code}
                 </pre>
               </div>

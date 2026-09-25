@@ -187,6 +187,7 @@ export default function VideoGuide() {
             <button
               key={s.id}
               onClick={() => setActiveShot(activeShot === s.id ? null : s.id)}
+              aria-pressed={activeShot === s.id}
               className={`p-6 border text-left transition-all ${
                 activeShot === s.id ? 'border-zinc-900 bg-zinc-50' : 'border-zinc-200 hover:border-zinc-400'
               }`}

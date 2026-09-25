@@ -511,9 +511,9 @@ export default function HardwareGuide() {
             {/* Dual-brain explainer (Uno Q only) */}
             {board === 'unoq' && (
               <div className="mb-10">
-                <button onClick={() => setShowDual(!showDual)}
+                <button onClick={() => setShowDual(!showDual)} aria-expanded={showDual}
                   className="flex items-center gap-3 text-zinc-400 hover:text-zinc-700 transition-colors mb-4 text-sm">
-                  <span className="mono">{ showDual ? '▼' : '▶'}</span>
+                  <span className="mono" aria-hidden="true">{ showDual ? '▼' : '▶'}</span>
                   Uno Q 是什麼？雙核心架構說明
                 </button>
                 <AnimatePresence>
@@ -588,7 +588,7 @@ export default function HardwareGuide() {
           </p>
           <div className="grid grid-cols-3 gap-4 mb-6">
             {COMPONENTS.map(c => (
-              <button key={c.name} onClick={() => setActiveComp(activeComp === c.name ? null : c.name)}
+              <button key={c.name} onClick={() => setActiveComp(activeComp === c.name ? null : c.name)} aria-pressed={activeComp === c.name}
                 className={`p-4 rounded-xl border text-left transition-all ${activeComp === c.name ? 'border-zinc-900 bg-zinc-50' : 'border-zinc-200 hover:border-zinc-400'}`}>
                 <div className="flex items-center justify-between mb-3">
                   <span className="mono text-xs px-2 py-0.5 rounded-full"

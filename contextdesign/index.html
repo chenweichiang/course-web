@@ -279,7 +279,7 @@
         <div class="h2-code mono">DELIVERABLES</div>
         <h2 class="serif">交付慣例</h2>
         <p>交付檔名一律 <span class="filename">M編號_交付物_組名_版本_日期</span>，例：<span class="filename">M1_觀察紀錄_平鎮夜市A組_v1_2026-09-24</span>。田野資料一律編號（<span class="filename">組代號-類型-流水號</span>，例 <span class="filename">A-OBS-12</span>），之後每一條痛點、每一張便利貼、Persona 每一欄、每一句 POV 與 HMW、每一張構想卡、原型每一個改動都要引用編號。每份交付末頁附 crit 回應單與 AI 貢獻聲明，並回答一句：這份交付如何對應我們場域的文化？<b>討論一律在 Miro 上：</b>每組一個板全學期用，frame 分 M0–M6、Crit 牆、日誌，第 1 週把老師加進去並交連結。便利貼、地圖、輪、矩陣、發想池、走牆、邏輯圖都在板上做，交付附 frame 連結，老師 desk crit 直接看板子。每一份交付物的規格見下方<a href="#specs">交付物規格</a>。</p>
-        <div class="tablewrap">
+        <div class="tablewrap" tabindex="0">
           <table>
             <thead><tr><th>里程碑</th><th>交付物</th></tr></thead>
             <tbody>
@@ -1452,6 +1452,10 @@ critique：老師問構想三「這跟信任有什麼關係，會不會只是解
           requestAnimationFrame(step);
         }
       })();
+    </script>
+    <script>
+      // 規格表（SPECS 區段）寬度不夠時要可以用鍵盤看完：加 tabindex
+      document.querySelectorAll('.spec-tablewrap').forEach(function (el) { el.tabIndex = 0; });
     </script>
   </body>
 </html>

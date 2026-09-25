@@ -218,7 +218,7 @@ function TopNav({ items }) {
                       {item.num}
                     </span>
                     <span className="text-zinc-800 text-[15px] flex-1 leading-none">{item.label}</span>
-                    <span className="mono text-zinc-300 text-xs shrink-0">→</span>
+                    <span className="mono text-zinc-300 text-xs shrink-0" aria-hidden="true">→</span>
                   </motion.a>
                 ))}
               </div>
@@ -252,6 +252,8 @@ function SectionRow({ id, num, label, summary, Component, defaultOpen = false })
     <div id={id} className="border-t border-zinc-200">
       <button
         onClick={() => setOpen(o => !o)}
+        aria-expanded={open}
+        aria-controls={`${id}-panel`}
         className="w-full flex items-center gap-5 px-8 py-5 text-left hover:bg-zinc-50 transition-colors group"
       >
         <span className="mono text-[#CC0000] text-xs font-bold w-5 shrink-0">{num}</span>
@@ -262,6 +264,7 @@ function SectionRow({ id, num, label, summary, Component, defaultOpen = false })
           <div className="text-zinc-400 text-xs leading-relaxed">{summary}</div>
         </div>
         <span
+          aria-hidden="true"
           className="mono text-zinc-300 text-xs transition-transform duration-200 shrink-0"
           style={{ transform: open ? 'rotate(180deg)' : 'rotate(0deg)' }}
         >
@@ -272,6 +275,7 @@ function SectionRow({ id, num, label, summary, Component, defaultOpen = false })
       <AnimatePresence initial={false}>
         {open && (
           <motion.div
+            id={`${id}-panel`}
             key="content"
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
@@ -325,7 +329,7 @@ export default function App() {
                 className="mono text-zinc-400 lg:text-zinc-300 text-xs py-2.5 px-2 lg:py-0 lg:px-0 hover:text-zinc-900 active:text-zinc-700 transition-colors flex items-center justify-between lg:justify-start gap-2 border-b border-zinc-100 lg:border-b-0 last:border-b-0"
               >
                 <span>{link.label}</span>
-                <span className="text-zinc-300 lg:ml-0.5">↗</span>
+                <span className="text-zinc-300 lg:ml-0.5" aria-hidden="true">↗</span>
               </a>
             ))}
           </div>

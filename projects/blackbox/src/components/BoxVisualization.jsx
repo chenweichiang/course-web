@@ -246,6 +246,7 @@ export default function BoxVisualization() {
                   <button
                     key={m.id}
                     onClick={() => setSelectedMaterial(selectedMaterial === m.id ? null : m.id)}
+                    aria-pressed={selectedMaterial === m.id}
                     className={`w-full text-left p-4 rounded-xl border transition-all ${
                       selectedMaterial === m.id
                         ? m.ok ? 'border-emerald-400 bg-emerald-50' : 'border-red-400 bg-red-50'

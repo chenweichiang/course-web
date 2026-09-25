@@ -345,7 +345,7 @@ export default function StateMachine() {
           <div className="grid grid-cols-2 gap-8">
             <div>
               <div className="text-red-600 font-medium text-sm mb-3">❌ 不用狀態機（常見錯誤）</div>
-              <pre className="text-zinc-500 text-xs leading-relaxed bg-white p-4 rounded-xl overflow-x-auto border border-zinc-200">
+              <pre tabIndex={0} className="text-zinc-500 text-xs leading-relaxed bg-white p-4 rounded-xl overflow-x-auto border border-zinc-200">
 {`void loop() {
   // 問題：條件互相干擾，
   // 邏輯越改越複雜
@@ -364,7 +364,7 @@ export default function StateMachine() {
             </div>
             <div>
               <div className="text-emerald-600 font-medium text-sm mb-3">✓ 用狀態機（清晰可擴展）</div>
-              <pre className="text-zinc-500 text-xs leading-relaxed bg-white p-4 rounded-xl overflow-x-auto border border-zinc-200">
+              <pre tabIndex={0} className="text-zinc-500 text-xs leading-relaxed bg-white p-4 rounded-xl overflow-x-auto border border-zinc-200">
 {`void loop() {
   int sensor = analogRead(A0);
 
@@ -393,7 +393,7 @@ export default function StateMachine() {
               <StateMachineFlowchart activeState={activeState} />
               <div className="grid grid-cols-2 gap-2 mt-4">
                 {Object.entries(STATE_DETAILS).map(([id, s]) => (
-                  <button key={id} onClick={() => setActiveState(activeState === id ? null : id)}
+                  <button key={id} onClick={() => setActiveState(activeState === id ? null : id)} aria-pressed={activeState === id}
                     className={`py-2 px-3 rounded-xl border text-left text-xs transition-all ${activeState === id ? 'border-zinc-300 bg-zinc-50' : 'border-zinc-200 hover:border-zinc-300'}`}
                     style={{ borderColor: activeState === id ? s.color + '80' : undefined }}>
                     <span className="font-mono font-bold" style={{ color: s.color }}>{id.toUpperCase()}</span>
@@ -414,7 +414,7 @@ export default function StateMachine() {
                     </div>
                     <div>
                       <div className="mono text-zinc-400 text-xs mb-2">程式碼片段（Arduino IDE）</div>
-                      <pre className="text-zinc-600 text-xs leading-relaxed bg-zinc-100 p-4 rounded-xl border border-zinc-200 overflow-x-auto">
+                      <pre tabIndex={0} className="text-zinc-600 text-xs leading-relaxed bg-zinc-100 p-4 rounded-xl border border-zinc-200 overflow-x-auto">
                         {detail.code}
                       </pre>
                     </div>
@@ -434,20 +434,20 @@ export default function StateMachine() {
 
         {/* Full template */}
         <div>
-          <button onClick={() => setShowTemplate(!showTemplate)}
+          <button onClick={() => setShowTemplate(!showTemplate)} aria-expanded={showTemplate}
             className="w-full flex items-center justify-between p-5 rounded-2xl border border-zinc-200 hover:border-zinc-400 transition-all mb-2">
             <div className="flex items-center gap-4">
               <span className="text-zinc-800 font-medium">完整程式碼範本（給 AI 作為起點）</span>
               <span className="mono text-zinc-400 text-xs">把這個模板貼給 AI，告訴它你的感測器和輸出</span>
             </div>
-            <span className="mono text-zinc-400">{showTemplate ? '▲' : '▼'}</span>
+            <span className="mono text-zinc-400" aria-hidden="true">{showTemplate ? '▲' : '▼'}</span>
           </button>
 
           <AnimatePresence>
             {showTemplate && (
               <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }}
                 className="overflow-hidden">
-                <pre className="text-zinc-600 text-xs leading-relaxed bg-zinc-50 p-6 rounded-2xl border border-zinc-200 overflow-x-auto">
+                <pre tabIndex={0} className="text-zinc-600 text-xs leading-relaxed bg-zinc-50 p-6 rounded-2xl border border-zinc-200 overflow-x-auto">
                   {FULL_TEMPLATE}
                 </pre>
               </motion.div>

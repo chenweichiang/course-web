@@ -7,7 +7,7 @@ import AIHint from '../AIHint'
 ───────────────────────────────────────── */
 function HapticIcon() {
   return (
-    <svg viewBox="0 0 60 60" className="w-12 h-12">
+    <svg viewBox="0 0 60 60" className="w-12 h-12" aria-hidden="true">
       {[1,2,3].map(i => (
         <ellipse key={i} cx="30" cy="30" rx={8 + i * 8} ry={8 + i * 8}
           fill="none" stroke="#60a5fa" strokeWidth="1"
@@ -19,7 +19,7 @@ function HapticIcon() {
 }
 function AudioIcon() {
   return (
-    <svg viewBox="0 0 60 60" className="w-12 h-12">
+    <svg viewBox="0 0 60 60" className="w-12 h-12" aria-hidden="true">
       {[4,7,10,7,4,2].map((h, i) => (
         <rect key={i} x={12 + i * 7} y={30 - h / 2} width="5" height={h}
           rx="2" fill="#34d399" opacity={0.4 + i * 0.1} />
@@ -29,7 +29,7 @@ function AudioIcon() {
 }
 function LightIcon() {
   return (
-    <svg viewBox="0 0 60 60" className="w-12 h-12">
+    <svg viewBox="0 0 60 60" className="w-12 h-12" aria-hidden="true">
       <circle cx="30" cy="30" r="8" fill="#fbbf2440" stroke="#fbbf24" strokeWidth="1.5" />
       {[0,45,90,135,180,225,270,315].map(angle => (
         <line key={angle}
@@ -44,7 +44,7 @@ function LightIcon() {
 }
 function MotionIcon() {
   return (
-    <svg viewBox="0 0 60 60" className="w-12 h-12">
+    <svg viewBox="0 0 60 60" className="w-12 h-12" aria-hidden="true">
       <path d="M15,40 Q20,15 30,20 Q40,25 45,15"
         fill="none" stroke="#fb923c" strokeWidth="2" strokeLinecap="round" />
       <circle cx="45" cy="15" r="4" fill="#fb923c60" stroke="#fb923c" strokeWidth="1.5" />
@@ -259,7 +259,7 @@ export default function CaseStudies() {
                     <div className="flex items-start justify-between gap-4 mb-3">
                       <div>
                         <div className="mono text-xs mb-1" style={{ color: cat.color }}>{c.org}</div>
-                        <h4 className="text-zinc-900 font-bold text-lg">{c.title}</h4>
+                        <h3 className="text-zinc-900 font-bold text-lg">{c.title}</h3>
                       </div>
                       <a href={c.url} target="_blank" rel="noopener noreferrer"
                         className="shrink-0 mono text-xs px-3 py-1.5 border border-zinc-200 rounded-full text-zinc-400 hover:text-zinc-700 hover:border-zinc-400 transition-all">
