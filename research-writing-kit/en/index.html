@@ -51,6 +51,7 @@
              font-size: 0.95rem; transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s; }
       .cta:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 0 #0a0a0a; border-color: var(--accent); color: inherit; }
       .cta .mono { font-weight: 500; color: var(--gray); margin-left: 0.5em; font-size: 0.85em; }
+      .ver { font-size: 0.8rem; color: var(--gray); margin: 1.1rem 0 0; letter-spacing: 0.02em; }
 
       section { margin-top: 3.5rem; padding-top: 2rem; border-top: 1px solid var(--line); }
       section > .label { font-size: 0.75rem; color: var(--gray); letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 0.5rem; }
@@ -104,6 +105,7 @@
       <h1 class="display">Research Writing Kit</h1>
       <p class="lede">A method for writing <strong>research papers and grant proposals</strong> with an AI, plus a small toolkit that <strong>installs and customizes itself</strong>. You don't need to know AI or do any setup. Hand the folder to your Claude; it asks you a few questions, then builds the tools that fit you.</p>
       <a class="cta" href="https://github.com/chenweichiang/research-writing-kit">Get it on GitHub <span class="mono">research-writing-kit</span></a>
+      <p class="ver mono" id="kit-version"><a href="https://github.com/chenweichiang/research-writing-kit/releases">Release notes</a></p>
 
       <section id="what">
         <p class="label mono">What it is</p>
@@ -114,7 +116,7 @@
           <li><b>No fabricated citations, ever</b><span>Every reference is actually fetched and its support direction verified. Anything that can't be verified is marked "unverified". Before delivery it also scans for retractions and for claims with no citation at all.</span></li>
           <li><b>Papers sound like your field, letters sound like you</b><span>Papers, grant proposals and applications are measured against published papers in your field, so each language feature sits inside the range real papers use: no generic AI prose, and no personal idiolect either. Your own voice is kept for letters and personal statements. English drafts get a separate rhythm pass before delivery.</span></li>
           <li><b>Honesty built in</b><span>Effect sizes with confidence intervals, not just p-values. Likert items are not treated as continuous. Before claiming an effect, the design is checked for whether it can answer the question at all.</span></li>
-          <li><b>Data stays local where it can</b><span>The bundled check tools and the statistics run on your machine. Unpublished drafts and raw research data are not sent to online search services or AI detectors, and online lookups send only bibliographic data such as DOIs and titles. Anything Claude Code reads, drafts and data included, is still processed on Anthropic's model servers.</span></li>
+          <li><b>Data stays local where it can</b><span>The bundled check tools and the statistics run on your machine. Unpublished drafts and raw research data are not sent to online search services or AI detectors, and online lookups send only bibliographic data such as DOIs and titles. Anything Claude Code reads, drafts and data included, is still processed on Anthropic's model servers, so when you review someone else's submission for a journal or conference, by default it only hands you the commands for the local tools to run yourself, and reads the manuscript only if you say so and the venue allows it.</span></li>
         </ol>
       </section>
 
@@ -179,5 +181,25 @@ claude</code></pre>
         <a href="/">Course hub</a> · <a href="../" lang="zh-TW">中文版</a> · <a href="https://github.com/chenweichiang/research-writing-kit">Source (GitHub)</a> · Chenwei Chiang 江振維
       </footer>
     </main>
+      <script>
+        // 版本號讀 GitHub 最新 Release，發版後自動更新；讀不到就只留「版本紀錄」連結，頁面上不寫死版本號
+        (function () {
+          var el = document.getElementById('kit-version');
+          if (!el || !window.fetch) return;
+          fetch('https://api.github.com/repos/chenweichiang/research-writing-kit/releases/latest', { headers: { Accept: 'application/vnd.github+json' } })
+            .then(function (r) { return r.ok ? r.json() : null; })
+            .then(function (d) {
+              if (!d || !d.tag_name) return;
+              var day = d.published_at ? new Date(d.published_at).toLocaleDateString('sv-SE', { timeZone: 'Asia/Taipei' }) : '';
+              el.textContent = '';
+              el.append('Current version ');
+              var a = document.createElement('a'); a.href = d.html_url; a.textContent = d.tag_name; el.append(a);
+              if (day) el.append(' · ' + day);
+              el.append(' · ');
+              var h = document.createElement('a'); h.href = 'https://github.com/chenweichiang/research-writing-kit/releases'; h.textContent = 'Release notes'; el.append(h);
+            })
+            .catch(function () {});
+        })();
+      </script>
   </body>
 </html>

@@ -15,7 +15,7 @@
     <style>
       @font-face {
         font-family: 'Zhuque Fangsong';
-        src: url('/research-writing-kit/fonts/ZhuqueFangsong-subset.woff2?v=20260926') format('woff2');
+        src: url('/research-writing-kit/fonts/ZhuqueFangsong-subset.woff2?v=20260928') format('woff2');
         font-weight: 400 900;
         font-display: swap;
       }
@@ -58,6 +58,7 @@
              font-size: 0.95rem; transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s; }
       .cta:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 0 #0a0a0a; border-color: var(--accent); color: inherit; }
       .cta .mono { font-weight: 500; color: var(--gray); margin-left: 0.5em; font-size: 0.85em; }
+      .ver { font-size: 0.8rem; color: var(--gray); margin: 1.1rem 0 0; letter-spacing: 0.02em; }
 
       section { margin-top: 3.5rem; padding-top: 2rem; border-top: 1px solid var(--line); }
       section > .label { font-size: 0.75rem; color: var(--gray); letter-spacing: 0.08em; margin: 0 0 0.5rem; }
@@ -112,6 +113,7 @@
       <h1 class="display">研究寫作套件</h1>
       <p class="lede">一套用 AI 協助寫<strong>研究論文與計畫提案</strong>的方法，加一個會<strong>自己安裝、自己客製</strong>的小工具箱。你不用懂 AI、不用會設定：把資料夾交給你的 Claude，它會問你幾個問題，再把適合你的工具建好。</p>
       <a class="cta" href="https://github.com/chenweichiang/research-writing-kit">到 GitHub 取得 <span class="mono">research-writing-kit</span></a>
+      <p class="ver mono" id="kit-version"><a href="https://github.com/chenweichiang/research-writing-kit/releases">版本紀錄</a></p>
 
       <section id="what">
         <p class="label mono">這是什麼</p>
@@ -122,7 +124,7 @@
           <li><b>絕不編造引用</b><span>每一條文獻都真的抓下來、確認方向對，查不到就標「未驗證」，不假裝。交付前還會掃撤稿與沒掛引用的宣稱。</span></li>
           <li><b>論文像你的領域，信件像你</b><span>論文、計畫書、申請書拿同領域已發表論文當準繩，每項語言特徵要落在真人論文的常見區間內，不磨成通用 AI 腔，也不套個人口吻；你自己的文風留給信件與自述。英文稿交付前另有去節奏的複查。</span></li>
           <li><b>誠實內建</b><span>效果量與信賴區間（不只 p 值）、Likert 不當連續變數、要主張效果先診斷設計能不能回答問題。</span></li>
-          <li><b>資料盡量留在本機</b><span>隨包的檢查工具與統計分析都在你電腦上跑。未發表稿件與研究原始資料不送往線上檢索服務或 AI 偵測器，線上檢索只送出 DOI 與標題這類書目資料。Claude Code 讀到的內容（包括稿件與資料）仍會傳到 Anthropic 的模型端處理。</span></li>
+          <li><b>資料盡量留在本機</b><span>隨包的檢查工具與統計分析都在你電腦上跑。未發表稿件與研究原始資料不送往線上檢索服務或 AI 偵測器，線上檢索只送出 DOI 與標題這類書目資料。Claude Code 讀到的內容（包括稿件與資料）仍會傳到 Anthropic 的模型端處理，因此替期刊或研討會審別人的稿件時，預設只把本機工具的指令交給你自己跑，要你明說、且確認該場域允許才會讀稿。</span></li>
         </ol>
       </section>
 
@@ -187,5 +189,25 @@ claude</code></pre>
         <a href="/">課程總站</a> · <a href="en/" lang="en">English</a> · <a href="https://github.com/chenweichiang/research-writing-kit">原始碼（GitHub）</a> · 江振維 Chenwei Chiang
       </footer>
     </main>
+      <script>
+        // 版本號讀 GitHub 最新 Release，發版後自動更新；讀不到就只留「版本紀錄」連結，頁面上不寫死版本號
+        (function () {
+          var el = document.getElementById('kit-version');
+          if (!el || !window.fetch) return;
+          fetch('https://api.github.com/repos/chenweichiang/research-writing-kit/releases/latest', { headers: { Accept: 'application/vnd.github+json' } })
+            .then(function (r) { return r.ok ? r.json() : null; })
+            .then(function (d) {
+              if (!d || !d.tag_name) return;
+              var day = d.published_at ? new Date(d.published_at).toLocaleDateString('sv-SE', { timeZone: 'Asia/Taipei' }) : '';
+              el.textContent = '';
+              el.append('目前版本 ');
+              var a = document.createElement('a'); a.href = d.html_url; a.textContent = d.tag_name; el.append(a);
+              if (day) el.append(' · ' + day);
+              el.append(' · ');
+              var h = document.createElement('a'); h.href = 'https://github.com/chenweichiang/research-writing-kit/releases'; h.textContent = '版本紀錄'; el.append(h);
+            })
+            .catch(function () {});
+        })();
+      </script>
   </body>
 </html>
