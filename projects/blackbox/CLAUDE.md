@@ -139,8 +139,6 @@ git commit -m "更新黑盒子頁"
 git push origin main
 ```
 
-> 2026-07 以前掛在自架 VPS `work.interaction.tw`、用 rsync 部署；該網域已除役，舊流程作廢。
-
 詳細部署流程見 [`docs/DEVELOPMENT.md`](docs/DEVELOPMENT.md)。
 
 ### 🔒 不要 commit 的東西
