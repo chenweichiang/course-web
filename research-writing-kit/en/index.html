@@ -150,7 +150,9 @@ claude</code></pre>
           <div><dt>"This reads like a translation"<small>/co-author</small></dt><dd>Native polish: first measures which language features sit outside the range of same-field papers; the editor subagent returns a change list only, and you rule on each item. Changed numbers, citations or terms are blocked.</dd></div>
           <div><dt>"Check this draft before I submit"<small>/paper-review</small></dt><dd>Five layers: mechanical, diction, language, reviewer's-eye logic, delivery completeness. Checks only; it does not rewrite.</dd></div>
           <div><dt>"Do these citations really support what I wrote?"<small>/verify-citations</small></dt><dd>Reads the cited PDFs sentence by sentence, judges support direction, verifies DOIs, and sends flagged items to a sceptical second reviewer.</dd></div>
-          <div><dt>"Get me the PDFs of these references"<small>/fetch-refs</small></dt><dd>Multi-source fetching, per-paper content check, filing. Includes citation snowballing.</dd></div>
+          <div><dt>"Run everything before I send it"<small>/co-author</small></dt><dd>Full polish: citations, proofreading, native polish, de-AI, overclaims, localization, regression, then a new versioned PDF, with one report at the end.</dd></div>
+          <div><dt>"My co-author wrote this draft"<small>/co-author</small></dt><dd>The original stays untouched and your changes become an edit layer; every sentence of the new draft is traced back to the original and the co-author's replies, and untraceable methods or numbers are flagged red.</dd></div>
+          <div><dt>"Get me the PDFs of these references"<small>/fetch-refs</small></dt><dd>Multi-source fetching, per-paper content check, filing. What it cannot get is listed for you to download, minus what your own library already holds, and your downloads are filed afterwards. Includes citation snowballing.</dd></div>
           <div><dt>"The reviews are back, help me respond"<small>/rebuttal</small></dt><dd>Split the points, rule on each, make the revisions, write the letter, verify completeness before sending.</dd></div>
           <div><dt>"Don't make that mistake again"<small>/doc-regress</small></dt><dd>Turns a caught error into a standing check that scans the whole document and blocks recurrence. Includes the numbers ledger.</dd></div>
           <div><dt>"Build the submission PDF"<small>/build-pdf</small></dt><dd>Formats to the venue template; second-language papers ship with the back-translation as a pair.</dd></div>
@@ -159,11 +161,11 @@ claude</code></pre>
 
       <section id="inside">
         <p class="label mono">What's inside</p>
-        <h2 class="display">Method, templates, twenty-eight tools</h2>
+        <h2 class="display">Method, templates, thirty-four tools</h2>
         <ul class="inv">
-          <li><b>The method</b> in seven documents: philosophy, iron rules, the nine-phase workflow, argumentation moves, method decision, thirty-eight method cards, the rigour process.</li>
+          <li><b>The method</b> in eleven documents: philosophy, iron rules, the nine-phase workflow, argumentation moves, method decision, thirty-eight method cards, the rigour process, version numbering, co-authored manuscripts, cutting to a page limit, publishers' AI-use rules.</li>
           <li><b>Seven skill templates</b> and <b>five subagents</b> (including the clean final review and native polish in both languages): adapted to your field, language, and venues at install time.</li>
-          <li><b>Twenty-eight local scripts</b>, most with zero install: Taiwan-usage and Chinese AI-style checks, register profiles and native-polish checks in both languages, English grammar and AI-fingerprint diagnostics, metadiscourse and lexical-bundle diagnostics, figure colour-vision accessibility, reference retrieval and the literature map, retraction scan, uncited-claims scan, document regression, format gates for the method decision and the analysis plan, response-letter and submission-ledger checks.</li>
+          <li><b>Thirty-four local scripts</b>, most with zero install: Taiwan-usage and Chinese AI-style checks, register profiles and native-polish checks in both languages, English grammar and AI-fingerprint diagnostics, metadiscourse and lexical-bundle diagnostics, figure colour-vision accessibility and a figure check on the typeset PDF, reference retrieval and the literature map, the missing-references list and filing of hand downloads, retraction scan, uncited-claims scan, document regression, format gates for the method decision and the analysis plan, sentence-by-sentence tracing of a co-authored rewrite, a version check, review-round convergence, response-letter and submission-ledger checks.</li>
           <li><b>Blank templates</b> (voice profile for letters, venue notes, argument skeleton), open academic word lists (two bundled; the AWL is fetched by a script because of its licence), one worked skeleton example.</li>
           <li><b>Traditional Chinese (Taiwan) add-on</b>: mainland-vs-Taiwan term check, 台/臺 consistency, a Typst recipe for Chinese PDFs.</li>
         </ul>

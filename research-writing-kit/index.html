@@ -15,7 +15,7 @@
     <style>
       @font-face {
         font-family: 'Zhuque Fangsong';
-        src: url('/research-writing-kit/fonts/ZhuqueFangsong-subset.woff2?v=20260928') format('woff2');
+        src: url('/research-writing-kit/fonts/ZhuqueFangsong-subset.woff2?v=20261004') format('woff2');
         font-weight: 400 900;
         font-display: swap;
       }
@@ -158,7 +158,9 @@ claude</code></pre>
           <div><dt>「這段讀起來像翻譯」<small>/co-author</small></dt><dd>母語潤稿：先量出哪些語言特徵偏離同領域論文的常見區間，潤稿子代理只交改動清單，由你逐條裁定；數字、引用、術語動了就擋。</dd></div>
           <div><dt>「幫我檢查這篇再投」<small>/paper-review</small></dt><dd>五層檢查：機械層、用字、語言、審稿視角的邏輯、交付完整性。只檢查，不改稿。</dd></div>
           <div><dt>「這些引用撐得住我寫的話嗎？」<small>/verify-citations</small></dt><dd>逐句對照 PDF 原文判定引用方向，DOI 權威查驗，被標記的再派懷疑論二審。</dd></div>
-          <div><dt>「幫我把引用的 PDF 收齊」<small>/fetch-refs</small></dt><dd>多源抓取、逐篇確認內容真的相符、歸檔，也包含引用滾雪球。</dd></div>
+          <div><dt>「交出去前全部跑一遍」<small>/co-author</small></dt><dd>全套潤修：引用查驗、校對、母語潤稿、去 AI 味、去過度宣稱、在地用語、回歸，最後出新版號的 PDF，跑完一次回報。</dd></div>
+          <div><dt>「這是合作者寫的稿」<small>/co-author</small></dt><dd>原檔不改，改動寫成潤稿層；新稿逐句對回原稿與對方回覆，指不回來源的方法與數字標紅。</dd></div>
+          <div><dt>「幫我把引用的 PDF 收齊」<small>/fetch-refs</small></dt><dd>多源抓取、逐篇確認內容真的相符、歸檔；拿不到的先扣掉你自己文獻庫已有的才列給你下載，下載好再幫你收件；也包含引用滾雪球。</dd></div>
           <div><dt>「審稿意見回來了，幫我回」<small>/rebuttal</small></dt><dd>拆點、逐點裁定、落實修訂、回應信、交付前完整性驗證。</dd></div>
           <div><dt>「別再犯同樣的錯」<small>/doc-regress</small></dt><dd>把抓到的錯寫成常駐檢查，改完全庫重掃，復發就擋下，另有數字帳本勾稽。</dd></div>
           <div><dt>「把這篇排成投稿 PDF」<small>/build-pdf</small></dt><dd>依場域模板排版，第二語言稿連同回譯稿成對交付。</dd></div>
@@ -167,11 +169,11 @@ claude</code></pre>
 
       <section id="inside">
         <p class="label mono">裡面有什麼</p>
-        <h2 class="display">方法、範本、二十八支工具</h2>
+        <h2 class="display">方法、範本、三十四支工具</h2>
         <ul class="inv">
-          <li><b>方法本體</b>七份：心法、鐵則、九階段流程、論證工法、方法決策、三十八張方法卡、嚴謹研究流程。</li>
+          <li><b>方法本體</b>十一份：心法、鐵則、九階段流程、論證工法、方法決策、三十八張方法卡、嚴謹研究流程、版號規則、合作者稿、超頁壓縮、各出版社的 AI 使用規定。</li>
           <li><b>七個 skill 範本</b>與<b>五個 subagent</b>（含乾淨終審與中英文母語潤稿）：安裝時依你的領域、語言、場域改寫。</li>
-          <li><b>二十八支本機腳本</b>，多數零安裝：台灣用語與中文 AI 味檢查、中英文語域剖面與母語潤稿檢查、英文文法與 AI 指紋、後設論述與詞束診斷、圖表色覺可及性、文獻取檔與文獻地圖、撤稿掃描、無引用宣稱掃描、文件回歸、方法決策與分析計畫的格式閘門、回應信與投稿狀態驗證。</li>
+          <li><b>三十四支本機腳本</b>，多數零安裝：台灣用語與中文 AI 味檢查、中英文語域剖面與母語潤稿檢查、英文文法與 AI 指紋、後設論述與詞束診斷、圖表色覺可及性與排好的 PDF 圖表檢查、文獻取檔與文獻地圖、缺件清單與下載匣收件、撤稿掃描、無引用宣稱掃描、文件回歸、方法決策與分析計畫的格式閘門、合作者稿逐句溯源、版號檢查、審查輪次收斂、回應信與投稿狀態驗證。</li>
           <li><b>空白模板</b>（信件用的文風檔、投稿筆記、論證骨架）、開放學術詞表（兩份隨包，AWL 因授權由腳本抓取）、一份填好的骨架範例。</li>
           <li><b>繁中在地化包</b>：陸用語對照、台／臺一致性、Typst 中文 PDF 配方。</li>
         </ul>
