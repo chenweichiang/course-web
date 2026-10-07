@@ -4,7 +4,7 @@ import AIHint from '../AIHint'
 
 const QUESTIONS = [
   { id: 'q1', type: 'open', label: '接觸這個物件後，你的身體有什麼感受？（不要說情緒詞，說身體）' },
-  { id: 'q2', type: 'scale', label: '這個感受的強度' },
+  { id: 'q2', type: 'scale', label: '這個感受的強度（1–7）' },
   { id: 'q3', type: 'choice', label: '這個感受讓你想', options: ['動起來', '靜下來', '離開', '靠近', '什麼都不想'] },
   { id: 'q4', type: 'open', label: '這個物件讓你想到什麼情境或記憶？' },
   { id: 'q5', type: 'choice', label: '如果這個物件是一句話，它是', options: ['一個問題', '一個告白', '一個警告', '一個邀請', '沉默'] },
@@ -98,13 +98,13 @@ function SimulatedTest() {
                 <span>非常強烈</span>
               </div>
               <input
-                type="range" min={1} max={5}
-                value={answers[q.id] || 3}
+                type="range" min={1} max={7}
+                value={answers[q.id] || 4}
                 onChange={e => updateAnswer(q.id, e.target.value)}
                 className="w-full"
               />
               <div className="text-center text-zinc-500 mono text-xs">
-                {answers[q.id] || 3} / 5
+                {answers[q.id] || 4} / 7
               </div>
             </div>
           )}

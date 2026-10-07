@@ -103,14 +103,6 @@ const CATEGORIES = [
         url: 'https://tangible.media.mit.edu/',
         keywords: 'MIT · 聲音控制 · 情感機器 · 身體參與',
       },
-      {
-        title: 'PICO — 可觸摸的聲音',
-        org: 'MIT Tangible Media Group',
-        desc: '可以用手「觸摸」聲音的裝置。不同觸摸位置和力道改變聲音的頻率和質地，讓聲音感覺像是有物理質感的東西。',
-        insight: '設計重點：當觸覺和聽覺同步時，感受比任一單獨更強烈。你的盒子能讓這兩種感知同步嗎？',
-        url: 'https://tangible.media.mit.edu/project/pico/',
-        keywords: 'MIT · 聲音 · 觸覺 · 跨感官',
-      },
     ],
   },
   {
@@ -120,14 +112,6 @@ const CATEGORIES = [
     Icon: LightIcon,
     principle: '光的設計是顏色溫度（暖光 vs 冷光）、擴散方式（點光源 vs 漫射）、變化速率（呼吸燈 vs 閃爍）的組合。光從哪裡「洩漏」出來本身就是設計決策。',
     cases: [
-      {
-        title: 'SURFACE X — 互動裝置',
-        org: 'Arduino Project Hub',
-        desc: '探索數位身份與物理身份碰撞的互動裝置。LED 陣列隨使用者的接觸方式呈現不同的光影模式，讓人感受到「自己」的存在如何影響空間。',
-        insight: '設計重點：光的反應是情感性的。「我的存在讓空間有了什麼變化？」',
-        url: 'https://projecthub.arduino.cc/Picaroon/1f9c6815-e296-4ffe-9765-1461079e190a',
-        keywords: 'Arduino · LED · 互動裝置 · 身份',
-      },
       {
         title: '互動貓耳髮夾',
         org: 'Arduino Project Hub',
@@ -143,15 +127,31 @@ const CATEGORIES = [
     label: '動作 · 機械',
     color: '#fb923c',
     Icon: MotionIcon,
-    principle: '機械動作的設計維度：速度（緩慢 vs 急促）、幅度（微小 vs 誇張）、方向（向外伸展 vs 向內收縮）、節奏（規律 vs 有機）。有時候「抵抗」本身就是情感。',
+    principle: '機械動作的設計維度：速度（緩慢 vs 急促）、幅度（微小 vs 誇張）、方向（向外伸展 vs 向內收縮）、節奏（規律 vs 有機）。有時候「抵抗」本身就是情感。機械動作的「意圖感」讓人覺得它有生命：它「想要」什麼？它「拒絕」什麼？',
     cases: [
       {
-        title: 'Soft Manipulator — 互動裝置',
-        org: 'Arduino Project Hub',
-        desc: '軟性機械臂對觀眾的靠近做出反應，有時退縮，有時伸展。使用者嘗試不同的接觸節奏，機械臂也改變自己的節奏反應。',
-        insight: '設計重點：機械動作的「意圖感」讓人感受到它是有生命的。它「想要」什麼？它「拒絕」什麼？',
+        title: 'PICO — 人與電腦一起推的桌面',
+        org: 'MIT Tangible Media Group（Patten、Alonso、Ishii，CHI 2007）',
+        desc: '一張會動的桌面：桌下的電磁鐵推動桌上的小物件（示範案例裡代表手機基地台），電腦一邊計算最適的配置一邊移動它們。站在桌邊的人可以用手擋住或移開物件，電腦就得在人設下的限制裡重新計算。',
+        insight: '設計重點：人的手和機器的力作用在同一個物件上，手上的阻力和眼睛看到的移動同步。當觸覺和另一種感知同步時，感受比任一單獨更強烈。你的盒子能讓這兩種感知同步嗎？',
+        url: 'https://tangible.media.mit.edu/project/pico/',
+        keywords: 'MIT · 電磁鐵 · 主動桌面 · 人機協作',
+      },
+      {
+        title: 'SURFACE X — 會對人開合的雨傘陣列',
+        org: 'Arduino Project Hub（Picaroon，2018）',
+        desc: '作者描述為「探索自己建構的數位身分與物理身分碰撞那一刻」的互動裝置。35 把電動雨傘配 20 個人體紅外線感測器，兩塊 Arduino Mega 主從分工：有人靠近，對應的雨傘就打開或收起。',
+        insight: '設計重點：回應是情感性的。「我的存在讓空間有了什麼變化？」',
+        url: 'https://projecthub.arduino.cc/Picaroon/1f9c6815-e296-4ffe-9765-1461079e190a',
+        keywords: 'Arduino Mega · 電動雨傘 · 人體紅外線 · 身分',
+      },
+      {
+        title: 'Soft Manipulator — 用節奏回應的機構裝置',
+        org: 'Arduino Project Hub（simongeist，2017）',
+        desc: '作者描述為「觀眾用節奏、機構和日常物件做實驗的好玩互動裝置」。觀眾按下開關，電磁螺線管敲出複節奏；硬體是自製電路板、MOSFET 與 3D 列印零件。',
+        insight: '設計重點：輸入是開關，輸出是螺線管的敲擊，中間的映射就是「哪個開關對應哪種節奏」。動作的節奏本身就是你可以設計的維度。',
         url: 'https://projecthub.arduino.cc/simongeist/soft-manipulator-interactive-robotic-installation-1ca4ad',
-        keywords: 'Arduino · 伺服馬達 · 軟機器人 · 反應性',
+        keywords: 'Arduino · 電磁螺線管 · 複節奏 · 日常物件',
       },
       {
         title: 'Tangible Bits — MIT Tangible Media',
