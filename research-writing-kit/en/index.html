@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Research Writing Kit — Chenwei Chiang</title>
-    <meta name="description" content="A method for writing research papers and grant proposals with an AI, plus a small toolkit that installs and customizes itself: skeleton first, no fabricated citations, effect sizes with confidence intervals, data stays on your machine. Open source on GitHub." />
+    <meta name="description" content="A method for writing research papers and grant proposals with an AI, plus a small toolkit that installs and customizes itself: skeleton first, every citation checked against its source, effect sizes with confidence intervals, data kept local where it can be. Open source on GitHub." />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href="https://course.interaction.tw/research-writing-kit/en/" />
     <link rel="alternate" hreflang="zh-TW" href="https://course.interaction.tw/research-writing-kit/" />
@@ -113,7 +113,7 @@
         <p>You own the ideas and the argument; the AI does the legwork: finds and verifies sources, builds the argument skeleton, writes the prose, then checks its own work. Five principles run through the whole thing:</p>
         <ol class="principles">
           <li><b>Skeleton first</b><span>Don't squeeze prose out of a blank page. Text written that way tends to read like AI prose. Build the argument structure first, then write to it.</span></li>
-          <li><b>No fabricated citations, ever</b><span>Every reference is actually fetched and its support direction verified. Anything that can't be verified is marked "unverified". Before delivery it also scans for retractions and for claims with no citation at all.</span></li>
+          <li><b>Every citation checked against its source</b><span>The method requires each reference to be fetched and its direction of support confirmed. One that cannot be found is marked "unverified" instead of being kept quietly. Before delivery it also scans for retractions and for claims with no citation at all.</span></li>
           <li><b>Papers sound like your field, letters sound like you</b><span>Papers, grant proposals and applications are measured against published papers in your field, so each language feature sits inside the range real papers use: no generic AI prose, and no personal idiolect either. Your own voice is kept for letters and personal statements. English drafts get a separate rhythm pass before delivery.</span></li>
           <li><b>Honesty built in</b><span>Effect sizes with confidence intervals, not just p-values. Likert items are not treated as continuous. Before claiming an effect, the design is checked for whether it can answer the question at all.</span></li>
           <li><b>Data stays local where it can</b><span>The bundled check tools and the statistics run on your machine. Unpublished drafts and raw research data are not sent to online search services or AI detectors, and online lookups send only bibliographic data such as DOIs and titles. Anything Claude Code reads, drafts and data included, is still processed on Anthropic's model servers, so when you review someone else's submission for a journal or conference, by default it only hands you the commands for the local tools to run yourself, and reads the manuscript only if you say so and the venue allows it.</span></li>
