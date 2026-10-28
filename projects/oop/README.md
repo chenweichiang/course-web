@@ -8,7 +8,6 @@
 - 延伸閱讀單一來源＝`src/readings.js`（key＝section id 或 M0–M6；每筆 2026-09-17 實際打開核對過，改連結後要重新檢查）
 - 週進度＝`src/data.js` 的 `WEEKS`（每週四，9/10–12/24）；agy 安裝說明＝`AGY_INSTALL`；想你的生物（養殖箱）＝`CREATURE`
 - 作業牆資料＝`public/gallery/students.json`（名單與每週作品連結）
-- 課程設計依據＝備課專案 `~/Developer/202608 課程 清大物件導向程式設計/`（課綱草案＋國際調查報告）
 - `index.html` 內嵌 AI ASSISTANT CONTEXT 註解：學生把課程頁網址貼給 AI 時，AI 會讀到分階段助教規範——改 AI 政策時兩處要同步（註解＋`src/data.js`）
 
 ```bash
@@ -20,11 +19,11 @@ cd ../.. && git add -A && git commit && git push   # push 後 GitHub Pages 自�
 ## Hero 背景：程序化生成的一棵櫻
 
 `public/tree/` 底下的 `skeleton.js` / `presets.js` / `recursive.js` / `venation.js` / `render.js` / `light.js`
-是從研究專案 `202608 研究 p5畫樹`（GitHub repo `chenweichiang/202608-research-p5-tree`，**私有，外部無法瀏覽**）
-**原封不動複製**過來的，⚠️ **不要在這裡改**——要改演算法回研究專案改，再重新複製：
+是從作者另一個尚未公開的程序化畫樹研究**原封不動複製**過來的，**不要在這裡改**：
+演算法在研究那邊改好，再把這六個檔重新複製過來（`SRC` 換成研究專案的路徑）：
 
 ```bash
-SRC=~/Developer/"202608 研究 p5畫樹"
+SRC=<畫樹研究專案的路徑>
 for f in skeleton presets recursive venation render light; do cp "$SRC/src/$f.js" public/tree/; done
 ```
 

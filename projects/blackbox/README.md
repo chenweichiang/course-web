@@ -127,9 +127,8 @@ push 後 GitHub Pages 自動上線。詳見 course-web 根目錄 `README.md`。
 .
 ├── README.md              ← 本檔案（專案總覽）
 ├── CHANGELOG.md           ← 變更歷史
-├── CLAUDE.md              ← AI 協作者規則（必讀）
 ├── docs/
-│   ├── PROJECT_MAP.md     ← 檔案逐一說明（給 AI 工具用）
+│   ├── PROJECT_MAP.md     ← 檔案逐一說明
 │   └── DEVELOPMENT.md     ← 開發慣例與工作流
 ├── public/
 │   ├── if-poster-reference.png    ← iF Award 參考海報
@@ -153,18 +152,12 @@ push 後 GitHub Pages 自動上線。詳見 course-web 根目錄 `README.md`。
 
 | 檔案 | 用途 | 讀者 |
 |---|---|---|
-| [`CLAUDE.md`](CLAUDE.md) | AI 協作規則、語言偏好、不可違反的原則 | AI 工具（Claude / Gemini） |
-| [`docs/PROJECT_MAP.md`](docs/PROJECT_MAP.md) | 每個檔案的責任、依賴、修改要點 | AI 工具 + 新進開發者 |
-| [`docs/DEVELOPMENT.md`](docs/DEVELOPMENT.md) | 開發慣例、響應式策略、deploy 流程 | 開發者（人類或 AI） |
+| [`docs/PROJECT_MAP.md`](docs/PROJECT_MAP.md) | 每個檔案的責任、依賴、修改要點 | 開發者 |
+| [`docs/DEVELOPMENT.md`](docs/DEVELOPMENT.md) | 開發慣例、響應式策略、deploy 流程 | 開發者 |
 | [`CHANGELOG.md`](CHANGELOG.md) | 版本變更歷史 | 所有人 |
 
 ---
 
 ## License
 
-教學用途，僅供互動設計課程學生參考使用。
-程式碼開放閱讀與學習，圖像素材保留所有權利。
-
----
-
-🤖 部分內容由 [Claude Code](https://claude.com/claude-code) 協作產生。
+程式碼採 MIT 授權（見 course-web 根目錄的 `LICENSE`）。課程文字與圖片不在 MIT 範圍內，保留所有權利；參考作品圖片的版權屬原作者。

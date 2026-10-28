@@ -3,3 +3,6 @@
 # 各 source 專案的相依與中繼產物（build 成品另置於上線路徑並進版控）
 projects/*/node_modules/
 projects/*/.claude/
+# 本機的編輯器與 AI 工具設定
+.claude/
+CLAUDE.md

@@ -1,14 +1,14 @@
 #!/usr/bin/env node
-// 交付物規格匯出：src/deliverables.js（唯一來源）→ 備課專案 教材/交付物規格.md ＋ wiki 原始碼
-// 用法：node scripts/export-specs.mjs            → 寫 md 到備課 repo、wiki 到 /tmp/dt-specs.wiki
+// 交付物規格匯出：src/deliverables.js（唯一來源）→ Markdown 規格表 ＋ wiki 原始碼
+// 用法：node scripts/export-specs.mjs            → 寫 md 與 wiki（/tmp/dt-specs.wiki）
 //       node scripts/export-specs.mjs --wiki-only
+// md 的輸出路徑寫在 scripts/export-specs.local（一行路徑，不進版控）；沒有這個檔就寫到 /tmp/dt-specs.md
 import { DELIVERABLES, DEMO, MIRO } from '../src/deliverables.js'
 import { MILESTONE_GUIDE } from '../src/data.js'
-import { writeFileSync } from 'node:fs'
-import { homedir } from 'node:os'
-import { join } from 'node:path'
+import { existsSync, readFileSync, writeFileSync } from 'node:fs'
 
-const MD_OUT = join(homedir(), 'Developer/202608 課程 設計思考/教材/交付物規格.md')
+const LOCAL = new URL('./export-specs.local', import.meta.url)
+const MD_OUT = existsSync(LOCAL) ? readFileSync(LOCAL, 'utf8').trim() : '/tmp/dt-specs.md'
 const WIKI_OUT = '/tmp/dt-specs.wiki'
 const groups = MILESTONE_GUIDE.map((m) => ({ m, items: DELIVERABLES.filter((d) => d.ms === m.id) })).filter((g) => g.items.length)
 const today = new Date().toISOString().slice(0, 10)

@@ -107,7 +107,6 @@
 - 專案基底（Vite + React + Tailwind + Framer Motion）
 - 12 段教學單頁應用基本架構
 - 課程核心概念、評分標準、感受探索器
-- `CLAUDE.md`：AI 工具規則
 
 ### Commit
 

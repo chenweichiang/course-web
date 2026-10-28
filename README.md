@@ -1,6 +1,6 @@
 # course-web — 課程網站總站
 
-江振維（Chiang Chenwei）課程頁面的統一發佈站。所有課程／作業展示頁與其原始碼都收在這一個 repo，
+江振維（Chenwei Chiang）課程頁面的統一發佈站。所有課程／作業展示頁與其原始碼都收在這一個 repo，
 掛在同一個網域 `course.interaction.tw` 底下的不同子路徑，由 GitHub Pages 免費代管（自訂網域 + HTTPS）。
 
 ## 課程網址
@@ -9,21 +9,20 @@
 
 | 課程 | 頁面 | 網址 | 原始碼 |
 |------|------|------|--------|
-| 設計思考（北商創科 115-1） | 課程主頁 | <https://course.interaction.tw/designthinking/> | `projects/designthinking/`（Vite + React；課程內容單一來源 `src/data.js`＋`src/deliverables.js` 31 張九欄規格卡；`node scripts/export-specs.mjs` 匯出到備課 repo 教材與 wiki） |
-| 脈絡設計與實踐（北商創科 115-1） | 課程主頁 | <https://course.interaction.tw/contextdesign/> | `contextdesign/`（純手寫靜態 HTML；標題字子集 `contextdesign/fonts/`；「交付物規格」區段由備課 repo `202608 課程 脈絡設計與實踐/scripts/build_web.py` 從 `教材/*.md` 生成，SPECS 標記內勿手改） |
+| 設計思考（北商創科 115-1） | 課程主頁 | <https://course.interaction.tw/designthinking/> | `projects/designthinking/`（Vite + React；課程內容單一來源 `src/data.js`＋`src/deliverables.js` 31 張九欄規格卡；`node scripts/export-specs.mjs` 匯出成 Markdown 與 wiki 原始碼） |
+| 脈絡設計與實踐（北商創科 115-1） | 課程主頁 | <https://course.interaction.tw/contextdesign/> | `contextdesign/`（純手寫靜態 HTML；標題字子集 `contextdesign/fonts/`；「交付物規格」區段由課程備課資料自動生成，`SPECS:START` 與 `SPECS:END` 標記之間勿手改） |
 | 互動設計 | 黑盒子 · 期末專案 | <https://course.interaction.tw/interactiondesign/blackbox/> | `projects/blackbox/`（Vite + React） |
 | 物件導向程式設計（清大科藝 115-1） | 課程主頁 | <https://course.interaction.tw/oop/> | `projects/oop/`（Vite + React；課程內容單一來源 `src/data.js`） |
 | 物件導向程式設計（清大科藝 115-1） | 作業牆 | <https://course.interaction.tw/oop/gallery/> | 同上（名單資料 `projects/oop/public/gallery/students.json`） |
-| 課堂點名（三門課共用） | 學生說明頁（外站） | <https://attend.interaction.tw/help> | 不在本 repo；程式在 server repo `services/attend/`，首頁只放一張卡片連過去 |
+| 課堂點名（三門課共用） | 學生說明頁（外站） | <https://attend.interaction.tw/help> | 不在本 repo；程式公開在 [chenweichiang/classroom-attendance](https://github.com/chenweichiang/classroom-attendance)，首頁只放一張卡片連過去 |
 | 研究寫作套件（公開工具箱） | 專案頁 | <https://course.interaction.tw/research-writing-kit/> | `research-writing-kit/`（純手寫靜態 HTML；標題字子集 `research-writing-kit/fonts/`，改頁面文字後要重新子集化；repo 本體在 [chenweichiang/research-writing-kit](https://github.com/chenweichiang/research-writing-kit)） |
 | 研究寫作套件（英文版） | 專案頁 | <https://course.interaction.tw/research-writing-kit/en/> | `research-writing-kit/en/`（同上；兩頁 hreflang 互連） |
 
-根目錄 `index.html`＝課程總覽首頁（原為轉址頁，2026-08 改版；新增課程記得補卡片）。首頁標題字用自己的子集 `fonts/ZhuqueFangsong-subset.woff2`——**首頁文字改動後要重新子集化**（SOP 見 `projects/designthinking/README.md`，來源文字改掃根目錄 `index.html`），否則新字會 fallback 成明體；子集化後把 `index.html` 裡字型網址的 `?v=` 版本號改成當天日期，否則使用者的瀏覽器會沿用舊字型（2026-09-10 踩過：「堂」字上線後仍顯示明體）。
+根目錄 `index.html`＝課程總覽首頁，新增課程記得補卡片。首頁標題字用自己的子集 `fonts/ZhuqueFangsong-subset.woff2`。**首頁文字改動後要重新子集化**（步驟見 `projects/designthinking/README.md`，來源文字改掃根目錄 `index.html`），否則新字會退回成明體；子集化後把 `index.html` 裡字型網址的 `?v=` 版本號改成當天日期，否則使用者的瀏覽器會沿用快取裡的舊字型。
 
-🔴 **每個用朱雀標題字的頁面要有自己的子集，不要借用別頁的**（來源文字＝該頁自己的 `index.html`）。
-這條踩過三次：2026-08-09 首頁借 OOP 子集缺「踐」、2026-09-10 首頁缺「堂」、2026-09-20 研究寫作套件頁
-借根目錄首頁子集，標題「不是模板，是方法」有四個字 fallback 成 Noto Serif TC 900，同一行一半仿宋一半粗黑。
-借用當下看不出問題（缺的字剛好在別頁的來源文字裡），是改了標題文字才爆，所以要在建頁時就給它自己的子集。
+**每個用朱雀標題字的頁面要有自己的子集，不要借用別頁的**（來源文字＝該頁自己的 `index.html`）。
+借用當下看不出問題，因為缺的字剛好在別頁的來源文字裡；等改了標題文字，缺的字才會退回成別的字型，
+同一行一半仿宋一半黑體。所以建頁時就要給它自己的子集。
 查法：開頁面在 console 對每個字比對 `"Zhuque Fangsong", serif` 與 `serif` 的 canvas 像素，相同＝該字不在子集裡
 （`document.fonts.check()` 只看 @font-face 宣告，對 subset 一律回 true，**不能用來驗**）。
 自動檢查：`python3 tools/check_font_subsets.py`（需 fonttools＋brotli；PR 與 push 到 main 時由
@@ -62,5 +61,12 @@ push 後 GitHub Pages 幾分鐘自動上線，無需碰伺服器。
 
 網址一律 = `course.interaction.tw/<課程>/<專案>/`。**新增後記得把網址補進上面「課程網址」表。**
 
-> 沿革：黑盒子頁原掛於自架伺服器 `work.interaction.tw/interactiondesign/114-2/`；2026-07 `work.interaction.tw`
-> 除役，頁面與其原始碼（原獨立專案 `202605 課程 互動設計黑盒子作業`）一併併入本總站，路徑改為 `/interactiondesign/blackbox/`。
+> 沿革：黑盒子頁原掛於 `work.interaction.tw/interactiondesign/114-2/`；2026-07 該站停用，
+> 頁面與原始碼一併併入本總站，路徑改為 `/interactiondesign/blackbox/`。
+
+## 授權
+
+- 程式碼（`projects/` 與 `tools/` 的原始碼、各頁的 HTML、CSS 與 JavaScript）採 [MIT 授權](LICENSE)。
+- 課程文字、教材與圖片不在 MIT 範圍內，著作權屬江振維，保留所有權利；要轉載或改作，請透過 [interaction.tw](https://interaction.tw) 聯絡。
+- 各頁的 `ZhuqueFangsong-subset.woff2` 是[朱雀仿宋](https://github.com/TrionesType/zhuque)的子集，© 2023 JadeFoci，採 SIL Open Font License 1.1，授權全文在 [`fonts/OFL.txt`](fonts/OFL.txt)。
+- 參考作品的圖片與延伸閱讀連結，版權屬原作者。

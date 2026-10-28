@@ -1,6 +1,6 @@
 # Development · 開發慣例與工作流
 
-> 給開發者（人類或 AI）參考的工作模式、設計慣例、部署流程。
+> 給開發者參考的工作模式、設計慣例、部署流程。
 
 ---
 
@@ -66,8 +66,8 @@ npm run build && cd ../.. && git add -A interactiondesign/blackbox projects/blac
 ### 部署步驟
 
 ```bash
-# 1. 進原始碼目錄
-cd ~/Developer/course-web/projects/blackbox
+# 1. 進原始碼目錄（從 course-web 根目錄）
+cd projects/blackbox
 
 # 2. 確認本地 dev 看起來正常
 npm run dev
@@ -76,8 +76,8 @@ npm run dev
 # 3. 建置（直接輸出到 ../../interactiondesign/blackbox/）
 npm run build
 
-# 4. commit + push，GitHub Pages 幾分鐘後自動上線
-cd ~/Developer/course-web
+# 4. 回到 course-web 根目錄 commit + push，GitHub Pages 幾分鐘後自動上線
+cd ../..
 git add -A interactiondesign/blackbox projects/blackbox
 git commit -m "更新黑盒子頁"
 git push origin main
@@ -326,11 +326,6 @@ vite 的 `outDir` 已改成 `../../interactiondesign/blackbox`，那份**要 com
 git rm -r --cached dist/
 git commit -m "從版控移除 dist/"
 ```
-
-### 6. 本機路徑含空格與中文
-
-本專案位於 `~/Developer/course-web/projects/blackbox/`，路徑沒有空格；但 `~/Developer` 底下多數專案是
-中文帶空格的資料夾名，跨專案複製素材時所有 `cd` / `cp` 都要 quote。
 
 ---
 
